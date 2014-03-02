@@ -42,7 +42,7 @@ advantage of all the awesome configuration options Jekyll makes available.
 </div>
 
 もし、あなたが問題に出くわしたとき、全ての [インストール必要条件][Installation]
-を満たしている事を確認してください。.
+を満たしている事を確認してください。
 <!--
 If you're running into problems, ensure you have all the [requirements
 installed][Installation].
