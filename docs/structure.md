@@ -23,7 +23,7 @@ or series of layout files. Throughout that process you can tweak how you want
 the site URLs to look, what data gets displayed in the layout, and more. This is
 all done through editing text files, and the static web site is the final
 product.
---
+-->
 
 基本的な Jekyll サイトは、通常このようになります:
 <!--
