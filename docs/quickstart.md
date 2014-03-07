@@ -16,8 +16,17 @@ For the impatient, here's how to get a boilerplate Jekyll site up and running.
 ~ $ jekyll new myblog
 ~ $ cd myblog
 ~/myblog $ jekyll serve
+# => http://localhost:4000 を見てください
+{% endhighlight %}
+<!--
+{% highlight bash %}
+~ $ gem install jekyll
+~ $ jekyll new myblog
+~ $ cd myblog
+~/myblog $ jekyll serve
 # => Now browse to http://localhost:4000
 {% endhighlight %}
+-->
 
 にもかかわらず、それは何も起こりません。
 真の魔法は、あなたがブログの posts を作りはじめた時に起こります。
