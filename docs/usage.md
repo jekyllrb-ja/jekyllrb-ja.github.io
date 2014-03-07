@@ -16,22 +16,33 @@ window. You can use this command in a number of ways:
 {% highlight bash %}
 $ jekyll build
 # => カレントフォルダが ./_site の下に生成されます
-# => The current folder will be generated into ./_site
 
 $ jekyll build --destination <destination>
 # => カレントフォルダが <destination> の下に生成されます
-# => The current folder will be generated into <destination>
 
 $ jekyll build --source <source> --destination <destination>
 # => <source> フォルダが <destination> の下に生成されます
-# => The <source> folder will be generated into <destination>
 
 $ jekyll build --watch
 # => カレントフォルダが ./_site の下に生成されます
 #    変更を監視し、自動的に再生成を行います
+{% endhighlight %}
+<!--
+{% highlight bash %}
+$ jekyll build
+# => The current folder will be generated into ./_site
+
+$ jekyll build --destination <destination>
+# => The current folder will be generated into <destination>
+
+$ jekyll build --source <source> --destination <destination>
+# => The <source> folder will be generated into <destination>
+
+$ jekyll build --watch
 # => The current folder will be generated into ./_site,
 #    watched for changes, and regenerated automatically.
 {% endhighlight %}
+-->
 
 Jekyll もまた組み込み開発サーバがついており、
 ローカルで生成したサイトをブラウザでプレビューすることができます。
@@ -43,20 +54,29 @@ preview what the generated site will look like in your browser locally.
 {% highlight bash %}
 $ jekyll serve
 # => 開発サーバを http://localhost:4000/ で起動します
-# => A development server will run at http://localhost:4000/
 
 $ jekyll serve --detach
 # => `jekyll serve` と同様、しかし、現在のターミナルからは切り離されます
 #    サーバを停止する場合、 PID が `1234` ならば `kill -9 1234` で停止することができます
 #    PID が見つからない場合、 `ps aux | grep jekyll` を実行し、インスタンスを停止してください [Read more](http://unixhelp.ed.ac.uk/shell/jobz5.html).
+
+$ jekyll serve --watch
+# => `jekyll serve` と同様、しかし、変更を監視し、自動的に再生成を行います
+{% endhighlight %}
+<!--
+{% highlight bash %}
+$ jekyll serve
+# => A development server will run at http://localhost:4000/
+
+$ jekyll serve --detach
 # => Same as `jekyll serve` but will detach from the current terminal.
 #    If you need to kill the server, you can `kill -9 1234` where "1234" is the PID.
 #    If you cannot find the PID, then do, `ps aux | grep jekyll` and kill the instance. [Read more](http://unixhelp.ed.ac.uk/shell/jobz5.html).
 
 $ jekyll serve --watch
-# => `jekyll serve` と同様、しかし、変更を監視し、自動的に再生成を行います
 # => Same as `jekyll serve`, but watch for changes and regenerate automatically.
 {% endhighlight %}
+-->
 
 これらは [設定項目](../configuration/) の一部です。
 多くのコンフィグオプションはコマンドラインでフラグとして指定するか、
