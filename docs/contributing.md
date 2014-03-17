@@ -6,14 +6,14 @@ next_section: history
 permalink: /docs/contributing/
 ---
 
-あなたは Jekyllに投じるすばらしいアイディアを持っています。
-すばらしい！次の事柄を心に留めてください。
+あなたは Jekyll に投じるすばらしいアイディアを持っています。
+すばらしいことです！次の事柄を心に留めてください。
 <!--
 So you've got an awesome idea to throw into Jekyll. Great! Please keep the
 following in mind:
 -->
 
-* もし、既存の機能への小さな修正やパッチを作成したなら、ただのシンプルなテストを行います。
+* もし、既存の機能への小さな修正やパッチを作成したなら、シンプルなテストを行います。
   現在のテストスイートの範囲にとどまり、そして
   [Shoulda](http://github.com/thoughtbot/shoulda/tree/master) や
   [RR](http://github.com/btakita/rr/tree/master) を使用してください。
@@ -36,9 +36,9 @@ following in mind:
   would be appreciated, and once merged it will be transferred over to the main
   `site`, jekyllrb.com.
 -->
-* あなたの貢献が Jekyll の振る舞いを変えた場合、ドキュメントを更新すべきです。
+* あなたの貢献によって Jekyll の振る舞いが変わった場合、
   それは `site/docs` にあります。
-  もし、 docs に案内誤りがあった場合、遠慮なく追加してください。
+  もし、 docs に情報の誤りがあった場合、遠慮なく追加してください。
   すばらしいドキュメントはすばらしいプロジェクトを作ります！
 <!--
 * If your contribution changes any Jekyll behavior, make sure to update the
@@ -57,7 +57,7 @@ following in mind:
 * Please do your best to submit **small pull requests**. The easier the proposed
   change is to review, the more likely it will be merged.
 -->
-* プルリクエストを送信するとき、プルリクエストボディを賢明に使用してください。
+* プルリクエストを送信するとき、プルリクエストのボディを賢明に使用してください。
   変更されたかどうかの記述、変更の背後にある動機、 [完了したかどうかのタスクリスト](http://git.io/gfm-tasks)
   もレビュー時間を早めます。
 <!--
@@ -86,8 +86,8 @@ following in mind:
 -----------------
 
 テストスイートの実行や gem のビルドのために、
-あなたは Jekyll の依存ツールをインストールする必要があります。
-Jekyll は Bundler を使用しており、 `bundle` コマンドを迅速に実行すると全ての設定が行われます！
+Jekyll の依存ツールをインストールする必要があります。
+Jekyll は Bundler を使用しており、 `bundle` コマンドを実行すると全ての設定が迅速に行われます！
 <!--
 To run the test suite and build the gem you'll need to install Jekyll's
 dependencies. Jekyll uses Bundler, so a quick run of the `bundle` command and
@@ -98,7 +98,7 @@ you're all set!
 $ bundle
 {% endhighlight %}
 
-はじめる前に、テストを実行し、必ずテストがパスされていることを
+はじめる前に、テストを実行し、必ずテストが通ることを
 確認してください(あなたの環境が適切に設定されているかを確認するために):
 <!--
 Before you start, run the tests and make sure that they pass (to confirm your
@@ -114,13 +114,13 @@ $ bundle exec rake features
 <!-- Workflow -->
 --------
 
-これは、あなたの作業をプロジェクトにマージされるもっとも直接的な方法です:
+これは、あなたの作業がプロジェクトにマージされるもっとも直接的な方法です:
 <!--
 Here's the most direct way to get your work merged into the project:
 -->
 
 * プロジェクトをフォークします
-* フォークしたあなたのプロジェクトをクローンします:
+* あなたのフォークプロジェクトをクローンします:
 <!--
 * Fork the project.
 * Clone down your fork:
@@ -140,7 +140,7 @@ git checkout -b my_awesome_feature
 {% endhighlight %}
 
 * ハックし、テストを追加します。必ずしもこの順番でなくてかまいません
-* `rake` を実行し、テストが必ず全てパスしていることを確認してください
+* `rake` を実行し、テストが必ず全て通ることを確認してください
 * 必要に応じて、エラーがないようにコミットを論理的な塊にリベースしてください
 * ブランチをプッシュしてください
 <!--
@@ -174,8 +174,8 @@ open-sourced our docs and we welcome any pull requests if you find it
 lacking.
 -->
 
-あなたは、 GitHub.com 上の Jekyll リポジトリの [site]({{ site.repository }}/tree/master/site) に
-jekyllrb.comのドキュメント見つけることができます。
+あなたは、 GitHub.com 上の Jekyll リポジトリの [site](https://github.com/jekyll/jekyll/tree/master/site) で
+jekyllrb.comのドキュメントを見つけることができます。
 <!--
 You can find the documentation for jekyllrb.com in the
 [site]({{ site.repository }}/tree/master/site) directory of
@@ -191,10 +191,10 @@ requests directed at another branch will not be accepted.
 
 GitHub の [Jekyll wiki]({{ site.repository }}/wiki) は、
 自由に更新することができるように、プルリクエストなしで
-全ての GitHub ユーザがアクセス権を持つすることができます。
+全ての GitHub ユーザがアクセス権を持つことができます。
 <!--
-The [Jekyll wiki]({{ site.repository }}/wiki) on GitHub 
-can be freely updated without a pull request as all 
+The [Jekyll wiki]({{ site.repository }}/wiki) on GitHub
+can be freely updated without a pull request as all
 GitHub users have access.
 -->
 
@@ -209,6 +209,8 @@ GitHub users have access.
   This way, the maintainers can control when the gem gets released.
 -->
 * mjombo/jekyll の最新コミットに基づいて(複数の)パッチを維持してください。
+  それは適用するためのあなたの仕事で、メンテナがしなければならないことを少なくするのは
+  とてもよいことです。
 <!--
 * Try to keep your patch(es) based from the latest commit on mojombo/jekyll.
   The easier it is to apply your work, the less work the maintainers have to do,
