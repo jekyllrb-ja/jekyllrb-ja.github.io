@@ -6,9 +6,20 @@ next_section: structure
 permalink: /docs/usage/
 ---
 
+<!--original
+---
+layout: docs
+title: Basic Usage
+prev_section: installation
+next_section: structure
+permalink: /docs/usage/
+---
+-->
+
 Jekyll gem はターミナルウィンドウに `jekyll` で実行することができます。
 あなたはいくつかの方法でこのコマンドを使用することができます:
-<!--
+
+<!--original
 The Jekyll gem makes a `jekyll` executable available to you in your Terminal
 window. You can use this command in a number of ways:
 -->
@@ -27,7 +38,8 @@ $ jekyll build --watch
 # => カレントフォルダが ./_site の下に生成されます
 #    変更を監視し、自動的に再生成を行います
 {% endhighlight %}
-<!--
+
+<!--original
 {% highlight bash %}
 $ jekyll build
 # => The current folder will be generated into ./_site
@@ -44,9 +56,34 @@ $ jekyll build --watch
 {% endhighlight %}
 -->
 
+<div class="note warning">
+  <h5>Destination folders are cleaned on site builds</h5>
+  <p>
+    The contents of <code>&lt;destination&gt;</code> are automatically
+    cleaned when the site is built.  Files or folders that are not
+    created by your site will be removed.  Do not use an important
+    location for <code>&lt;destination&gt;</code>; instead, use it as
+    a staging area and copy files from there to your web server. 
+  </p>
+</div>
+
+<!--original
+<div class="note warning">
+  <h5>Destination folders are cleaned on site builds</h5>
+  <p>
+    The contents of <code>&lt;destination&gt;</code> are automatically
+    cleaned when the site is built.  Files or folders that are not
+    created by your site will be removed.  Do not use an important
+    location for <code>&lt;destination&gt;</code>; instead, use it as
+    a staging area and copy files from there to your web server. 
+  </p>
+</div>
+-->
+
 Jekyll もまた組み込み開発サーバがついており、
 ローカルで生成したサイトをブラウザでプレビューすることができます。
-<!--
+
+<!--original
 Jekyll also comes with a built-in development server that will allow you to
 preview what the generated site will look like in your browser locally.
 -->
@@ -57,13 +94,15 @@ $ jekyll serve
 
 $ jekyll serve --detach
 # => `jekyll serve` と同様、しかし、現在のターミナルからは切り離されます
+
 #    サーバを停止する場合、 PID が `1234` ならば `kill -9 1234` で停止することができます
 #    PID が見つからない場合、 `ps aux | grep jekyll` を実行し、インスタンスを停止してください [Read more](http://unixhelp.ed.ac.uk/shell/jobz5.html).
 
 $ jekyll serve --watch
 # => `jekyll serve` と同様、しかし、変更を監視し、自動的に再生成を行います
 {% endhighlight %}
-<!--
+
+<!--original
 {% highlight bash %}
 $ jekyll serve
 # => A development server will run at http://localhost:4000/
@@ -83,7 +122,8 @@ $ jekyll serve --watch
 もしくは(より一般的な)、ソースディレクトリのルートにある `_config.yml` ファイルに指定することができます。
 Jekyll は、起動時にこのファイルのオプションを自動的に使用します。
 例えば、あなたが `_config.yml` ファイルに以下のような行を置いた場合:
-<!--
+
+<!--original
 These are just a few of the available [configuration options](../configuration/).
 Many configuration options can either be specified as flags on the command line,
 or alternatively (and more commonly) they can be specified in a `_config.yml`
@@ -97,8 +137,16 @@ source:      _source
 destination: _deploy
 {% endhighlight %}
 
+<!--original
+{% highlight yaml %}
+source:      _source
+destination: _deploy
+{% endhighlight %}
+-->
+
 この時、以下の二つのコマンドの意味は同じとなります:
-<!--
+
+<!--original
 Then the following two commands will be equivalent:
 -->
 
@@ -107,8 +155,16 @@ $ jekyll build
 $ jekyll build --source _source --destination _deploy
 {% endhighlight %}
 
+<!--original
+{% highlight bash %}
+$ jekyll build
+$ jekyll build --source _source --destination _deploy
+{% endhighlight %}
+-->
+
 コンフィグオプションの詳細については、 [設定項目](../configuration/) ページを参照してください。
-<!--
+
+<!--original
 For more about the possible configuration options, see the
 [configuration](../configuration/) page.
 -->
