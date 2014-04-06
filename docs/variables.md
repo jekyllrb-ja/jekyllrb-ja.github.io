@@ -1,19 +1,92 @@
 ---
 layout: docs
-title: Variables
+title: 変数
 prev_section: pages
 next_section: datafiles
 permalink: /docs/variables/
 ---
 
+<!--original
+---
+layout: docs
+title: Variables
+prev_section: pages
+next_section: datafiles
+permalink: /docs/variables/
+---
+-->
+
+Jekyll は処理を行うファイルを探してサイトを横断します。
+[YAML Front Matter](../frontmatter/) を持つ任意のファイルは処理の対象になります。
+これらのファイルのそれぞれについて、 Jekyll は [Liquid templating
+system](http://wiki.shopify.com/Liquid) を経由して様々なデータを作ります。
+以下は利用可能なデータのリファレンスです。
+
+<!--original
 Jekyll traverses your site looking for files to process. Any files with [YAML
 Front Matter](../frontmatter/) are subject to processing. For each of these
 files, Jekyll makes a variety of data available via the [Liquid templating
 system](http://wiki.shopify.com/Liquid). The
 following is a reference of the available data.
+-->
 
+## グローバル変数
+
+<!--original
 ## Global Variables
+-->
 
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>変数</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><p><code>site</code></p></td>
+      <td><p>
+
+          <code>_config.yml</code> からサイト全体の情報と設定項目を設定します。
+          詳細については、下記を参照してください。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>page</code></p></td>
+      <td><p>
+
+        Page 固有の情報と <a href="../frontmatter/">YAML Front Matter</a> を設定します。
+        YAML front matter を経由して設定されたカスタム変数は、ここで利用可能です。
+        詳細については、下記を参照してください。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>content</code></p></td>
+      <td><p>
+
+        レイアウトファイルでは、Post または Page のレンダリングされたコンテンツはラップされます。
+        Post または Page ファイルの中には定義されていません。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>paginator</code></p></td>
+      <td><p>
+
+        <code>paginate</code> オプションを設定している時、この変数は使用可能となります。
+        詳細については、 <a href="../pagination/">Pagination</a> を参照してください。
+
+      </p></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<!--original
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -64,9 +137,104 @@ following is a reference of the available data.
   </tbody>
 </table>
 </div>
+-->
 
+## Site 変数
+
+<!--original
 ## Site Variables
+-->
 
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>変数</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><p><code>site.time</code></p></td>
+      <td><p>
+
+        現在の時刻です。(あなたが <code>jekyll</code> コマンドを実行した時の)
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.pages</code></p></td>
+      <td><p>
+
+        すべての Page のリストです。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.posts</code></p></td>
+      <td><p>
+
+        新しい順のすべての Post のリストです。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.related_posts</code></p></td>
+      <td><p>
+
+        処理されているページが Post ならば、これは 10 以下の関連する Post のリストが含まれています。
+        デフォルトでは、これらは低品質だが高速に計算されます。
+        低速だが高品質に結果を計算するためには、
+        <code>jekyll</code> コマンドに <code>--lsi</code> (latent semantic indexing)
+        オプションを指定して実行します。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.static_files</code></p></td>
+      <td><p>
+
+        すべての静的ファイルのリストです。
+        (つまり、 Jekyll のコンバータや Liquid レンダラによって処理されないファイル)
+        各々のファイルには 3 つのプロパティがあります:
+        <code>path</code>, <code>modified_time</code> そして <code>extname</code> 。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.categories.CATEGORY</code></p></td>
+      <td><p>
+
+        カテゴリが <code>CATEGORY</code> のすべての Post のリストです。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.tags.TAG</code></p></td>
+      <td><p>
+
+        タグ <code>TAG</code> を持つすべての Post のリストです。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.[CONFIGURATION_DATA]</code></p></td>
+      <td><p>
+
+        コマンドラインと <code>_config.yml</code> 経由で設定された
+        全ての変数は <code>site</code> 変数を介して利用できます。
+        例えば、あなたの設定ファイルの中に <code>url: http://mysite.com</code> が
+        あるとしたら、あなたの Post と Page では <code>site.url</code> の中に格納されます。
+        Jekyll は <code>_config.yml</code> 内の <code>watch</code> モードの変更を
+        解析しないので、あなたは変数の変更を見るために Jekyll を再起動する必要があります。
+
+      </p></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<!--original
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -155,9 +323,135 @@ following is a reference of the available data.
   </tbody>
 </table>
 </div>
+-->
 
+## Page 変数
+
+<!--original
 ## Page Variables
+-->
 
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>変数</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><p><code>page.content</code></p></td>
+      <td><p>
+
+        未レンダリングの Page コンテンツです。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>page.title</code></p></td>
+      <td><p>
+
+        Page のタイトルです。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>page.excerpt</code></p></td>
+      <td><p>
+
+        未レンダリングの Page 抜粋です。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>page.url</code></p></td>
+      <td><p>
+
+        ドメインなしの Post の URL ですが、先頭にスラッシュがつきます、
+        例えば <code>/2008/12/14/my-post.html</code> です。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>page.date</code></p></td>
+      <td><p>
+
+        Post に割り当てられた日付です。
+        これは、新しい 日付/時間を指定することで Post の front matter で
+        上書きすることができます。
+        <code>YYYY-MM-DD HH:MM:SS</code> (UTC を想定), または
+        <code>YYYY-MM-DD HH:MM:SS +/-TTTT</code>
+        (タイムゾーンを指定するために UTC からオフセット、例えば
+        <code>2008-12-14 10:30:00 +0900</code>)
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>page.id</code></p></td>
+      <td><p>
+
+        Post への一意な識別子です。(RSS フィードに役立ちます)
+        例えば <code>/2008/12/14/my-post</code>
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>page.categories</code></p></td>
+      <td><p>
+
+        この Post が属するカテゴリのリストです。
+        カテゴリは、 <code>_posts</code> ディレクトリの上のディレクトリ構成から導出されます。
+        例えば、 <code>/work/code/_posts/2008-12-24-closures.md</code> という Post は、
+        このフィールドに <code>['work', 'code']</code> が設定されます。
+        これらもまた、 <a href="../frontmatter/">YAML Front Matter</a>
+        で指定することができます。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>page.tags</code></p></td>
+      <td><p>
+
+        この Post が属するタグのリストです。
+        これらは、 <a href="../frontmatter/">YAML Front Matter</a>
+        で指定することができます。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>page.path</code></p></td>
+      <td><p>
+
+        生 Post や Page へのパスです。
+        使用例: GitHub 上の Page や Post のソースにリンクを貼る。
+        これは <a href="../frontmatter/">YAML Front Matter</a> で上書きすることができます。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>page.next</code></p></td>
+      <td><p>
+
+        <code>site.posts</code> 内の現在の Post の位置と比較して次の Post です。
+        最後のエントリは <code>nil</code> を返します。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>page.previous</code></p></td>
+      <td><p>
+
+        <code>site.posts</code> 内の現在の Post の位置と比較して前の Post です。
+        最初のエントリは <code>nil</code> を返します。
+
+      </p></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<!--original
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -275,7 +569,20 @@ following is a reference of the available data.
   </tbody>
 </table>
 </div>
+-->
 
+<div class="note">
+  <h5>ProTip™: カスタム front-matter を使用する</h5>
+  <p>
+
+    任意のカスタム front-matter は指定した <code>page</code> の下で利用可能となります。
+    例えば、 Page の front-matter で<code>custom_css: true</code> と指定した場合、
+    その値は <code>page.custom_css</code> として利用可能となります。
+
+  </p>
+</div>
+
+<!--original
 <div class="note">
   <h5>ProTip™: Use custom front-matter</h5>
   <p>
@@ -287,9 +594,64 @@ following is a reference of the available data.
 
   </p>
 </div>
+-->
 
+## Paginator 変数
+
+<!--original
 ## Paginator
+-->
 
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>変数</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><p><code>paginator.per_page</code></p></td>
+      <td><p>ページあたりの Post 数です。</p></td>
+    </tr>
+    <tr>
+      <td><p><code>paginator.posts</code></p></td>
+      <td><p>そのページで利用可能な Post です。</p></td>
+    </tr>
+    <tr>
+      <td><p><code>paginator.total_posts</code></p></td>
+      <td><p>Post の合計数です。</p></td>
+    </tr>
+    <tr>
+      <td><p><code>paginator.total_pages</code></p></td>
+      <td><p>Page の合計数です。</p></td>
+    </tr>
+    <tr>
+      <td><p><code>paginator.page</code></p></td>
+      <td><p>現在のページ数です。</p></td>
+    </tr>
+    <tr>
+      <td><p><code>paginator.previous_page</code></p></td>
+      <td><p>前のページ数です。</p></td>
+    </tr>
+    <tr>
+      <td><p><code>paginator.previous_page_path</code></p></td>
+      <td><p>前のページのパスです。</p></td>
+    </tr>
+    <tr>
+      <td><p><code>paginator.next_page</code></p></td>
+      <td><p>次のページ数です。</p></td>
+    </tr>
+    <tr>
+      <td><p><code>paginator.next_page_path</code></p></td>
+      <td><p>次のページのパスです。</p></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<!--original
 <div class="mobile-side-scroller">
 <table>
   <thead>
@@ -338,7 +700,19 @@ following is a reference of the available data.
   </tbody>
 </table>
 </div>
+-->
 
+<div class="note info">
+  <h5>Paginator 変数の可用性</h5>
+  <p>
+
+    これらは、 <code>/blog/index.html</code> のような
+    サブディレクトリの中に配置されている index ファイルでのみ利用することができます
+
+  </p>
+</div>
+
+<!--original
 <div class="note info">
   <h5>Paginator variable availability</h5>
   <p>
@@ -348,3 +722,4 @@ following is a reference of the available data.
 
   </p>
 </div>
+-->
