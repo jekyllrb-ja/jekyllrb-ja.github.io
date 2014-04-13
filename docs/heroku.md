@@ -16,7 +16,7 @@ permalink: /docs/heroku/
 ---
 -->
 
-移動しました。ここには何もありません。
+みなさま、ご移動ください。ここには何もありません。
 
 <!--original
 Move along, people. Nothing to see here.
