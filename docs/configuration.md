@@ -41,9 +41,9 @@ in the terminal.
 ### Global Configuration
 -->
 
-以下のテーブルは、Jekyll で使用可能な設定の一覧で、
-それらは様々な<code class="option">オプション</code> (設定ファイルで指定します) と
-<code class="flag">フラグ</code> (コマンドラインで指定します) を制御します。
+以下のテーブルは、Jekyll で使用可能な設定と、
+それらを制御するための<code class="option">オプション</code> (設定ファイルで指定します) と
+<code class="flag">フラグ</code> (コマンドラインで指定します) の一覧です。
 
 <!--original
 The table below lists the available settings for Jekyll, and the various <code
@@ -75,7 +75,7 @@ class="flag">flags</code> (specified on the command-line) that control them.
     <tr class='setting'>
       <td>
         <p class='name'><strong>サイト出力先</strong></p>
-        <p class='description'>Jekyll がファイルを書き出すディレクトリを変更します</p>
+        <p class='description'>Jekyll がファイルを書き出すディレクトリを変更します。</p>
       </td>
       <td class="align-center">
         <p><code class="option">destination: DIR</code></p>
@@ -85,7 +85,7 @@ class="flag">flags</code> (specified on the command-line) that control them.
     <tr class='setting'>
       <td>
         <p class='name'><strong>セーフモード</strong></p>
-        <p class='description'><a href="../plugins/">カスタムプラグイン</a>を無効化します</p>
+        <p class='description'><a href="../plugins/">カスタムプラグイン</a>を無効化します。</p>
       </td>
       <td class="align-center">
         <p><code class="option">safe: BOOL</code></p>
@@ -95,7 +95,10 @@ class="flag">flags</code> (specified on the command-line) that control them.
     <tr class='setting'>
       <td>
         <p class='name'><strong>エクスクルード</strong></p>
-        <p class="description">変換するファイル、またはディレクトリから除外します</p>
+        <p class="description">ディレクトリやファイルを変換対象から除外します。
+          除外はサイトのソースディレクトリからの相対指定であり、
+          ソースディレクトリ外のものは指定できません。
+        </p>
       </td>
       <td class='align-center'>
         <p><code class="option">exclude: [DIR, FILE, ...]</code></p>
@@ -105,8 +108,8 @@ class="flag">flags</code> (specified on the command-line) that control them.
       <td>
         <p class='name'><strong>インクルード</strong></p>
         <p class="description">
-          変換するファイル、またはディレクトリに強制的に含めます。
-          ドットファイルはデフォルトで除外されるため、 <code>.htaccess</code> はよい例です。
+          ディレクトリまたはファイルを強制的に変換対象に含めます。
+          ドットファイルはデフォルトで除外されるため、 <code>.htaccess</code> を指定するのがよい例です。
         </p>
       </td>
       <td class='align-center'>
@@ -118,9 +121,9 @@ class="flag">flags</code> (specified on the command-line) that control them.
         <p class='name'><strong>タイムゾーン</strong></p>
         <p class="description">
             サイト生成のためにタイムゾーンを設定します。
-            環境変数 <code>TZ</code> で設定し、 Ruby は日付の作成と操作を処理するために使用します。
+            このオプションは、Ruby が日付の作成と操作を処理するために使用する環境変数 <code>TZ</code> を設定します。
             <a href="http://ja.wikipedia.org/wiki/Tz_database">IANA タイムゾーン データベース</a> からの
-            任意のエントリは有効です、例えば <code>America/New_York</code> のような。
+            任意のエントリが有効です、例えば <code>America/New_York</code> のような。
             デフォルトでは、あなたが使っているオペレーティングシステムのローカルタイムゾーンがセットされています。
         </p>
       </td>
@@ -134,10 +137,11 @@ class="flag">flags</code> (specified on the command-line) that control them.
         <p class="description">
             名前によってファイルのエンコーディングがセットされます。
             ( Ruby 1.9 またはそれ以降でのみ利用可能です。)
-            デフォルトの値は nil で、 Rubyのデフォルト <code>ASCII-8BIT</code> を使います。
+            デフォルトの値は、2.0.0以降では utf-8 、2.0.0より前では nil で、
+            Rubyのデフォルト <code>ASCII-8BIT</code> を使います。
             Ruby で利用可能なエンコーディングは、コマンド
             <code>ruby -e 'puts Encoding::list.join("\n")'</code>
-            によって示すことができます。
+            によって一覧することができます。
         </p>
       </td>
       <td class='align-center'>
@@ -272,7 +276,7 @@ class="flag">flags</code> (specified on the command-line) that control them.
     <tr class='setting'>
       <td>
         <p class='name'><strong>再生成</strong></p>
-        <p class='description'>ファイルが変更したとき、サイトの自動再生成を有効にします。</p>
+        <p class='description'>ファイルが変更された場合の、サイトの自動再生成を有効にします。</p>
       </td>
       <td class="align-center">
         <p><code class="flag">-w, --watch</code></p>
@@ -284,7 +288,7 @@ class="flag">flags</code> (specified on the command-line) that control them.
         <p class="description">
             自動的に読み込まれる <code>_config.yml</code> の代わりに
             設定ファイルを指定します。
-            以前のファイルの設定は、以降のファイルの設定で上書きされます。
+            先に指定したファイルの設定は、後に指定したファイルの設定で上書きされます。
         </p>
       </td>
       <td class='align-center'>
@@ -413,8 +417,8 @@ class="flag">flags</code> (specified on the command-line) that control them.
 -->
 
 以下のオプションに加え、 `serve` サブコマンドは `build` サブコマンドの
-オプションのいくつかを受け入れることができます。
-それは、あなたのサイトが提供される前に発生したサイトのビルドのために適用されます。
+オプションすべてを受け入れることができます。
+それらのオプションを使用してサイトをビルドしたうえで、サイトを serve します。
 
 <!--original
 In addition to the options below, the `serve` sub-command can accept any of the options
@@ -534,7 +538,7 @@ before your site is served.
   <h5>設定ファイルにタブは使わないでください</h5>
   <p>
     パースエラーにつながるか、 Jekyll のデフォルト設定に戻るかのどちらかになるでしょう。
-    代わりにスペースを使用します。
+    代わりにスペースを使用してください。
   </p>
 </div>
 
@@ -565,11 +569,10 @@ configuration file or on the command-line, Jekyll will run using these options.
 -->
 
 <div class="note warning">
-  <h5>2 つサポートしていない kramdown のオプションがあります</h5>
+  <h5>サポートしていない kramdown のオプションが 2 つあります</h5>
   <p>
-    <code>remove_block_html_tags</code> と <code>remove_span_html_tags</code> の両方を
-    現在 Jekyll がサポートしていないという事実のため、
-    それらは kramdown HTML コンバータに含まれていませんので
+    <code>remove_block_html_tags</code> と <code>remove_span_html_tags</code> の両方が
+    kramdown HTML コンバータに含まれていないので、現在 Jekyll でもそれらをサポートしていません。
     ご注意ください。
   </p>
 </div>
@@ -756,8 +759,8 @@ redcloth:
 ## Markdown Options
 -->
 
-Jekyll は様々な Markdown のレンダラをサポートしており、
-時折、利用可能な追加オプションを持っています。
+Jekyll でサポートしているさまざまな Markdown レンダラでは、
+追加のオプションを利用できる場合があります。
 
 <!--original
 The various Markdown renderers supported by Jekyll sometimes have extra options available.
@@ -769,12 +772,11 @@ The various Markdown renderers supported by Jekyll sometimes have extra options 
 ### Redcarpet
 -->
 
-Redcarpet は値が文字列の配列であるべきであり、
-`extensions` のサブ設定を設けることで設定することができます。
+Redcarpet は `extensions` サブセッティングを設けることで設定が可能です。
+値は文字列の配列である必要があります。
 各々の文字列は `Redcarpet::Markdown` クラスの拡張の
 いずれかの名前であるべきです。
-配列の中に存在する場合、それは `true` に対応する
-拡張を設定します。
+配列に名前が存在する場合、当該の拡張を `true` にセットします。
 
 <!--original
 Redcarpet can be configured by providing an `extensions` sub-setting, whose value should be an array of strings. Each string should be the name of one of the `Redcarpet::Markdown` class's extensions; if present in the array, it will set the corresponding extension to `true`.
@@ -787,20 +789,20 @@ Jekyll handles two special Redcarpet extensions:
 -->
 
 - `no_fenced_code_blocks` --- デフォルトでは、
-  Jekyll は `fenced_code_blocks` 拡張を `true` に設定しています
-  (トリプルチルダまたはトリプルバッククォートでコードブロックを区切るために)
-  GitHub はそれらの熱心な採用を避けられないように始めているからです。
-  Jekyll と使用するとき、 Redcarpet の `fenced_code_blocks` 拡張は通常不活性です:
-  代わりに、あなたは無効化した fenced code 拡張の反転バージョンを使用することができます。
-    最初の区切りのあとにハイライトする言語を指定できることに注意してください:
+  Jekyll は `fenced_code_blocks` 拡張(トリプルチルダまたはトリプルバッククォートで
+  コードブロックを区切るための拡張)を `true` に設定しています。
+  おそらく、GitHub がこれを積極的に採用しているので、避けられなくなりつつある、という理由からです。
+  Jekyll で使用するときには、 Redcarpet の通常の `fenced_code_blocks` 拡張は不活性です。
+  代わりに、この逆バージョンの拡張を使って fenced code を無効化できます。
+  最初の区切りのあとに、ハイライトする言語の指定もできることに注目:
 
         ```ruby
         # ...ruby code
         ```
 
-    fenced code block と Pygments を両方有効にすると、静的なコードをハイライトします。
-    Pygments なしでは、様々な JavaScript コードハイライトライブラリによってヒントとして使用することができ、
-    `<code>` 要素に `class="LANGUAGE"` を追加します。
+    fenced code block と highlighter を両方有効にすると、静的にコードをハイライトします。
+    highlighter なしの場合、`<code>` 要素に `class="LANGUAGE"` を追加し、
+    様々な JavaScript のコードハイライトライブラリがこれをヒントとして使用できるようにします。
 
 
 <!--original
@@ -815,19 +817,19 @@ Jekyll handles two special Redcarpet extensions:
 -->
 
 - `smart` --- この擬似拡張は SmartyPants をオンにし、
-   straight quotes から curly quotes の変換、
-   ハイフンの em (`---`) ダッシュ と en (`--`) ダッシュの実行を行います。
+   straight quotes を curly quotes に、
+   ハイフンの連打を em (`---`) ダッシュ、 en (`--`) ダッシュに変換します。
 
 <!--original
 - `smart` --- This pseudo-extension turns on SmartyPants, which converts straight quotes to curly quotes and runs of hyphens to em (`---`) and en (`--`) dashes.
 -->
 
-`smart` は Jekyll で指定されるので別として、
-他のすべての拡張は Redcarpet からの通常の名前や no renderer オプションを維持します。
+その他の拡張はすべて Redcarpet における本来の名前を維持しており、
+`smart` 以外のレンダリングオプションは Jekyll によって指定されることはありません。
 [利用可能な拡張のリストは Redcarpet の README から見つけられます。][redcarpet_extensions]
-で、 Redcarpet の正しいバージョンの README を見ていることを確認します。
-Jekyll は現在 v2.2.x を使用し、 `footnotes` や `highlight` のような拡張は
-バージョン 3.0.0 以降まで追加されませんでした。
+Redcarpet の正しいバージョンの README を見ていることを確認してください。
+Jekyll は現在 v2.2.x を使用しています。 `footnotes` や `highlight` のような拡張は
+バージョン 3.0.0 以降まで追加されません。
 もっとも一般的に使用される拡張は以下の通りです:
 
 <!--original
