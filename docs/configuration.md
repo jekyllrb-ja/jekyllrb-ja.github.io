@@ -288,7 +288,7 @@ class="flag">flags</code> (specified on the command-line) that control them.
         <p class="description">
             自動的に読み込まれる <code>_config.yml</code> の代わりに
             設定ファイルを指定します。
-            上に指定したファイルでの設定は、より下に指定したファイルでの設定で上書きされます。
+            先に指定したファイルの設定は、後に指定したファイルの設定で上書きされます。
         </p>
       </td>
       <td class='align-center'>
