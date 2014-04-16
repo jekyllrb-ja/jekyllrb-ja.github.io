@@ -28,7 +28,8 @@ Sites built using Jekyll can be deployed in a large number of ways due to the st
 ## Web hosting providers (FTP)
 -->
 
-従来のWebホスティングプロバイダについては、あなたは、FTP経由でそれらのサーバーにファイルをアップロードできます。 FTPを使用してWebホストにジキルサイトをアップロードするには、単に `jekyll` コマンドを実行し、生成された `_site` フォルダをホスティングアカウントのルートフォルダにコピーします。
+従来のWebホスティングプロバイダについては、あなたは、FTP経由でそれらのサーバーにファイルをアップロードできます。 FTPを使用してWebホストにJekyllで作られたサイトをアップロードするには、単に `jekyll` コマンドを実行し、生成された `_site` フォルダをホスティングアカウントのルートフォルダにコピーします。
+これは、多くのホスティングプロバイダーの `httpdocs` や `publich_html` フォルダに相当します。
 
 <!--original
 Just about any traditional web hosting provider will let you upload files to their servers over FTP. To upload a Jekyll site to a web host using FTP, simply run the `jekyll` command and copy the generated `_site` folder to the root folder of your hosting account. This is most likely to be the `httpdocs` or `public_html` folder on most hosting providers.
@@ -53,7 +54,7 @@ send them to your host through FTP.
 ## Self-managed web server
 -->
 
-デプロイ対象のWebサーバへの直接アクセスを自分で持っている場合は、ファイルを転送するため（例えば`scp`、あるいはファイルシステムへの直接アクセスなど）使用できる他の方法があるかもしれませんが、それらを除き、デプロイの方法は基本的に同じです。ちょうど生成された `_site`フォルダの内容が、Webサーバーの適切なWebルートディレクトリに置くことができることを確認することを忘れないでください。
+デプロイ対象のWebサーバへの直接アクセスする方法を持っている場合は、デプロイの方法は基本的に同じです。（`scp`、あるいはファイルシステムへの直接アクセスする他の方法がある場合は除く）生成された `_site`フォルダの内容が、Webサーバーの適切なWebルートディレクトリに置かれているか確認を忘れないでください。
 
 <!--original
 If you have direct access yourself to the deployment web server yourself, the process is essentially the same, except you might have other methods available to you (such as `scp`, or even direct filesystem access) for transferring the files. Just remember to make sure the contents of the generated `_site` folder get placed in the appropriate web root directory for your web server.
@@ -65,7 +66,7 @@ If you have direct access yourself to the deployment web server yourself, the pr
 ## Automated methods
 -->
 
-Jekyllサイトのデプロイを簡単に自動化する方法はいくつもあります。あなたが下の一覧に表示されていない別の方法を持っているならば誰もが恩恵を受けることができるように、あなたが[貢献](../contributing/)することを期待します。
+Jekyllサイトのデプロイを簡単に自動化する方法はいくつもあります。あなたが一覧にない方法を知っているなら、誰もが恩恵を受けることができるように、[貢献](../contributing/)してくれるととても嬉しいです！
 
 <!--original
 There are also a number of ways to easily automate the deployment of a Jekyll site. If you’ve got another method that isn’t listed below, we’d love it if you [contributed](../contributing/) so that everyone else can benefit too.
@@ -77,7 +78,7 @@ There are also a number of ways to easily automate the deployment of a Jekyll si
 ### Git post-update hook
 -->
 
-あなたが自身のjekyllサイトを[Git](http://git-scm.com/) に保存している場合（あなたは正しいバージョン管理をしていますか？）、
+あなたが自身のJekyllサイトを[Git](http://git-scm.com/) に保存している場合（あなたは正しいバージョン管理をしていますか？）、
 あなたのGitリポジトリにpost-update フックを設定することでデプロイ手順を自動化するのは簡単です。
 [やり方はこちらです](http://web.archive.org/web/20091223025644/http://www.taknado.com/en/2009/03/26/deploying-a-jekyll-generated-site/)
 
@@ -94,7 +95,7 @@ this](http://web.archive.org/web/20091223025644/http://www.taknado.com/en/2009/0
 ### Git post-receive hook
 -->
 
-リモートサーバがあなたのためにGitで変更をpushするたびにデプロイするを行うようにするには、あなたはデプロイするのに必要な許可を与えられたすべての公開鍵を`authorized_keys` ファイルに追加したアカウントを作ります。次のように所定の場所に post-receive フックを設定することでできます：
+Gitで変更をpushする度にリモートサーバにデプロイするためには、デプロイ権限を持ったアカウントを作成し、公開鍵を`authorized_keys` ファイルに追加します。次のように所定の場所に post-receive フックを設定することでできます：
 
 <!--original
 To have a remote server handle the deploy for you every time you push changes using Git, you can create a user account which has all the public keys that are authorized to deploy in its `authorized_keys` file. With that in place, setting up the post-receive hook is done as follows:
@@ -169,7 +170,7 @@ laptops$ git remote add deploy deployer@example.com:~/myrepo.git
 {% endhighlight %}
 -->
 
-デプロイはnginx や Apache が `/var/www/myrepo` を見るのと同じくらいに簡単です。
+ここまでくれば、デプロイはnginx や Apache が `/var/www/myrepo` を見るくらいに簡単です。
 そして次のコマンドを実行します：
 
 <!--original
