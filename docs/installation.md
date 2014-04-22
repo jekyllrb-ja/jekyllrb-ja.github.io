@@ -17,7 +17,7 @@ permalink: /docs/installation/
 -->
 
 Jekyll は数分でインストールと運用準備ができます。
-もし、それが悩みの種となっていたら、[file an 
+もし、それが悩みの種となっていたら、[file an
 issue]({{ site.repository }}/issues/new)に(または、プルリクエスト送信で)
 あなたが遭遇した問題を記述することで、我々がプロセスを
 より簡単に変更するかもしれません。
@@ -58,9 +58,8 @@ you’ll need to make sure your system has before you start.
 <div class="note info">
   <h5>Jekyll を Windows で実行する</h5>
   <p>
-    While Windows is not officially supported, it is possible to get it running
-    on Windows. Special instructions can be found on our
-    <a href="../windows/#installation">Windows-specific docs page</a>.
+    Windowsは公式にはサポートしていませんが、Windows上でJekyllを実行できるかもしれません。
+    <a href="../windows/#installation">Windows向けのドキュメントページ</a>に、説明があります。
   </p>
 </div>
 
@@ -147,8 +146,7 @@ community can improve the experience for everyone.
 ## Pre-releases
 -->
 
-In order to install a pre-release, make sure you have all the requirements
-installed properly and run:
+pre-release をインストールするためには、必要なものをインストールした状態で、以下を実行してください。
 
 <!--original
 In order to install a pre-release, make sure you have all the requirements
@@ -165,8 +163,7 @@ gem install jekyll --pre
 {% endhighlight %}
 -->
 
-This will install the latest pre-release. If you want a particular pre-release,
-use the `-v` switch to indicate the version you'd like to install:
+このコマンドで、最新の pre-release がインストールできます。もし、特定のバージョンの pre-release を使いたい場合は `-v` オプションを使い、インストールしたいバージョンを指定してください。
 
 <!--original
 This will install the latest pre-release. If you want a particular pre-release,
@@ -183,9 +180,8 @@ gem install jekyll -v '2.0.0.alpha.1'
 {% endhighlight %}
 -->
 
-If you'd like to install a development version of Jekyll, the process is a bit
-more involved. This gives you the advantage of having the latest and greatest,
-but may be unstable.
+もし、開発バージョンの Jekyll をインストールしたい場合、少し手順が複雑です。
+開発バージョンでは最新の素晴らしい利点を得ることができますが、安定性に欠ける恐れがあります。
 
 <!--original
 If you'd like to install a development version of Jekyll, the process is a bit
@@ -211,7 +207,7 @@ $ ls pkg/*.gem | head -n 1 | xargs gem install -l
 {% endhighlight %}
 -->
 
-## Optional Extras
+## その他の追加機能
 
 <!--original
 ## Optional Extras
