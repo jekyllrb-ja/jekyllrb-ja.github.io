@@ -113,7 +113,7 @@ sudo gem update --system
 それでもまだ問題がある場合は、 [Xcodeを使ってコマンドラインツールをインストールする]
 (http://www.zlu.me/ruby/os%20x/gem/mountain%20lion/2012/02/21/install-native-ruby-gem-in-mountain-lion-preview.html)
 必要があります。
-つまり、次のコマンドを使ってネイティブのgemsをインストールすることができます。
+コマンドラインツールをインストールすることで、次のコマンドを使ってネイティブのgemsをインストールすることができます。
 
 <!--original
 If you still have issues, you may need to [use XCode to install Command Line
@@ -207,7 +207,7 @@ http://localhost:4000/blog/index.html
 {% endhighlight %}
 -->
 
-動作しない場合は次のアクセスを試してください:
+以下にアクセスしてもうまく動きません:
 
 <!--original
 It won’t work to just access:
