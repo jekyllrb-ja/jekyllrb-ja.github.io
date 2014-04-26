@@ -16,8 +16,8 @@ permalink: /docs/sites/
 ---
 -->
 
-デザインや機能などの紹介を見るのは興味深いです。
-以下に学習目的の厳選されたJekyll利用のブログがあります。
+他の人が考えたデザインや機能を見るのは面白いです。
+以下は厳選された学習目的のJekyll利用のブログです。
 
 <!--original
 It’s interesting to see what designs and features others have come up
