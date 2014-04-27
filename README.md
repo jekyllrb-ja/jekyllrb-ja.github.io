@@ -1,6 +1,8 @@
 jekyllrb.com.jp
 ===============
 
+[![Build Status](https://travis-ci.org/gosyujin/jekyllrb.com.jp.svg?branch=master)](https://travis-ci.org/gosyujin/jekyllrb.com.jp)
+
 ここは http://jekyllrb.com/ の翻訳プロジェクトです。
 
 このプロジェクトのメインブランチは 2 つあります。
