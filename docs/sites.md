@@ -25,17 +25,17 @@ with. Below are some Jekyll-powered blogs which were hand-picked for
 learning purposes.
 -->
 
-- [トム·プレストン·ヴェルナーのブログ](http://tom.preston-werner.com/)
+- [Tom Preston-Wernerのブログ](http://tom.preston-werner.com/)
     ([ソース](https://github.com/mojombo/mojombo.github.io))
-- [ニック・クアラントのブログ](http://quaran.to/)
+- [Nick Quarantoのブログ](http://quaran.to/)
     ([ソース](https://github.com/qrush/qrush.github.com))
-- [ロジャー·チャップマンのブログ](http://rogchap.com/)
+- [Roger Chapmanのブログ](http://rogchap.com/)
     ([ソース](https://github.com/rogchap/rogchap.github.com))
 - [GitHub 公式 教育資料](http://teach.github.com)
     ([ソース](https://github.com/github/teach.github.com))
-- [ラスマス·アンダーソンのブログ](http://rsms.me/)
+- [Rasmus Anderssonのブログ](http://rsms.me/)
     ([ソース](https://github.com/rsms/rsms.github.com))
-- [スコット·チャコンのブログ](http://schacon.github.com)
+- [Scott Chaconのブログ](http://schacon.github.com)
     ([ソース](https://github.com/schacon/schacon.github.com))
 
 <!--original
@@ -53,10 +53,8 @@ learning purposes.
     ([source](https://github.com/schacon/schacon.github.com))
 -->
 
-あなたがより多くの例を探したい場合は、[ジキルのWikiの「サイト」ページ][jekyll-sites]にサイトと
+あなたがより多くの例を探したい場合は、[Jekyll wikiの「サイト」ページ][jekyll-sites]にサイトと
 そのソースのリストを見つけることができます。
-If you would like to explore more examples, you can find a list of sites
-and their sources on the ["Sites" page in the Jekyll wiki][jekyll-sites].
 
 <!--original
 If you would like to explore more examples, you can find a list of sites
