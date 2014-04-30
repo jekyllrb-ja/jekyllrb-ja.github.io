@@ -111,9 +111,8 @@ hazardous. Here’s what to look out for.
 -->
 
 <div class="note unreleased">
-  <h5>You'll see this by a feature that hasn't been released</h5>
-  <p>Some pieces of this website are for future versions of Jekyll that
-    are not yet released.</p>
+  <h5>この注釈付きの機能はリリースされていません</h5>
+  <p>このウェブサイトの中には、まだリリースされていない将来のバージョンのJekyllのための情報が含まれています。</p>
 </div>
 
 <!--original
