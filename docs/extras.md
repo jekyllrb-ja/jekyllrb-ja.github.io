@@ -57,7 +57,7 @@ of the other three pre-defined markdown parsers or define your own.
 ### RDiscount
 -->
 
-[Maruku](http://github.com/bhollis/maruku)の代わりに[RDiscount](http://github.com/rtomayko/rdiscount)を使用する場合は、それがインストールされていることを確認してください。
+[Maruku](http://github.com/bhollis/maruku)の代わりに[RDiscount](http://github.com/rtomayko/rdiscount)を使用する場合は、RDiscountがインストールされていることを確認してください。
 
 <!--original
 If you prefer to use [RDiscount](http://github.com/rtomayko/rdiscount) instead
@@ -100,7 +100,7 @@ markdown: rdiscount
 ### Kramdown
 -->
 
-Marukuの代わりに[Kramdown](http://kramdown.rubyforge.org/)を使用する場合は、それがインストールされていることを確認してください。
+Marukuの代わりに[Kramdown](http://kramdown.rubyforge.org/)を使用する場合は、Kramdownがインストールされていることを確認してください。
 
 <!--original
 You can also use [Kramdown](http://kramdown.rubyforge.org/) instead of Maruku
@@ -150,7 +150,7 @@ website](http://kramdown.rubyforge.org/options.html).
 ### User-Defined
 -->
 
-これら4つの組み込みMarkdownパーサが全く気に入らないって？問題ありません。これをプラグインとして定義できますから。
+これら4つの組み込みMarkdownパーサが全く気に入らないって？問題ありません。このようにプラグインを定義できますから。
 
 <!--original
 So, you're totally at odds with our four built-in markdown parsers, eh? No
