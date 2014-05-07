@@ -78,7 +78,7 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
         <p><code>i_month</code></p>
       </td>
       <td>
-        <p>Post のファイル名から取得できる前ゼロなしの月</p>
+        <p>Post のファイル名から取得できる0埋めしない月</p>
       </td>
     </tr>
     <tr>
