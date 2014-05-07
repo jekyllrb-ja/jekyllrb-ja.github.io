@@ -57,13 +57,12 @@ $ jekyll build --watch
 -->
 
 <div class="note warning">
-  <h5>Destination folders are cleaned on site builds</h5>
+  <h5>サイトのビルド時に生成先のフォルダの中身は削除されます</h5>
   <p>
-    The contents of <code>&lt;destination&gt;</code> are automatically
-    cleaned when the site is built.  Files or folders that are not
-    created by your site will be removed.  Do not use an important
-    location for <code>&lt;destination&gt;</code>; instead, use it as
-    a staging area and copy files from there to your web server. 
+    <code>&lt;destination&gt;</code> の中身はサイトをビルドした際に自動的に削除されます。
+    あなたのサイトで生成されたものではないファイルやフォルダは削除されます。
+    重要な場所として <code>&lt;destination&gt;</code> を使用しないでください。
+    それよりもステージング領域として使用し、ファイルをそこからWebサーバへコピーしてください。
   </p>
 </div>
 
