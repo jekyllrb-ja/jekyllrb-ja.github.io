@@ -304,6 +304,7 @@ way of rendering paginated Posts in a HTML file:
 layout: default
 title: My Blog
 ---
+
 <!-- ページ分割されたpostsに対してループ -->
 {% for post in paginator.posts %}
   <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
@@ -339,6 +340,7 @@ title: My Blog
 layout: default
 title: My Blog
 ---
+
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
   <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
@@ -415,6 +417,7 @@ page with links to all but the current page.
       <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
     {% endif %}
   {% endfor %}
+
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
   {% else %}
@@ -445,6 +448,7 @@ page with links to all but the current page.
       <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
     {% endif %}
   {% endfor %}
+
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
   {% else %}
