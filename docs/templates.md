@@ -19,7 +19,7 @@ permalink: /docs/templates/
 Jekyll はテンプレートを処理するために
 [Liquid](http://wiki.shopify.com/Liquid) テンプレート言語を使用しています。
 標準の Liquid [タグ](http://wiki.shopify.com/Logic) や
-[フィルタ](http://wiki.shopify.com/Filters) のすべてはサポートされています。
+[フィルタ](http://wiki.shopify.com/Filters) はすべてサポートされています。
 Jekyll は一般的なタスクをより簡単に所有するために、
 いくつかの便利なフィルタやタグが追加されています。
 
@@ -492,7 +492,7 @@ These parameters are available via Liquid in the include:
 Jekyll は Pygments のおかげで [100 以上の言語](http://pygments.org/languages/)の
 シンタックスハイライトサポートが組み込まれています。
 [Pygments](http://pygments.org/) を使うためには、あなたのシステムに Python をインストールし、
-サイトの設定ファイルに Pygments でハイライトする設定をする必要があります。
+サイトの設定ファイルの `highlighter` に `pygments` を設定する必要があります。
 
 <!--original
 Jekyll has built in support for syntax highlighting of [over 100
