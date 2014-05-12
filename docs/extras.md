@@ -171,6 +171,7 @@ class Jekyll::Converters::Markdown::MyCustomParser
     SomeRenderer.new(@site_config).to_html(content)
   end
 end
+{% endhighlight %}
 
 <!--original
 {% highlight ruby %}
