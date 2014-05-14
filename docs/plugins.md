@@ -29,7 +29,7 @@ having to modify the Jekyll source itself.
   <h5>GitHub Pagesにおけるプラグイン</h5>
   <p>
     <a href="http://pages.github.com/">GitHub Pages</a>はJekyllで動いていますが、ここで構築されるすべてのサイトは、セキュリティ上の理由から<code>--safe</code>オプションで生成され、カスタムプラグインが利用できないようになっています。残念ながら、これはあなたのプラグインをGitHub Pagesにデプロイしても動作しないことを意味します。<br><br>
-    あなたのサイトを公開するためにGitHub Pagesを利用することはできますが、そのためにはサイトをローカルで変換し、生成された静的ファイルを、Jekyllのソースファイルに代えて、GitHubレポジトリにプッシュする必要があります。
+    あなたのサイトを公開するためにGitHub Pagesを利用することはできますが、そのためには、Jekyllのソースファイルの代わりに、サイトをローカルで変換して、生成された静的ファイルをGitHubレポジトリにプッシュする必要があります。
   </p>
 </div>
 
@@ -54,7 +54,7 @@ having to modify the Jekyll source itself.
 ## Installing a plugin
 -->
 
-プラグインをインストールする２つの選択肢があります。
+プラグインをインストールする２つの方法があります。
 
 <!--original
 You have 2 options for installing plugins:
@@ -63,7 +63,7 @@ You have 2 options for installing plugins:
 1. サイトのルートに`_plugins`ディレクトリを作って、プラグインをここに配置します。このディレクトリ内の`*.rb`で終わるすべてのファイルは、Jekyllがサイトを生成するときに読み込まれます。
 
 
-2. `_config.yml`ファイルに、`gems`をキーとし、使いたいプラグインのgem名を値とする新たな列を追加します。例を示します。
+2. `_config.yml`ファイルに、`gems`をキーとし、使いたいプラグインのgem名を値とする新たな行を追加します。例を示します。
 
         gems: [jekyll-test-plugin, jekyll-jsonify, jekyll-assets]
         # これで各gemが自動的に読み込まれます。
@@ -73,7 +73,6 @@ You have 2 options for installing plugins:
 1. In your site source root, make a `_plugins` directory. Place your plugins here.
     Any file ending in `*.rb` inside this directory will be loaded before Jekyll
     generates your site.
-
 2. In your `_config.yml` file, add a new array with the key `gems` and the values
     of the gem names of the plugins you'd like to use. An example:
 
@@ -104,7 +103,7 @@ You have 2 options for installing plugins:
 </div>
 -->
 
-通常、作られるpluginは次の３つのカテゴリの何れかに該当します。
+通常、あなたが作るpluginは次の３つのカテゴリの何れかに該当します。
 
 <!--original
 In general, plugins you make will fall into one of three categories:
@@ -149,7 +148,7 @@ ignored. Jekyll does not assume any particular side-effect to happen, it just
 runs the method.
 -->
 
-ジェネレータは、Jekyllが存在するコンテンツの目録を作った後、サイトが生成される前に、動作されます。YAML front-matterを備えたpageは、[`Jekyll::Page`]({{ site.repository }}/blob/master/lib/jekyll/page.rb)のインスタンスとして格納され、`site.pages`を通して利用可能になります。静的ファイルは、[`Jekyll::StaticFile`]({{ site.repository }}/blob/master/lib/jekyll/static_file.rb)のインスタンスになり、`site.static_files`を通して利用可能になります。詳しくは、[`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb)を確認して下さい。
+ジェネレータは、Jekyllが存在するコンテンツの目録を作った後、サイトが生成される前に、動作します。YAML front-matterを備えたpageは、[`Jekyll::Page`]({{ site.repository }}/blob/master/lib/jekyll/page.rb)のインスタンスとして格納され、`site.pages`を通して利用可能になります。静的ファイルは、[`Jekyll::StaticFile`]({{ site.repository }}/blob/master/lib/jekyll/static_file.rb)のインスタンスになり、`site.static_files`を通して利用可能になります。詳しくは、[`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb)を確認して下さい。
 
 <!--original
 Generators run after Jekyll has made an inventory of the existing content, and
@@ -163,7 +162,7 @@ and are available via `site.static_files`. See
 for more details.
 -->
 
-例えばジェネレータは、テンプレート変数のために、ビルド時に計算された値を挿入できます。次の例ではテンプレート`reading.html`は２つの変数、`ongoing`および`done`を持っており、これらはジェネレータにおいて値を埋め込まれます。
+例えばジェネレータは、ビルド時に計算された値をテンプレート変数を使い挿入できます。次の例ではテンプレート`reading.html`は２つの変数、`ongoing`および`done`を持っており、これらはジェネレータにおいて値を埋め込まれます。
 
 <!--original
 For instance, a generator can inject values computed at build time for template
@@ -279,7 +278,7 @@ end
 {% endhighlight %}
 -->
 
-この例においてジェネレータは、各カテゴリごとに`categories`ディレクトリ下に一式のファイルを生成し、`category_index.html`レイアウトを使って、各カテゴリごとにその記事群をリスティングするでしょう。
+この例においてジェネレータは、各カテゴリごとに`categories`ディレクトリ下に一式のファイルを生成し、`category_index.html`レイアウトを使って、各カテゴリごとに記事をリスト表示します。
 
 <!--original
 In this example, our generator will create a series of files under the
@@ -287,7 +286,7 @@ In this example, our generator will create a series of files under the
 using the `category_index.html` layout.
 -->
 
-ジェネレータでは、１つのメソッドの実装だけが必要となります。
+ジェネレータでは、１つのメソッドを実装すれば良いです。
 
 <!--original
 Generators are only required to implement one method:
@@ -343,7 +342,7 @@ Generators are only required to implement one method:
 ## Converters
 -->
 
-サイトで利用したい新しいマークアップ言語があるときは、独自のコンバータを実装することで利用できるようになります。MarkdownおよびTexttileマークアップ言語は、共にこの方法で実装されています。
+サイトで利用したい新しいマークアップ言語があるときは、独自のコンバータを実装することで利用できるようになります。MarkdownおよびTextileマークアップ言語は、共にこの方法で実装されています。
 
 <!--original
 If you have a new markup language you’d like to use with your site, you can
@@ -354,7 +353,7 @@ markup languages are implemented using this method.
 <div class="note info">
   <h5>YAML front-matterを忘れずに</h5>
   <p>
-    Jekyllは先頭にYAMLヘッダーがあるファイルだけを変換しますが、これはたとえプラグインを使って追加されたコンバータであっても同じです。。
+    Jekyllは先頭にYAMLヘッダーがあるファイルだけを変換しますが、これはたとえプラグインを使って追加されたコンバータであっても同じです。
   </p>
 </div>
 
@@ -524,7 +523,7 @@ it will do so with a `.html` extension.
 -->
 
 
-サイトで専用liquidタグを使いたいときは、タグシステムにフックさせることで実現できます。jekyllの組み込みサンプルには、'highlight'タグと'include'タグが含まれています。次の例は、pageが作られるときの時刻を出力する専用liquidタグです。
+サイトで専用Liquidタグを使いたいときは、タグシステムにフックさせることで実現できます。jekyllの組み込みサンプルには、'highlight'タグと'include'タグが含まれています。次の例は、pageが作られるときの時刻を出力する専用Liquidタグです。
 
 
 <!--original
@@ -572,7 +571,7 @@ Liquid::Template.register_tag('render_time', Jekyll::RenderTimeTag)
 {% endhighlight %}
 -->
 
-liquidタグでは最低限、次を実装する必要があります。
+Liquidタグでは最低限、次を実装する必要があります。
 
 <!--original
 At a minimum, liquid tags must implement:
@@ -682,7 +681,7 @@ And we would get something like this on the page:
 ### Liquid filters
 -->
 
-上でタグを追加したように、liquidテンプレートシステムに独自フィルタを追加することもできます。フィルタは、liquidにメソッドをエクスポートする簡単なモジュールです。すべてのメソッドは、フィルタの入力としての少なくとも１つの引数を取る必要があります。その返り値はフィルタの出力になります。
+上でタグを追加したように、Liquidテンプレートシステムに独自フィルタを追加することもできます。フィルタは、Liquidにメソッドをエクスポートする簡単なモジュールです。すべてのメソッドは、フィルタの入力としての少なくとも１つの引数を取る必要があります。その返り値はフィルタの出力になります。
 
 <!--original
 You can add your own filters to the Liquid template system much like you can add
