@@ -762,7 +762,7 @@ There are two flags to be aware of when writing a plugin:
       </td>
       <td>
         <p>
-          任意のコードの実行が許可されていない環境で、対象のプラグインが安全に実行されるものであるか否かをJekyllに伝えるブーリアンフラグ。これはGitHub Pagesで利用され、そこでどのコアプラグインが利用でき、またどのプラグインが起動上安全でないかが判断される。あなたのプラグインが任意コードの実行を許可しない場合には、<code>true</code>をセットする。GitHub Pagesは依然としてプラグインを読み込まないが、これをコアへ組み込むようサブミットするなら、それが問題をなくすベストな方法である。
+          任意のコードの実行が許可されていない環境で、対象のプラグインが安全に実行されるものであるか否かをJekyllに伝えるブーリアンフラグ。これはGitHub Pagesで利用され、そこでどのコアプラグインが利用でき、またどのプラグインが起動上安全でないかが判断される。あなたのプラグインが任意コードの実行を許可しない場合には、<code>true</code>をセットする。これをセットしたとしてもGitHub Pagesは依然としてあなたのプラグインを読み込むようにはならないが、Jekyll本体に組み込むべくプラグインを供するつもりなら、このオプションを正しく設定しておくのがよい。
         </p>
       </td>
     </tr>
@@ -965,7 +965,7 @@ You can find a few useful plugins at the following locations:
 - [pluralize](https://github.com/bdesham/pluralize): 数字と単語を文法的に正しい量(例：“1 minute” or “2 minute**s**”)で簡単に結合する。
 - [reading_time](https://github.com/bdesham/reading_time): 単語をカウントし、テキスト片のリーディング時間を見積る。この場合、対象テキストとして含めるにそぐわないHTML要素は無視される。
 - [Table of Content Generator](https://github.com/dafi/jekyll-toc-generator): 目次(TOC)を含むHTMLコードを生成する。目次は多様な方法でカスタマイズ可能であり、例えば、目次を持たないページを指定できる。
-- [jekyll-humanize](https://github.com/23maverick23/jekyll-humanize): これはDjangoアプリhumanizeのポートで、データに"人間らしさ"を追加する。各メソッドは、Fluidタイプフィルタを表し、Jekyllサイトのテンプレートで利用可能。Jekyllが静的サイトを生成する場合、いくつかのオリジナルメソッドは論理的な意味を成さない(例：naturaltime)。
+- [jekyll-humanize](https://github.com/23maverick23/jekyll-humanize): これはDjangoアプリhumanizeの移植版で、データに"人間らしさ"を追加する。各メソッドは、Fluidタイプフィルタを表し、Jekyllサイトのテンプレートで利用可能。Jekyllは静的サイトを生成するので、いくつかのオリジナルメソッドは移植版において論理的な意味をなさない(例：naturaltime)。
 
 <!--original
 - [Truncate HTML](https://github.com/MattHall/truncatehtml) by [Matt Hall](http://codebeef.com): A Jekyll filter that truncates HTML while preserving markup structure.
@@ -1000,7 +1000,7 @@ You can find a few useful plugins at the following locations:
 - [Status.net/OStatus Tag by phaer](https://gist.github.com/912466): 渡されたstatus.net/ostatusフィード内の通知を表示する。
 - [Raw Tag by phaer](https://gist.github.com/1020852): `raw`タグ間のLiquidをテキストパースに対して維持する。
 - [Embed.ly client by Robert Böhnke](https://github.com/robb/jekyll-embedly-client): oEmbedを使ってURLから添付物(embeds)を自動生成する。
-- [Logarithmic Tag Cloud](https://gist.github.com/2290195): フレキシブルな対数分布。説明はコードに。
+- [Logarithmic Tag Cloud](https://gist.github.com/2290195): フレキシブルな対数分布。説明はコード内を参照。
 - [oEmbed Tag by Tammo van Lessen](https://gist.github.com/1455726): oEmbed経由で(YouTube, Flickr, Slideshareなどから)簡単にコンテンツの埋め込みができるようにする。
 - [FlickrSetTag by Thomas Mango](https://github.com/tsmango/jekyll_flickr_set_tag): Flickrのsetから画像ギャラリーを生成する。
 - [Tweet Tag by Scott W. Bradley](https://github.com/scottwb/jekyll-tweet-tag): Twitterの短いコードを使った[ツイートをサイトに埋め込む(Embedded Tweets)](https://dev.twitter.com/docs/embedded-tweets)のためのLiquidタグ。
