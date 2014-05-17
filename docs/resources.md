@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: リソース
+title: リソース集
 prev_section: sites
 next_section: upgrading
 permalink: /docs/resources/
@@ -16,7 +16,7 @@ permalink: /docs/resources/
 ---
 -->
 
-Jekyllの利用の拡大は多種多様ななチュートリアル、フレームワーク、エクステンション、例、そして
+Jekyllの利用の広がりと共に、チュートリアル、フレームワーク、エクステンション、例、そして
 とても有用なリソースを生んでいます。以下は最も人気のあるJekyllリソースの一部へのリンク集です。
 
 <!--original
@@ -54,7 +54,7 @@ Jekyll’s growing use is producing a wide variety of tutorials, frameworks, ext
 - [JekyllBootstrap.com](http://jekyllbootstrap.com)
 -->
 
-  詳細な説明や例、より簡単にJekyllを使い始めるようにするヘルパーコードを提供します。
+  より簡単にJekyllを始めるための、詳細な説明や例、ヘルパーコードが書かれています。
 
 <!--original
   Provides detailed explanations, examples, and helper-code to make
@@ -120,7 +120,7 @@ Jekyll’s growing use is producing a wide variety of tutorials, frameworks, ext
 - [Jekyll Extensions -= Pain](http://rfelix.com/2010/01/19/jekyll-extensions-minus-equal-pain/)
 -->
 
-  ForkやJekyll gemのコードベースを修正することなしに[Jekyllを拡張](http://github.com/rfelix/jekyll_ext)したり、再利用でき共有できるいくつかの[便利なJekyllの拡張](http://wiki.github.com/rfelix/jekyll_ext/extensions)の方法
+  ForkやJekyll gemのコードベースを修正することなしに[Jekyllを拡張](http://github.com/rfelix/jekyll_ext)したり、再利用・共有可能ないくつかの[便利なJekyllの拡張](http://wiki.github.com/rfelix/jekyll_ext/extensions)の方法
 
 <!--original
   A way to [extend Jekyll](http://github.com/rfelix/jekyll_ext) without forking and modifying the Jekyll gem codebase and some [portable Jekyll extensions](http://wiki.github.com/rfelix/jekyll_ext/extensions) that can be reused and shared.
