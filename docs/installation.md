@@ -230,7 +230,7 @@ Check out [the extras page](../extras/) for more information.
   <p>
     Jekyll を使用している人ならば、 <a href="http://pygments.org/">Pygments</a> を使用して
     シンタックスハイライトを有効化したほうがよいでしょう。
-    これ以上進む前に<a href="../templates/#code_snippet_highlighting">やり方を調べる</a>べきです。
+    これ以上進む前に<a href="../templates/#code-snippet-highlighting">やり方を調べる</a>べきです。
   </p>
 </div>
 
