@@ -64,7 +64,7 @@ relies on.
     もし、 UTF-8 エンコーディングを使用している場合、 <code>BOM</code> ヘッダの
     文字がファイルに存在するかどうか、またはとてもとても悪い何かが Jekyll に起こるか
     どうか確認してください。
-    これは、 Windows 上で Jekyll を実行している場合、特に関連します。
+    これは、 <a href="../windows/">Windows 上で Jekyll</a> を実行している場合、特に関連します。
   </p>
 </div>
 
@@ -74,7 +74,8 @@ relies on.
   <p>
     If you use UTF-8 encoding, make sure that no <code>BOM</code> header
     characters exist in your files or very, very bad things will happen to
-    Jekyll. This is especially relevant if you’re running Jekyll on Windows.
+    Jekyll. This is especially relevant if you’re running
+    <a href="../windows/">Jekyll on Windows</a>.
   </p>
 </div>
 -->
@@ -282,6 +283,7 @@ front-matter of a page or post.
   </tbody>
 </table>
 </div>
+
 -->
 
 
