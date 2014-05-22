@@ -1,10 +1,10 @@
-task :default => :test
+task :default => :togglate
 
 desc "diff local and original document at BASE_REVISION"
 # args:
 #   rev: base rivision(ex: rev=master)
 #   files: diff target file(ex: files=docs/*.md )
-task :test do
+task :togglate do
   GITHUB_USER = 'jekyll'
   GITHUB_REPOSITORY = 'jekyll'
   RAW_URL = 'https://raw.githubusercontent.com'
@@ -66,6 +66,39 @@ task :test do
   p ng_files
 
   if ng_files.empty?
+    exit 0
+  else
+    exit 1
+  end
+end
+
+desc "jekyll syntax check (try jekyll build)"
+task :jekyll do
+  # check jekyll command
+  jekyll = 'jekyll'
+  system( "#{jekyll} > /dev/null" )
+  unless $? == 0
+    jekyll = "bundle exec #{jekyll}"
+    system ( "#{jekyll} > /dev/null" )
+    unless $? == 0
+      puts 'Please install jekyll: $ gem install jekyll'
+      exit 1
+    end
+  end
+
+  # create _config.yml
+  config_yml = '_config_rake_jekyll.yml'
+  system( "echo 'exclude: ['vendor']' >> #{config_yml}" )
+  system( "echo 'markdown: kramdown' >> #{config_yml}" )
+
+  # try jekyll build
+  system( "#{jekyll} build --config _config.yml,#{config_yml}" )
+  result = $?
+
+  system( "rm #{config_yml}" )
+
+  case result
+  when 0
     exit 0
   else
     exit 1

@@ -2,5 +2,7 @@ language: ruby
 rvm:
   - 2.1.0
 install: gem install togglate
+install: gem install jekyll
 script:
-  - rake test
+  - rake togglate
+  - rake jekyll
