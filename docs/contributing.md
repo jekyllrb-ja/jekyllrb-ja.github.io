@@ -190,6 +190,7 @@ git checkout -b my_awesome_feature
 * ブランチをプッシュしてください
 
 <!--original
+
 * Hack away, add tests. Not necessarily in that order.
 * Make sure everything still passes by running `rake`.
 * If necessary, rebase your commits into logical chunks, without errors.
@@ -206,11 +207,11 @@ git push origin my_awesome_feature
 {% endhighlight %}
 -->
 
-* mojombo/jekyll プロジェクトの master ブランチに対してプルリクエストを作成し、
+* jekyll/jekyll プロジェクトの master ブランチに対してプルリクエストを作成し、
   あなたの変更内容と、なぜそれをマージすべきかを記述してください
 
 <!--original
-* Create a pull request against mojombo/jekyll:master and describe what your
+* Create a pull request against jekyll/jekyll:master and describe what your
   change does and the why you think it should be merged.
 -->
 
@@ -254,9 +255,21 @@ GitHub の [Jekyll wiki]({{ site.repository }}/wiki) は、
 全ての GitHub ユーザがアクセス権を持つことができます。
 
 <!--original
-The [Jekyll wiki]({{ site.repository }}/wiki) on GitHub
-can be freely updated without a pull request as all
+The [Jekyll wiki]({{ site.repository }}/wiki) on GitHub 
+can be freely updated without a pull request as all 
 GitHub users have access.
+-->
+
+もし、あなたのプラグインを[プラグイン一覧](/docs/plugins/#available_plugins)に追加したいなら、
+あなたのプラグインのタイプに応じて適切な小見出しの下にリンクを追加し、
+[プラグインページのソースファイル]({{ site.repository }}/blob/master/site/docs/plugins.md)へ
+プルリクエストを送ってください。
+
+<!--original
+If you want to add your plugin to the [list of plugins](/docs/plugins/#available_plugins),
+please submit a pull request modifying the [plugins page source
+file]({{ site.repository }}/blob/master/site/docs/plugins.md) by adding a
+link to your plugin under the proper subheading depending upon its type.
 -->
 
 落とし穴
@@ -269,7 +282,7 @@ Gotchas
 
 * もし、 gem のバージョンがかちあった場合、コミットを分けてください。
   この方法だと、メンテナが gem をリリースするときに制御できます。
-* mjombo/jekyll の最新コミットに基づいて(複数の)パッチを維持してください。
+* jekyll/jekyll の最新コミットに基づいて(複数の)パッチを維持してください。
   それは適用するためのあなたの仕事で、メンテナがしなければならないことを少なくするのは
   とてもよいことです。
 * あなたの GitHub issue で \[fix\], \[feature\] などのタグをつけないでください。
@@ -278,7 +291,7 @@ Gotchas
 <!--original
 * If you want to bump the gem version, please put that in a separate commit.
   This way, the maintainers can control when the gem gets released.
-* Try to keep your patch(es) based from the latest commit on mojombo/jekyll.
+* Try to keep your patch(es) based from the latest commit on jekyll/jekyll.
   The easier it is to apply your work, the less work the maintainers have to do,
   which is always a good thing.
 * Please don't tag your GitHub issue with \[fix\], \[feature\], etc. The maintainers
