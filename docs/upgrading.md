@@ -71,9 +71,9 @@ rebuild each time a file changes, just add the `--watch` flag at the end.
 -->
 
 <div class="note info">
-  <h5>監視とサービスの提供</h5>
+  <h5>watchフラグとserveサブコマンド</h5>
   <p markdown="1">新たなサブコマンドにおいては、ローカルでサイトをプレビューする方法が少し変更されています。
-  サイトの設定ファイルにおいて`server: true`を指定する代わりに、`jekyll serve`を使います。`watch: true`についても同様でこれを保持するために、`jekyll serve`および`jekyll build`で`--watch`フラグを使います。
+  サイトの設定ファイルにおいて`server: true`を指定する代わりに、`jekyll serve`を使います。`watch: true`についても同様で、代わりに、`jekyll serve`および`jekyll build`で`--watch`フラグを使います。
    </p>
 </div>
 
@@ -88,7 +88,7 @@ rebuild each time a file changes, just add the `--watch` flag at the end.
 </div>
 -->
 
-### 絶対パーマリンク(Absolute Permalinks)
+### 絶対パーマリンク
 
 <!--original
 ### Absolute Permalinks
@@ -104,7 +104,7 @@ instead of relative permalinks.
 -->
 
 * 絶対パーマリンクを使用する場合は、設定ファイル内で`relative_permalinks: false`を設定します。
-* 相対パーマリンクを続けて使う場合は、設定ファイル内で`relative_permalinks: true`を設定します。
+* 引き続き相対パーマリンクを使う場合は、設定ファイル内で`relative_permalinks: true`を設定します。
 
 <!--original
 * To use absolute permalinks, set `relative_permalinks: false` in your configuration file.
@@ -180,7 +180,7 @@ Simply add the `--config` flag to the `jekyll` command, followed by the path
 to one or more config files (comma-delimited, no spaces).
 -->
 
-#### 以下のコマンドラインのフラッグは非推奨となりました
+#### 以下のコマンドラインのフラグは非推奨となりました
 
 <!--original
 #### As a result, the following command line flags are now deprecated:
@@ -209,7 +209,7 @@ to one or more config files (comma-delimited, no spaces).
 -->
 
 <div class="note info">
-  <h5>設定フラグは設定ファイルを明示的に指定する</h5>
+  <h5>設定フラグで設定ファイルを明示的に指定する</h5>
   <p markdown="1">`--config`フラグを使うと、Jekyllは`_config.yml`ファイルを無視します。カスタム設定を通常の設定に統合したいですか？問題はありません。Jekyllはコマンドラインを通して、複数のカスタム設定ファイルを取ることができます。設定ファイルは、右から左に重ねられます。つまり仮に、`jekyll serve --config _config.yml,_config-dev.yml`を実行した場合、これらの設定ファイルが同じキーを持っていたなら、右側の設定ファイル(`_config-dev.yml`)の値が、左側(`_config.yml`)の値を上書きします。</p>
 </div>
 
@@ -232,7 +232,7 @@ to one or more config files (comma-delimited, no spaces).
 ### New Config File Options
 -->
 
-Jekyll1.0では、いくつかの新しい設定ファイルのオプションが導入されました。アップグレードの前に、そのいずれかがあなたの1.0以前の設定ファイルに存在しているかどうかを調べ、もし存在しているなら、それらが適切に使われているかを確認して下さい。
+Jekyll1.0では、いくつかの新しい設定ファイルのオプションが導入されました。アップグレードの前に、以下に示すオプションがあなたの1.0以前の設定ファイルに存在しているかどうかを調べ、もし存在しているなら、それらが適切に使われているかを確認して下さい。
 
 <!--original
 Jekyll 1.0 introduced several new config file options. Before you upgrade, you
@@ -266,7 +266,7 @@ if so, make sure that you're using them properly:
 ### Baseurl
 -->
 
-Jekyllによるサイトを複数の場所で起動させる機能が欲しいことがあります(GitHub Pagesに公開する前にローカルでプレビューする場合など)。Jekyll1.0では、新たな`--baseurl`フラグでこれを簡単に実現できます。この機能を活かすには、最初にサイトの`_config.yml`ファイルにプロダクションの`baseurl`を追加します。そして、サイトを通して相対URLに`{% raw %}{{ site.baseurl }}{% endraw %}`を前置すればいいです。
+Jekyllによるサイトを複数の場所で起動させる機能が欲しいことがよくあります(GitHub Pagesに公開する前にローカルでプレビューする場合など)。Jekyll1.0では、新たな`--baseurl`フラグでこれを簡単に実現できます。この機能を活かすには、最初にサイトの`_config.yml`ファイルに本番環境の`baseurl`を追加します。そして、サイト全体にわたって相対URLに`{% raw %}{{ site.baseurl }}{% endraw %}`を前置すればいいです。
 サイトをローカルでプレビューする準備が整ったなら、`jekyll serve`に`--baseurl`フラグをローカルのベースURL(通常は`/`)と共に渡せば、Jekyllは渡されたものに入れ替え、これにより双方の環境ですべてのリンクが期待通りに機能することを保証します。
 
 <!--original
@@ -282,8 +282,8 @@ expect in both environments.
 -->
 
 <div class="note warning">
-  <h5 markdown="1">すべてのpageおよびpostのURLはリーディングスラッシュを含む</h5>
-  <p markdown="1">上で説明した方法を使用する場合、すべてのpageおよびpostのURLはリーディングスラッシュを含んでいることを忘れないで下さい。よって、サイトのベースURLとpost/pageのURLを繋ぐとき、それらが`site.baseurl = /`と`post.url = /2013/06/05/my-fun-post/`であるなら、２つのリーディングスラッシュが入ってしまう結果となり、リンクは間違ったものになるでしょう。そのため、`site.baseurl`に前置するのは、`baseurl`がデフォルトの`/`以外のものである場合だけにすることをお薦めします。</p>
+  <h5 markdown="1">すべてのpageおよびpostのURLは先頭にスラッシュを含む</h5>
+  <p markdown="1">上で説明した方法を使用する場合、すべてのpageおよびpostのURLは先頭にスラッシュを含んでいることを忘れないで下さい。よって、サイトのベースURLとpost/pageのURLを繋ぐとき、それらが`site.baseurl = /`と`post.url = /2013/06/05/my-fun-post/`であるなら、先頭スラッシュが２つ入ってしまう結果となり、リンクは間違ったものになるでしょう。そのため、`site.baseurl`に前置するのは、`baseurl`がデフォルトの`/`以外のものである場合だけにすることをお薦めします。</p>
 </div>
 
 <!--original
