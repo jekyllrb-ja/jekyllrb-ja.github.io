@@ -1109,7 +1109,7 @@ You can find a few useful plugins at the following locations:
 - [Singlepage-jekyll](https://github.com/JCB-K/singlepage-jekyll) by [JCB-K](https://github.com/JCB-K): Jekyllを動的な単一ページWebサイトに変える。
 - [generator-jekyllrb](https://github.com/robwierzbowski/generator-jekyllrb): Jekyllを[Yeoman](http://yeoman.io/)でラップするジェネレータ。Yeomanは、最新のWebアプリを構築するためのツールセットおよびワークフローである。
 - [grunt-jekyll](https://github.com/dannygarcia/grunt-jekyll): 文字通りのJekyll用[Grunt](http://gruntjs.com/)プラグイン。
-- [jekyll-postfiles](https://github.com/indirect/jekyll-postfiles): `_postfiles`ディレクトリと{% raw %}`{{ postfile }}`{% endraw %}タグを追加し、postが参照するファイルが常にレポジトリの直ぐ近くにあるようにする。
+- [jekyll-postfiles](https://github.com/indirect/jekyll-postfiles): `_postfiles`ディレクトリと{% raw %}`{{ postfile }}`{% endraw %}タグを追加し、postから参照するファイルを常にpostのすぐそばに置けるようにする。
 
 <!--original
 - [Pygments Cache Path by Raimonds Simanovskis](https://github.com/rsim/blog.rayapps.com/blob/master/_plugins/pygments_cache_patch.rb): Plugin to cache syntax-highlighted code from Pygments.
