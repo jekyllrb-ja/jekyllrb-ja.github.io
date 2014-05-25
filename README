@@ -64,7 +64,7 @@ Jekyllはあなたが望むことを実現します。それ以上のことも�
 * サイトに必要な情報を[変数](http://gosyujin.github.io/jekyllrb.com.jp/docs/variables/)にセットしましょう。
 * [パーマリンク](http://gosyujin.github.io/jekyllrb.com.jp/docs/permalinks/)を編集しましょう。
 * サイト構築をより簡単に行うためにビルト・インの[テンプレート](http://gosyujin.github.io/jekyllrb.com.jp/docs/templates/)を使ってみましょう。
-* あなたのサイトにあったコンテンツを生成するために[プラグイン](http://gosyujin.github.io/jekyllrb.com.jp/docs/plugins/)を使ってみあm賞。
+* あなたのサイトにあったコンテンツを生成するために[プラグイン](http://gosyujin.github.io/jekyllrb.com.jp/docs/plugins/)を使ってみましょう。
 
 <!--original
 ## License
