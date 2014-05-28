@@ -279,6 +279,7 @@ When you're ready to preview your site locally, pass along the `--baseurl` flag
 with your local baseurl (most likely `/`) to `jekyll serve` and Jekyll will
 swap in whatever you've passed along, ensuring all your links work as you'd
 expect in both environments.
+
 -->
 
 <div class="note warning">

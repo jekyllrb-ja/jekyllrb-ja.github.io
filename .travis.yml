@@ -1,8 +1,6 @@
 language: ruby
 rvm:
   - 2.1.0
-install: gem install togglate
-install: gem install github-pages
 script:
   - rake togglate
   - rake jekyll
