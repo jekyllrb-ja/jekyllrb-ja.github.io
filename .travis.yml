@@ -4,3 +4,6 @@ rvm:
 script:
   - rake togglate
   - rake jekyll
+notifications:
+  webhooks:
+    - https://idobata.io/hook/af1bc391-1a00-4247-91de-384cb55d6c1f
