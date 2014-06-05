@@ -30,34 +30,42 @@ task :togglate do
   ng_files = []
 
   Dir.glob(files).each do |file|
-    # check togglate command
-    togglate = 'togglate'
-    system( "#{togglate} > /dev/null" )
-    unless $? == 0
-      togglate = "bundle exec #{togglate}"
-      system ( "#{togglate} > /dev/null" ) 
+    begin
+      # check togglate command
+      togglate = 'togglate'
+      system( "#{togglate} > /dev/null" )
       unless $? == 0
-        puts 'Please install togglate: $ gem install togglate'
-        exit 1
+        togglate = "bundle exec #{togglate}"
+        system ( "#{togglate} > /dev/null" )
+        unless $? == 0
+          puts 'Please install togglate: $ gem install togglate'
+          exit 1
+        end
+      end
+
+      local_doc = "#{file}_local"
+      origin_doc = "#{file}_origin"
+
+      # output local document
+      system( "#{togglate} commentout #{file} > #{local_doc}" )
+      # output original document
+      file_exist = system( "curl -sf #{ORIGINAL_DOC_URL}/#{file} > #{origin_doc}" )
+      unless file_exist
+        fail "`curl`: No such file - '#{ORIGINAL_DOC_URL}/#{file}'"
+      end
+      # system( "git diff --no-index #{local_doc} #{origin_doc}" )
+      system( "diff -u #{local_doc} #{origin_doc}" )
+      case $?
+      when 0
+        ok_files << file
+      else
+        ng_files << file
+      end
+    ensure
+      [local_doc, origin_doc].each do |f|
+        system("rm", f) if File.exist?(f)
       end
     end
-
-    local_doc = "#{file}_local"
-    origin_doc = "#{file}_origin"
-
-    # output local document
-    system( "#{togglate} commentout #{file} > #{local_doc}" )
-    # output original document
-    system( "curl -s #{ORIGINAL_DOC_URL}/#{file} > #{origin_doc}" )
-    # system( "git diff --no-index #{local_doc} #{origin_doc}" )
-    system( "diff -u #{local_doc} #{origin_doc}" )
-    case $?
-    when 0
-      ok_files << file
-    else
-      ng_files << file
-    end
-    system( "rm #{local_doc} #{origin_doc}" )
   end
 
   puts "OK:"
