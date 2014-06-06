@@ -1,4 +1,4 @@
-jekyllrb.com.jp
+jekyllrb-ja.github.io
 ===============
 
 [![Build Status](https://travis-ci.org/jekyllrb-ja/jekyllrb-ja.github.io.svg?branch=master)](https://travis-ci.org/jekyllrb-ja/jekyllrb-ja.github.io)
@@ -23,7 +23,7 @@ jekyllrb.com.jp
 ドキュメントにケアレスミスや誤訳を発見した場合は、いずれかの方法で連絡してください。
 
 - Pull Request
-- [Issues](https://github.com/gosyujin/jekyllrb.com.jp/issues)
+- [Issues](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/issues)
 - [Twitter](https://twitter.com/kk_Ataka)
 
 Pull Request の手順については、ワークフローを参照してください。
@@ -35,5 +35,5 @@ Pull Request の手順については、ワークフローを参照してくだ�
 - トピックブランチを作成し、修正した内容をコミットする ( `git checkout -b my_awesome_feature` )
 - 必要に応じて、コミットを意味のある塊にリベースする
 - トピックブランチをプッシュする ( `git push origin my_awesome_feature` )
-- gosyujin/jekyllrb.com.jp プロジェクトの `master` ブランチに対して Pull Request を作成する
+- jekyllrb-ja/jekyllrb-ja.github.io プロジェクトの `master` ブランチに対して Pull Request を作成する
   - Pull Request には変更内容を記述する
