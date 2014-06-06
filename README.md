@@ -1,7 +1,7 @@
 jekyllrb.com.jp
 ===============
 
-[![Build Status](https://travis-ci.org/gosyujin/jekyllrb.com.jp.svg?branch=master)](https://travis-ci.org/gosyujin/jekyllrb.com.jp)
+[![Build Status](https://travis-ci.org/jekyllrb-ja/jekyllrb-ja.github.io.svg?branch=master)](https://travis-ci.org/jekyllrb-ja/jekyllrb-ja.github.io)
 
 ここは http://jekyllrb.com/ の翻訳プロジェクトです。
 
@@ -31,7 +31,7 @@ Pull Request の手順については、ワークフローを参照してくだ�
 ## ワークフロー
 
 - このプロジェクトをフォークする
-- 自分の作業環境にフォークしたプロジェクトをクローンする ( `git clone git@github.com:<username>/jekyllrb.com.jp.git` )
+- 自分の作業環境にフォークしたプロジェクトをクローンする ( `git clone git@github.com:<username>/jekyllrb-ja.github.io.git` )
 - トピックブランチを作成し、修正した内容をコミットする ( `git checkout -b my_awesome_feature` )
 - 必要に応じて、コミットを意味のある塊にリベースする
 - トピックブランチをプッシュする ( `git push origin my_awesome_feature` )
