@@ -1,3 +1,11 @@
+require "octokit"
+
+GITHUB_USER = 'jekyll'
+GITHUB_REPOSITORY = 'jekyll'
+RAW_URL = 'https://raw.githubusercontent.com'
+
+BASE_REVISION = '5daf987'
+
 task :default => :togglate
 
 desc "diff local and original document at BASE_REVISION"
@@ -5,11 +13,6 @@ desc "diff local and original document at BASE_REVISION"
 #   rev: base rivision(ex: rev=master)
 #   files: diff target file(ex: files=docs/*.md )
 task :togglate do
-  GITHUB_USER = 'jekyll'
-  GITHUB_REPOSITORY = 'jekyll'
-  RAW_URL = 'https://raw.githubusercontent.com'
-
-  BASE_REVISION = '5daf987'
   revision = ENV['rev']
   if revision.nil?
     revision = BASE_REVISION
@@ -77,6 +80,27 @@ task :togglate do
     exit 0
   else
     exit 1
+  end
+end
+
+desc "compare file exsistence with site/docs in original BASE_REVISION"
+# args:
+#   rev: base rivision(ex: rev=master) default: master
+task :compare_docs do
+  revision = ENV['rev'] || 'master'
+
+  local_files = Dir.glob('docs/*').map { |f| File.basename(f) }
+  remote_files = Octokit.contents("#{GITHUB_USER}/#{GITHUB_REPOSITORY}", path:'site/docs', ref:"#{revision}").map(&:name)
+
+  added_files = remote_files - local_files
+  removed_files = local_files - remote_files
+
+  case
+  when [added_files, removed_files].all?(&:empty?)
+    # say nothing
+  else
+    puts "New files: #{added_files.join(', ')}"
+    puts "Removed files: #{removed_files.join(', ')}"
   end
 end
 
