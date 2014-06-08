@@ -66,7 +66,7 @@ class Jekyllja < Thor
   desc "dir_diff DIRECTORY", "Compare file exsistence in DIRECTORY between local and remote repository"
   option :save, aliases:'-s', default:false, type: :boolean, desc:'save new files'
   option :save_path, default:"diff/tmp", desc:'save path'
-  def diff_dir(dir)
+  def dir_diff(dir)
     path = File.join(options[:path], dir)
     opts = { path:path, ref:options[:revision] }
     remote_files = get_dir(options[:repo], opts)
@@ -100,7 +100,7 @@ class Jekyllja < Thor
   option :save_path, default:"diff/tmp", desc:'save path'
   option :save_remote, default:false, type: :boolean
   def diff_all(dir)
-    invoke(:diff_dir, [dir], options)
+    invoke(:dir_diff, [dir], options)
 
     local_files = Dir.glob("#{dir}/*")
     opts = options.merge(print_content:false)
