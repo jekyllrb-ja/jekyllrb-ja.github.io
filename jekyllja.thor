@@ -39,7 +39,7 @@ class Jekyllja < Thor
       if options[:save]
         save(diff, options[:save_path], file, '.diff')
         f = File.basename(file, '.*') + '.diff'
-        puts "'#{f}' saved in '#{options[:save_path]}'"
+        print "'#{f}' saved in '#{options[:save_path]}'\n"
       else
         print(options[:print_content] ? diff : "Diff found on '#{file}'\n")
       end
