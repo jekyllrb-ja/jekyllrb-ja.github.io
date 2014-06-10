@@ -67,10 +67,10 @@ class Jekyllja < Thor
   option :save, aliases:'-s', default:false, type: :boolean, desc:'save new files'
   option :save_path, default:"diff/tmp", desc:'save path'
   def dir_diff(dir)
-    path = File.join(options[:path], dir)
-    opts = { path:path, ref:options[:revision] }
+    remote_path = File.join(options[:path], dir).sub(/\/.?$/, '')
+    opts = { path:remote_path, ref:options[:revision] }
     remote_files = get_dir(options[:repo], opts)
-    local_files = Dir.glob("#{dir}/*").map { |f| File.basename(f) }
+    local_files = Dir.glob(["#{dir}/*", "#{dir}/.[^.]*"]).map { |f| File.basename(f) }
 
     new_files = remote_files - local_files
     removed_files = local_files - remote_files
@@ -89,7 +89,8 @@ class Jekyllja < Thor
             puts "  '#{file}' saved in '#{options[:save_path]}'"
           end
         end
-      elsif removed_files.any?
+      end
+      if removed_files.any?
         puts "Removed files found: #{removed_files.join(', ')}"
       end
     end
