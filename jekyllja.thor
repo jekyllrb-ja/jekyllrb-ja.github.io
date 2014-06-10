@@ -106,8 +106,8 @@ class Jekyllja < Thor
     local_files = Dir.glob("#{dir}/*")
     opts = options.merge(print_content:false)
     local_files.map do |file|
-      Thread.new do
-        Jekyllja.new.invoke(:diff, [file], opts)
+      Thread.new(file) do |_file|
+        Jekyllja.new.invoke(:diff, [_file], opts)
       end
     end.each(&:join)
   end
