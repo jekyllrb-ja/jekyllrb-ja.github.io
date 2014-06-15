@@ -119,10 +119,9 @@ community can improve the experience for everyone.
 <div class="note info">
   <h5>Xcode コマンドラインツールをインストール</h5>
   <p>
-    もし、あなたがMac OS X を利用中にネイティブ拡張を使用して
-    Jekyll に依存するもののインストール中に問題に出くわした場合、
-    あなたは Xcode と コマンドラインツールを
-    インストールする必要があります。
+    ネイティブ拡張を利用したJekyllの依存関係をインストールする際に問題が生じた場合、
+    あなたがMax OS Xを使っているなら、Xcodeと、
+    付属のコマンドラインツールをインストールする必要があるでしょう。
     ダウンロードは、
     <code>Preferences &#8594; Downloads &#8594; Components</code>.
   </p>
