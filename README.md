@@ -8,7 +8,7 @@ jekyllrb-ja.github.io
 
 ## ブランチ
 
-このプロジェクトのブランチは 2 つあります。
+このプロジェクトのブランチです。
 
 1. `master` ブランチ
   - http://jekyllrb-ja.github.io のデプロイブランチです
@@ -18,9 +18,6 @@ jekyllrb-ja.github.io
       - .gitignore, .travis.yml, Gemfile, Rakefile
     - 変更
       - _config.yml, index.html
-2. `translate` ブランチ(仮)
-  - `master` ブランチにマージする前にいったんPRを受けるブランチです
-  - 構成は `master` ブランチと同じです
 
 ## コントリビュート
 
