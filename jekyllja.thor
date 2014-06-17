@@ -127,14 +127,14 @@ class Jekyllja < Thor
     ref_shas =
       case ref
       when 'all'
-        Octokit.refs(options[:repo]).map do |res|
+        get_ref(options[:repo]).map do |res|
           {ref:res[:ref], sha:res[:object][:sha]}
         end
       when /^v\d/
-        res = Octokit.ref(options[:repo], "tags/#{ref}")
+        res = get_ref(options[:repo], "tags/#{ref}")
         [{ref:"ref/tags/#{ref}", sha:res[:object][:sha]}]
       else
-        res = Octokit.ref(options[:repo], "heads/#{ref}")
+        res = get_ref(options[:repo], "heads/#{ref}")
         [{ref:"ref/heads/#{ref}", sha:res[:object][:sha]}]
       end
     if options[:stdout]
@@ -204,6 +204,18 @@ class Jekyllja < Thor
     rescue ::Octokit::Unauthorized
       puts "Bad Credentials"
       exit(1)
+    end
+
+    def get_ref(repo, ref=nil)
+      if (user=options[:username]) && (pwd=options[:password])
+        github_auth(user, pwd)
+      end
+      case ref
+      when :all, nil
+        Octokit.refs(repo)
+      else
+        Octokit.ref(repo, ref)
+      end
     end
 
     def build_ref_message(ref)
