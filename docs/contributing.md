@@ -24,7 +24,7 @@ So you've got an awesome idea to throw into Jekyll. Great! Please keep the
 following in mind:
 -->
 
-* もし、既存の機能への小さな修正やパッチを作成したなら、シンプルなテストを行います。
+* 取り組んでいるのが細かな修正や既存機能へのパッチなら、簡単な内容で構わないのでテストも追加してください。
   現在のテストスイートの範囲にとどまり、そして
   [Shoulda](http://github.com/thoughtbot/shoulda/tree/master) や
   [RR](http://github.com/btakita/rr/tree/master) を使用してください。
@@ -280,7 +280,7 @@ Gotchas
 -------
 -->
 
-* もし、 gem のバージョンがかちあった場合、コミットを分けてください。
+* もし、 gem のバージョンをあげる場合は、コミットを分けてください。
   この方法だと、メンテナが gem をリリースするときに制御できます。
 * jekyll/jekyll の最新コミットに基づいて(複数の)パッチを維持してください。
   それは適用するためのあなたの仕事で、メンテナがしなければならないことを少なくするのは
