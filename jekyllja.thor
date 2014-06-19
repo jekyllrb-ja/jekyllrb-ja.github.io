@@ -117,8 +117,24 @@ class Jekyllja < Thor
       if (user=options[:username]) && (pwd=options[:password])
         github_auth(user, pwd)
       end
-      f = Octokit.contents(repo, opts)
+      f = _get_content(repo, opts)
       content = Base64.decode64(f.content)
+    end
+
+    def get_dir(repo, opts)
+      if (user=options[:username]) && (pwd=options[:password])
+        github_auth(user, pwd)
+      end
+      _get_content(repo, opts).map(&:name)
+    end
+
+    def _get_content(repo, opts)
+      Octokit.contents(repo, opts)
+    rescue ::Octokit::TooManyRequests
+      puts "API rate limit exceeded"
+      puts "Use username and password options to make the limit up"
+      puts "  ex. thor jekyllrb:diff_all docs --username=xxx --password=xxx"
+      exit(1)
     end
 
     def read_local_file(file)
@@ -144,13 +160,6 @@ class Jekyllja < Thor
       fname = [File.basename(file, ".*"), ext].join
       save_path = File.join(path, fname)
       File.write(save_path, content)
-    end
-
-    def get_dir(repo, opts)
-      if (user=options[:username]) && (pwd=options[:password])
-        github_auth(user, pwd)
-      end
-      Octokit.contents(repo, opts).map(&:name)
     end
 
     def github_auth(username, password)
