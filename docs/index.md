@@ -124,8 +124,7 @@ hazardous. Here’s what to look out for.
 -->
 
 もし、あなたが私たちがカバーしていない過程の何かにでくわしたり、
-他の人が便利だと思う tips を知っているならば、[file an
-issue]({{ site.repository }}/issues/new) をお願いします、そして
+他の人が便利だと思う tips を知っているならば、[issueに報告(英語)]({{ site.repository }}/issues/new) をお願いします、そして
 私たちはこのガイドに含む処置をします。
 
 <!--original

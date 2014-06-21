@@ -18,7 +18,7 @@ permalink: /docs/troubleshooting/
 
 あなたが今までJekyllのインストールや使用した際に問題が発生した場合、
 いくつか助けになるかもしれないヒントがあります。以下にあるヒントでも解決しない場合、
-[その問題を報告]({{ site.repository }}/issues/new) してください。そうすることで
+[その問題を報告(英語)]({{ site.repository }}/issues/new) してください。そうすることで
 Jekyll コミュニティはすべての人によりよい体験を与えられます。
 
 <!--original
