@@ -286,7 +286,7 @@ Gotchas
   それは適用するためのあなたの仕事で、メンテナがしなければならないことを少なくするのは
   とてもよいことです。
 * あなたの GitHub issue で \[fix\], \[feature\] などのタグをつけないでください。
-  メンテナは積極的に issue を読み、彼らが問題に出くわしたらラベルをつけるでしょう。 
+  メンテナは積極的に issue を読み、彼らが問題に出くわしたらラベルをつけるでしょう。
 
 <!--original
 * If you want to bump the gem version, please put that in a separate commit.
@@ -302,8 +302,8 @@ Gotchas
   <h5>もっとよくできる方法をお知らせください！</h5>
   <p>
     Jekyll の使用とハックは楽しく単純、簡単でなければなりません。
-    なんらかの理由で苦痛を見つけた場合、 あなたの経験をGitHub の<a
-    href="{{ site.repository }}/issues/new">issue に追加</a>すると、
+    なんらかの理由で苦痛を見つけた場合、 あなたの経験をGitHub の
+    <a href="{{ site.repository }}/issues/new">issue に報告(英語)</a>すると、
     私たちはそれを改善することができます。
   </p>
 </div>
