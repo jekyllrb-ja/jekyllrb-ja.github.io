@@ -31,17 +31,26 @@ class Jekyllja < Thor
         f
       end
 
+    @ref ||= invoke(:ref, [options[:revision]], {'stdout' => false}).first
+    ref_msg = build_ref_message(@ref)
+
     diff = get_diff(local.path, remote.path)
     
     if diff.empty?
-      print "No diff on '#{file}'\n"
+      print "No diff on '#{file}' (#{ref_msg[:short]})\n"
     else
       if options[:save]
-        save(diff, options[:save_path], file, '.diff')
+        save("#{ref_msg[:long]}\n#{diff}", options[:save_path], file, '.diff')
         f = File.basename(file, '.*') + '.diff'
         print "'#{f}' saved in '#{options[:save_path]}'\n"
       else
-        print(options[:print_content] ? diff : "Diff found on '#{file}'\n")
+        print begin
+          if options[:print_content]
+            "#{ref_msg[:long]}\n#{diff}"
+          else
+            "Diff found on '#{file}' (#{ref_msg[:short]})\n"
+          end
+        end
       end
     end
   end
@@ -112,6 +121,39 @@ class Jekyllja < Thor
     end.each(&:join)
   end
 
+  desc "ref REF", "Get a revision(sha) of REF"
+  option :stdout, default:true, type: :boolean, desc:'output revision(s) in terminal'
+  def ref(ref='master')
+    ref_shas =
+      case ref
+      when 'all'
+        get_ref(options[:repo]).map do |res|
+          {ref:res[:ref], sha:res[:object][:sha]}
+        end
+      when /^v\d/
+        res = get_ref(options[:repo], "tags/#{ref}")
+        [{ref:"ref/tags/#{ref}", sha:res[:object][:sha]}]
+      else
+        res = get_ref(options[:repo], "heads/#{ref}")
+        [{ref:"ref/heads/#{ref}", sha:res[:object][:sha]}]
+      end
+    if options[:stdout]
+      max_len = ref_shas.map { |h| h[:ref].size }.max
+      ref_shas.each do |h|
+        print "#{h[:ref].ljust(max_len)} => #{h[:sha]}\n"
+      end
+    else
+      ref_shas
+    end
+  rescue Octokit::NotFound
+    if options[:stdout]
+      print "Reference `#{ref}` not found\n"
+      exit(1)
+    else
+      [{ref:nil, sha:ref}]
+    end
+  end
+
   no_tasks do
     def get_content(repo, opts)
       if (user=options[:username]) && (pwd=options[:password])
@@ -171,6 +213,30 @@ class Jekyllja < Thor
     rescue ::Octokit::Unauthorized
       puts "Bad Credentials"
       exit(1)
+    end
+
+    def get_ref(repo, ref=nil)
+      if (user=options[:username]) && (pwd=options[:password])
+        github_auth(user, pwd)
+      end
+      case ref
+      when :all, nil
+        Octokit.refs(repo)
+      else
+        Octokit.ref(repo, ref)
+      end
+    end
+
+    def build_ref_message(ref)
+      pre = "Base revision:"
+      if ref[:ref]
+        rf  = "[#{ref[:ref]}]"
+        srf = "[#{ref[:ref].match(/\w+$/).to_s}]"
+      end
+      {
+        long: "#{pre} #{ref[:sha]}#{rf}",
+        short:"#{pre} #{ref[:sha][0,7]}#{srf}"
+      }
     end
   end
 end
