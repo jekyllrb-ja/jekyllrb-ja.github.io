@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: ドラフトの働き
+title: ドラフトを使う
 prev_section: posts
 next_section: pages
 permalink: /docs/drafts/
