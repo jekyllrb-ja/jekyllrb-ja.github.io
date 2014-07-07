@@ -16,7 +16,7 @@ permalink: /docs/quickstart/
 ---
 -->
 
-せっかちな人のために、 Jekyll サイトの起動と動作の例を得る方法です。
+せっかちな人のために、 Jekyll のひな形サイトを立ち上げる方法を説明します。
 
 <!--original
 For the impatient, here's how to get a boilerplate Jekyll site up and running.
@@ -40,10 +40,10 @@ For the impatient, here's how to get a boilerplate Jekyll site up and running.
 {% endhighlight %}
 -->
 
-にもかかわらず、それは何も起こりません。
-真の魔法は、あなたがブログの posts を作りはじめた時に起こります。
+しかし、これは大したことではありません。
 テンプレートとレイアウトを制御するために front-matter を使い、
-すべてのすばらしい設定オプションを利用して Jekyll を使用できるようにします。
+Jekyll で使用可能なすべてのすばらしい設定オプションを利用し、
+ブログの posts を作成し始めた時に、真の魔法は起こります。
 
 <!--original
 That's nothing, though. The real magic happens when you start creating blog
@@ -53,8 +53,8 @@ advantage of all the awesome configuration options Jekyll makes available.
 
 <div class="note info">
   <h5>Redcarpet は新しいサイトのデフォルトの Markdown エンジンです</h5>
-  <p>Jekyll 1.1 から私たちは <code>jekyll new</code> で生成されるサイトの
-     デフォルトの Markdown エンジンを Redcarpet に切り替えました。</p>
+  <p>Jekyll 1.1 から、 <code>jekyll new</code> で生成されるサイトの
+     デフォルト Markdown エンジンが Redcarpet に切り替わりました。</p>
 </div>
 
 <!--original
@@ -65,7 +65,7 @@ advantage of all the awesome configuration options Jekyll makes available.
 </div>
 -->
 
-もし、あなたが問題に出くわしたとき、全ての [インストール必要条件][Installation]
+もし、問題に直面した時は、全ての [インストール必要条件][Installation]
 を満たしている事を確認してください。
 
 <!--original
