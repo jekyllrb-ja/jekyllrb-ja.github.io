@@ -17,7 +17,7 @@ permalink: /docs/home/
 このサイトは Jekyll の包括的なガイドを目指しています。
 私たちはあなたのサイトの起動と動作、コンテンツの作成と管理、
 サイトの動作や見た目のカスタマイズ、様々な環境へのデプロイのようなトピックをカバーし、
-あなたに Jekyll の将来の発展に参加するためのいくつかのアドバイスを与えるでしょう。
+Jekyll 自体の将来の開発への参加について、いくつかアドバイスします。
 
 <!--original
 This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such
@@ -27,7 +27,7 @@ environments, and give you some advice on participating in the future
 development of Jekyll itself.
 -->
 
-## Jekyll とは何ですか？
+## Jekyll とは一体何ですか？
 
 <!--original
 ## So what is Jekyll, exactly?
@@ -39,9 +39,9 @@ Jekyll はシンプルな、ブログを意識した静的サイトジェネレ�
 [Textile](http://textile.sitemonks.com/)) や
 [Liquid](http://wiki.shopify.com/Liquid)
 コンバータを通して実行し、あなたの好みの Web サーバとサービス提供に適した、
-すぐに公開できる静的 Web サイトを吐き出します。
-Jekyll は GitHub Pages の後ろのエンジンであるため、あなたは **無料で**
-GitHub のサーバからプロジェクトのページ、ブログまたは Web サイトをホストする
+完全かつすぐに公開できる静的 Web サイトを吐き出します。
+Jekyll は GitHub Pages の背後で動いているエンジンでもあります。このことは、
+プロジェクトのページ、ブログまたは Web サイトをGitHub のサーバから**無料で**ホストするために
 Jekyll を使用できることを意味します。
 
 <!--original
@@ -63,9 +63,9 @@ free**.
 ## Helpful Hints
 -->
 
-このガイドには Jekyll をより簡単に、より楽しく、より危険が少なく
-利用することができる、多数の小さいが便利な情報のピースがあります。
-ここに用心します。
+このガイドには Jekyll の利用をより簡単に、より楽しく、より危険が少なく
+できる、ささやかだけれども役に立つ多くの情報があります。
+以下に、注意すべき点を示します。
 
 <!--original
 Throughout this guide there are a number of small-but-handy pieces of
@@ -74,8 +74,8 @@ hazardous. Here’s what to look out for.
 -->
 
 <div class="note">
-  <h5>ProTips™ はあなたが Jekyll からより多くのことを得るのを助けます</h5>
-  <p>Jekyll の賢人を助ける tips や仕掛けがあります！</p>
+  <h5>ProTips™ はあなたが Jekyll からより多くのことを得る助けになります</h5>
+  <p>Jekyll の達人になるのを助ける tips や仕掛けがあります！</p>
 </div>
 
 <!--original
@@ -86,8 +86,8 @@ hazardous. Here’s what to look out for.
 -->
 
 <div class="note info">
-  <h5>Notes は情報の便利なピースです</h5>
-  <p>Jekyll を理解するためになくてはならない一片です。</p>
+  <h5>Notes は役に立つ情報です</h5>
+  <p>Jekyll を理解するために時々必要となる追加情報です。</p>
 </div>
 
 <!--original
@@ -99,7 +99,7 @@ hazardous. Here’s what to look out for.
 -->
 
 <div class="note warning">
-  <h5>Warnings は大げさではなく、あなたを助けます</h5>
+  <h5>Warnings は、あなたがものを破壊してしまわないよう手助けします</h5>
   <p>もし、あなたが絶体絶命の事態を回避したいなら、これらのメッセージに注意してください。</p>
 </div>
 
@@ -123,9 +123,9 @@ hazardous. Here’s what to look out for.
 </div>
 -->
 
-もし、あなたが私たちがカバーしていない過程の何かにでくわしたり、
-他の人が便利だと思う tips を知っているならば、[issueに報告(英語)]({{ site.repository }}/issues/new) をお願いします、そして
-私たちはこのガイドに含む処置をします。
+もし、あなたが私たちがカバーしていない何かに途中で出くわしたり、
+他の人が便利だと思う tips を知っているならば、[issueに報告(英語)]({{ site.repository }}/issues/new) をお願いします。
+そうすれば、私たちはこのガイドに含めることを検討します。
 
 <!--original
 If you come across anything along the way that we haven’t covered, or if you
