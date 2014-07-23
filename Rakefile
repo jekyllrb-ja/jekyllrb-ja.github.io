@@ -139,6 +139,8 @@ task :create_issue do |x, args|
       build_issue_content(:update, GITHUB_HOST, myrepo, myrevision, path)
     when /(md|markdown)$/
       build_issue_content(:new, GITHUB_HOST, myrepo, myrevision, path)
+    when /delete$/
+      build_issue_content(:delete, GITHUB_HOST, myrepo, myrevision, path)
     else
       fail "Only accept 'diff' or 'markdown'"
     end
@@ -165,6 +167,8 @@ def build_issue_content(type, host, repo, revision, path)
     template_update(repo_file_link, repo_source_link, org_rev_link)
   when :new
     template_new(repo_file_link, repo_source_link, org_rev_link)
+  when :delete
+    template_delete(repo_source_link, org_rev_link)
   end
 end
 
@@ -202,6 +206,20 @@ Original file created. Need to translate:
   Base Revision: #{original_rev_link}
   EOS
   label = 'Original Created'
+  { title:title, body:body, label:label }
+end
+
+def template_delete(source_link, original_rev_link)
+  title = "Need to delete! #{File.basename(source_link)}"
+  body = <<-EOS
+Original file removed. Need to delete:
+
+Note that this might be caused by renaming file or merging the content to another file.
+
+  File: #{source_link}
+  Base Revision: #{original_rev_link}
+  EOS
+  label = 'Original Removed'
   { title:title, body:body, label:label }
 end
 
