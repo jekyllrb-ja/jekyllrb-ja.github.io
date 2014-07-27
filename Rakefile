@@ -145,7 +145,8 @@ task :create_issue do |x, args|
       fail "Only accept 'diff' or 'markdown'"
     end
 
-  github_auth(ENV['USERNAME'], ENV['PASSWORD'], ENV['TOKEN'])
+  GhDiff::Auth[ username:ENV['USERNAME'], password:ENV['PASSWORD'],
+                token:ENV['TOKEN'] ]
 
   Octokit.create_issue(myrepo, cont[:title], cont[:body], labels:cont[:label])
   puts "Issue created successfully for #{path}"
@@ -245,16 +246,4 @@ Note that this might be caused by renaming file or merging the content to anothe
   EOS
   label = 'Original Removed'
   { title:title, body:body, label:label }
-end
-
-def github_auth(username, password, token)
-  if token
-    Octokit.configure { |c| c.access_token = token }
-  else
-    Octokit.configure { |c| c.login = username; c.password = password }
-  end
-  Octokit.user
-rescue ::Octokit::Unauthorized
-  puts "Bad Credentials"
-  exit(1)
 end
