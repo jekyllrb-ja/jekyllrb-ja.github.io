@@ -1,5 +1,5 @@
 require "octokit"
-require "dotenv"
+require "gh-diff"
 
 Dotenv.load
 
@@ -150,6 +150,30 @@ task :create_issue do |x, args|
   Octokit.create_issue(myrepo, cont[:title], cont[:body], labels:cont[:label])
   puts "Issue created successfully for #{path}"
   exit(0)
+end
+
+# This task activates `dir_diff` and `diff` commands of `gh-diff`:
+#   - dir_diff: it compares file existence in the docs directory
+#               between original repo and local.
+#   - diff:     it takes diffs docs in original repo with commentout
+#               texts in local docs.
+# note: You need to setup some environment variables for this task.
+#       Check a README of gh-diff.
+desc "Check updates for doc files in original repo"
+task :check_updates do
+  GhDiff::CLI.start(["dir_diff", "docs"])
+  puts "\e[33mDiff files:\e[0m"
+  GhDiff::CLI.start(["diff", "docs", "--commentout"])
+end
+
+# This task activates `dir_diff` and `diff` commands of `gh-diff`
+# with save option. Files will be saved to 'diff' directory of
+# the project root.
+desc "Save updates for doc files in original repo"
+task :save_updates do
+  GhDiff::CLI.start(["dir_diff", "docs", "--save", "--ref"])
+  puts "\e[33mDiff files:\e[0m"
+  GhDiff::CLI.start(["diff", "docs", "--commentout", "--save"])
 end
 
 def build_issue_content(type, host, repo, revision, path)
