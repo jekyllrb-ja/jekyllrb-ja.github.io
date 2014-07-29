@@ -8,8 +8,6 @@ GITHUB_USER = 'jekyll'
 GITHUB_REPOSITORY = 'jekyll'
 RAW_URL = 'https://raw.githubusercontent.com'
 
-BASE_REVISION = '5daf987'
-
 task :default => :togglate
 
 desc "diff local and original document at BASE_REVISION"
@@ -17,15 +15,6 @@ desc "diff local and original document at BASE_REVISION"
 #   rev: base rivision(ex: rev=master)
 #   files: diff target file(ex: files=docs/*.md )
 task :togglate do
-  revision = ENV['rev']
-  if revision.nil?
-    revision = BASE_REVISION
-  end
-  puts "base revision: #{revision}"
-
-  ORIGINAL_DOC_URL = "#{RAW_URL}/#{GITHUB_USER}/#{GITHUB_REPOSITORY}/#{revision}/site"
-  puts "original doc url: #{ORIGINAL_DOC_URL}"
-
   files = ENV['files']
   if files.nil?
     files = `git diff --name-only HEAD~ -- docs`
@@ -37,6 +26,15 @@ task :togglate do
   ng_files = []
 
   Dir.glob(files).each do |file|
+    revision = ENV['rev']
+    if revision.nil?
+      revision = read_base_revision(file) || 'master'
+    end
+    puts "base revision: #{revision}"
+
+    ORIGINAL_DOC_URL = "#{RAW_URL}/#{GITHUB_USER}/#{GITHUB_REPOSITORY}/#{revision}/site"
+    puts "original doc url: #{ORIGINAL_DOC_URL}"
+
     begin
       # check togglate command
       togglate = 'togglate'
