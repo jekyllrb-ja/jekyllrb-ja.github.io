@@ -4,6 +4,7 @@ title: GitHub Pagesについて
 prev_section: extras
 next_section: deployment-methods
 permalink: /docs/github-pages/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b
 ---
 
 <!--original
@@ -17,7 +18,7 @@ permalink: /docs/github-pages/
 -->
 
 [GitHub Pages](http://pages.github.com) はユーザや、組織、そしてレポジトリ
-（これらはGitHubの[github.io]()ドメインあるいは、ユーザが選んだドメイン名で自由にホストされます）
+（これらはGitHubの `github.io` ドメインあるいは、ユーザが選んだドメイン名で自由にホストされます）
 のための公開できるウェブページです。GitHub Pages は
 裏側でJekyllが動作しており、通常のHTMLコンテンツをサポートすることに加え、
 Jekyllで動作するウェブサイトを無料でホストするとても優れた方法です。
@@ -25,7 +26,7 @@ Jekyllで動作するウェブサイトを無料でホストするとても優�
 <!--original
 [GitHub Pages](http://pages.github.com) are public web pages for users,
 organizations, and repositories, that are freely hosted on GitHub's
-[github.io]() domain or on a custom domain name of your choice. GitHub Pages are
+`github.io` domain or on a custom domain name of your choice. GitHub Pages are
 powered by Jekyll behind the scenes, so in addition to supporting regular HTML
 content, they’re also a great way to host your Jekyll-powered website for free.
 -->
