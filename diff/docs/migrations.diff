@@ -1,0 +1,9 @@
+Base revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+--- docs/migrations.md
++++ docs/migrations.md
+
+ 
+ If you’re switching to Jekyll from another blogging system, Jekyll’s importers
+ can help you with the move. To learn more about importing your site to Jekyll,
+-visit our [`jekyll-import` docs site](http://import.jekyllrb.com).
++visit our [`jekyll-import` docs site](http://import.jekyllrb.com/docs/home/).
