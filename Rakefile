@@ -118,6 +118,25 @@ task :jekyll do
   end
 end
 
+desc "Verify original insertion to a translated document"
+task :verify_original_insertion, "path", "revision"
+task :verify_original_insertion do |x, args|
+  path = args.path
+  if path.nil?
+    fail "A file path required: e.g. create_issue['diff/docs/index.diff']"
+  elsif !File.exist?(path)
+    fail "File NotFound: #{path}"
+  end
+
+  base_revision = args.revision || read_base_revision(path)
+  unless base_revision
+    fail "Base revision not found on the file. Please path it by hands.\n" +
+         "  e.g. verify_original_insertion[docs/index.md,5daf987] (note: no spaces between arguments!)"
+  end
+
+  GhDiff::CLI.start(["diff", path, "--commentout", "--revision=#{base_revision}", "--no-name_only"])
+end
+
 desc "Create issue for a file"
 task :create_issue, "path"
 task :create_issue do |x, args|
@@ -159,10 +178,12 @@ end
 # note: You need to setup some environment variables for this task.
 #       Check a README of gh-diff.
 desc "Check updates for doc files in original repo"
-task :check_updates do
-  GhDiff::CLI.start(["dir_diff", "docs"])
+task :check_updates, "revision"
+task :check_updates do |x, args|
+  base_revision = args.revision || 'master'
+  GhDiff::CLI.start(["dir_diff", "docs", "--revision=#{base_revision}"])
   puts "\e[33mDiff files:\e[0m"
-  GhDiff::CLI.start(["diff", "docs", "--commentout"])
+  GhDiff::CLI.start(["diff", "docs", "--commentout", "--revision=#{base_revision}"])
 end
 
 # This task activates `dir_diff` and `diff` commands of `gh-diff`
