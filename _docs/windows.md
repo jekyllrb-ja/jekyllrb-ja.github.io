@@ -4,6 +4,7 @@ title: WindowsでJekyllを動かす
 prev_section: configuration
 next_section: posts
 permalink: /docs/windows/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -33,11 +34,11 @@ knowledge and lessons that have been unearthed by Windows users.
 ## Installation
 -->
 
-Madhur Ahujaが、[WindowsでJekyllを動かす][windows-installation]手順を書いています。
+Julian Thiloが、[WindowsでJekyllを動かす][windows-installation]手順を書いています。
 これはおおよそ、うまくいっているようです。
 
 <!--original
-Madhur Ahuja has written up instructions to get
+Julian Thilo has written up instructions to get
 [Jekyll running on Windows][windows-installation] and it seems to work for most.
 -->
 
@@ -77,10 +78,10 @@ $ chcp 65001
 {% endhighlight %}
 -->
 
-[windows-installation]: http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html
+[windows-installation]: http://jekyll-windows.juthilo.com/
 
 <!--original
-[windows-installation]: http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html
+[windows-installation]: http://jekyll-windows.juthilo.com/
 -->
 
 ## 自動再生成
