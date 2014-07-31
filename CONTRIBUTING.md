@@ -24,20 +24,24 @@
 - [`Original Updated`](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/labels/Original%20Updated) ← **原文の変更に訳文が追従できていないファイル一覧**
 - [`Original Created`](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/labels/Original%20Created) ← **翻訳作業が未着手なファイル一覧**
 
-追従作業を行う場合は以下のワークフローを参考に Pull Request を送ってください。なお、Issue 1つあたりの原文変更・追加の分量が多い場合は、その一部に対する Pull Request でも助かります。
+追従作業を行う場合は、対象のIssueを確認のうえ、以下のワークフローを参考に Pull Request を送ってください。なお、Issue 1つあたりの原文変更・追加の分量が多い場合は、その一部に対する Pull Request でも助かります。
 
 ### Pull Request のワークフロー
 
-- このプロジェクトをフォークする
-- 自分の作業環境にフォークしたプロジェクトをクローンする ( `git clone git@github.com:<username>/jekyllrb-ja.github.io.git` )
-- トピックブランチを作成し、修正した内容をコミットする ( `git checkout -b my_awesome_feature` )
-- 必要に応じて、コミットを意味のある塊にリベースする
-- トピックブランチをプッシュする ( `git push origin my_awesome_feature` )
-- jekyllrb-ja/jekyllrb-ja.github.io プロジェクトの `master` ブランチに対して Pull Request を作成する
-  - Pull Request には変更内容を記述する
-	- 追従作業の場合は該当の Issue 番号も記述する
+1. 該当のIssueで「このIssue対応します！」の宣言コメントをする
+1. このプロジェクトをフォークする
+1. 自分の作業環境にフォークしたプロジェクトをクローンする ( `git clone git@github.com:<username>/jekyllrb-ja.github.io.git` )
+1. トピックブランチを作成し、Issueの内容にもとづき修正をコミットをする ( `git checkout -b my_awesome_feature` )
+  - .diffファイルを元に翻訳
+	- `/docs/` 配下の該当ファイルの原文および日本語文を修正
+	- .diffファイルの一行目 `base_revision` 行を該当ファイルの YAML front-matter に貼り付ける
+1. トピックブランチをプッシュする ( `git push origin my_awesome_feature` )
+1. jekyllrb-ja/jekyllrb-ja.github.io プロジェクトの `master` ブランチに対して Pull Request を作成する
+  - 該当のIssueを閉じられるような Pull Request の場合は、description のところに `fix #<issue番号>` と書いておく 例：[#192](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/pull/192)
   - コミットログや PR コメントは英語でも日本語でもどちらでも :ok: です
-- Pull Request を送る
+1. Pull Request を送る
+
+注：.diffファイルは別途削除しますので、そのままで結構です。
 
 ## プロジェクトへの参加
 
