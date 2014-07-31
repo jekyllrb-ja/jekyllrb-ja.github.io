@@ -124,17 +124,41 @@ task :verify_original_insertion do |x, args|
   path = args.path
   if path.nil?
     fail "A file path required: e.g. create_issue['diff/docs/index.diff']"
-  elsif !File.exist?(path)
+  elsif !File.exist?(path) && File.directory?(path)
     fail "File NotFound: #{path}"
   end
 
-  base_revision = args.revision || read_base_revision(path)
-  unless base_revision
-    fail "Base revision not found on the file. Please path it by hands.\n" +
-         "  e.g. verify_original_insertion[docs/index.md,5daf987] (note: no spaces between arguments!)"
-  end
+  paths = File.directory?(path) ? Dir["#{path}/**/*.{md,markdown}"] : [path]
 
-  GhDiff::CLI.start(["diff", path, "--commentout", "--revision=#{base_revision}", "--no-name_only"])
+  # HELP!:
+  # Thread doesnt' work correctly. Sometimes Errno::ENOENT exception
+  # raises even the file exist on the remote. Threading is now disabled.
+  # `check_updates` task is faster for multiple files if one fixed revision
+  # acceptable for all files.
+
+  # Thread.abort_on_exception = true
+  paths.map do |f|
+    # Thread.new(file) do |f|
+      base_revision = args.revision || read_base_revision(f)
+      unless base_revision
+        fail "Base revision not found on the file. Please path it by hands.\n" +
+             "  e.g. verify_original_insertion[docs/index.md,5daf987] (note: no spaces between arguments!)"
+      end
+
+      begin
+        flag = GhDiff::CLI.start(["diff", f, "--commentout",
+                                  "--revision=#{base_revision}", "--no-name_only"])
+        unless flag.zero?
+          print "SystemExited: Diff found on #{f}.\n"
+          exit(1)
+        end
+      rescue Errno::ENOENT
+        print "File not found: #{f}.\n"
+        exit(1)
+      end
+    end
+  # end.each(&:join)
+  exit(0)
 end
 
 desc "Create issue for a file"
