@@ -181,9 +181,14 @@ desc "Check updates for doc files in original repo"
 task :check_updates, "revision"
 task :check_updates do |x, args|
   base_revision = args.revision || 'master'
-  GhDiff::CLI.start(["dir_diff", "docs", "--revision=#{base_revision}"])
+  flag = GhDiff::CLI.start(["dir_diff", "docs", "--revision=#{base_revision}"])
   puts "\e[33mDiff files:\e[0m"
-  GhDiff::CLI.start(["diff", "docs", "--commentout", "--revision=#{base_revision}"])
+  flag |= GhDiff::CLI.start(["diff", "docs", "--commentout",
+                                     "--revision=#{base_revision}"])
+
+  # flag 0: all passed - no dir_diff & no diffs
+  #      1: any failed - any change on dir or diff found on any of files
+  flag
 end
 
 # This task activates `dir_diff` and `diff` commands of `gh-diff`
