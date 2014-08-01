@@ -146,7 +146,14 @@ task :create_issue do |x, args|
   GhDiff::Auth[ username:ENV['USERNAME'], password:ENV['PASSWORD'],
                 token:ENV['TOKEN'] ]
 
-  Octokit.create_issue(myrepo, cont[:title], cont[:body], labels:cont[:label])
+  revision = read_base_revision(path)
+  milestones = get_milestones(myrepo)
+  unless milestones.has_key?(revision)
+    Octokit.create_milestone(myrepo, revision)
+    milestones = get_milestones(myrepo)
+  end
+
+  Octokit.create_issue(myrepo, cont[:title], cont[:body], { labels:cont[:label], milestone:milestones[revision] } )
   puts "Issue created successfully for #{path}"
   exit(0)
 end
@@ -244,4 +251,14 @@ Note that this might be caused by renaming file or merging the content to anothe
   EOS
   label = 'Original Removed'
   { title:title, body:body, label:label }
+end
+
+def get_milestones(myrepo)
+  milestones = {}
+
+  res = Octokit.list_milestones(myrepo)
+  res.each do |res|
+    milestones[res[:title]] = res[:number]
+  end
+  milestones
 end
