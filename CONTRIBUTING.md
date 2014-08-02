@@ -32,9 +32,11 @@
 1. このプロジェクトをフォークする
 1. 自分の作業環境にフォークしたプロジェクトをクローンする ( `git clone git@github.com:<username>/jekyllrb-ja.github.io.git` )
 1. トピックブランチを作成し、Issueの内容にもとづき修正をコミットをする ( `git checkout -b my_awesome_feature` )
-  - .diffファイルを元に翻訳
-	- `/docs/` 配下の該当ファイルの原文および日本語文を修正
-	- .diffファイルの一行目 `base_revision` 行を該当ファイルの YAML front-matter に貼り付ける
+  - Issue の description で指定されてるファイルを使う
+    - `Diff:` で指定されている .diff ファイル
+    - `File:` で指定されている .md ファイル
+  - 変更を .diff ファイルで確認し、`/docs/` 配下の該当 .md ファイルの原文・日本語訳に反映する
+  - 該当ファイルの YAML front-matter の base_revision キーを .diffファイルの一行目で置き換える( base_revision キーがない場合は挿入する)
 1. トピックブランチをプッシュする ( `git push origin my_awesome_feature` )
 1. jekyllrb-ja/jekyllrb-ja.github.io プロジェクトの `master` ブランチに対して Pull Request を作成する
   - 該当のIssueを閉じられるような Pull Request の場合は、description のところに `fix #<issue番号>` と書いておく 例：[#192](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/pull/192)
