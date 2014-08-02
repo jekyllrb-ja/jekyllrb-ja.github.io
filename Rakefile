@@ -147,13 +147,12 @@ task :create_issue do |x, args|
                 token:ENV['TOKEN'] ]
 
   revision = read_base_revision(path)
-  milestones = get_milestones(myrepo)
-  unless milestones.has_key?(revision)
-    Octokit.create_milestone(myrepo, revision)
-    milestones = get_milestones(myrepo)
+  unless milestone_number = get_milestones(myrepo)[revision]
+    milestone_number = Octokit.create_milestone(myrepo, revision)['number']
   end
 
-  Octokit.create_issue(myrepo, cont[:title], cont[:body], { labels:cont[:label], milestone:milestones[revision] } )
+  Octokit.create_issue(myrepo, cont[:title], cont[:body], { labels:cont[:label], milestone:milestone_number } )
+
   puts "Issue created successfully for #{path}"
   exit(0)
 end
