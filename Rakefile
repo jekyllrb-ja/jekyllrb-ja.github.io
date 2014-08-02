@@ -166,7 +166,7 @@ task :create_issue, "path"
 task :create_issue do |x, args|
   path = args.path
   if path.nil?
-    fail "A file path required: e.g. create_issue['diff/docs/index.diff']"
+    fail "A file path required: e.g. create_issue['diff/_docs/index.diff']"
   elsif !File.exist?(path)
     fail "File NotFound: #{path}"
   end
@@ -211,9 +211,9 @@ desc "Check updates for doc files in original repo"
 task :check_updates, "revision"
 task :check_updates do |x, args|
   base_revision = args.revision || 'master'
-  flag = GhDiff::CLI.start(["dir_diff", "docs", "--revision=#{base_revision}"])
+  flag = GhDiff::CLI.start(["dir_diff", "_docs", "--revision=#{base_revision}"])
   puts "\e[33mDiff files:\e[0m"
-  flag |= GhDiff::CLI.start(["diff", "docs", "--commentout",
+  flag |= GhDiff::CLI.start(["diff", "_docs", "--commentout",
                                      "--revision=#{base_revision}"])
 
   # flag 0: all passed - no dir_diff & no diffs
@@ -226,9 +226,9 @@ end
 # the project root.
 desc "Save updates for doc files in original repo"
 task :save_updates do
-  GhDiff::CLI.start(["dir_diff", "docs", "--save", "--ref"])
+  GhDiff::CLI.start(["dir_diff", "_docs", "--save", "--ref"])
   puts "\e[33mDiff files:\e[0m"
-  GhDiff::CLI.start(["diff", "docs", "--commentout", "--save"])
+  GhDiff::CLI.start(["diff", "_docs", "--commentout", "--save"])
 end
 
 def build_issue_content(type, host, repo, revision, path)
