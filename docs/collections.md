@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: コレクション
+title: Collection
 prev_section: variables
 next_section: datafiles
 permalink: /docs/collections/
@@ -18,7 +18,7 @@ permalink: /docs/collections/
 -->
 
 <div class="note warning">
-  <h5>コレクションのサポートは確定しておらず、変更される可能性があります。</h5>
+  <h5>Collectionのサポートは確定しておらず、変更される可能性があります。</h5>
   <p>これは実験的な機能であり、APIはこの機能が安定するまでは変更される可能性が高いです。</p>
 </div>
 
@@ -31,20 +31,20 @@ permalink: /docs/collections/
 </div>
 -->
 
-PostとPageですべてがまかなえるわけではありません。オープンソースプロジェクトにおける各種メソッド一覧、チームのメンバー表、あるいはカンファレンスでの発表リストなどのドキュメントが必要となるかもしれません。
-コレクションを使えば、新しいタイプのドキュメント、つまり通常ではPageやPostのように振る舞い、しかし一方で、固有の属性と名前空間を持ったもの、を定義することができます。
+PostとPageですべてがまかなえるわけではありません。関わっているオープンソースプロジェクトにおける決めごとをまとめたり、チームメンバーの紹介をしたり、カンファレンスでの発表の記録を残したりしたくなることもあるでしょう。
+Collectionを使えば、新しいタイプのドキュメント、つまり通常ではPageやPostのように振る舞い、しかし一方で、固有の属性と名前空間を持ったもの、を定義することができます。
 
 <!--original
 Not everything is a post or a page. Maybe you want to document the various methods in your open source project, members of a team, or talks at a conference. Collections allow you to define a new type of document that behave like Pages or Posts do normally, but also have their own unique properties and namespace.
 -->
 
-## コレクション(Collections)の使い方
+## Collectionの使い方
 
 <!--original
 ## Using Collections
 -->
 
-### ステップ１：コレクションに読み込むようJekyllに伝える
+### ステップ１：Jekyllにあなたのコレクションを読み込ませる
 
 <!--original
 ### Step 1: Tell Jekyll to read in your collection
@@ -95,7 +95,7 @@ collections:
 -->
 
 対応するフォルダー(例えば、`<source>/_my_collection`)を作成し、ドキュメントを追加します。
-YAML front-matterがある場合は、それはデータとして読み込まれ、無い場合は、すべてのものはそのままドキュメントの`content`属性に蓄積されます。
+YAML front-matterがある場合は、それはデータとして読み込まれ、無い場合は、すべてのものはそのままドキュメントの`content`属性に挿入されます。
 
 <!--original
 Create a corresponding folder (e.g. `<source>/_my_collection`) and add documents.
@@ -108,7 +108,7 @@ YAML front-matter is read in as data if it exists, if not, then everything is ju
 Note: the folder must be named identical to the collection you defined in you config.yml file, with the addition of the preceding `_` character.
 -->
 
-### ステップ３：必要に応じてコレクションのドキュメントを独立ファイルに書き出す
+### ステップ３：必要に応じてコレクションのドキュメントを個別ファイルに書き出す
 
 <!--original
 ### Step 3: Optionally render your collection's documents into independent files
