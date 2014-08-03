@@ -201,20 +201,30 @@ task :create_issue do |x, args|
 end
 
 # This task activates `dir_diff` and `diff` commands of `gh-diff`:
-#   - dir_diff: it compares file existence in the docs directory
+#   - dir_diff: it compares file existence in target directories
 #               between original repo and local.
-#   - diff:     it takes diffs docs in original repo with commentout
+#   - diff:     it takes diffs target directories in original repo with commentout
 #               texts in local docs.
+# argument:
+#   - revision: target revision. default: 'master'
+#   - target_dir: target directories. deault: '_docs,_posts'
 # note: You need to setup some environment variables for this task.
 #       Check a README of gh-diff.
-desc "Check updates for doc files in original repo"
-task :check_updates, "revision"
-task :check_updates do |x, args|
-  base_revision = args.revision || 'master'
-  flag = GhDiff::CLI.start(["dir_diff", "_docs", "--revision=#{base_revision}"])
-  puts "\e[33mDiff files:\e[0m"
-  flag |= GhDiff::CLI.start(["diff", "_docs", "--commentout",
-                                     "--revision=#{base_revision}"])
+desc "Check updates for files in original repo"
+task :check_updates do
+  base_revision = ENV['revision'] || 'master'
+  target_dirs = ENV['target_dir'] ? ENV['target_dir'].split(',').map(&:strip) : %w(_docs _posts)
+
+  flag = 0
+  target_dirs.each do |dir|
+    puts "\e[32m#{dir}\e[0m directory checking..."
+    puts
+    flag |= GhDiff::CLI.start(["dir_diff", dir, "--revision=#{base_revision}"])
+    puts "\e[33mDiff files:\e[0m"
+    flag |= GhDiff::CLI.start(["diff", dir, "--commentout",
+                                       "--revision=#{base_revision}"])
+    puts
+  end
 
   # flag 0: all passed - no dir_diff & no diffs
   #      1: any failed - any change on dir or diff found on any of files
