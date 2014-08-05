@@ -17,7 +17,7 @@ desc "diff local and original document at BASE_REVISION"
 task :togglate do
   files = ENV['files']
   if files.nil?
-    files = `git diff --name-only HEAD~ -- docs`
+    files = `git diff --name-only HEAD~ -- _docs`
     files = files.split("\n")
   end
   puts "files: #{files}"
@@ -54,9 +54,10 @@ task :togglate do
       # output local document
       system( "#{togglate} commentout #{file} > #{local_doc}" )
       # output original document
-      file_exist = system( "curl -sf #{ORIGINAL_DOC_URL}/#{file} > #{origin_doc}" )
+      curl_file = file.gsub(/_/, '')
+      file_exist = system( "curl -sf #{ORIGINAL_DOC_URL}/#{curl_file} > #{origin_doc}" )
       unless file_exist
-        fail "`curl`: No such file - '#{ORIGINAL_DOC_URL}/#{file}'"
+        fail "`curl`: No such file - '#{ORIGINAL_DOC_URL}/#{curl_file}'"
       end
       # system( "git diff --no-index #{local_doc} #{origin_doc}" )
       system( "diff -u #{local_doc} #{origin_doc}" )
