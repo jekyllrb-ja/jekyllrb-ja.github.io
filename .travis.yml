@@ -3,6 +3,7 @@ rvm:
   - 2.1.0
 script:
   - rake togglate
+#  - rake verify_original_insertion[,]
   - rake jekyll
 notifications:
   webhooks:
