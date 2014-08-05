@@ -4,6 +4,7 @@ title: 基本的な使い方
 prev_section: installation
 next_section: structure
 permalink: /docs/usage/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -74,7 +75,7 @@ $ jekyll build --watch
     cleaned when the site is built.  Files or folders that are not
     created by your site will be removed.  Do not use an important
     location for <code>&lt;destination&gt;</code>; instead, use it as
-    a staging area and copy files from there to your web server. 
+    a staging area and copy files from there to your web server.
   </p>
 </div>
 -->
