@@ -125,11 +125,16 @@ task :verify_original_insertion do |x, args|
   path = args.path
   if path.nil?
     fail "A file path required: e.g. create_issue['diff/docs/index.diff']"
+  elsif path == ""
+    files = `git diff --name-only HEAD~ -- _docs`
+    path = files.split("\n")
   elsif !File.exist?(path) && File.directory?(path)
     fail "File NotFound: #{path}"
+  else
+    path = [path]
   end
 
-  paths = File.directory?(path) ? Dir["#{path}/**/*.{md,markdown}"] : [path]
+  paths = File.directory?(args.path) ? Dir["#{path}/**/*.{md,markdown}"] : path
 
   # HELP!:
   # Thread doesnt' work correctly. Sometimes Errno::ENOENT exception
