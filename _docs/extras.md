@@ -4,7 +4,7 @@ title: Extras
 prev_section: plugins
 next_section: github-pages
 permalink: /docs/extras/
-Base revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
