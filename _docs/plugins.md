@@ -890,7 +890,7 @@ You can find a few useful plugins at the following locations:
 - [Compass integration for Jekyll](https://github.com/mscharley/jekyll-compass): CompassおよびSassをJekyllのウェブサイトに簡単に統合する。
 - [Pages Directory by Ben Baker-Smith](https://github.com/bbakersmith/jekyll-pages-directory): pageファイル群のための`_pages`ディレクトリを定義し、それがプロジェクトのルートに対する出力先を作る。
 - [Page Collections by Jeff Kolesky](https://github.com/jeffkole/jekyll-page-collections): Postに似た機能を持ったPageのコレクションを生成する。
-- [Windows 8.1 Live Tile Generation by Matt Sheehan](https://github.com/sheehamj13/jekyll-live-tiles): インターネットエクスプローラー11のconfig.xmlファイルおよびタイルテンプレートを生成し、サイトをWindows 8.1に貼り付ける。
+- [Windows 8.1 Live Tile Generation by Matt Sheehan](https://github.com/sheehamj13/jekyll-live-tiles): インターネットエクスプローラー11のconfig.xmlファイルおよびタイルテンプレートを生成し、サイトをWindows 8.1専用にする。
 - [Jekyll::AutolinkEmail by Ivan Tse](https://github.com/ivantsepp/jekyll-autolink_email): e-mailの自動リンク。
 - [Jekyll::GitMetadata by Ivan Tse](https://github.com/ivantsepp/jekyll-git_metadata): テンプレートにおけるGitのメタデータを公開する。
 
@@ -1137,7 +1137,7 @@ You can find a few useful plugins at the following locations:
 - [generator-jekyllrb](https://github.com/robwierzbowski/generator-jekyllrb): Jekyllを[Yeoman](http://yeoman.io/)でラップするジェネレータ。Yeomanは、最新のWebアプリを構築するためのツールセットおよびワークフローである。
 - [grunt-jekyll](https://github.com/dannygarcia/grunt-jekyll): 文字通りのJekyll用[Grunt](http://gruntjs.com/)プラグイン。
 - [jekyll-postfiles](https://github.com/indirect/jekyll-postfiles): `_postfiles`ディレクトリと{% raw %}`{{ postfile }}`{% endraw %}タグを追加し、postから参照するファイルを常にpostのすぐそばに置けるようにする。
-- [A layout that compresses HTML](https://github.com/penibelst/jekyll-compress-html) by [Anatol Broder](http://penibelst.de/): Github Pagesに適合し、設定可能な方法で、サイトの生成時にHTMLを圧縮する。
+- [A layout that compresses HTML](https://github.com/penibelst/jekyll-compress-html) by [Anatol Broder](http://penibelst.de/): サイト生成時に作動するHTML圧縮用プラグイン。GitHub Pages対応。圧縮方法は設定可能。
 - [Jekyll CO₂](https://github.com/wdenton/jekyll-co2): ハワイ州マウナロア観測所における大気中CO₂の月ごとの変化を表示するHTMLを生成する。
 
 <!--original
