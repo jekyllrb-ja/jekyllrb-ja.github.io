@@ -12,7 +12,7 @@ base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 layout: docs
 title: Variables
 prev_section: pages
-next_section: datafiles
+next_section: collections
 permalink: /docs/variables/
 ---
 -->
@@ -617,7 +617,7 @@ following is a reference of the available data.
       <td><p><code>page.next</code></p></td>
       <td><p>
 
-        The next post relative to the position of the current post in 
+        The next post relative to the position of the current post in
         <code>site.posts</code>. Returns <code>nil</code> for the last entry.
 
       </p></td>
@@ -626,7 +626,7 @@ following is a reference of the available data.
       <td><p><code>page.previous</code></p></td>
       <td><p>
 
-        The previous post relative to the position of the current post in 
+        The previous post relative to the position of the current post in
         <code>site.posts</code>. Returns <code>nil</code> for the first entry.
 
       </p></td>
