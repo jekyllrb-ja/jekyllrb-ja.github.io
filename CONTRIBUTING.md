@@ -19,7 +19,7 @@
 
 ## 原文への追従
 
-この翻訳プロジェクトでは、原文[(jekyll/jekyll)](https://github.com/jekyll/jekyll)への追従を再優先しています。追従状況は [Issues](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/issues) のラベル `Original Updated` と `Original Created` で確認できます。
+この翻訳プロジェクトでは、原文[(jekyll/jekyll)](https://github.com/jekyll/jekyll)への追従を最優先しています。追従状況は [Issues](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/issues) のラベル `Original Updated` と `Original Created` で確認できます。
 
 - [`Original Updated`](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/labels/Original%20Updated) ← **原文の変更に訳文が追従できていないファイル一覧**
 - [`Original Created`](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/labels/Original%20Created) ← **翻訳作業が未着手なファイル一覧**
@@ -36,7 +36,7 @@
     - `Diff:` で指定されている .diff ファイル
     - `File:` で指定されている .md ファイル
   - 変更を .diff ファイルで確認し、`/docs/` 配下の該当 .md ファイルの原文・日本語訳に反映する
-  - 該当ファイルの YAML front-matter の base_revision キーを .diffファイルの一行目で置き換える( base_revision キーがない場合は挿入する)
+  - 該当ファイルの YAML front-matter の `base_revision` キーを .diffファイルの一行目で置き換える( base_revision キーがない場合は挿入する)
 1. トピックブランチをプッシュする ( `git push origin my_awesome_feature` )
 1. jekyllrb-ja/jekyllrb-ja.github.io プロジェクトの `master` ブランチに対して Pull Request を作成する
   - 該当のIssueを閉じられるような Pull Request の場合は、description のところに `fix #<issue番号>` と書いておく 例：[#192](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/pull/192)
