@@ -207,20 +207,30 @@ task :create_issue do |x, args|
 end
 
 # This task activates `dir_diff` and `diff` commands of `gh-diff`:
-#   - dir_diff: it compares file existence in the docs directory
+#   - dir_diff: it compares file existence in target directories
 #               between original repo and local.
-#   - diff:     it takes diffs docs in original repo with commentout
+#   - diff:     it takes diffs target directories in original repo with commentout
 #               texts in local docs.
+# arguments:
+#   - revision: target revision. default: 'master'
+#   - target_dir: target directories. deault: '_docs,_posts'
 # note: You need to setup some environment variables for this task.
 #       Check a README of gh-diff.
-desc "Check updates for doc files in original repo"
-task :check_updates, "revision"
-task :check_updates do |x, args|
-  base_revision = args.revision || 'master'
-  flag = GhDiff::CLI.start(["dir_diff", "_docs", "--revision=#{base_revision}"])
-  puts "\e[33mDiff files:\e[0m"
-  flag |= GhDiff::CLI.start(["diff", "_docs", "--commentout",
-                                     "--revision=#{base_revision}"])
+desc "Check updates for files in original repo"
+task :check_updates do
+  base_revision = ENV['revision'] || 'master'
+  target_dirs = ENV['target_dir'] ? ENV['target_dir'].split(',').map(&:strip) : %w(_docs _posts)
+
+  flag = 0
+  target_dirs.each do |dir|
+    puts "\e[32m#{dir}\e[0m directory checking..."
+    puts
+    flag |= GhDiff::CLI.start(["dir_diff", dir, "--revision=#{base_revision}"])
+    puts "\e[33mDiff files:\e[0m"
+    flag |= GhDiff::CLI.start(["diff", dir, "--commentout",
+                                       "--revision=#{base_revision}"])
+    puts
+  end
 
   # flag 0: all passed - no dir_diff & no diffs
   #      1: any failed - any change on dir or diff found on any of files
@@ -230,11 +240,22 @@ end
 # This task activates `dir_diff` and `diff` commands of `gh-diff`
 # with save option. Files will be saved to 'diff' directory of
 # the project root.
-desc "Save updates for doc files in original repo"
+# arguments: same as 'check_updates' task.
+desc "Save updates for files in original repo"
 task :save_updates do
-  GhDiff::CLI.start(["dir_diff", "_docs", "--save", "--ref"])
-  puts "\e[33mDiff files:\e[0m"
-  GhDiff::CLI.start(["diff", "_docs", "--commentout", "--save"])
+  base_revision = ENV['revision'] || 'master'
+  target_dirs = ENV['target_dir'] ? ENV['target_dir'].split(',').map(&:strip) : %w(_docs _posts)
+
+  flag = 0
+  target_dirs.each do |dir|
+    puts "\e[32m#{dir}\e[0m directory checking..."
+    puts
+    flag |= GhDiff::CLI.start(["dir_diff", dir, "--save", "--ref", "--revision=#{base_revision}"])
+    puts "\e[33mDiff files:\e[0m"
+    flag |= GhDiff::CLI.start(["diff", dir, "--commentout", "--save", "--revision=#{base_revision}"])
+    puts
+  end
+  flag
 end
 
 def build_issue_content(type, host, repo, revision, path)
