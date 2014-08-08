@@ -4,6 +4,7 @@ title: ディレクトリ構成
 prev_section: usage
 next_section: configuration
 permalink: /docs/structure/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -334,9 +335,9 @@ An overview of what each of these does:
       <td>
         <p>
 
-          Well-formatted site data should be placed here. The jekyll engine will 
-          autoload all yaml files (ends with <code>.yml</code> or <code>.yaml</code>) 
-          in this directory. If there's a file <code>members.yml</code> under the directory, 
+          Well-formatted site data should be placed here. The jekyll engine will
+          autoload all yaml files (ends with <code>.yml</code> or <code>.yaml</code>)
+          in this directory. If there's a file <code>members.yml</code> under the directory,
           then you can access contents of the file through <code>site.data.members</code>.
 
         </p>
