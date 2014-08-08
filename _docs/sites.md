@@ -4,6 +4,7 @@ title: Jekyllを使ったサイト
 prev_section: troubleshooting
 next_section: resources
 permalink: /docs/sites/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -31,8 +32,8 @@ learning purposes.
     ([ソース](https://github.com/qrush/qrush.github.com))
 - [Roger Chapmanのブログ](http://rogchap.com/)
     ([ソース](https://github.com/rogchap/rogchap.github.com))
-- [GitHub 公式 教育資料](http://teach.github.com)
-    ([ソース](https://github.com/github/teach.github.com))
+- [GitHub 公式 教育資料](http://training.github.com)
+    ([ソース](https://github.com/github/training.github.com/tree/7049d7532a6856411e34046aedfce43a4afaf424))
 - [Rasmus Anderssonのブログ](http://rsms.me/)
     ([ソース](https://github.com/rsms/rsms.github.com))
 - [Scott Chaconのブログ](http://schacon.github.com)
@@ -45,8 +46,8 @@ learning purposes.
     ([source](https://github.com/qrush/qrush.github.com))
 - [Roger Chapman](http://rogchap.com/)
     ([source](https://github.com/rogchap/rogchap.github.com))
-- [GitHub Official Teaching Materials](http://teach.github.com)
-    ([source](https://github.com/github/teach.github.com))
+- [GitHub Official Teaching Materials](http://training.github.com)
+    ([source](https://github.com/github/training.github.com/tree/7049d7532a6856411e34046aedfce43a4afaf424))
 - [Rasmus Andersson](http://rsms.me/)
     ([source](https://github.com/rsms/rsms.github.com))
 - [Scott Chacon](http://schacon.github.com)
