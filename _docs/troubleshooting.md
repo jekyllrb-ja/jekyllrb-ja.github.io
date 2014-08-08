@@ -4,6 +4,7 @@ title: トラブルシューティング
 prev_section: deployment-methods
 next_section: sites
 permalink: /docs/troubleshooting/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -18,13 +19,13 @@ permalink: /docs/troubleshooting/
 
 あなたが今までJekyllのインストールや使用した際に問題が発生した場合、
 いくつか助けになるかもしれないヒントがあります。以下にあるヒントでも解決しない場合、
-[その問題を報告(英語)]({{ site.repository }}/issues/new) してください。そうすることで
+[その問題を報告(英語)]({{site.help_url}}/issues/new) してください。そうすることで
 Jekyll コミュニティはすべての人によりよい体験を与えられます。
 
 <!--original
-If you ever run into problems installing or using Jekyll, here's a few tips
+If you ever run into problems installing or using Jekyll, here are a few tips
 that might be of help. If the problem you’re experiencing isn’t covered below,
-please [report an issue]({{ site.repository }}/issues/new) so the
+please [report an issue]({{site.help_url}}/issues/new) so the
 Jekyll community can make everyone’s experience better.
 -->
 
@@ -147,12 +148,12 @@ sudo emerge -av dev-ruby/rubygems
 {% endhighlight %}
 -->
 
-Windows では[RubyInstaller DevKit](http://wiki.github.com/oneclick/rubyinstaller/development-kit)
+Windows では[RubyInstaller DevKit](https://wiki.github.com/oneclick/rubyinstaller/development-kit)
 をインストールする必要があります。
 
 <!--original
 On Windows, you may need to install [RubyInstaller
-DevKit](http://wiki.github.com/oneclick/rubyinstaller/development-kit).
+DevKit](https://wiki.github.com/oneclick/rubyinstaller/development-kit).
 -->
 
 ## Jekyllの実行での問題
@@ -307,30 +308,6 @@ XHTML.](http://www.w3.org/TR/xhtml1/#C_3) An easy fix is to put a space
 between the opening and closing tags.
 -->
 
-### RedCloth
-
-<!--original
-### RedCloth
--->
-
-バージョン4.1.1以降ではnotextileタグに従いません。
-[これは既知のバグで](http://aaronqian.com/articles/2009/04/07/redcloth-ate-my-notextile.html)
-うまくいけばバージョン4.2で修正されるでしょう。
-あなたはまだバージョン4.1.9を利用できますが、テストスイートは、4.1.0がインストールされている必要があります。
-あなたがnotextileタグを持たないRedClothのバージョンを使用する場合、
-Pygments や Rougeからのシンタックス・ハイライトのブロックが正しくフォーマットされてないことに気づくかもしれません。
-その場合は、バージョン4.1.0がインストールされています。
-
-<!--original
-Versions 4.1.1 and higher do not obey the notextile tag. [This is a known
-bug](http://aaronqian.com/articles/2009/04/07/redcloth-ate-my-notextile.html)
-and will hopefully be fixed for 4.2. You can still use 4.1.9, but the
-test suite requires that 4.1.0 be installed. If you use a version of
-RedCloth that does not have the notextile tag, you may notice that
-syntax highlighted blocks from Pygments or Rouge are not formatted
-correctly, among other things. If you’re seeing this just install 4.1.0.
--->
-
 ### Liquid
 
 <!--original
@@ -377,13 +354,21 @@ run into these errors, try setting `excerpt_separator: ""` in your
 -->
 
 <div class="note">
-  <h5>あなたの遭遇した問題を報告してください</h5>
-  <p>もしバグに遭遇した場合、他の方の為に我々が文書化できるように問題と回避策についてのGitHubに<a href="{{ site.repository }}/issues/new">Issueを作成</a>してください。
+  <h5>あなたが遭遇した問題を報告してください!</h5>
+  <p>
+  もしバグに遭遇した場合、GitHubに<a href="{{ site.help_url }}/issues/new">Issueを作成</a>し、
+  問題と、あなたが見つけた回避策があればそれも記述してください。
+  そうすれば、我々がそれをこのページに文書化して共有することができます。
+  </p>
 </div>
 
 <!--original
 <div class="note">
   <h5>Please report issues you encounter!</h5>
-  <p>If you come across a bug, please <a href="{{ site.repository }}/issues/new">create an issue</a> on GitHub describing the problem and any work-arounds you find so we can document it here for others.</p>
+  <p>
+  If you come across a bug, please <a href="{{ site.help_url }}/issues/new">create an issue</a>
+  on GitHub describing the problem and any work-arounds you find so we can
+  document it here for others.
+  </p>
 </div>
 -->
