@@ -4,6 +4,7 @@ title: プラグイン
 prev_section: pagination
 next_section: extras
 permalink: /docs/plugins/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -148,7 +149,7 @@ ignored. Jekyll does not assume any particular side-effect to happen, it just
 runs the method.
 -->
 
-ジェネレータは、Jekyllが存在するコンテンツの目録を作った後、サイトが生成される前に、動作します。YAML front-matterを備えたpageは、[`Jekyll::Page`]({{ site.repository }}/blob/master/lib/jekyll/page.rb)のインスタンスとして格納され、`site.pages`を通して利用可能になります。静的ファイルは、[`Jekyll::StaticFile`]({{ site.repository }}/blob/master/lib/jekyll/static_file.rb)のインスタンスになり、`site.static_files`を通して利用可能になります。詳しくは、[`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb)を確認して下さい。
+ジェネレータは、Jekyllが存在するコンテンツの目録を作った後、サイトが生成される前に、動作します。YAML front-matterを備えたpageは、[`Jekyll::Page`]({{ site.repository }}/blob/master/lib/jekyll/page.rb)のインスタンスとして格納され、`site.pages`を通して利用可能になります。静的ファイルは、[`Jekyll::StaticFile`]({{ site.repository }}/blob/master/lib/jekyll/static_file.rb)のインスタンスになり、`site.static_files`を通して利用可能になります。詳しくは、[変数のページ](/docs/variables/)および[`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb)を確認して下さい。
 
 <!--original
 Generators run after Jekyll has made an inventory of the existing content, and
@@ -158,6 +159,7 @@ instances of
 and are available via `site.pages`. Static files become instances of
 [`Jekyll::StaticFile`]({{ site.repository }}/blob/master/lib/jekyll/static_file.rb)
 and are available via `site.static_files`. See
+[the Variables documentation page](/docs/variables/) and
 [`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb)
 for more details.
 -->
@@ -887,6 +889,10 @@ You can find a few useful plugins at the following locations:
 - [Emoji for Jekyll](https://github.com/yihangho/emoji-for-jekyll): 全postおよびpageでシームレスに利用可能な絵文字。
 - [Compass integration for Jekyll](https://github.com/mscharley/jekyll-compass): CompassおよびSassをJekyllのウェブサイトに簡単に統合する。
 - [Pages Directory by Ben Baker-Smith](https://github.com/bbakersmith/jekyll-pages-directory): pageファイル群のための`_pages`ディレクトリを定義し、それがプロジェクトのルートに対する出力先を作る。
+- [Page Collections by Jeff Kolesky](https://github.com/jeffkole/jekyll-page-collections): Postに似た機能を持ったPageのコレクションを生成する。
+- [Windows 8.1 Live Tile Generation by Matt Sheehan](https://github.com/sheehamj13/jekyll-live-tiles): インターネットエクスプローラー11のconfig.xmlファイルおよびタイルテンプレートを生成し、サイトをWindows 8.1専用にする。
+- [Jekyll::AutolinkEmail by Ivan Tse](https://github.com/ivantsepp/jekyll-autolink_email): e-mailの自動リンク。
+- [Jekyll::GitMetadata by Ivan Tse](https://github.com/ivantsepp/jekyll-git_metadata): テンプレートにおけるGitのメタデータを公開する。
 
 <!--original
 - [ArchiveGenerator by Ilkka Laukkanen](https://gist.github.com/707909): Uses [this archive page](https://gist.github.com/707020) to generate archives.
@@ -903,6 +909,10 @@ You can find a few useful plugins at the following locations:
 - [Emoji for Jekyll](https://github.com/yihangho/emoji-for-jekyll): Seamlessly enable emoji for all posts and pages.
 - [Compass integration for Jekyll](https://github.com/mscharley/jekyll-compass): Easily integrate Compass and Sass with your Jekyll website.
 - [Pages Directory by Ben Baker-Smith](https://github.com/bbakersmith/jekyll-pages-directory): Defines a `_pages` directory for page files which routes its output relative to the project root.
+- [Page Collections by Jeff Kolesky](https://github.com/jeffkole/jekyll-page-collections): Generates collections of pages with functionality that resembles posts.
+- [Windows 8.1 Live Tile Generation by Matt Sheehan](https://github.com/sheehamj13/jekyll-live-tiles): Generates Internet Explorer 11 config.xml file and Tile Templates for pinning your site to Windows 8.1.
+- [Jekyll::AutolinkEmail by Ivan Tse](https://github.com/ivantsepp/jekyll-autolink_email): Autolink your emails.
+- [Jekyll::GitMetadata by Ivan Tse](https://github.com/ivantsepp/jekyll-git_metadata): Expose Git metadata for your templates.
 -->
 
 #### コンバータ
@@ -924,9 +934,9 @@ You can find a few useful plugins at the following locations:
 - [ReStructuredText Converter](https://github.com/xdissent/jekyll-rst): ReSTドキュメントを、PygmentsシンタックスハイライトでHTMLに変換する。
 - [Jekyll-pandoc-plugin](https://github.com/dsanson/jekyll-pandoc-plugin): markdownをレンダリングするためにpandocを使う。
 - [Jekyll-pandoc-multiple-formats](https://github.com/fauno/jekyll-pandoc-multiple-formats) by [edsl](https://github.com/edsl): pandocを使って複数のフォーマットでサイトを生成する。pandocのmarkdown拡張をサポート。
-- [ReStructuredText Converter](https://github.com/xdissent/jekyll-rst): ReSTドキュメントを、PygmentsシンタックスハイライトでHTMLに変換する。
 - [Transform Layouts](https://gist.github.com/1472645): HAMLレイアウトを可能にする(これを機能させるには、HAMLコンバータプラグインが必要)。
 - [Org-mode Converter](https://gist.github.com/abhiyerra/7377603): Jekyll用Org-modeコンバータ。
+- [Customized Kramdown Converter](https://github.com/mvdbos/kramdown-with-pygments): Kramdownでパースされるフェンスコードブロックに対し、Pygmentsによるシンタックスハイライトを使えるようにする。
 
 <!--original
 - [Jade plugin by John Papandriopoulos](https://github.com/snappylabs/jade-jekyll-plugin): Jade converter for Jekyll.
@@ -942,9 +952,9 @@ You can find a few useful plugins at the following locations:
 - [ReStructuredText Converter](https://github.com/xdissent/jekyll-rst): Converts ReST documents to HTML with Pygments syntax highlighting.
 - [Jekyll-pandoc-plugin](https://github.com/dsanson/jekyll-pandoc-plugin): Use pandoc for rendering markdown.
 - [Jekyll-pandoc-multiple-formats](https://github.com/fauno/jekyll-pandoc-multiple-formats) by [edsl](https://github.com/edsl): Use pandoc to generate your site in multiple formats. Supports pandoc’s markdown extensions.
-- [ReStructuredText Converter](https://github.com/xdissent/jekyll-rst): Converts ReST documents to HTML with Pygments syntax highlighting.
 - [Transform Layouts](https://gist.github.com/1472645): Allows HAML layouts (you need a HAML Converter plugin for this to work).
 - [Org-mode Converter](https://gist.github.com/abhiyerra/7377603): Org-mode converter for Jekyll.
+- [Customized Kramdown Converter](https://github.com/mvdbos/kramdown-with-pygments): Enable Pygments syntax highlighting for Kramdown-parsed fenced code blocks.
 -->
 
 #### フィルタ
@@ -959,13 +969,15 @@ You can find a few useful plugins at the following locations:
 - [URL encoding by James An](https://gist.github.com/919275): URIパーセントエンコーディング。
 - [JSON Filter](https://gist.github.com/1850654) by [joelverhagen](https://github.com/joelverhagen): 入力テキストを得てJSONとして出力するフィルタ。JavaScriptをレンダリングするのに好適。
 - [i18n_filter](https://github.com/gacha/gacha.id.lv/blob/master/_plugins/i18n_filter.rb): I18nローカライゼーションに使うLiquidフィルタ。
-- [Smilify](https://github.com/SaswatPadhi/jekyll_smilify) by [SaswatPadhi](https://github.com/SaswatPadhi): コンテンツ内の顔文字テキスト(emoticons)をテーマ別顔文字画像に変換する([デモ](http://saswatpadhi.github.com/))。
+- [Smilify](https://github.com/SaswatPadhi/jekyll_smilify) by [SaswatPadhi](https://github.com/SaswatPadhi): コンテンツ内の顔文字テキスト(emoticons)をテーマ別顔文字画像に変換する。
 - [Read in X Minutes](https://gist.github.com/zachleat/5792681) by [zachleat](https://github.com/zachleat): 文字列(ブログ記事のコンテンツ)のリーディング時間を見積る。
 - [Jekyll-timeago](https://github.com/markets/jekyll-timeago): 時間値を時間経過の単語に変換する。
 - [pluralize](https://github.com/bdesham/pluralize): 数字と単語を文法的に正しい量(例：“1 minute” or “2 minute**s**”)で簡単に結合する。
 - [reading_time](https://github.com/bdesham/reading_time): 単語をカウントし、テキスト片のリーディング時間を見積る。この場合、対象テキストとして含めるにそぐわないHTML要素は無視される。
 - [Table of Content Generator](https://github.com/dafi/jekyll-toc-generator): 目次(TOC)を含むHTMLコードを生成する。目次は多様な方法でカスタマイズ可能であり、例えば、目次を持たないページを指定できる。
 - [jekyll-humanize](https://github.com/23maverick23/jekyll-humanize): これはDjangoアプリhumanizeの移植版で、データに"人間らしさ"を追加する。各メソッドは、Fluidタイプフィルタを表し、Jekyllサイトのテンプレートで利用可能。Jekyllは静的サイトを生成するので、いくつかのオリジナルメソッドは移植版において論理的な意味をなさない(例：naturaltime)。
+- [Jekyll-Ordinal](https://github.com/PatrickC8t/Jekyll-Ordinal): "st"、"nd"、"rd"、"th"などの日付けの序数を出力するJekyllのLiquidフィルタ。
+- [Deprecated articles keeper](https://github.com/kzykbys/JekyllPlugins) by [Kazuya Kobayashi](http://blog.kazuya.co/): 記事の古さを監視するシンプルなJekyllフィルタ。
 
 <!--original
 - [Truncate HTML](https://github.com/MattHall/truncatehtml) by [Matt Hall](http://codebeef.com): A Jekyll filter that truncates HTML while preserving markup structure.
@@ -974,13 +986,15 @@ You can find a few useful plugins at the following locations:
 - [URL encoding by James An](https://gist.github.com/919275): Percent encoding for URIs.
 - [JSON Filter](https://gist.github.com/1850654) by [joelverhagen](https://github.com/joelverhagen): Filter that takes input text and outputs it as JSON. Great for rendering JavaScript.
 - [i18n_filter](https://github.com/gacha/gacha.id.lv/blob/master/_plugins/i18n_filter.rb): Liquid filter to use I18n localization.
-- [Smilify](https://github.com/SaswatPadhi/jekyll_smilify) by [SaswatPadhi](https://github.com/SaswatPadhi): Convert text emoticons in your content to themeable smiley pics ([Demo](http://saswatpadhi.github.com/)).
+- [Smilify](https://github.com/SaswatPadhi/jekyll_smilify) by [SaswatPadhi](https://github.com/SaswatPadhi): Convert text emoticons in your content to themeable smiley pics.
 - [Read in X Minutes](https://gist.github.com/zachleat/5792681) by [zachleat](https://github.com/zachleat): Estimates the reading time of a string (for blog post content).
 - [Jekyll-timeago](https://github.com/markets/jekyll-timeago): Converts a time value to the time ago in words.
 - [pluralize](https://github.com/bdesham/pluralize): Easily combine a number and a word into a gramatically-correct amount like “1 minute” or “2 minute**s**”.
 - [reading_time](https://github.com/bdesham/reading_time): Count words and estimate reading time for a piece of text, ignoring HTML elements that are unlikely to contain running text.
 - [Table of Content Generator](https://github.com/dafi/jekyll-toc-generator): Generate the HTML code containing a table of content (TOC), the TOC can be customized in many way, for example you can decide which pages can be without TOC.
 - [jekyll-humanize](https://github.com/23maverick23/jekyll-humanize): This is a port of the Django app humanize which adds a "human touch" to data. Each method represents a Fluid type filter that can be used in your Jekyll site templates. Given that Jekyll produces static sites, some of the original methods do not make logical sense to port (e.g. naturaltime).
+- [Jekyll-Ordinal](https://github.com/PatrickC8t/Jekyll-Ordinal): Jekyll liquid filter to output a date ordinal such as "st", "nd", "rd", or "th".
+- [Deprecated articles keeper](https://github.com/kzykbys/JekyllPlugins) by [Kazuya Kobayashi](http://blog.kazuya.co/): A simple Jekyll filter which monitor how old an article is.
 -->
 
 #### タグ
@@ -991,7 +1005,7 @@ You can find a few useful plugins at the following locations:
 
 - [Asset Path Tag](https://github.com/samrayner/jekyll-asset-path-plugin) by [Sam Rayner](http://www.samrayner.com/): 与えられたファイルのpostまたはpageに対する相対パスを出力することで、アセットをサブディレクトリに整理できるようにする。
 - [Delicious Plugin by Christian Hellsten](https://github.com/christianhellsten/jekyll-plugins): delicious.comからブックマークを取得しレンダリングする。
-- [Ultraviolet Plugin by Steve Alex](https://gist.github.com/480380): [Ultraviolet](http://ultraviolet.rubyforge.org/)コードハイライターのためのJekyllタグ。
+- [Ultraviolet Plugin by Steve Alex](https://gist.github.com/480380): [Ultraviolet](https://github.com/grosser/ultraviolet)コードハイライターのためのJekyllタグ。
 - [Tag Cloud Plugin by Ilkka Laukkanen](https://gist.github.com/710577): タグページにリンクしたタグクラウドを生成する。
 - [GIT Tag by Alexandre Girard](https://gist.github.com/730347): リスト内にGitのアクティビティを追加する。
 - [MathJax Liquid Tags by Jessy Cowan-Sharp](https://gist.github.com/834610): インラインおよびブロック引用の数式を、適切なMathJaxスクリプトタグに変換するJekyll用のシンプルなLiquidタグ。
@@ -1027,11 +1041,17 @@ You can find a few useful plugins at the following locations:
 - [Jekyll Quick Man](https://github.com/GSI/jekyll_quick_man) by [GSI](https://github.com/GSI): インターネット上のmanページのソースへのちょっとしたリンクをレンダリングするタグ。
 - [jekyll-font-awesome](https://gist.github.com/23maverick23/8532525): postにFont Awesomeのアイコンを簡単に追加する。
 - [Lychee Gallery Tag](https://gist.github.com/tobru/9171700) by [tobru](https://github.com/tobru): postに[Lychee](http://lychee.electerious.com/)アルバムを挿入する。はじめに、[Jekyll meets Lychee - A Liquid Tag plugin](https://tobrunet.ch/articles/jekyll-meets-lychee-a-liquid-tag-plugin/)を参照のこと。
+- [Image Set/Gallery Tag](https://github.com/callmeed/jekyll-image-set) by [callmeed](https://github.com/callmeed): Jekyllサイトの特定フォルダから画像ギャラリーのためのHTMLをレンダリングする。フォルダ名とclass/tagオプションを渡します。
+- [jekyll_figure](https://github.com/lmullen/jekyll_figure): 図と見出しを複数のフォーマットの画像リンクと共に生成する。
+- [Jekyll Github Sample Tag](https://github.com/bwillis/jekyll-github-sample): GitHubリポジトリファイルのサンプルをJekyllサイトに含めるためのLiquidタグ。
+- [Jekyll Project Version Tag](https://github.com/rob-murray/jekyll-version-plugin): Jekyllサイトのバージョン識別子をレンダリングするLiquidタグプラグイン。識別子はサイトのコードを管理するgitリポジトリから取得される。
+- [Piwigo Gallery](https://github.com/AlessandroLorenzi/piwigo_gallery) by [Alessandro Lorenzi](http://www.alorenzi.eu/): Piwigoギャラリーからサムネイルを生成し、Liquidタグを使って表示するためのJekyllプラグイン。
+
 
 <!--original
 - [Asset Path Tag](https://github.com/samrayner/jekyll-asset-path-plugin) by [Sam Rayner](http://www.samrayner.com/): Allows organisation of assets into subdirectories by outputting a path for a given file relative to the current post or page.
 - [Delicious Plugin by Christian Hellsten](https://github.com/christianhellsten/jekyll-plugins): Fetches and renders bookmarks from delicious.com.
-- [Ultraviolet Plugin by Steve Alex](https://gist.github.com/480380): Jekyll tag for the [Ultraviolet](http://ultraviolet.rubyforge.org/) code highligher.
+- [Ultraviolet Plugin by Steve Alex](https://gist.github.com/480380): Jekyll tag for the [Ultraviolet](https://github.com/grosser/ultraviolet) code highligher.
 - [Tag Cloud Plugin by Ilkka Laukkanen](https://gist.github.com/710577): Generate a tag cloud that links to tag pages.
 - [GIT Tag by Alexandre Girard](https://gist.github.com/730347): Add Git activity inside a list.
 - [MathJax Liquid Tags by Jessy Cowan-Sharp](https://gist.github.com/834610): Simple liquid tags for Jekyll that convert inline math and block equations to the appropriate MathJax script tags.
@@ -1067,6 +1087,12 @@ You can find a few useful plugins at the following locations:
 - [Jekyll Quick Man](https://github.com/GSI/jekyll_quick_man) by [GSI](https://github.com/GSI): Tag that renders pretty links to man page sources on the internet.
 - [jekyll-font-awesome](https://gist.github.com/23maverick23/8532525): Quickly and easily add Font Awesome icons to your posts.
 - [Lychee Gallery Tag](https://gist.github.com/tobru/9171700) by [tobru](https://github.com/tobru): Include [Lychee](http://lychee.electerious.com/) albums into a post. For an introduction, see [Jekyll meets Lychee - A Liquid Tag plugin](https://tobrunet.ch/articles/jekyll-meets-lychee-a-liquid-tag-plugin/)
+- [Image Set/Gallery Tag](https://github.com/callmeed/jekyll-image-set) by [callmeed](https://github.com/callmeed): Renders HTML for an image gallery from a folder in your Jekyll site. Just pass it a folder name and class/tag options.
+- [jekyll_figure](https://github.com/lmullen/jekyll_figure): Generate figures and captions with links to the figure in a variety of formats
+- [Jekyll Github Sample Tag](https://github.com/bwillis/jekyll-github-sample): A liquid tag to include a sample of a github repo file in your Jekyll site.
+- [Jekyll Project Version Tag](https://github.com/rob-murray/jekyll-version-plugin): A Liquid tag plugin that renders a version identifier for your Jekyll site sourced from the git repository containing your code.
+- [Piwigo Gallery](https://github.com/AlessandroLorenzi/piwigo_gallery) by [Alessandro Lorenzi](http://www.alorenzi.eu/): Jekyll plugin to generate thumbnails from a Piwigo gallery and display them with a Liquid tag
+
 -->
 
 #### コレクション
@@ -1104,12 +1130,15 @@ You can find a few useful plugins at the following locations:
 - [Jekyll-scholar](https://github.com/inukshuk/jekyll-scholar): 学術研究向けブログのためのJekyll拡張。
 - [Jekyll-asset_bundler](https://github.com/moshen/jekyll-asset_bundler): JavaScriptとCSSをバンドルしミニファイする。
 - [Jekyll-assets](http://ixti.net/jekyll-assets/) by [ixti](https://github.com/ixti): Rails風アセットパイプライン(アセットをCoffeeScript, Sass, LESSなどで書いて、アセット内の簡単な宣言的コメントで自動バンドリングのための依存関係を指定し、ミニファイおよび圧縮を実行し、JSTテンプレートを使用し、キャッシュ消去(cache bust)をし、その他諸々をする)。
+- [JAPR](https://github.com/kitsched/japr): Jekyll Asset Pipeline Reborn - JavaScriptおよびCSSファイル群を収集、変換および圧縮するJekyll用の強力なアセットパイプライン。
 - [File compressor](https://gist.github.com/2758691) by [mytharcher](https://github.com/mytharcher): サイトのビルドにおいてHTMLおよびJavaScriptファイルを圧縮する。
 - [Jekyll-minibundle](https://github.com/tkareine/jekyll-minibundle): アセットのバンドリングおよびキャッシュ消去(cache busting)を、指定の外部ミニファイツールを使って行う。他のGemに依存しない。
 - [Singlepage-jekyll](https://github.com/JCB-K/singlepage-jekyll) by [JCB-K](https://github.com/JCB-K): Jekyllを動的な単一ページWebサイトに変える。
 - [generator-jekyllrb](https://github.com/robwierzbowski/generator-jekyllrb): Jekyllを[Yeoman](http://yeoman.io/)でラップするジェネレータ。Yeomanは、最新のWebアプリを構築するためのツールセットおよびワークフローである。
 - [grunt-jekyll](https://github.com/dannygarcia/grunt-jekyll): 文字通りのJekyll用[Grunt](http://gruntjs.com/)プラグイン。
 - [jekyll-postfiles](https://github.com/indirect/jekyll-postfiles): `_postfiles`ディレクトリと{% raw %}`{{ postfile }}`{% endraw %}タグを追加し、postから参照するファイルを常にpostのすぐそばに置けるようにする。
+- [A layout that compresses HTML](https://github.com/penibelst/jekyll-compress-html) by [Anatol Broder](http://penibelst.de/): サイト生成時に作動するHTML圧縮用プラグイン。GitHub Pages対応。圧縮方法は設定可能。
+- [Jekyll CO₂](https://github.com/wdenton/jekyll-co2): ハワイ州マウナロア観測所における大気中CO₂の月ごとの変化を表示するHTMLを生成する。
 
 <!--original
 - [Pygments Cache Path by Raimonds Simanovskis](https://github.com/rsim/blog.rayapps.com/blob/master/_plugins/pygments_cache_patch.rb): Plugin to cache syntax-highlighted code from Pygments.
@@ -1125,12 +1154,15 @@ You can find a few useful plugins at the following locations:
 - [Jekyll-scholar](https://github.com/inukshuk/jekyll-scholar): Jekyll extensions for the blogging scholar.
 - [Jekyll-asset_bundler](https://github.com/moshen/jekyll-asset_bundler): Bundles and minifies JavaScript and CSS.
 - [Jekyll-assets](http://ixti.net/jekyll-assets/) by [ixti](https://github.com/ixti): Rails-alike assets pipeline (write assets in CoffeeScript, Sass, LESS etc; specify dependencies for automatic bundling using simple declarative comments in assets; minify and compress; use JST templates; cache bust; and many-many more).
+- [JAPR](https://github.com/kitsched/japr): Jekyll Asset Pipeline Reborn - Powerful asset pipeline for Jekyll that collects, converts and compresses JavaScript and CSS assets.
 - [File compressor](https://gist.github.com/2758691) by [mytharcher](https://github.com/mytharcher): Compress HTML and JavaScript files on site build.
 - [Jekyll-minibundle](https://github.com/tkareine/jekyll-minibundle): Asset bundling and cache busting using external minification tool of your choice. No gem dependencies.
 - [Singlepage-jekyll](https://github.com/JCB-K/singlepage-jekyll) by [JCB-K](https://github.com/JCB-K): Turns Jekyll into a dynamic one-page website.
 - [generator-jekyllrb](https://github.com/robwierzbowski/generator-jekyllrb): A generator that wraps Jekyll in [Yeoman](http://yeoman.io/), a tool collection and workflow for builing modern web apps.
 - [grunt-jekyll](https://github.com/dannygarcia/grunt-jekyll): A straightforward [Grunt](http://gruntjs.com/) plugin for Jekyll.
 - [jekyll-postfiles](https://github.com/indirect/jekyll-postfiles): Add `_postfiles` directory and {% raw %}`{{ postfile }}`{% endraw %} tag so the files a post refers to will always be right there inside your repo.
+- [A layout that compresses HTML](https://github.com/penibelst/jekyll-compress-html) by [Anatol Broder](http://penibelst.de/): Github Pages compatible, configurable way to compress HTML files on site build.
+- [Jekyll CO₂](https://github.com/wdenton/jekyll-co2): Generates HTML showing the monthly change in atmospheric CO₂ at the Mauna Loa observatory in Hawaii. 
 -->
 
 #### エディタ
