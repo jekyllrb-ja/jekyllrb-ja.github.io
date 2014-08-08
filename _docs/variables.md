@@ -2,8 +2,9 @@
 layout: docs
 title: 変数
 prev_section: pages
-next_section: datafiles
+next_section: collections
 permalink: /docs/variables/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -11,7 +12,7 @@ permalink: /docs/variables/
 layout: docs
 title: Variables
 prev_section: pages
-next_section: datafiles
+next_section: collections
 permalink: /docs/variables/
 ---
 -->
@@ -202,6 +203,38 @@ following is a reference of the available data.
       </p></td>
     </tr>
     <tr>
+      <td><p><code>site.html_pages</code></p></td>
+      <td><p>
+
+        すべての HTML ページのリストです。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.collections</code></p></td>
+      <td><p>
+
+        すべてのコレクションのリストです。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.data</code></p></td>
+      <td><p>
+
+        <code>_data</code> ディレクトリにある YAML ファイルから読み込まれたデータのリストです。
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.documents</code></p></td>
+      <td><p>
+
+        各コレクションのすべてのドキュメントのリストです。
+
+      </p></td>
+    </tr>
+    <tr>
       <td><p><code>site.categories.CATEGORY</code></p></td>
       <td><p>
 
@@ -287,6 +320,38 @@ following is a reference of the available data.
         A list of all static files (i.e. files not processed by Jekyll's
         converters or the Liquid renderer). Each file has three properties:
         <code>path</code>, <code>modified_time</code> and <code>extname</code>.
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.html_pages</code></p></td>
+      <td><p>
+
+        A list of all HTML Pages.
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.collections</code></p></td>
+      <td><p>
+
+        A list of all the collections.
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.data</code></p></td>
+      <td><p>
+
+        A list containing the data loaded from the YAML files located in the <code>_data</code> directory.
+
+      </p></td>
+    </tr>
+    <tr>
+      <td><p><code>site.documents</code></p></td>
+      <td><p>
+
+        A list of all the documents in every collection.
 
       </p></td>
     </tr>
@@ -552,7 +617,7 @@ following is a reference of the available data.
       <td><p><code>page.next</code></p></td>
       <td><p>
 
-        The next post relative to the position of the current post in 
+        The next post relative to the position of the current post in
         <code>site.posts</code>. Returns <code>nil</code> for the last entry.
 
       </p></td>
@@ -561,7 +626,7 @@ following is a reference of the available data.
       <td><p><code>page.previous</code></p></td>
       <td><p>
 
-        The previous post relative to the position of the current post in 
+        The previous post relative to the position of the current post in
         <code>site.posts</code>. Returns <code>nil</code> for the first entry.
 
       </p></td>
