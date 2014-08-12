@@ -15,4 +15,4 @@ collections:
     output: true
 
 # jekyllrb-ja
-exclude: ["vendor"]
+exclude: [vendor, diff]
