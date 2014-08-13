@@ -1,57 +1,130 @@
-# コントリビュート
 
-翻訳作業へのご協力、ありがとうございます！お願いをしたいのは以下の2つの作業です。
+# プロジェクトに対する貢献
 
-- 誤訳の指摘や改訳の提案
-- 原文への追従
+次のような方法を通して、どなたでもJekyllサイト翻訳プロジェクト（以下、「本プロジェクト」といいます）に貢献または参加することができます。
 
-それぞれのやり方については下記ルールを参考にしてください。
+- 翻訳ドキュメント上の誤訳やタイプミスの指摘、またはより良い訳への改善提案(修正提案)
+- 本家([jekyll/jekyll](https://github.com/jekyll/jekyll))のドキュメント追加・更新に追従する翻訳ドキュメントの追加・更新(本家への追従)
+- 本プロジェクトの管理業務
 
-## 誤訳の指摘や改訳の提案
+以下では、これらの具体的な貢献方法を順に説明します。
 
-ドキュメント誤訳を発見した場合や改訳を提案する場合は、いずれかの方法で連絡してください。
+## 誤訳の指摘または改訳の提案をされる場合
 
-- [Issues](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/issues)
-  - 誤訳や改訳はいきなり PR だと敷居が高いかも…
-  - とりあえず Issues から提案してもらえると議論しやすいかもしれません
-- [Twitter](https://twitter.com/kk_Ataka)
-- Pull Request(後述のワークフロー参照)
+翻訳ドキュメント上の誤訳やタイプミスを発見した場合または訳の改善提案をする場合は、次の方法を採ってください。
 
-## 原文への追従
+### 1. 新規Issueを作成する
 
-この翻訳プロジェクトでは、原文[(jekyll/jekyll)](https://github.com/jekyll/jekyll)への追従を最優先しています。追従状況は [Issues](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/issues) のラベル `Original Updated` と `Original Created` で確認できます。
+Issueの作成に際しては、問題箇所を明示し、修正案があればそれをコメントして下さい。できれば`Edit Request`のラベルを付けて下さい。問題箇所が複数ある場合、それらを一つのIssueにまとめて頂いて結構です。
 
-- [`Original Updated`](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/labels/Original%20Updated) ← **原文の変更に訳文が追従できていないファイル一覧**
-- [`Original Created`](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/labels/Original%20Created) ← **翻訳作業が未着手なファイル一覧**
+### 2. 修正案をPull Requestする
 
-追従作業を行う場合は、対象のIssueを確認のうえ、以下のワークフローを参考に Pull Request を送ってください。なお、Issue 1つあたりの原文変更・追加の分量が多い場合は、その一部に対する Pull Request でも助かります。
+余力があれば、修正案をPull Requestしてください(事前にIssueを立てなくても結構です)。Pull Requestの具体的な手順については後述します。
 
-### Pull Request のワークフロー
+## 翻訳ドキュメントの追加・更新(本家への追従)をされる場合
 
-1. 該当のIssueで「このIssue対応します！」の宣言コメントをする
-1. このプロジェクトをフォークする
-1. 自分の作業環境にフォークしたプロジェクトをクローンする ( `git clone git@github.com:<username>/jekyllrb-ja.github.io.git` )
-1. トピックブランチを作成し、Issueの内容にもとづき修正をコミットをする ( `git checkout -b my_awesome_feature` )
-  - Issue の description で指定されてるファイルを使う
-    - `Diff:` で指定されている .diff ファイル
-    - `File:` で指定されている .md ファイル
-  - 変更を .diff ファイルで確認し、`/docs/` 配下の該当 .md ファイルの原文・日本語訳に反映する
-  - 該当ファイルの YAML front-matter の `base_revision` キーを .diffファイルの一行目で置き換える( base_revision キーがない場合は挿入する)
-1. トピックブランチをプッシュする ( `git push origin my_awesome_feature` )
-1. jekyllrb-ja/jekyllrb-ja.github.io プロジェクトの `master` ブランチに対して Pull Request を作成する
-  - 該当のIssueを閉じられるような Pull Request の場合は、description のところに `fix #<issue番号>` と書いておく 例：[#192](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/pull/192)
-  - コミットログや PR コメントは英語でも日本語でもどちらでも :ok: です
-1. Pull Request を送る
+本プロジェクトでは、翻訳・修正が必要なファイルがある場合、基本的には、まずはプロジェクト管理者がIssueを立て、それに対する翻訳作業者からの修正Pull Requestを通してこれを消化をしていくというワークフローを採用しています。
+Pull Requestの具体的な手順は次の項を参照して下さい。
 
-注：.diffファイルは別途削除しますので、そのままで結構です。
+## Pull Requestのワークフロー
 
-## プロジェクトへの参加
+ここでは、翻訳ドキュメントの追加・更新におけるワークフローを中心に説明します。修正提案をPull Requestで行う場合のワークフローについては、「1. 翻訳対象の選択と宣言」は読み飛ばして下さい。
 
-このプロジェクトに参加したいという場合は、 Issues や Twitter からメンバーに連絡をお願いします :heart:
+### 1. 翻訳対象の選択と宣言
 
-## 翻訳ルール
+[Issue一覧](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/issues)から希望する翻訳案件を選びます。翻訳が必要とされている案件には、`Original Updated`または`Original Created`というラベルが付いています。
+前者は本家更新へ追従するべく既存翻訳ファイルの更新が必要なもの、後者は本家で新規に追加されたファイルに対応する新規翻訳が必要なものを指しています。
 
-すごく暫定。とりあえずGentooJPを参考に…。
+Issueには作業対象ファイル(および差分ファイル)へのリンクが貼ってあるので、リンク先で内容を確認して案件を決定してください。
+
+翻訳案件が決まったら、そのIssueに自分が翻訳作業をする旨の宣言をコメントとして残してください(ex.「私が担当します！」)。これは同じ翻訳案件で作業が重複してしまうのを避けるために必要です。
+
+### 2. ローカル作業環境の構築
+
+次の手順でローカルに作業環境を構築します。
+
+ 1. 本プロジェクトをフォークして、自身のリポジトリにそのコピーを作ります。
+
+ 1. フォークしたプロジェクトをローカルの作業環境にクローンします。
+
+     git clone git@github.com:<username>/jekyllrb-ja.github.io.git
+
+ 1. 翻訳作業のためのトピックブランチを作成します。
+
+     ex. git checkout -b translate-usage
+
+ 1. 必要に応じて、`bundle install`を実行し、ローカル環境にプロジェクト関連のgemをインストールします。
+
+
+### 3. 翻訳作業
+
+作成したトピックブランチで対象ファイルの作成、更新または修正を行って下さい。翻訳上の細かいルールについては、下記「翻訳上のルールについて」を参考にして下さい。
+具体的な翻訳作業に当たり注意点が２点ほどあります。
+
+1. 本プロジェクトでは本家[(jekyll/jekyll)](https://github.com/jekyll/jekyll)の原文ファイルを管理することはしていません。
+代わりに、各翻訳ファイルにおいて対応原文をそのセンテンスごとにHTMLコメントとして挿入することで、原文に対する翻訳文の追従状況を管理しています。
+そのため、翻訳作業においては、翻訳の作成・修正に加えて、コメント化された原文の更新も同時に行う必要があります。
+新規に翻訳ファイルを作成する場合には、原文のすべて(コードも含めて)をコメント化して挿入する作業が必要になります。本プロジェクトに含まれる`togglate`というツールがこの作業を支援します。`togglate`の使い方については下記「togglateを使った翻訳ファイルの作成」を参照して下さい。
+
+1. 翻訳対象ファイルにYAML Front Matterがある場合は、ベースとなっている原文のリビジョンを特定する指定`base_revision`を、最後の項目として挿入しています。
+
+     base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+
+  この値はIssueでリンクされたdiffファイルの一行目にありますので、古い値をこれに置き換えてください（`base_revision`キーが無い場合は挿入してください）。
+
+本プロジェクトでは、翻訳ファイルの本家原文に対する追従状況をシステム的に監視するため、翻訳ファイル内の原文および`base_revision`を参照しています。そのためこれらの情報が正しく更新されている必要があります。ご理解の程、よろしくお願い致します。
+
+### 4. 翻訳結果の確認
+
+Pull Requestを送る前に、ローカル環境で翻訳ファイルが形式上正しく更新されているか確認する方法について説明します。翻訳ファイルの形式チェックは、最終的にプロジェクトの管理サイドでも行いますので、以下の作業は必須ではありません。
+なお、この作業を実行するにはRuby(version2.0以上)および必要なgemが事前にインストールされている必要があります。
+
+#### 原文コメントの更新の確認
+
+翻訳ファイルに挿入した原文が正しく更新されているかを、rakeタスクを使って確認できます。翻訳ファイルが`_docs`ディレクトリ内の`extras.md`である場合、プロジェクトのルートで以下を実行します。
+
+    rake verify_original_insertion[_docs/extras.md]
+
+このコマンドにより、翻訳ファイルに挿入された原文と本家の対応ファイルの内容の一致が比較されます。翻訳ファイル内の原文が正しく更新されている場合は、次の出力が得られます。
+
+    no Diff on _docs/extras.md <-> _docs/extras.md [e57cd00:]
+
+更新が正しくない場合はその差分が出力されますので、その差分が無くなるよう修正して下さい。なお、比較の対象になる本家側のリビジョンは、翻訳ファイルのYAML Front Matterにおける`base_revision`が使われますが、他のrevisionとの比較を行いたい場合は、第２引数にそれを渡します。
+
+    rake verify_original_insertion[_docs/extras.md,master]
+
+
+#### 翻訳ファイルのブラウザ上での表示確認
+
+ローカル環境に本プロジェクトのサイトを立ち上げることで、翻訳ファイルがブラウザ上で正しく表示されるかを確認できます。以下のコマンドでサーバーが立ち上がります。
+
+    bundle exec jekyll serve
+
+ブラウザから`http://localhost:4000/`へアクセスします。
+
+### 5. トピックブランチのプッシュ
+
+翻訳作業が完了したらコミットし、そのトピックブランチをリモートリポジトリにプッシュしてください。
+
+    git add _docs/usage.md
+    git commit -m 'update translation of usage.md'
+    git push origin translate-usage
+
+
+なお、ファイル更新のベースとなった差分ファイル(diff)は削除する必要はありません。
+
+### 6. 本プロジェクトに対するPull Request
+
+プッシュしたトピックブランチを本プロジェクトに取り込むPull Requestを送って下さい(対象ブランチは`master`です)。
+Issueに基づいたPull Requestである場合は、そのdescriptionに`fix #<issue番号>`を入れて下さい(変更がマージされると自動でIssueがクローズされるようになります)。
+
+## 本プロジェクトの管理業務をされたい場合
+
+本プロジェクトに参加したい方は、Issueにその旨をお知らせ下さい。
+
+## 翻訳上のルールについて
+
+本プロジェクトにおける翻訳上のルールについては、まだ暫定的なものしかありませんが、以下を参考にして下さい。
 
 ### 基本ルール
 
@@ -68,8 +141,13 @@
 
 [翻訳メモ · jekyllrb-ja/jekyllrb-ja.github.io Wiki](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/wiki/%E7%BF%BB%E8%A8%B3%E3%83%A1%E3%83%A2#%E7%BF%BB%E8%A8%B3%E3%81%9B%E3%81%9A%E3%81%AB%E3%81%9D%E3%81%AE%E3%81%BE%E3%81%BE%E8%8B%B1%E5%8D%98%E8%AA%9E%E3%81%A7%E8%A8%98%E8%BF%B0%E3%81%99%E3%82%8B%E3%82%82%E3%81%AE)
 
-## 翻訳 Tips
+## togglateを使った翻訳ファイルの作成
+
+(未記載)
+
+## 翻訳上のTips
 
 ローカルで作業をする際の Tips については以下を参考にしてください。
 
 - [翻訳ワークフロー](https://github.com/jekyllrb-ja/jekyllrb-ja.github.io/wiki/翻訳ワークフロー)
+
