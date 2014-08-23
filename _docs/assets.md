@@ -4,6 +4,7 @@ title: Assets
 prev_section: datafiles
 next_section: migrations
 permalink: /docs/assets/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
