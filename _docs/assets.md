@@ -4,6 +4,7 @@ title: Assets
 prev_section: datafiles
 next_section: migrations
 permalink: /docs/assets/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -14,24 +15,6 @@ prev_section: datafiles
 next_section: migrations
 permalink: /docs/assets/
 ---
--->
-
-<div class="note unreleased">
-  <h5>Sass と CoffeeScript のサポートは現在リリースされていません。</h5>
-  <p>
-  この機能を使用するためには、 <a href="/docs/installation/#pre-releases">
-  Jekyll の最新開発版をインストールしてください</a>。
-  </p>
-</div>
-
-<!--original
-<div class="note unreleased">
-  <h5>Sass and CoffeeScript support is currently unreleased.</h5>
-  <p>
-  In order to use this feature, <a href="/docs/installation/#pre-releases">
-  install the latest development version of Jekyll</a>.
-  </p>
-</div>
 -->
 
 Jekyll は Sass と CoffeeScript の組み込みをサポートしています。
@@ -72,7 +55,7 @@ Jekyll はそれを処理し、そしてサイトの指定フォルダの下に
 `/css/styles.css` を配置します。
 
 <!--original
-Jekyll treats these files the same a regular page, in that the output file
+Jekyll treats these files the same as a regular page, in that the output file
 will be placed in the same directory that it came from. For instance, if you
 have a file named `/css/styles.scss` in your site's source folder, Jekyll
 will process it and put it in your site's destination folder under
