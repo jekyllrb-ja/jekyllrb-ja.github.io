@@ -1,4 +1,3 @@
-<!--original
 ---
 layout: news_item
 title: 'Pick Up your $1 Jekyll Sticker'
@@ -6,6 +5,15 @@ date: 2014-06-04 15:46:53 -0400
 author: parkr
 categories: [partners]
 base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[]
+---
+
+<!--original
+---
+layout: news_item
+title: 'Pick Up your $1 Jekyll Sticker'
+date: 2014-06-04 15:46:53 -0400
+author: parkr
+categories: [partners]
 ---
 -->
 

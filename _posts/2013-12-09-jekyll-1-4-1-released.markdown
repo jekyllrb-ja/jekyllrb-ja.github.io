@@ -40,9 +40,10 @@ keep on writing without any problems.
 As always, you can find the full list of fixes in this release in the
 [change log](/docs/history/)!
 
+
 <!--original
 As always, you can find the full list of fixes in this release in the
 [change log](/docs/history/)!
+
+
 -->
-
-

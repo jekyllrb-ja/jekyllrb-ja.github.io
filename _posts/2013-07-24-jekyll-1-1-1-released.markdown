@@ -25,6 +25,7 @@ excerpt inception bug ([#1339][]) and non-zero exit codes for invalid commands
 ([#1338][]).
 
 <!--original
+
 Coming just 10 days after the release of v1.1.0, v1.1.1 is out with a patch for the nasty
 excerpt inception bug ([#1339][]) and non-zero exit codes for invalid commands
 ([#1338][]).
