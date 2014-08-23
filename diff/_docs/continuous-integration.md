@@ -4,7 +4,7 @@ title: Continuous Integration
 prev_section: deployment-methods
 next_section: troubleshooting
 permalink: /docs/continuous-integration/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: e57cd00[refs/heads/master]
 ---
 
 You can easily test your website build against one or more versions of Ruby.

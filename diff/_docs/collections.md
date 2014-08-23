@@ -4,7 +4,7 @@ title: Collections
 prev_section: variables
 next_section: datafiles
 permalink: /docs/collections/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: e57cd00[refs/heads/master]
 ---
 
 <div class="note warning">
