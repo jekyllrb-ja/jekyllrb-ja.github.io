@@ -98,14 +98,14 @@ Jekyllを用いたタグクラウドとタグごとのコンテンツページ�
   > “Jekyll is a well-architected throwback to a time before WordPress, when men were men, and HTML was static. I like the ideas it espouses, and have made a few improvements to it’s core. Here, I’ll point out some highlights of my fork in the hopes that they see usage beyond this site.”
 - [‘About this Website’, by Carter Allen](http://cartera.me/2010/08/12/about-this-website/)
   > “Jekyll is everything that I ever wanted in a blogging engine. Really. It isn’t perfect, but what’s excellent about it is that if there’s something wrong, I know exactly how it works and how to fix it. It runs on the your machine only, and is essentially an added”build" step between you and the browser. I coded this entire site in TextMate using standard HTML5 and CSS3, and then at the end I added just a few little variables to the markup. Presto-chango, my site is built and I am at peace with the world.”
-- [Generating a Tag Cloud in Jekyll](http://www.justkez.com/generating-a-tag-cloud-in-jekyll/) 
+- [Generating a Tag Cloud in Jekyll](http://www.justkez.com/generating-a-tag-cloud-in-jekyll/)  
 A guide to implementing a tag cloud and per-tag content pages using Jekyll.
 -->
 
-  ForkやJekyll gemのコードベースを修正することなしに[Jekyllを拡張](https://github.com/rfelix/jekyll_ext)したり、再利用・共有可能ないくつかの[便利なJekyllの拡張](https://wiki.github.com/rfelix/jekyll_ext/extensions)の方法
+- ForkやJekyll gemのコードベースを修正することなしに[Jekyllを拡張](https://github.com/rfelix/jekyll_ext)したり、再利用・共有可能ないくつかの[便利なJekyllの拡張](https://wiki.github.com/rfelix/jekyll_ext/extensions)の方法
 
 <!--original
-  A way to [extend Jekyll](https://github.com/rfelix/jekyll_ext) without forking and modifying the Jekyll gem codebase and some [portable Jekyll extensions](https://wiki.github.com/rfelix/jekyll_ext/extensions) that can be reused and shared.
+- A way to [extend Jekyll](https://github.com/rfelix/jekyll_ext) without forking and modifying the Jekyll gem codebase and some [portable Jekyll extensions](https://wiki.github.com/rfelix/jekyll_ext/extensions) that can be reused and shared.
 -->
 
 - [RailsのレイアウトでJekyllを利用する](http://numbers.brighterplanet.com/2010/08/09/sharing-rails-views-with-jekyll)
