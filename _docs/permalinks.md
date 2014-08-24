@@ -4,6 +4,7 @@ title: パーマリンク
 prev_section: templates
 next_section: pagination
 permalink: /docs/permalinks/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -99,6 +100,14 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
     </tr>
     <tr>
       <td>
+        <p><code>short_year</code></p>
+      </td>
+      <td>
+        <p>Post のファイル名から取得できる年の下2桁</p>
+      </td>
+    </tr>
+     <tr>
+      <td>
         <p><code>title</code></p>
       </td>
       <td>
@@ -172,6 +181,14 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
       </td>
     </tr>
     <tr>
+      <td>
+        <p><code>short_year</code></p>
+      </td>
+      <td>
+        <p>Year from the Post’s filename without the century.</p>
+      </td>
+    </tr>
+     <tr>
       <td>
         <p><code>title</code></p>
       </td>
@@ -294,7 +311,7 @@ Given a post named: `/2009-04-29-slap-chop.textile`
 <table>
   <thead>
     <tr>
-      <th>パーマリンク設定</th>
+      <th>URLテンプレート</th>
       <th>パーマリンク URL の結果</th>
     </tr>
   </thead>
@@ -309,7 +326,7 @@ Given a post named: `/2009-04-29-slap-chop.textile`
     </tr>
     <tr>
       <td>
-        <p><code>permalink: pretty</code></p>
+        <p><code>pretty</code></p>
       </td>
       <td>
         <p><code>/2009/04/29/slap-chop/index.html</code></p>
@@ -317,7 +334,7 @@ Given a post named: `/2009-04-29-slap-chop.textile`
     </tr>
     <tr>
       <td>
-        <p><code>permalink: /:month-:day-:year/:title.html</code></p>
+        <p><code>/:month-:day-:year/:title.html</code></p>
       </td>
       <td>
         <p><code>/04-29-2009/slap-chop.html</code></p>
@@ -325,7 +342,7 @@ Given a post named: `/2009-04-29-slap-chop.textile`
     </tr>
     <tr>
       <td>
-        <p><code>permalink: /blog/:year/:month/:day/:title</code></p>
+        <p><code>/blog/:year/:month/:day/:title</code></p>
       </td>
       <td>
         <p><code>/blog/2009/04/29/slap-chop/index.html</code></p>
@@ -340,7 +357,7 @@ Given a post named: `/2009-04-29-slap-chop.textile`
 <table>
   <thead>
     <tr>
-      <th>Permalink Setting</th>
+      <th>URL Template</th>
       <th>Resulting Permalink URL</th>
     </tr>
   </thead>
@@ -355,7 +372,7 @@ Given a post named: `/2009-04-29-slap-chop.textile`
     </tr>
     <tr>
       <td>
-        <p><code>permalink: pretty</code></p>
+        <p><code>pretty</code></p>
       </td>
       <td>
         <p><code>/2009/04/29/slap-chop/index.html</code></p>
@@ -363,7 +380,7 @@ Given a post named: `/2009-04-29-slap-chop.textile`
     </tr>
     <tr>
       <td>
-        <p><code>permalink: /:month-:day-:year/:title.html</code></p>
+        <p><code>/:month-:day-:year/:title.html</code></p>
       </td>
       <td>
         <p><code>/04-29-2009/slap-chop.html</code></p>
@@ -371,7 +388,7 @@ Given a post named: `/2009-04-29-slap-chop.textile`
     </tr>
     <tr>
       <td>
-        <p><code>permalink: /blog/:year/:month/:day/:title</code></p>
+        <p><code>/blog/:year/:month/:day/:title</code></p>
       </td>
       <td>
         <p><code>/blog/2009/04/29/slap-chop/index.html</code></p>
