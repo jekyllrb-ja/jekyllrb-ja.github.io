@@ -188,7 +188,7 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
         <p>Year from the Post’s filename without the century.</p>
       </td>
     </tr>
-     <tr>
+    <tr>
       <td>
         <p><code>title</code></p>
       </td>
