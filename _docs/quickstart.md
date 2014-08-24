@@ -4,6 +4,7 @@ title: Quick-start ガイド
 prev_section: home
 next_section: installation
 permalink: /docs/quickstart/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -49,20 +50,6 @@ Jekyll で使用可能なすべてのすばらしい設定オプションを利�
 That's nothing, though. The real magic happens when you start creating blog
 posts, using the front-matter to control templates and layouts, and taking
 advantage of all the awesome configuration options Jekyll makes available.
--->
-
-<div class="note info">
-  <h5>Redcarpet は新しいサイトのデフォルトの Markdown エンジンです</h5>
-  <p>Jekyll 1.1 から、 <code>jekyll new</code> で生成されるサイトの
-     デフォルト Markdown エンジンが Redcarpet に切り替わりました。</p>
-</div>
-
-<!--original
-<div class="note info">
-  <h5>Redcarpet is the default Markdown engine for new sites</h5>
-  <p>In Jekyll 1.1, we switched the default markdown engine for sites
-     generated with <code>jekyll new</code> to Redcarpet</p>
-</div>
 -->
 
 もし、問題に直面した時は、全ての [インストール必要条件][Installation]
