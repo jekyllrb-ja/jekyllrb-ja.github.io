@@ -4,6 +4,7 @@ title: Post を書く
 prev_section: frontmatter
 next_section: drafts
 permalink: /docs/posts/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -44,7 +45,7 @@ and web-based CMS systems, this will be a welcome change!
 `_posts` フォルダはあなたのブログの Post がある場所です。
 これらのファイルは
 [Markdown](http://daringfireball.net/projects/markdown/) や
-[Textile](http://textile.sitemonks.com/) フォーマットのテキストファイルの
+[Textile](http://redcloth.org/textile) フォーマットのテキストファイルの
 どちらでも書くことができ、そしてそれらが
 [YAML front-matter](../frontmatter/) を持っている限り、
 これらのソースフォーマットから静的サイトの一部として HTML ページに変換されます。
@@ -53,7 +54,7 @@ and web-based CMS systems, this will be a welcome change!
 As explained on the [directory structure](../structure/) page, the `_posts`
 folder is where your blog posts will live. These files can be either
 [Markdown](http://daringfireball.net/projects/markdown/) or
-[Textile](http://textile.sitemonks.com/) formatted text files, and as long as
+[Textile](http://redcloth.org/textile) formatted text files, and as long as
 they have [YAML front-matter](../frontmatter/), they will be converted from their
 source format into an HTML page that is part of your static site.
 -->
@@ -107,6 +108,26 @@ file. For example, the following are examples of valid post filenames:
 {% endhighlight %}
 -->
 
+<div class="note">
+  <h5>ProTip™: 別のポストへのリンク</h5>
+  <p>
+    <a href="../templates#post-url"><code>post_url</code></a> タグを使って
+    別のポストにリンクをすることにより、サイトのパーマリンクの変更時のURL変更を
+    気にしなくて済みます。
+  </p>
+</div>
+
+<!--original
+<div class="note">
+  <h5>ProTip™: Link to other posts</h5>
+  <p>
+    Use the <a href="../templates#post-url"><code>post_url</code></a>
+    tag to link to other posts without having to worry about the URL's
+    breaking when the site permalink style changes.
+  </p>
+</div>
+-->
+
 ### コンテンツのフォーマット
 
 <!--original
@@ -117,7 +138,7 @@ file. For example, the following are examples of valid post filenames:
 後は、あなたが好むフォーマットを決定するだけです。
 Jekyll は 2 つの人気のあるマークアップフォーマットをサポートしています:
 [Markdown](http://daringfireball.net/projects/markdown/) と
-[Textile](http://textile.sitemonks.com/) です。
+[Textile](http://redcloth.org/textile) です。
 これらのフォーマットはそれぞれ
 Post のコンテンツの異なるタイプをマークアップする独自の方法を持っているため、
 あなたは自分のニーズにもっとも適したものを決定し、それらのフォーマットに慣れるべきです。
@@ -127,7 +148,7 @@ All blog post files must begin with [YAML front-matter](../frontmatter/). After
 that, it's simply a matter of deciding which format you prefer. Jekyll supports
 two popular content markup formats:
 [Markdown](http://daringfireball.net/projects/markdown/) and
-[Textile](http://textile.sitemonks.com/). These formats each have their own way
+[Textile](http://redcloth.org/textile). These formats each have their own way
 of marking up different types of content within a post, so you should
 familiarize yourself with these formats and decide which one best suits your
 needs.
