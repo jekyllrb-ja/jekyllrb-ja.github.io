@@ -391,11 +391,11 @@ These are available out-of-the-box to be used in the front-matter for a post.
 -->
 
 <div class="note">
-  <h5>ProTip™: 変数を繰り返さない</h5>
+  <h5>ProTip™: 同じ事を繰り返さない(Don't repeat yourself)</h5>
   <p>
-     もし、頻繁に使用するfront-matter変数を何度も繰り返したくない場合は、
-     <a href="../configuration/#frontmatter-defaults" title="frontmatter defaults">defaults</a>を定義し
-     必要に応じてそれらを上書きします。
+     もし、頻繁に使用するfront-matter変数を何度も繰り返したくない場合、
+     それらは設定ファイルに<a href="../configuration/#frontmatter-defaults" title="frontmatter defaults">defaults</a>として定義し
+     必要に応じてそれらを上書きします。(あるいは全く上書きしません)
      これは定義済変数、カスタム変数両方に対して動作します。
   </p>
 </div>
