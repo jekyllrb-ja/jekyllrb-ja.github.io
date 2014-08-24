@@ -106,7 +106,7 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
         <p>Post のファイル名から取得できる年の下2桁</p>
       </td>
     </tr>
-     <tr>
+    <tr>
       <td>
         <p><code>title</code></p>
       </td>
