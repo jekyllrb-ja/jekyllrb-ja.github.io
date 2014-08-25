@@ -60,7 +60,7 @@ task :togglate do
         fail "`curl`: No such file - '#{ORIGINAL_DOC_URL}/#{curl_file}'"
       end
       # system( "git diff --no-index #{local_doc} #{origin_doc}" )
-      system( "diff -u #{local_doc} #{origin_doc}" )
+      system( "diff -uw #{local_doc} #{origin_doc}" )
       case $?
       when 0
         ok_files << file
