@@ -4,6 +4,7 @@ title: Front-matter
 prev_section: configuration
 next_section: posts
 permalink: /docs/frontmatter/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -386,6 +387,28 @@ These are available out-of-the-box to be used in the front-matter for a post.
     </tr>
   </tbody>
 </table>
+</div>
+-->
+
+<div class="note">
+  <h5>ProTip™: 同じ事を繰り返さない(Don't repeat yourself)</h5>
+  <p>
+     もし、頻繁に使用するfront-matter変数を何度も繰り返したくない場合、
+     それらは設定ファイルに<a href="../configuration/#frontmatter-defaults" title="frontmatter defaults">defaults</a>として定義し
+     必要に応じてそれらを上書きします。(あるいは全く上書きしません)
+     これは定義済変数、カスタム変数両方に対して動作します。
+  </p>
+</div>
+
+<!--original
+<div class="note">
+  <h5>ProTip™: Don't repeat yourself</h5>
+  <p>
+    If you don't want to repeat your frequently used front-matter variables over and over,
+    just define <a href="../configuration/#frontmatter-defaults" title="frontmatter defaults">defaults</a>
+    for them and only override them where necessary (or not at all). This works both for predefined
+    and custom variables.
+  </p>
 </div>
 -->
 
