@@ -4,6 +4,7 @@ title: リソース集
 prev_section: sites
 next_section: upgrading
 permalink: /docs/resources/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -88,6 +89,7 @@ Jekyll’s growing use is producing a wide variety of tutorials, frameworks, ext
 - [Carter Allenによるブログ ‘このウェブサイトについて’](http://cartera.me/2010/08/12/about-this-website/)
   > “Jekyllは私が今までブログエンジンで欲しかったものすべてです。本当に。完璧ではないですが、何が素晴らしいかというと何か間違ってることがあれば、どのように動作するかを正確に知っており、どのように修正するかを知っているからです。あなたのマシン上で実行され、本質的にあなたとブラウザの間に”build"という過程が加わるだけです。私は標準のHTML5とCSS3を使用してTextMateで、このサイト全体をコード化して、最後に私はこのマークアップにいくつかの変数を追加しました。Presto-chango、私のサイトは構築され、そして世界の平和を思います。”
 - [Jekyllでタグクラウドを生成する](http://www.justkez.com/generating-a-tag-cloud-in-jekyll/)
+Jekyllを用いたタグクラウドとタグごとのコンテンツページの実装ガイド
 
 <!--original
 - [Integrating Twitter with Jekyll](http://www.justkez.com/integrating-twitter-with-jekyll/)
@@ -96,25 +98,14 @@ Jekyll’s growing use is producing a wide variety of tutorials, frameworks, ext
   > “Jekyll is a well-architected throwback to a time before WordPress, when men were men, and HTML was static. I like the ideas it espouses, and have made a few improvements to it’s core. Here, I’ll point out some highlights of my fork in the hopes that they see usage beyond this site.”
 - [‘About this Website’, by Carter Allen](http://cartera.me/2010/08/12/about-this-website/)
   > “Jekyll is everything that I ever wanted in a blogging engine. Really. It isn’t perfect, but what’s excellent about it is that if there’s something wrong, I know exactly how it works and how to fix it. It runs on the your machine only, and is essentially an added”build" step between you and the browser. I coded this entire site in TextMate using standard HTML5 and CSS3, and then at the end I added just a few little variables to the markup. Presto-chango, my site is built and I am at peace with the world.”
-- [Generating a Tag Cloud in Jekyll](http://www.justkez.com/generating-a-tag-cloud-in-jekyll/)
+- [Generating a Tag Cloud in Jekyll](http://www.justkez.com/generating-a-tag-cloud-in-jekyll/)  
+A guide to implementing a tag cloud and per-tag content pages using Jekyll.
 -->
 
-  Jekyllを用いたタグクラウドとタグごとのコンテンツページの実装ガイド
+- ForkやJekyll gemのコードベースを修正することなしに[Jekyllを拡張](https://github.com/rfelix/jekyll_ext)したり、再利用・共有可能ないくつかの[便利なJekyllの拡張](https://wiki.github.com/rfelix/jekyll_ext/extensions)の方法
 
 <!--original
-  A guide to implementing a tag cloud and per-tag content pages using Jekyll.
--->
-
-- [Jekyllの拡張 -= Pain](http://rfelix.com/2010/01/19/jekyll-extensions-minus-equal-pain/)
-
-<!--original
-- [Jekyll Extensions -= Pain](http://rfelix.com/2010/01/19/jekyll-extensions-minus-equal-pain/)
--->
-
-  ForkやJekyll gemのコードベースを修正することなしに[Jekyllを拡張](http://github.com/rfelix/jekyll_ext)したり、再利用・共有可能ないくつかの[便利なJekyllの拡張](http://wiki.github.com/rfelix/jekyll_ext/extensions)の方法
-
-<!--original
-  A way to [extend Jekyll](http://github.com/rfelix/jekyll_ext) without forking and modifying the Jekyll gem codebase and some [portable Jekyll extensions](http://wiki.github.com/rfelix/jekyll_ext/extensions) that can be reused and shared.
+- A way to [extend Jekyll](https://github.com/rfelix/jekyll_ext) without forking and modifying the Jekyll gem codebase and some [portable Jekyll extensions](https://wiki.github.com/rfelix/jekyll_ext/extensions) that can be reused and shared.
 -->
 
 - [RailsのレイアウトでJekyllを利用する](http://numbers.brighterplanet.com/2010/08/09/sharing-rails-views-with-jekyll)
