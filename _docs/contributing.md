@@ -4,6 +4,7 @@ title: 貢献
 prev_section: upgrading
 next_section: history
 permalink: /docs/contributing/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -26,8 +27,8 @@ following in mind:
 
 * 取り組んでいるのが細かな修正や既存機能へのパッチなら、簡単な内容で構わないのでテストも追加してください。
   現在のテストスイートの範囲にとどまり、そして
-  [Shoulda](http://github.com/thoughtbot/shoulda/tree/master) や
-  [RR](http://github.com/btakita/rr/tree/master) を使用してください。
+  [Shoulda](https://github.com/thoughtbot/shoulda/tree/master) や
+  [RR](https://github.com/btakita/rr/tree/master) を使用してください。
 * もし、それが新しい機能の場合は、必ず新しい
   [Cucumber](https://github.com/cucumber/cucumber/) の機能を作成し、
   必要に応じて手順を再利用します。
@@ -50,8 +51,8 @@ following in mind:
 <!--original
 * If you're creating a small fix or patch to an existing feature, just a simple
   test will do. Please stay in the confines of the current test suite and use
-  [Shoulda](http://github.com/thoughtbot/shoulda/tree/master) and
-  [RR](http://github.com/btakita/rr/tree/master).
+  [Shoulda](https://github.com/thoughtbot/shoulda/tree/master) and
+  [RR](https://github.com/btakita/rr/tree/master).
 * If it's a brand new feature, make sure to create a new
   [Cucumber](https://github.com/cucumber/cucumber/) feature and reuse steps
   where appropriate. Also, whipping up some documentation in your fork's `site`
@@ -255,18 +256,18 @@ GitHub の [Jekyll wiki]({{ site.repository }}/wiki) は、
 全ての GitHub ユーザがアクセス権を持つことができます。
 
 <!--original
-The [Jekyll wiki]({{ site.repository }}/wiki) on GitHub 
-can be freely updated without a pull request as all 
+The [Jekyll wiki]({{ site.repository }}/wiki) on GitHub
+can be freely updated without a pull request as all
 GitHub users have access.
 -->
 
-もし、あなたのプラグインを[プラグイン一覧](/docs/plugins/#available_plugins)に追加したいなら、
+もし、あなたのプラグインを[プラグイン一覧](/docs/plugins/#available-plugins)に追加したいなら、
 あなたのプラグインのタイプに応じて適切な小見出しの下にリンクを追加し、
 [プラグインページのソースファイル]({{ site.repository }}/blob/master/site/docs/plugins.md)へ
 プルリクエストを送ってください。
 
 <!--original
-If you want to add your plugin to the [list of plugins](/docs/plugins/#available_plugins),
+If you want to add your plugin to the [list of plugins](/docs/plugins/#available-plugins),
 please submit a pull request modifying the [plugins page source
 file]({{ site.repository }}/blob/master/site/docs/plugins.md) by adding a
 link to your plugin under the proper subheading depending upon its type.
