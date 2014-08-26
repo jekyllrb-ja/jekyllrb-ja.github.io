@@ -4,6 +4,7 @@ title: インストール
 prev_section: quickstart
 next_section: usage
 permalink: /docs/installation/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -47,11 +48,14 @@ you’ll need to make sure your system has before you start.
 - [Ruby](http://www.ruby-lang.org/en/downloads/)
 - [RubyGems](http://rubygems.org/pages/download)
 - Linux, Unix または Mac OS X
+- [NodeJS](http://nodejs.org)か、あるいは別のJavaScriptランタイム(CoffeeScriptをサポートするため)
 
 <!--original
 - [Ruby](http://www.ruby-lang.org/en/downloads/)
 - [RubyGems](http://rubygems.org/pages/download)
 - Linux, Unix, or Mac OS X
+- [NodeJS](http://nodejs.org), or another JavaScript runtime (for
+  CoffeeScript support).
 -->
 
 <div class="note info">
@@ -80,13 +84,13 @@ you’ll need to make sure your system has before you start.
 -->
 
 Jekyll をインストールする最もよい方法は
-[RubyGems](http://docs.rubygems.org/read/chapter/3) を経由する事です。
+[RubyGems](http://rubygems.org/pages/download) を経由する事です。
 ターミナルプロンプトで、単純に Jekyll をインストールするには
 以下のコマンドを実行します。
 
 <!--original
 The best way to install Jekyll is via
-[RubyGems](http://docs.rubygems.org/read/chapter/3). At the terminal prompt,
+[RubyGems](http://rubygems.org/pages/download). At the terminal prompt,
 simply run the following command to install Jekyll:
 -->
 
@@ -239,7 +243,7 @@ Check out [the extras page](../extras/) for more information.
     If you’re the kind of person who is using Jekyll, then chances are you’ll
     want to enable syntax highlighting using <a href="http://pygments.org/">Pygments</a>
     or <a href="https://github.com/jayferd/rouge">Rouge</a>. You should really
-    <a href="../templates/#code_snippet_highlighting">check out how to
+    <a href="../templates/#code-snippet-highlighting">check out how to
     do that</a> before you go any farther.
   </p>
 </div>
