@@ -4,6 +4,7 @@ title: ページネーション
 prev_section: permalinks
 next_section: plugins
 permalink: /docs/pagination/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -267,7 +268,8 @@ attributes:
   <p>ページネーションでは、各ページのYAML Front Matterにどのような変数が
   指定されているかには関知せず、サイトの <code>posts</code> 全部をページ分割します。
   現在のところ、共通のタグやカテゴリで紐付けられたグループごとでの
-  ページネーションはできません。
+  ページネーションはできません。posts に限定されているため、ドキュメントの
+  任意のコレクションを含めることはできません。
 </div>
 
 <!--original
@@ -276,7 +278,8 @@ attributes:
   <p>Pagination pages through every post in the <code>posts</code>
   variable regardless of variables defined in the YAML Front Matter of
   each. It does not currently allow paging over groups of posts linked
-  by a common tag or category.</p>
+  by a common tag or category. It cannot include any collection of
+  documents because it is restricted to posts.</p>
 </div>
 -->
 
