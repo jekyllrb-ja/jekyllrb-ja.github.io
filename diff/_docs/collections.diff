@@ -1,0 +1,76 @@
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
+--- _docs/collections.md
++++ _docs/collections.md
+
+ ### Step 2: Add your content
+ 
+ Create a corresponding folder (e.g. `<source>/_my_collection`) and add documents.
+-YAML front-matter is read in as data if it exists, if not, then everything is just stuck in the Document's `content` attribute.
++YAML Front Matter is read in as data if it exists, if not, then everything is just stuck in the Document's `content` attribute.
+ 
+-Note: the folder must be named identical to the collection you defined in you config.yml file, with the addition of the preceding `_` character.
++Note: the folder must be named identically to the collection you defined in your `_config.yml` file, with the addition of the preceding `_` character.
+ 
+ ### Step 3: Optionally render your collection's documents into independent files
+ 
+         <p><code>collection</code></p>
+       </td>
+       <td>
+-        <p>Label of the containing collection</p>
++        <p>Label of the containing collection.</p>
+       </td>
+     </tr>
+     <tr>
+         <p><code>path</code></p>
+       </td>
+       <td>
+-        <p>Path to the document relative to the collection's directory</p>
++        <p>Path to the document relative to the collection's directory.</p>
++      </td>
++    </tr>
++    <tr>
++      <td>
++        <p><code>name</code></p>
++      </td>
++      <td>
++        <p>The document's base filename, with every sequence of spaces and non-alphanumeric characters replaced by a hyphen.</p>
++      </td>
++    </tr>
++    <tr>
++      <td>
++        <p><code>title</code></p>
++      </td>
++      <td>
++        <p>The document's lowercase title (as defined in its <a href="/docs/frontmatter/">front matter</a>), with every sequence of spaces and non-alphanumeric characters replaced by a hyphen. If the document does not define a title in its <a href="/docs/frontmatter/">front matter</a>, this is equivalent to <code>name</code>.</p>
+       </td>
+     </tr>
+     <tr>
+         <p><code>output_ext</code></p>
+       </td>
+       <td>
+-        <p>Extension of the output file</p>
++        <p>Extension of the output file.</p>
+       </td>
+     </tr>
+   </tbody>
+ 
+ ### Documents
+ 
+-In addition to any YAML front-matter provided in the document's corresponding file, each document has the following attributes:
++In addition to any YAML Front Matter provided in the document's corresponding file, each document has the following attributes:
+ 
+ <div class="mobile-side-scroller">
+ <table>
+       </td>
+       <td>
+         <p>
+-          The (unrendered) content of the document. If no YAML front-matter is provided,
+-          this is the entirety of the file contents. If YAML front-matter
++          The (unrendered) content of the document. If no YAML Front Matter is provided,
++          this is the entirety of the file contents. If YAML Front Matter
+           is used, then this is all the contents of the file after the terminating
+-          `---` of the front-matter.
++          `---` of the front matter.
+         </p>
+       </td>
+     </tr>

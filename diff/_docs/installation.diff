@@ -1,0 +1,13 @@
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
+--- _docs/installation.md
++++ _docs/installation.md
+
+ Installing Jekyll is easy and straight-forward, but there are a few requirements
+ you’ll need to make sure your system has before you start.
+ 
+-- [Ruby](http://www.ruby-lang.org/en/downloads/)
++- [Ruby](http://www.ruby-lang.org/en/downloads/) (including development
++  headers)
+ - [RubyGems](http://rubygems.org/pages/download)
+ - Linux, Unix, or Mac OS X
+ - [NodeJS](http://nodejs.org), or another JavaScript runtime (for
