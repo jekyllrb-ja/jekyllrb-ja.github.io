@@ -1,28 +1,13 @@
-Base revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
---- docs/installation.md
-+++ docs/installation.md
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
+--- _docs/installation.md
++++ _docs/installation.md
 
- - [Ruby](http://www.ruby-lang.org/en/downloads/)
+ Installing Jekyll is easy and straight-forward, but there are a few requirements
+ you’ll need to make sure your system has before you start.
+ 
+-- [Ruby](http://www.ruby-lang.org/en/downloads/)
++- [Ruby](http://www.ruby-lang.org/en/downloads/) (including development
++  headers)
  - [RubyGems](http://rubygems.org/pages/download)
  - Linux, Unix, or Mac OS X
-+- [NodeJS](http://nodejs.org), or another JavaScript runtime (for
-+  CoffeeScript support).
- 
- <div class="note info">
-   <h5>Running Jekyll on Windows</h5>
- ## Install with RubyGems
- 
- The best way to install Jekyll is via
--[RubyGems](http://docs.rubygems.org/read/chapter/3). At the terminal prompt,
-+[RubyGems](http://rubygems.org/pages/download). At the terminal prompt,
- simply run the following command to install Jekyll:
- 
- {% highlight bash %}
-     If you’re the kind of person who is using Jekyll, then chances are you’ll
-     want to enable syntax highlighting using <a href="http://pygments.org/">Pygments</a>
-     or <a href="https://github.com/jayferd/rouge">Rouge</a>. You should really
--    <a href="../templates/#code_snippet_highlighting">check out how to
-+    <a href="../templates/#code-snippet-highlighting">check out how to
-     do that</a> before you go any farther.
-   </p>
- </div>
+ - [NodeJS](http://nodejs.org), or another JavaScript runtime (for

@@ -1,12 +1,12 @@
-Base revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
---- docs/index.md
-+++ docs/index.md
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
+--- _docs/index.md
++++ _docs/index.md
 
- Jekyll is a simple, blog-aware, static site generator. It takes a template
  directory containing raw text files in various formats, runs it through
  [Markdown](http://daringfireball.net/projects/markdown/) (or
--[Textile](http://textile.sitemonks.com/)) and
-+[Textile](http://redcloth.org/textile)) and
- [Liquid](http://wiki.shopify.com/Liquid)
+ [Textile](http://redcloth.org/textile)) and
+-[Liquid](http://wiki.shopify.com/Liquid)
++[Liquid](https://github.com/Shopify/liquid/wiki)
  converters, and spits out a complete, ready-to-publish static website suitable
  for serving with your favorite web server. Jekyll also happens to be the engine
+ behind [GitHub Pages](http://pages.github.com), which means you can use Jekyll

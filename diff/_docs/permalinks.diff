@@ -1,50 +1,20 @@
-Base revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
---- docs/permalinks.md
-+++ docs/permalinks.md
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
+--- _docs/permalinks.md
++++ _docs/permalinks.md
 
-     </tr>
-     <tr>
-       <td>
-+        <p><code>short_year</code></p>
-+      </td>
-+      <td>
-+        <p>Year from the Post’s filename without the century.</p>
-+      </td>
-+    </tr>
-+    <tr>
-+      <td>
-         <p><code>title</code></p>
-       </td>
-       <td>
+ 
+ ## Built-in permalink styles
+ 
++**Note:** these may only apply to posts, not to pages, collections or
++static files. For example, `pretty` changes page permalinks from
++`/:path/:basename:output_ext` to `/:page/:basename/` if the page is HTML,
++thus "prettyifying" the page permalink. The `date`, `none`, and all custom
++values do not apply to pages. No permalink style applies to static files,
++and collections have their own means of specifying permalinks. It's all
++rather confusing but check out [Issue #2691](https://github.com/jekyll/jekyll/issues/2691)
++for more background on the subject, and submit a PR if you're adventurous
++enough to fix it all!
++
+ <div class="mobile-side-scroller">
  <table>
    <thead>
-     <tr>
--      <th>Permalink Setting</th>
-+      <th>URL Template</th>
-       <th>Resulting Permalink URL</th>
-     </tr>
-   </thead>
-     </tr>
-     <tr>
-       <td>
--        <p><code>permalink: pretty</code></p>
-+        <p><code>pretty</code></p>
-       </td>
-       <td>
-         <p><code>/2009/04/29/slap-chop/index.html</code></p>
-     </tr>
-     <tr>
-       <td>
--        <p><code>permalink: /:month-:day-:year/:title.html</code></p>
-+        <p><code>/:month-:day-:year/:title.html</code></p>
-       </td>
-       <td>
-         <p><code>/04-29-2009/slap-chop.html</code></p>
-     </tr>
-     <tr>
-       <td>
--        <p><code>permalink: /blog/:year/:month/:day/:title</code></p>
-+        <p><code>/blog/:year/:month/:day/:title</code></p>
-       </td>
-       <td>
-         <p><code>/blog/2009/04/29/slap-chop/index.html</code></p>
