@@ -1,4 +1,4 @@
----
+--
 layout: docs
 title: データファイル
 prev_section: collections
@@ -165,7 +165,7 @@ You can now render the list of members in a template:
 
 データファイルは `_data` フォルダの下位のフォルダに配置することもできます。
 各フォルダレベルが変数の名前空間に追加されます。
-以下の例は，GitHub の organizations を `orgs` フォルダ配下のファイルに
+以下の例は、GitHub の organizations を `orgs` フォルダ配下のファイルに
 分割して定義するとしたらどのようになるかを示しています。
 
 <!--original
