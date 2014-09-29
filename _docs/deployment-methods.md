@@ -268,7 +268,7 @@ this script from within Textmate.
 -->
 
 [Rack-Jekyll](https://github.com/adaoraul/rack-jekyll/)は、Amazon EC2、Slicehost、Herokuの、そして、任意のRackサーバ上などでサイトをデプロイするための簡単な方法です。
-それらは [shotgun](https://github.com/rtomakyo/shotgun/)、 [rackup](https://github.com/rack/rack)、 [mongrel](https://github.com/mongrel/mongrel)、 [unicorn](https://github.com/defunkt/unicorn/)、 [その他](https://github.com/adaoraul/rack-jekyll#readme) にて実行することができます。
+それらは [shotgun](https://github.com/rtomayko/shotgun/)、 [rackup](https://github.com/rack/rack)、 [mongrel](https://github.com/mongrel/mongrel)、 [unicorn](https://github.com/defunkt/unicorn/)、 [その他](https://github.com/adaoraul/rack-jekyll#readme) にて実行することができます。
 
 <!--original
 [Rack-Jekyll](https://github.com/adaoraul/rack-jekyll/) is an easy way to deploy your site on any Rack server such as Amazon EC2, Slicehost, Heroku, and so forth. It also can run with [shotgun](https://github.com/rtomayko/shotgun/), [rackup](https://github.com/rack/rack), [mongrel](https://github.com/mongrel/mongrel), [unicorn](https://github.com/defunkt/unicorn/), and [others](https://github.com/adaoraul/rack-jekyll#readme).
