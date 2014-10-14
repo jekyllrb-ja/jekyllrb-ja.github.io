@@ -4,6 +4,7 @@ title: デプロイ方法
 prev_section: github-pages
 next_section: troubleshooting
 permalink: /docs/deployment-methods/
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -83,7 +84,7 @@ There are also a number of ways to easily automate the deployment of a Jekyll si
 [やり方はこちらです](http://web.archive.org/web/20091223025644/http://www.taknado.com/en/2009/03/26/deploying-a-jekyll-generated-site/)
 
 <!--original
-If you store your jekyll site in [Git](http://git-scm.com/) (you are using version control, right?), it’s pretty easy to automate the
+If you store your Jekyll site in [Git](http://git-scm.com/) (you are using version control, right?), it’s pretty easy to automate the
 deployment process by setting up a post-update hook in your Git
 repository, [like
 this](http://web.archive.org/web/20091223025644/http://www.taknado.com/en/2009/03/26/deploying-a-jekyll-generated-site/).
@@ -188,18 +189,54 @@ laptops$ git push deploy master
 {% endhighlight %}
 -->
 
+### Jekyll-hook
+
+<!--original
+### Jekyll-hook
+-->
+
+あなたは jekyll-hook を使うこともできます。
+jekyll-hook は GitHub からのウェブフックの発動を監視し、Jekyll でウェブサイトを
+作成してどこかの場所に発行するサーバです。
+あなた独自の GitHub Pages スタイルのウェブサーバを運用するために使ってください。
+
+<!--original
+You can also use jekyll-hook, a server that listens for webhook posts from
+GitHub, generates a website with Jekyll, and moves it somewhere to be
+published. Use this to run your own GitHub Pages-style web server.
+-->
+
+ファイアウォール越しにサイトを提供する場合や、HTTP ベーシック認証のような
+追加的なサーバレベル機能が必要な場合、あるいは CDN や S3 のようなファイルホストで
+直接サイトをホストしたい場合には、この方法が便利です。
+
+<!--original
+This method is useful if you need to serve your websites behind a firewall,
+need extra server-level features like HTTP basic authentication or want to
+host your site directly on a CDN or file host like S3.
+-->
+
+セットアップの手順は
+[`jekyll-hook` リポジトリ](https://github.com/developmentseed/jekyll-hook)
+にすべてドキュメント化されています。
+
+<!--original
+Setup steps are fully documented
+[in the `jekyll-hook` repo](https://github.com/developmentseed/jekyll-hook).
+-->
+
 ### Rake
 
 <!--original
 ### Rake
 -->
 
-Jekyllサイトをデプロイする別の方法は[Rake](https://github.com/jimweirich/rake)、[HighLine](https://github.com/JEG2/highline)、[Net::SSH](http://net-ssh.rubyforge.org/) を利用することです。
+Jekyllサイトをデプロイする別の方法は[Rake](https://github.com/jimweirich/rake)、[HighLine](https://github.com/JEG2/highline)、[Net::SSH](https://github.com/net-ssh/net-ssh) を利用することです。
 複数のブランチをRakeで扱い、Jekyllをデプロイするより複雑な例は[Git Ready](https://github.com/gitready/gitready/blob/cdfbc4ec5321ff8d18c3ce936e9c749dbbc4f190/Rakefile) に記載されています。
 
 <!--original
 Another way to deploy your Jekyll site is to use [Rake](https://github.com/jimweirich/rake), [HighLine](https://github.com/JEG2/highline), and
-[Net::SSH](http://net-ssh.rubyforge.org/). A more complex example of deploying Jekyll with Rake that deals with multiple branches can be found in [Git Ready](https://github.com/gitready/gitready/blob/cdfbc4ec5321ff8d18c3ce936e9c749dbbc4f190/Rakefile).
+[Net::SSH](https://github.com/net-ssh/net-ssh). A more complex example of deploying Jekyll with Rake that deals with multiple branches can be found in [Git Ready](https://github.com/gitready/gitready/blob/cdfbc4ec5321ff8d18c3ce936e9c749dbbc4f190/Rakefile).
 -->
 
 ### rsync
@@ -209,11 +246,12 @@ Another way to deploy your Jekyll site is to use [Rake](https://github.com/jimwe
 -->
 
 一度、 `_site` ディレクトリを生成したら、あなたは右記のような `tasks/deploy` シェルスクリプトを用いて簡単にrsyncできます。
-[デプロイスクリプトはこちら](http://github.com/henrik/henrik.nyh.se/blob/master/tasks/deploy)
+[デプロイスクリプトはこちら](https://github.com/henrik/henrik.nyh.se/blob/master/tasks/deploy)
 あなたは明らかにあなたのサイトの詳細を反映するように値を変更する必要があります。
 しかし、それをするのに役立つTextMateの中から実行するスクリプト [TextMate のマッチングコマンド](http://gist.github.com/214959) があります。
+
 <!--original
-Once you’ve generated the `_site` directory, you can easily rsync it using a `tasks/deploy` shell script similar to [this deploy script here](http://github.com/henrik/henrik.nyh.se/blob/master/tasks/deploy). You’d obviously need to change the values to reflect your site’s details. There is even [a matching TextMate command](http://gist.github.com/214959) that will help you run
+Once you’ve generated the `_site` directory, you can easily rsync it using a `tasks/deploy` shell script similar to [this deploy script here](https://github.com/henrik/henrik.nyh.se/blob/master/tasks/deploy). You’d obviously need to change the values to reflect your site’s details. There is even [a matching TextMate command](http://gist.github.com/214959) that will help you run
 this script from within Textmate.
 -->
 
@@ -224,11 +262,11 @@ this script from within Textmate.
 ## Rack-Jekyll
 -->
 
-[Rack-Jekyll](http://github.com/adaoraul/rack-jekyll/)は、Amazon EC2、Slicehost、Herokuの、そして、任意のRackサーバ上などでサイトをデプロイするための簡単な方法です。
-それらは [shotgun](http://github.com/rtomakyo/shotgun/)、 [rackup](http://github.com/rack/rack)、 [mongrel](http://github.com/mongrel/mongrel)、 [unicorn](http://github.com/defunkt/unicorn/)、 [その他](https://github.com/adaoraul/rack-jekyll#readme) にて実行することができます。
+[Rack-Jekyll](https://github.com/adaoraul/rack-jekyll/)は、Amazon EC2、Slicehost、Herokuの、そして、任意のRackサーバ上などでサイトをデプロイするための簡単な方法です。
+それらは [shotgun](https://github.com/rtomayko/shotgun/)、 [rackup](https://github.com/rack/rack)、 [mongrel](https://github.com/mongrel/mongrel)、 [unicorn](https://github.com/defunkt/unicorn/)、 [その他](https://github.com/adaoraul/rack-jekyll#readme) にて実行することができます。
 
 <!--original
-[Rack-Jekyll](http://github.com/adaoraul/rack-jekyll/) is an easy way to deploy your site on any Rack server such as Amazon EC2, Slicehost, Heroku, and so forth. It also can run with [shotgun](http://github.com/rtomakyo/shotgun/), [rackup](http://github.com/rack/rack), [mongrel](http://github.com/mongrel/mongrel), [unicorn](http://github.com/defunkt/unicorn/), and [others](https://github.com/adaoraul/rack-jekyll#readme).
+[Rack-Jekyll](https://github.com/adaoraul/rack-jekyll/) is an easy way to deploy your site on any Rack server such as Amazon EC2, Slicehost, Heroku, and so forth. It also can run with [shotgun](https://github.com/rtomayko/shotgun/), [rackup](https://github.com/rack/rack), [mongrel](https://github.com/mongrel/mongrel), [unicorn](https://github.com/defunkt/unicorn/), and [others](https://github.com/adaoraul/rack-jekyll#readme).
 -->
 
 Rack-Jekyllを用いたHerokuへのデプロイの仕方については[この記事](http://blog.crowdint.com/2010/08/02/instant-blog-using-jekyll-and-heroku.html) を読んでください。
@@ -243,11 +281,11 @@ Read [this post](http://blog.crowdint.com/2010/08/02/instant-blog-using-jekyll-a
 ## Jekyll-Admin for Rails
 -->
 
-もし、あなたが既存のRailsアプリの内部でJekyllを利用したい場合は、[Jekyll-Admin](http://github.com/zkarpinski/Jekyll-Admin)がこれを可能にするためのコードにドロップします。
-より詳細はJekyll-Adminの[README](http://github.com/zkarpinski/Jekyll-Admin/blob/master/README) 参照してください。
+もし、あなたが既存のRailsアプリの内部でJekyllを利用したい場合は、[Jekyll-Admin](https://github.com/zkarpinski/Jekyll-Admin)がこれを可能にするためのコードにドロップします。
+より詳細はJekyll-Adminの[README](https://github.com/zkarpinski/Jekyll-Admin/blob/master/README) 参照してください。
 
 <!--original
-If you want to maintain Jekyll inside your existing Rails app, [Jekyll-Admin](http://github.com/zkarpinski/Jekyll-Admin) contains drop in code to make this possible. See Jekyll-Admin’s [README](http://github.com/zkarpinski/Jekyll-Admin/blob/master/README) for more details.
+If you want to maintain Jekyll inside your existing Rails app, [Jekyll-Admin](https://github.com/zkarpinski/Jekyll-Admin) contains drop in code to make this possible. See Jekyll-Admin’s [README](https://github.com/zkarpinski/Jekyll-Admin/blob/master/README) for more details.
 -->
 
 ## Amazon S3
