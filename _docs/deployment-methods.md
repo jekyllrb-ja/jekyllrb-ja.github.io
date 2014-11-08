@@ -49,13 +49,16 @@ There is a project called [Glynn](https://github.com/dmathieu/glynn), which lets
 send them to your host through FTP.
 -->
 
-## 自分で管理してる web サーバの場合
+## 自分で管理している web サーバの場合
 
 <!--original
 ## Self-managed web server
 -->
 
-デプロイ対象のWebサーバへの直接アクセスする方法を持っている場合は、デプロイの方法は基本的に同じです。（`scp`、あるいはファイルシステムへの直接アクセスする他の方法がある場合は除く）生成された `_site`フォルダの内容が、Webサーバーの適切なWebルートディレクトリに置かれているか確認を忘れないでください。
+デプロイ対象のWebサーバへ直接アクセスする方法を持っている場合は、
+デプロイの方法は基本的に同じです（`scp`、あるいはファイルシステムへ直接アクセスするといった、
+他のファイル転送方法がある場合は除く）。生成された `_site`フォルダの内容が、
+Webサーバーの適切なWebルートディレクトリに置かれているか確認するのを忘れないでください。
 
 <!--original
 If you have direct access yourself to the deployment web server yourself, the process is essentially the same, except you might have other methods available to you (such as `scp`, or even direct filesystem access) for transferring the files. Just remember to make sure the contents of the generated `_site` folder get placed in the appropriate web root directory for your web server.
@@ -79,9 +82,9 @@ There are also a number of ways to easily automate the deployment of a Jekyll si
 ### Git post-update hook
 -->
 
-あなたが自身のJekyllサイトを[Git](http://git-scm.com/) に保存している場合（あなたは正しいバージョン管理をしていますか？）、
-あなたのGitリポジトリにpost-update フックを設定することでデプロイ手順を自動化するのは簡単です。
-[やり方はこちらです](http://web.archive.org/web/20091223025644/http://www.taknado.com/en/2009/03/26/deploying-a-jekyll-generated-site/)
+あなたが自身のJekyllサイトを[Git](http://git-scm.com/) に保存している場合（あなたはバージョン管理をしていますよね？）、
+あなたのGitリポジトリに post-update フックを設定することでデプロイ手順を自動化するのは簡単です。
+[やり方はこちらです](http://web.archive.org/web/20091223025644/http://www.taknado.com/en/2009/03/26/deploying-a-jekyll-generated-site/)。
 
 <!--original
 If you store your Jekyll site in [Git](http://git-scm.com/) (you are using version control, right?), it’s pretty easy to automate the
@@ -245,10 +248,12 @@ Another way to deploy your Jekyll site is to use [Rake](https://github.com/jimwe
 ### rsync
 -->
 
-一度、 `_site` ディレクトリを生成したら、あなたは右記のような `tasks/deploy` シェルスクリプトを用いて簡単にrsyncできます。
-[デプロイスクリプトはこちら](https://github.com/henrik/henrik.nyh.se/blob/master/tasks/deploy)
-あなたは明らかにあなたのサイトの詳細を反映するように値を変更する必要があります。
-しかし、それをするのに役立つTextMateの中から実行するスクリプト [TextMate のマッチングコマンド](http://gist.github.com/214959) があります。
+一度、 `_site` ディレクトリを生成したら、あなたは
+[このデプロイスクリプト](https://github.com/henrik/henrik.nyh.se/blob/master/tasks/deploy)
+のような `tasks/deploy` シェルスクリプトを用いて簡単にrsyncできます。
+当然ながら、あなたのサイトの詳細に合わせて値を変更する必要はあります。
+このスクリプトに[対応したTextMateのコマンド](http://gist.github.com/214959) もあり、
+Textmate上からこのスクリプトを実行するのに役立ちます。
 
 <!--original
 Once you’ve generated the `_site` directory, you can easily rsync it using a `tasks/deploy` shell script similar to [this deploy script here](https://github.com/henrik/henrik.nyh.se/blob/master/tasks/deploy). You’d obviously need to change the values to reflect your site’s details. There is even [a matching TextMate command](http://gist.github.com/214959) that will help you run
@@ -281,8 +286,8 @@ Read [this post](http://blog.crowdint.com/2010/08/02/instant-blog-using-jekyll-a
 ## Jekyll-Admin for Rails
 -->
 
-もし、あなたが既存のRailsアプリの内部でJekyllを利用したい場合は、[Jekyll-Admin](https://github.com/zkarpinski/Jekyll-Admin)がこれを可能にするためのコードにドロップします。
-より詳細はJekyll-Adminの[README](https://github.com/zkarpinski/Jekyll-Admin/blob/master/README) 参照してください。
+もし、あなたが既存のRailsアプリの内部でJekyllを利用したいなら、[Jekyll-Admin](https://github.com/zkarpinski/Jekyll-Admin)にある挿入用コードを使うことで可能です。
+より詳細な情報はJekyll-Adminの[README](https://github.com/zkarpinski/Jekyll-Admin/blob/master/README) を参照してください。
 
 <!--original
 If you want to maintain Jekyll inside your existing Rails app, [Jekyll-Admin](https://github.com/zkarpinski/Jekyll-Admin) contains drop in code to make this possible. See Jekyll-Admin’s [README](https://github.com/zkarpinski/Jekyll-Admin/blob/master/README) for more details.
