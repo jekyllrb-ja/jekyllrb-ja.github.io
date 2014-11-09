@@ -287,7 +287,7 @@ Read [this post](http://blog.crowdint.com/2010/08/02/instant-blog-using-jekyll-a
 -->
 
 もし、あなたが既存のRailsアプリの内部でJekyllを利用したいなら、[Jekyll-Admin](https://github.com/zkarpinski/Jekyll-Admin)にある挿入用コードを使うことで可能です。
-より詳細な情報はJekyll-Adminの[README](https://github.com/zkarpinski/Jekyll-Admin/blob/master/README) を参照してください。
+詳細はJekyll-Adminの[README](https://github.com/zkarpinski/Jekyll-Admin/blob/master/README)を参照してください。
 
 <!--original
 If you want to maintain Jekyll inside your existing Rails app, [Jekyll-Admin](https://github.com/zkarpinski/Jekyll-Admin) contains drop in code to make this possible. See Jekyll-Admin’s [README](https://github.com/zkarpinski/Jekyll-Admin/blob/master/README) for more details.
