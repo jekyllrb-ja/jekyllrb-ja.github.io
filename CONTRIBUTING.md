@@ -143,7 +143,13 @@ Issueに基づいたPull Requestである場合は、そのdescriptionに`fix #<
 
 ## togglateを使った翻訳ファイルの作成
 
-(未記載)
+1. 下記コマンドにて作業用ファイルを作成します。
+
+   `togglate create -e=false ./diff/_docs/xxxxx.md > ./_docs/xxxxx.md`
+
+1. YAML Front-matter部分がコメントアウトされてしまうので、ファイル冒頭にコピペします。
+
+1. 作業用ファイル内の[Translation here]部分に訳文を書いていきます。
 
 ## 翻訳上のTips
 
