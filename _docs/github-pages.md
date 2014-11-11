@@ -4,7 +4,7 @@ title: GitHub Pagesについて
 prev_section: extras
 next_section: deployment-methods
 permalink: /docs/github-pages/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
 ---
 
 <!--original
