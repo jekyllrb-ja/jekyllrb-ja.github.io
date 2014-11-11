@@ -24,6 +24,7 @@ task :togglate do
 
   ok_files = []
   ng_files = []
+  retry_files = []
 
   Dir.glob(files).each do |file|
     revision = ENV['rev']
@@ -57,15 +58,17 @@ task :togglate do
       curl_file = file.gsub(/_/, '')
       file_exist = system( "curl -sf #{ORIGINAL_DOC_URL}/#{curl_file} > #{origin_doc}" )
       unless file_exist
-        fail "`curl`: No such file - '#{ORIGINAL_DOC_URL}/#{curl_file}'"
-      end
-      # system( "git diff --no-index #{local_doc} #{origin_doc}" )
-      system( "diff -uw #{local_doc} #{origin_doc}" )
-      case $?
-      when 0
-        ok_files << file
+        puts "`curl`: No such file - '#{ORIGINAL_DOC_URL}/#{curl_file}'"
+        retry_files << file
       else
-        ng_files << file
+        # system( "git diff --no-index #{local_doc} #{origin_doc}" )
+        system( "diff -uw #{local_doc} #{origin_doc}" )
+        case $?
+        when 0
+          ok_files << file
+        else
+          ng_files << file
+        end
       end
     ensure
       [local_doc, origin_doc].each do |f|
@@ -79,10 +82,16 @@ task :togglate do
   puts "NG:"
   p ng_files
 
-  if ng_files.empty?
+  if ng_files.empty? and retry_files.empty?
     exit 0
   else
-    exit 1
+    exit 1 unless ng_files.empty?
+
+    retry_files.each do |file|
+      puts file
+      Rake::Task['verify_original_insertion'].invoke(file)
+      puts $?
+    end
   end
 end
 
