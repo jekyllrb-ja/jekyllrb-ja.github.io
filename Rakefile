@@ -54,7 +54,8 @@ task :togglate do
       # output local document
       system( "#{togglate} commentout #{file} > #{local_doc}" )
       # output original document
-      curl_file = file.gsub(/_/, '')
+      # curl_file = file.gsub(/_/, '')
+      curl_file = file.dup
       file_exist = system( "curl -sf #{ORIGINAL_DOC_URL}/#{curl_file} > #{origin_doc}" )
       unless file_exist
         fail "`curl`: No such file - '#{ORIGINAL_DOC_URL}/#{curl_file}'"
