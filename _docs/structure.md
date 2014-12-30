@@ -4,7 +4,7 @@ title: ディレクトリ構成
 prev_section: usage
 next_section: configuration
 permalink: /docs/structure/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
 ---
 
 <!--original
@@ -153,7 +153,7 @@ An overview of what each of these does:
         <p>
 
           これらは posts をラップするテンプレートです。
-          layouts は次のセクションに記述されている <a href="../frontmatter/">YAML front matter</a>
+          layouts は次のセクションに記述されている <a href="../frontmatter/">YAML Front Matter</a>
           に基づいて post 毎に選択されます。
           liquid タグ <code>{% raw %}{{ content }}{% endraw %}</code> は
           ウェブページにコンテンツを挿入するために使用されます。
@@ -303,7 +303,7 @@ An overview of what each of these does:
         <p>
 
           These are the templates that wrap posts. Layouts are chosen on a post-
-          by-post basis in the <a href="../frontmatter/">YAML front matter</a>,
+          by-post basis in the <a href="../frontmatter/">YAML Front Matter</a>,
           which is described in the next section. The liquid tag
           <code>{% raw %}{{ content }}{% endraw %}</code>
           is used to inject content into the web page.
