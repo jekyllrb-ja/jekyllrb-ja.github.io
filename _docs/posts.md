@@ -4,7 +4,7 @@ title: Post を書く
 prev_section: frontmatter
 next_section: drafts
 permalink: /docs/posts/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
 ---
 
 <!--original
@@ -47,7 +47,7 @@ and web-based CMS systems, this will be a welcome change!
 [Markdown](http://daringfireball.net/projects/markdown/) や
 [Textile](http://redcloth.org/textile) フォーマットのテキストファイルの
 どちらでも書くことができ、そしてそれらが
-[YAML front-matter](../frontmatter/) を持っている限り、
+[YAML Front Matter](../frontmatter/) を持っている限り、
 これらのソースフォーマットから静的サイトの一部として HTML ページに変換されます。
 
 <!--original
@@ -55,7 +55,7 @@ As explained on the [directory structure](../structure/) page, the `_posts`
 folder is where your blog posts will live. These files can be either
 [Markdown](http://daringfireball.net/projects/markdown/) or
 [Textile](http://redcloth.org/textile) formatted text files, and as long as
-they have [YAML front-matter](../frontmatter/), they will be converted from their
+they have [YAML Front Matter](../frontmatter/), they will be converted from their
 source format into an HTML page that is part of your static site.
 -->
 
@@ -134,7 +134,7 @@ file. For example, the following are examples of valid post filenames:
 ### Content Formats
 -->
 
-すべてのブログ Post は [YAML front-matter](../frontmatter/) ではじまるべきです。
+すべてのブログ Post は [YAML Front Matter](../frontmatter/) ではじまるべきです。
 後は、あなたが好むフォーマットを決定するだけです。
 Jekyll は 2 つの人気のあるマークアップフォーマットをサポートしています:
 [Markdown](http://daringfireball.net/projects/markdown/) と
@@ -144,7 +144,7 @@ Post のコンテンツの異なるタイプをマークアップする独自の
 あなたは自分のニーズにもっとも適したものを決定し、それらのフォーマットに慣れるべきです。
 
 <!--original
-All blog post files must begin with [YAML front-matter](../frontmatter/). After
+All blog post files must begin with [YAML Front Matter](../frontmatter/). After
 that, it's simply a matter of deciding which format you prefer. Jekyll supports
 two popular content markup formats:
 [Markdown](http://daringfireball.net/projects/markdown/) and
@@ -396,12 +396,12 @@ which is already done for you. These tags can be removed with the following if y
 -->
 
 もし、あなたが自動的に生成された Post の抜粋を好まないなら、
-Post の YAML ｆront-matter に `excerpt` を追加することによって上書きすることができます。
+Post の YAML Front Matter に `excerpt` を追加することによって上書きすることができます。
 `excerpt_separator` に `""` を設定することによって、完全にそれを無効にします。
 
 <!--original
 If you don't like the automatically-generated post excerpt, it can be overridden by adding
-`excerpt` to your post's YAML front-matter. Completely disable it by setting
+`excerpt` to your post's YAML Front Matter. Completely disable it by setting
 your `excerpt_separator` to `""`.
 -->
 
