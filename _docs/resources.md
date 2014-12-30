@@ -89,7 +89,7 @@ Jekyll’s growing use is producing a wide variety of tutorials, frameworks, ext
 - [Carter Allenによるブログ ‘このウェブサイトについて’](http://cartera.me/2010/08/12/about-this-website/)
   > “Jekyllは私が今までブログエンジンで欲しかったものすべてです。本当に。完璧ではないですが、何が素晴らしいかというと何か間違ってることがあれば、どのように動作するかを正確に知っており、どのように修正するかを知っているからです。あなたのマシン上で実行され、本質的にあなたとブラウザの間に”build"という過程が加わるだけです。私は標準のHTML5とCSS3を使用してTextMateで、このサイト全体をコード化して、最後に私はこのマークアップにいくつかの変数を追加しました。Presto-chango、私のサイトは構築され、そして世界の平和を思います。”
 - [Barry Clarkによるブログ ‘JekyllとGitHub Pagesでブログを構築する’](http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/)
-  > “私は最近，ブログをWordPressからJekyllに移行しました。Jekyllはミニマルで静的なブログをGitHub上でホスティングするためのすばらしいウェブサイト生成ツールです。Jekyllのデザインレイヤーや，執筆ワークフローのシンプルさがすばらしい。しかし，サイトをセットアップするのは予想よりもずっと時間がかかりました。この記事で順を追って説明しましょう: Jekyllでブログをセットアップする最短の方法，Jekyllを使うことで起こりがちな問題をどのように回避するか，Wordpressからコンテンツをインポートする方法，などなど。”
+  > “私は最近、ブログをWordPressからJekyllに移行しました。Jekyllはミニマルで静的なブログをGitHub上でホスティングするためのすばらしいウェブサイト生成ツールです。Jekyllのデザインレイヤーや、執筆ワークフローのシンプルさがすばらしい。しかし、サイトをセットアップするのは予想よりもずっと時間がかかりました。この記事で順を追って説明しましょう: Jekyllでブログをセットアップする最短の方法、Jekyllを使うことで起こりがちな問題をどのように回避するか、Wordpressからコンテンツをインポートする方法、などなど。”
 - [Jekyllでタグクラウドを生成する](http://www.justkez.com/generating-a-tag-cloud-in-jekyll/)
 Jekyllを用いたタグクラウドとタグごとのコンテンツページの実装ガイド
 
