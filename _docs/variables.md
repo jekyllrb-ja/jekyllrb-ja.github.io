@@ -409,8 +409,6 @@ following is a reference of the available data.
       <td><p><code>page.content</code></p></td>
       <td><p>
 
-        The content of the Page, rendered or un-rendered depending upon
-        what Liquid is being processed and what <code>page</code> is.
         レンダリング済みまたは未レンダリング（Liquid が処理されているかや、
         <code>page</code> が何であるかにより変わります）の，Page の内容です。
 
