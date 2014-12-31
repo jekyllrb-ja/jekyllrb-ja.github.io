@@ -4,7 +4,7 @@ title: Collection
 prev_section: variables
 next_section: datafiles
 permalink: /docs/collections/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
 ---
 
 <!--original
@@ -95,17 +95,17 @@ collections:
 -->
 
 対応するフォルダー(例えば、`<source>/_my_collection`)を作成し、ドキュメントを追加します。
-YAML front-matterがある場合は、それはデータとして読み込まれ、無い場合は、すべてのものはそのままドキュメントの`content`属性に挿入されます。
+YAML Front Matterがある場合は、それはデータとして読み込まれ、無い場合は、すべてのものはそのままドキュメントの`content`属性に挿入されます。
 
 <!--original
 Create a corresponding folder (e.g. `<source>/_my_collection`) and add documents.
-YAML front-matter is read in as data if it exists, if not, then everything is just stuck in the Document's `content` attribute.
+YAML Front Matter is read in as data if it exists, if not, then everything is just stuck in the Document's `content` attribute.
 -->
 
-注：フォルダーの名前は、config.ymlファイルに定義したコレクション名に、`_`文字を前置したものと同じでなければなりません。
+注：フォルダーの名前は、`_config.yml` ファイルに定義したコレクション名に、`_`文字を前置したものと同じでなければなりません。
 
 <!--original
-Note: the folder must be named identical to the collection you defined in you config.yml file, with the addition of the preceding `_` character.
+Note: the folder must be named identically to the collection you defined in your `_config.yml` file, with the addition of the preceding `_` character.
 -->
 
 ### ステップ３：必要に応じてコレクションのドキュメントを個別ファイルに書き出す
@@ -186,7 +186,7 @@ For example, if you have `_my_collection/some_subdir/some_doc.md`, it will be wr
         <p><code>collection</code></p>
       </td>
       <td>
-        <p>コレクションのラベル</p>
+        <p>コレクションのラベル。</p>
       </td>
     </tr>
     <tr>
@@ -194,7 +194,23 @@ For example, if you have `_my_collection/some_subdir/some_doc.md`, it will be wr
         <p><code>path</code></p>
       </td>
       <td>
-        <p>コレクションのディレクトリに対するドキュメントの相対パス</p>
+        <p>コレクションのディレクトリに対するドキュメントの相対パス。</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>name</code></p>
+      </td>
+      <td>
+        <p>ドキュメントのベース・ファイル名。スペース文字の連続、英数字以外の文字の連続はハイフンに置き換えられる。</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>title</code></p>
+      </td>
+      <td>
+        <p>ドキュメントの小文字のタイトル (<a href="/docs/frontmatter/">front matter</a> で定義されたもの)。スペース文字の連続、英数字以外の文字の連続はハイフンに置き換えられる。ドキュメントの <a href="/docs/frontmatter/">front matter</a> でタイトルが定義されていない場合は、<code>name</code> と同一になる。</p>
       </td>
     </tr>
     <tr>
@@ -202,7 +218,7 @@ For example, if you have `_my_collection/some_subdir/some_doc.md`, it will be wr
         <p><code>output_ext</code></p>
       </td>
       <td>
-        <p>出力ファイルの拡張子</p>
+        <p>出力ファイルの拡張子。</p>
       </td>
     </tr>
   </tbody>
@@ -224,7 +240,7 @@ For example, if you have `_my_collection/some_subdir/some_doc.md`, it will be wr
         <p><code>collection</code></p>
       </td>
       <td>
-        <p>Label of the containing collection</p>
+        <p>Label of the containing collection.</p>
       </td>
     </tr>
     <tr>
@@ -232,7 +248,23 @@ For example, if you have `_my_collection/some_subdir/some_doc.md`, it will be wr
         <p><code>path</code></p>
       </td>
       <td>
-        <p>Path to the document relative to the collection's directory</p>
+        <p>Path to the document relative to the collection's directory.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>name</code></p>
+      </td>
+      <td>
+        <p>The document's base filename, with every sequence of spaces and non-alphanumeric characters replaced by a hyphen.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>title</code></p>
+      </td>
+      <td>
+        <p>The document's lowercase title (as defined in its <a href="/docs/frontmatter/">front matter</a>), with every sequence of spaces and non-alphanumeric characters replaced by a hyphen. If the document does not define a title in its <a href="/docs/frontmatter/">front matter</a>, this is equivalent to <code>name</code>.</p>
       </td>
     </tr>
     <tr>
@@ -240,7 +272,7 @@ For example, if you have `_my_collection/some_subdir/some_doc.md`, it will be wr
         <p><code>output_ext</code></p>
       </td>
       <td>
-        <p>Extension of the output file</p>
+        <p>Extension of the output file.</p>
       </td>
     </tr>
   </tbody>
@@ -409,10 +441,10 @@ The collections are also available under `site.collections`, with the metadata y
 ### Documents
 -->
 
-ドキュメントの対応するファイルに備えられたYAML front-matterのものに加えて、各ドキュメントは、次の属性を持っています。
+ドキュメントの対応するファイルに備えられたYAML Front Matterのものに加えて、各ドキュメントは、次の属性を持っています。
 
 <!--original
-In addition to any YAML front-matter provided in the document's corresponding file, each document has the following attributes:
+In addition to any YAML Front Matter provided in the document's corresponding file, each document has the following attributes:
 -->
 
 <div class="mobile-side-scroller">
@@ -430,7 +462,7 @@ In addition to any YAML front-matter provided in the document's corresponding fi
       </td>
       <td>
         <p>
-          (出力前の)ドキュメントの内容。YAML front-matterを備えていない場合、ファイルにある内容のすべてがこれに該当する。YAML front-matterが使われている場合は、ファイルにおけるfront-matterの終端を示す`---`以降の内容がこれに該当する。
+          (出力前の)ドキュメントの内容。YAML Front Matterを備えていない場合、ファイルにある内容のすべてがこれに該当する。YAML Front Matterが使われている場合は、ファイルにおけるfront matterの終端を示す`---`以降の内容がこれに該当する。
         </p>
       </td>
     </tr>
@@ -504,10 +536,10 @@ In addition to any YAML front-matter provided in the document's corresponding fi
       </td>
       <td>
         <p>
-          The (unrendered) content of the document. If no YAML front-matter is provided,
-          this is the entirety of the file contents. If YAML front-matter
+          The (unrendered) content of the document. If no YAML Front Matter is provided,
+          this is the entirety of the file contents. If YAML Front Matter
           is used, then this is all the contents of the file after the terminating
-          `---` of the front-matter.
+          `---` of the front matter.
         </p>
       </td>
     </tr>
