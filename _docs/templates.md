@@ -1,9 +1,10 @@
----
+--
 layout: docs
 title: テンプレート
 prev_section: migrations
 next_section: permalinks
 permalink: /docs/templates/
+Base revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
@@ -48,165 +49,208 @@ common tasks easier.
   <tbody>
     <tr>
       <td>
-        <p class='name'><strong>日付を XML スキーマに</strong></p>
+        <p class="name"><strong>日付を XML スキーマに</strong></p>
         <p>日付を XML スキーマ(ISO 8601)形式に変換します。</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ site.time | date_to_xmlschema }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ site.time | date_to_xmlschema }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>2008-11-07T13:07:54-08:00</code>
+          <code class="output">2008-11-07T13:07:54-08:00</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>日付を RFC-822 形式に</strong></p>
+        <p class="name"><strong>日付を RFC-822 形式に</strong></p>
         <p>日付を RSS フィードで使用される RFC-822 形式に変換します。</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ site.time | date_to_rfc822 }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ site.time | date_to_rfc822 }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>Mon, 07 Nov 2008 13:07:54 -0800</code>
+          <code class="output">Mon, 07 Nov 2008 13:07:54 -0800</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>日付を文字列に</strong></p>
+        <p class="name"><strong>日付を文字列に</strong></p>
         <p>日付を短い文字列形式に変換します。</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ site.time | date_to_string }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ site.time | date_to_string }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>07 Nov 2008</code>
+          <code class="output">07 Nov 2008</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>日付を長い文字列に</strong></p>
+        <p class="name"><strong>日付を長い文字列に</strong></p>
         <p>日付を長い文字列形式に変換します。</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ site.time | date_to_long_string }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ site.time | date_to_long_string }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>07 November 2008</code>
+          <code class="output">07 November 2008</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>XML エスケープ</strong></p>
+        <p class="name"><strong>Where</strong></p>
+        <p>配列の中で、キー項目がその値を持つような全てのオブジェクトを選択します。</p>
+      </td>
+      <td class="align-center">
+        <p>
+         <code class="filter">{% raw %}{{ site.members | where:"graduation_year","2014" }}{% endraw %}</code>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="name"><strong>Group By</strong></p>
+        <p>その項目で配列の要素をグループ化します。</p>
+      </td>
+      <td class="align-center">
+        <p>
+         <code class="filter">{% raw %}{{ site.members | group_by:"graduation_year" }}{% endraw %}</code>
+        </p>
+        <p>
+          <code class="output">[{"name"=>"2013", "items"=>[...]},
+{"name"=>"2014", "items"=>[...]}]</code>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="name"><strong>XML エスケープ</strong></p>
         <p>XML で使用するためのいくつかのテキストをエスケープします。</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ page.content | xml_escape }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ page.content | xml_escape }}{% endraw %}</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>CGI エスケープ</strong></p>
+        <p class="name"><strong>CGI エスケープ</strong></p>
         <p>
           CGI エスケープは URL で使用される文字列をエスケープします。
           適切な %XX との交換で任意の特殊文字を置き換えます。
         </p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ “foo,bar;baz?” | cgi_escape }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ “foo,bar;baz?” | cgi_escape }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>foo%2Cbar%3Bbaz%3F</code>
+          <code class="output">foo%2Cbar%3Bbaz%3F</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>URI エスケープ</strong></p>
+        <p class="name"><strong>URI エスケープ</strong></p>
         <p>
           URI エスケープします。
         </p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ “'foo, bar \\baz?'” | uri_escape }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ “'foo, bar \\baz?'” | uri_escape }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>foo,%20bar%20%5Cbaz?</code>
+          <code class="output">foo,%20bar%20%5Cbaz?</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>ワード数</strong></p>
+        <p class="name"><strong>ワード数</strong></p>
         <p>テキスト内のワード数をカウントします。</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ page.content | number_of_words }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ page.content | number_of_words }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>1337</code>
+          <code class="output">1337</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>文を配列</strong></p>
+        <p class="name"><strong>文を配列</strong></p>
         <p>文を配列に変換します。タグのリストを表示するのに役立ちます。</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ page.tags | array_to_sentence_string }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ page.tags | array_to_sentence_string }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>foo, bar, and baz</code>
+          <code class="output">foo, bar, and baz</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>Textile 化</strong></p>
+        <p class="name"><strong>Textile 化</strong></p>
         <p>RedCloth を経由で作成された Textile フォーマット文字列を HTML に変換します。</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ page.excerpt | textilize }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ page.excerpt | textilize }}{% endraw %}</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>Markdown 化</strong></p>
+        <p class="name"><strong>Markdown 化</strong></p>
         <p>Markdown フォーマット文字列を HTML に変換します。</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ page.excerpt | markdownify }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ page.excerpt | markdownify }}{% endraw %}</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>JSON 用のデータ</strong></p>
+        <p class="name"><strong>JSON 用のデータ</strong></p>
         <p>JSON 用にハッシュか配列に変換します。Convert Hash or Array to JSON.</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ site.data.projects | jsonify }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ site.data.projects | jsonify }}{% endraw %}</code>
         </p>
       </td>
     </tr>
+    <tr>
+      <td>
+        <p class="name"><strong>ソート</strong></p>
+        <p>配列をソートします。ハッシュに対して使えるオプション引数： 1.&nbsp;プロパティ名 2.&nbsp;nilの順番 (<em>first</em> または <em>last</em>)。</p>
+      </td>
+      <td class="align-center">
+        <p>
+         <code class="filter">{% raw %}{{ page.tags | sort }}{% endraw %}</code>
+        </p>
+        <p>
+         <code class="filter">{% raw %}{{ site.posts | sort: 'author' }}{% endraw %}</code>
+        </p>
+         <p>
+         <code class="filter">{% raw %}{{ site.pages | sort: 'title', 'last' }}{% endraw %}</code>
+         </p>
+       </td>
+     </tr>
   </tbody>
 </table>
 </div>
@@ -223,165 +267,208 @@ common tasks easier.
   <tbody>
     <tr>
       <td>
-        <p class='name'><strong>Date to XML Schema</strong></p>
+        <p class="name"><strong>Date to XML Schema</strong></p>
         <p>Convert a Date into XML Schema (ISO 8601) format.</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ site.time | date_to_xmlschema }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ site.time | date_to_xmlschema }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>2008-11-07T13:07:54-08:00</code>
+          <code class="output">2008-11-07T13:07:54-08:00</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>Date to RFC-822 Format</strong></p>
+        <p class="name"><strong>Date to RFC-822 Format</strong></p>
         <p>Convert a Date into the RFC-822 format used for RSS feeds.</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ site.time | date_to_rfc822 }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ site.time | date_to_rfc822 }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>Mon, 07 Nov 2008 13:07:54 -0800</code>
+          <code class="output">Mon, 07 Nov 2008 13:07:54 -0800</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>Date to String</strong></p>
+        <p class="name"><strong>Date to String</strong></p>
         <p>Convert a date to short format.</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ site.time | date_to_string }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ site.time | date_to_string }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>07 Nov 2008</code>
+          <code class="output">07 Nov 2008</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>Date to Long String</strong></p>
+        <p class="name"><strong>Date to Long String</strong></p>
         <p>Format a date to long format.</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ site.time | date_to_long_string }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ site.time | date_to_long_string }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>07 November 2008</code>
+          <code class="output">07 November 2008</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>XML Escape</strong></p>
+        <p class="name"><strong>Where</strong></p>
+        <p>Select all the objects in an array where the key has the given value.</p>
+      </td>
+      <td class="align-center">
+        <p>
+         <code class="filter">{% raw %}{{ site.members | where:"graduation_year","2014" }}{% endraw %}</code>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="name"><strong>Group By</strong></p>
+        <p>Group an array's items by a given property.</p>
+      </td>
+      <td class="align-center">
+        <p>
+         <code class="filter">{% raw %}{{ site.members | group_by:"graduation_year" }}{% endraw %}</code>
+        </p>
+        <p>
+          <code class="output">[{"name"=>"2013", "items"=>[...]},
+{"name"=>"2014", "items"=>[...]}]</code>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p class="name"><strong>XML Escape</strong></p>
         <p>Escape some text for use in XML.</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ page.content | xml_escape }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ page.content | xml_escape }}{% endraw %}</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>CGI Escape</strong></p>
+        <p class="name"><strong>CGI Escape</strong></p>
         <p>
           CGI escape a string for use in a URL. Replaces any special characters
           with appropriate %XX replacements.
         </p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ “foo,bar;baz?” | cgi_escape }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ “foo,bar;baz?” | cgi_escape }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>foo%2Cbar%3Bbaz%3F</code>
+          <code class="output">foo%2Cbar%3Bbaz%3F</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>URI Escape</strong></p>
+        <p class="name"><strong>URI Escape</strong></p>
         <p>
           URI escape a string.
         </p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ “'foo, bar \\baz?'” | uri_escape }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ “'foo, bar \\baz?'” | uri_escape }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>foo,%20bar%20%5Cbaz?</code>
+          <code class="output">foo,%20bar%20%5Cbaz?</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>Number of Words</strong></p>
+        <p class="name"><strong>Number of Words</strong></p>
         <p>Count the number of words in some text.</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ page.content | number_of_words }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ page.content | number_of_words }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>1337</code>
+          <code class="output">1337</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>Array to Sentence</strong></p>
+        <p class="name"><strong>Array to Sentence</strong></p>
         <p>Convert an array into a sentence. Useful for listing tags.</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ page.tags | array_to_sentence_string }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ page.tags | array_to_sentence_string }}{% endraw %}</code>
         </p>
         <p>
-          <code class='output'>foo, bar, and baz</code>
+          <code class="output">foo, bar, and baz</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>Textilize</strong></p>
+        <p class="name"><strong>Textilize</strong></p>
         <p>Convert a Textile-formatted string into HTML, formatted via RedCloth</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ page.excerpt | textilize }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ page.excerpt | textilize }}{% endraw %}</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>Markdownify</strong></p>
+        <p class="name"><strong>Markdownify</strong></p>
         <p>Convert a Markdown-formatted string into HTML.</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ page.excerpt | markdownify }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ page.excerpt | markdownify }}{% endraw %}</code>
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        <p class='name'><strong>Data To JSON</strong></p>
+        <p class="name"><strong>Data To JSON</strong></p>
         <p>Convert Hash or Array to JSON.</p>
       </td>
-      <td class='align-center'>
+      <td class="align-center">
         <p>
-         <code class='filter'>{% raw %}{{ site.data.projects | jsonify }}{% endraw %}</code>
+         <code class="filter">{% raw %}{{ site.data.projects | jsonify }}{% endraw %}</code>
         </p>
       </td>
     </tr>
+    <tr>
+      <td>
+        <p class="name"><strong>Sort</strong></p>
+        <p>Sort an array. Optional arguments for hashes: 1.&nbsp;property name 2.&nbsp;nils order (<em>first</em> or <em>last</em>).</p>
+      </td>
+      <td class="align-center">
+        <p>
+         <code class="filter">{% raw %}{{ page.tags | sort }}{% endraw %}</code>
+        </p>
+        <p>
+         <code class="filter">{% raw %}{{ site.posts | sort: 'author' }}{% endraw %}</code>
+        </p>
+         <p>
+         <code class="filter">{% raw %}{{ site.pages | sort: 'title', 'last' }}{% endraw %}</code>
+         </p>
+       </td>
+     </tr>
   </tbody>
 </table>
 </div>
@@ -432,7 +519,7 @@ root of your source directory. This will embed the contents of
   <p>
 
     あなたが埋め込みたいファイル名は、(上記の例のように)リテラルを指定できます。
-    また、 <code>{% raw %}{% include {{ my_variable }} %}{% endraw %}</code> のように
+    また、 <code>{% raw %}{% include {{my_variable}} %}{% endraw %}</code> のように
     liquid のような変数構文を使用して変数を使用することができます。
 
   </p>
@@ -445,7 +532,7 @@ root of your source directory. This will embed the contents of
 
     The name of the file you wish to embed can be literal (as in the example above),
     or you can use a variable, using liquid-like variable syntax as in
-    <code>{% raw %}{% include {{ my_variable }} %}{% endraw %}</code>.
+    <code>{% raw %}{% include {{my_variable}} %}{% endraw %}</code>.
 
   </p>
 </div>
@@ -591,7 +678,7 @@ end
 -->
 
 表示するまでにハイライトするには、ハイライトスタイルシートを含める必要があります。
-[syntax.css](http://github.com/mojombo/tpw/tree/master/css/syntax.css) でスタイルシートの例を見ることができます。
+[syntax.css](https://github.com/mojombo/tpw/tree/master/css/syntax.css) でスタイルシートの例を見ることができます。
 同一のスタイルが GitHub によって使用されており、あなたが自分のサイトのために自由に使用することができます。
 もし `linenos` を使っているなら、ハイライトされたコードから行番号を区別するため `syntax.css` 内に `.lineno` 定義を
 追加することをお勧めします。
@@ -599,7 +686,7 @@ end
 <!--original
 In order for the highlighting to show up, you’ll need to include a highlighting
 stylesheet. For an example stylesheet you can look at
-[syntax.css](http://github.com/mojombo/tpw/tree/master/css/syntax.css). These
+[syntax.css](https://github.com/mojombo/tpw/tree/master/css/syntax.css). These
 are the same styles as used by GitHub and you are free to use them for your own
 site. If you use `linenos`, you might want to include an additional CSS class
 definition for the `.lineno` class in `syntax.css` to distinguish the line
@@ -688,21 +775,22 @@ You can also use this tag to create a link to a post in Markdown as follows:
 -->
 
 GitHub Gist をあなたのサイトに簡単に埋め込むために `gist` タグを使用します。
+公開・プライベート両方の Gist に対して有効です。
 
 <!--original
-Use the `gist` tag to easily embed a GitHub Gist onto your site:
+Use the `gist` tag to easily embed a GitHub Gist onto your site. This works with public or secret gists:
 -->
 
 {% highlight text %}
 {% raw %}
-{% gist 5555251 %}
+{% gist parkr/931c1c8d465a04042403 %}
 {% endraw %}
 {% endhighlight %}
 
 <!--original
 {% highlight text %}
 {% raw %}
-{% gist 5555251 %}
+{% gist parkr/931c1c8d465a04042403 %}
 {% endraw %}
 {% endhighlight %}
 -->
@@ -715,41 +803,14 @@ You may also optionally specify the filename in the gist to display:
 
 {% highlight text %}
 {% raw %}
-{% gist 5555251 result.md %}
+{% gist parkr/931c1c8d465a04042403 jekyll-private-gist.markdown %}
 {% endraw %}
 {% endhighlight %}
 
 <!--original
 {% highlight text %}
 {% raw %}
-{% gist 5555251 result.md %}
+{% gist parkr/931c1c8d465a04042403 jekyll-private-gist.markdown %}
 {% endraw %}
 {% endhighlight %}
--->
-
-`gist` タグはプライベート gist にも働きますが、 gist 所有者の GitHub ユーザ名が必須です:
-
-<!--original
-The `gist` tag also works with private gists, which require the gist owner's
-github username:
--->
-
-{% highlight text %}
-{% raw %}
-{% gist parkr/931c1c8d465a04042403 %}
-{% endraw %}
-{% endhighlight %}
-
-<!--original
-{% highlight text %}
-{% raw %}
-{% gist parkr/931c1c8d465a04042403 %}
-{% endraw %}
-{% endhighlight %}
--->
-
-プライベート gist のシンタックスもファイル名でサポートしています。
-
-<!--original
-The private gist syntax also supports filenames.
 -->
