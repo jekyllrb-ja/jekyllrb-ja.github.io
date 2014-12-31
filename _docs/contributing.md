@@ -4,7 +4,7 @@ title: 貢献
 prev_section: upgrading
 next_section: history
 permalink: /docs/contributing/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
 ---
 
 <!--original
@@ -263,13 +263,13 @@ GitHub users have access.
 
 もし、あなたのプラグインを[プラグイン一覧](/docs/plugins/#available-plugins)に追加したいなら、
 あなたのプラグインのタイプに応じて適切な小見出しの下にリンクを追加し、
-[プラグインページのソースファイル]({{ site.repository }}/blob/master/site/docs/plugins.md)へ
+[プラグインページのソースファイル]({{ site.repository }}/blob/master/site/_docs/plugins.md)へ
 プルリクエストを送ってください。
 
 <!--original
 If you want to add your plugin to the [list of plugins](/docs/plugins/#available-plugins),
 please submit a pull request modifying the [plugins page source
-file]({{ site.repository }}/blob/master/site/docs/plugins.md) by adding a
+file]({{ site.repository }}/blob/master/site/_docs/plugins.md) by adding a
 link to your plugin under the proper subheading depending upon its type.
 -->
 
