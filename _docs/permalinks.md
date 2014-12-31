@@ -4,7 +4,7 @@ title: パーマリンク
 prev_section: templates
 next_section: pagination
 permalink: /docs/permalinks/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
 ---
 
 <!--original
@@ -217,6 +217,29 @@ permalink is defined as `/:categories/:year/:month/:day/:title.html`.
 
 <!--original
 ## Built-in permalink styles
+-->
+
+**注：** 下記で説明する内容はpostsのみに適用され、pages、collections、静的ファイルには
+適用されません。たとえば `pretty` は、そのページがHTMLであれば、パーマリンクを
+`/:path/:basename:output_ext` から `/:page/:basename/` に変更します。
+つまりページのパーマリンクを「きれいにする(prettify)」わけです。
+`date`、`none` および、その他全てのカスタム値はpagesには適用されません。
+静的ファイルにはパーマリンクスタイルは全く適用されません。
+collectionsはパーマリンクを指定する独自の手段があります。
+上述の内容はかなり分かりにくいのですが、この件に関するさらなる背景は
+[Issue #2691](https://github.com/jekyll/jekyll/issues/2691) をご覧ください。
+この問題を解決しようという勇気ある方は、PRを送ってください！
+
+<!--original
+**Note:** these may only apply to posts, not to pages, collections or
+static files. For example, `pretty` changes page permalinks from
+`/:path/:basename:output_ext` to `/:page/:basename/` if the page is HTML,
+thus "prettyifying" the page permalink. The `date`, `none`, and all custom
+values do not apply to pages. No permalink style applies to static files,
+and collections have their own means of specifying permalinks. It's all
+rather confusing but check out [Issue #2691](https://github.com/jekyll/jekyll/issues/2691)
+for more background on the subject, and submit a PR if you're adventurous
+enough to fix it all!
 -->
 
 <div class="mobile-side-scroller">
