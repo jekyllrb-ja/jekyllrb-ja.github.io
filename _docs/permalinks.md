@@ -342,10 +342,10 @@ Given a post named: `/2009-04-29-slap-chop.textile`
     </tr>
     <tr>
       <td>
-        <p><code>/blog/:year/:month/:day/:title</code></p>
+        <p><code>/blog/:year/:month/:day/:title/</code></p>
       </td>
       <td>
-        <p><code>/blog/2009/04/29/slap-chop/index.html</code></p>
+        <p><code>/blog/2009/04/29/slap-chop/</code></p>
       </td>
     </tr>
   </tbody>
