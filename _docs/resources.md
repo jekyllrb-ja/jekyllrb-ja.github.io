@@ -4,7 +4,7 @@ title: リソース集
 prev_section: sites
 next_section: upgrading
 permalink: /docs/resources/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
 ---
 
 <!--original
@@ -88,6 +88,8 @@ Jekyll’s growing use is producing a wide variety of tutorials, frameworks, ext
   > “Jekyllは非常によく設計されており、WordPress以前に立ち戻らせてくれる。男が男であり、HTMLが静的であった頃に。私はこのアイデアが気に入っていて、支持してしているし、そしてこのコア部分にいくつかの改良も加えています。ここで、私はこのサイト以外の利用者の為に私のFork内容の要点のいくつかについて指摘しておきます。”
 - [Carter Allenによるブログ ‘このウェブサイトについて’](http://cartera.me/2010/08/12/about-this-website/)
   > “Jekyllは私が今までブログエンジンで欲しかったものすべてです。本当に。完璧ではないですが、何が素晴らしいかというと何か間違ってることがあれば、どのように動作するかを正確に知っており、どのように修正するかを知っているからです。あなたのマシン上で実行され、本質的にあなたとブラウザの間に”build"という過程が加わるだけです。私は標準のHTML5とCSS3を使用してTextMateで、このサイト全体をコード化して、最後に私はこのマークアップにいくつかの変数を追加しました。Presto-chango、私のサイトは構築され、そして世界の平和を思います。”
+- [Barry Clarkによるブログ ‘JekyllとGitHub Pagesでブログを構築する’](http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/)
+  > “私は最近、ブログをWordPressからJekyllに移行しました。Jekyllはミニマルで静的なブログをGitHub上でホスティングするためのすばらしいウェブサイト生成ツールです。Jekyllのデザインレイヤーや、執筆ワークフローのシンプルさがすばらしい。しかし、サイトをセットアップするのは予想よりもずっと時間がかかりました。この記事で順を追って説明しましょう: Jekyllでブログをセットアップする最短の方法、Jekyllを使うことで起こりがちな問題をどのように回避するか、Wordpressからコンテンツをインポートする方法、などなど。”
 - [Jekyllでタグクラウドを生成する](http://www.justkez.com/generating-a-tag-cloud-in-jekyll/)
 Jekyllを用いたタグクラウドとタグごとのコンテンツページの実装ガイド
 
@@ -98,6 +100,8 @@ Jekyllを用いたタグクラウドとタグごとのコンテンツページ�
   > “Jekyll is a well-architected throwback to a time before WordPress, when men were men, and HTML was static. I like the ideas it espouses, and have made a few improvements to it’s core. Here, I’ll point out some highlights of my fork in the hopes that they see usage beyond this site.”
 - [‘About this Website’, by Carter Allen](http://cartera.me/2010/08/12/about-this-website/)
   > “Jekyll is everything that I ever wanted in a blogging engine. Really. It isn’t perfect, but what’s excellent about it is that if there’s something wrong, I know exactly how it works and how to fix it. It runs on the your machine only, and is essentially an added”build" step between you and the browser. I coded this entire site in TextMate using standard HTML5 and CSS3, and then at the end I added just a few little variables to the markup. Presto-chango, my site is built and I am at peace with the world.”
+- [‘Build A Blog With Jekyll And GitHub Pages’, by Barry Clark](http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/)
+  > “I recently migrated my blog from WordPress to Jekyll, a fantastic website generator that’s designed for building minimal, static blogs to be hosted on GitHub Pages. The simplicity of Jekyll’s theming layer and writing workflow is fantastic; however, setting up my website took a lot longer than expected. In this article we'll walk through: the quickest way to set up a Jekyll powered blog, how to avoid common problems with using Jekyll, how to import your content from Wordpress, and more.”
 - [Generating a Tag Cloud in Jekyll](http://www.justkez.com/generating-a-tag-cloud-in-jekyll/)  
 A guide to implementing a tag cloud and per-tag content pages using Jekyll.
 -->
