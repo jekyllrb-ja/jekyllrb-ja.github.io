@@ -4,7 +4,7 @@ title: トラブルシューティング
 prev_section: deployment-methods
 next_section: sites
 permalink: /docs/troubleshooting/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
 ---
 
 <!--original
@@ -154,6 +154,23 @@ Windows では[RubyInstaller DevKit](https://wiki.github.com/oneclick/rubyinstal
 <!--original
 On Windows, you may need to install [RubyInstaller
 DevKit](https://wiki.github.com/oneclick/rubyinstaller/development-kit).
+-->
+
+### Could not find a JavaScript runtime. (ExecJS::RuntimeUnavailable)
+
+このエラーは、あなたが適切な Javascript ランタイムを持っていない場合に、
+`jekyll-coffeescript` をインストールする最中に発生する可能性があります。
+これを解決するには、`execjs` および `therubyracer` gem をインストールするか、
+あるいは `nodejs` をインストールします。
+詳細は [issue #2327](https://github.com/jekyll/jekyll/issues/2327) をご覧ください。
+
+<!--original
+### Could not find a JavaScript runtime. (ExecJS::RuntimeUnavailable)
+
+This error can occur during the installation of `jekyll-coffeescript` when
+you don't have a proper JavaScript runtime. To solve this, either install
+`execjs` and `therubyracer` gems, or install `nodejs`. Check out
+[issue #2327](https://github.com/jekyll/jekyll/issues/2327) for more info.
 -->
 
 ## Jekyllの実行での問題
