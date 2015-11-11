@@ -49,11 +49,9 @@ task :togglate do
 
       # output local document
       system( "#{togglate} commentout #{file} > #{local_doc}" )
-      # output original document
-      curl_file = file.gsub(/_/, '')
-      file_exist = system( "curl -sf #{ORIGINAL_DOC_URL}/#{curl_file} > #{origin_doc}" )
+      file_exist = system( "curl -sf #{ORIGINAL_DOC_URL}/#{file} > #{origin_doc}" )
       unless file_exist
-        puts "`curl`: No such file - '#{ORIGINAL_DOC_URL}/#{curl_file}'"
+        puts "`curl`: No such file - '#{ORIGINAL_DOC_URL}/#{file}'"
         retry_files << file
       else
         # system( "git diff --no-index #{local_doc} #{origin_doc}" )
