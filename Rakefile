@@ -28,7 +28,7 @@ task :togglate do
     end
     puts "base revision: #{revision}"
 
-    ORIGINAL_DOC_URL = "#{ENV['HOST_RAW']}/#{ENV['PARENT_USER']}/#{ENV['PARENT_REPO']}/#{revision}/site"
+    ORIGINAL_DOC_URL = "#{ENV['HOST_RAW']}/#{ENV['REPO']}/#{revision}/site"
     puts "original doc url: #{ORIGINAL_DOC_URL}"
 
     begin
@@ -265,7 +265,8 @@ def build_issue_content(type, host, repo, revision, path)
   repo_source_link = build_repo_file_link(host, repo, revision, path, '.md')
   org_rev_link =
     if base_rev = read_base_revision(path)
-      File.join(host, ENV['PARENT_USER'], ENV['PARENT_REPO'], 'commit', base_rev)
+      user, repo = ENV['REPO'].split('/')
+      File.join(host, user, repo, 'commit', base_rev)
     else
       ''
     end
@@ -286,6 +287,7 @@ def build_repo_file_link(host, repo, revision, path, ext)
   File.join(host, repo, "blob", revision, *dir, file)
 end
 
+# ドキュメント(のFront matter)からbase_revisionを取得する
 def read_base_revision(path)
   rev_re = /^(?:B|b)ase.revision:\s*([a-z0-9]+)/
   md = File.read(path).match(rev_re)
