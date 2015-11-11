@@ -3,7 +3,7 @@ layout: docs
 title: ようこそ
 next_section: quickstart
 permalink: /docs/home/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
 ---
 
 <!--original
@@ -38,7 +38,7 @@ Jekyll はシンプルな、ブログを意識した静的サイトジェネレ�
 それは様々なフォーマットの生テキストファイルを含むテンプレートディレクトリをとり、
 [Markdown](http://daringfireball.net/projects/markdown/) (または
 [Textile](http://redcloth.org/textile)) や
-[Liquid](http://wiki.shopify.com/Liquid)
+[Liquid](https://github.com/Shopify/liquid/wiki)
 コンバータを通して実行し、あなたの好みの Web サーバとサービス提供に適した、
 完全かつすぐに公開できる静的 Web サイトを吐き出します。
 Jekyll は GitHub Pages の背後で動いているエンジンでもあります。このことは、
@@ -50,7 +50,7 @@ Jekyll is a simple, blog-aware, static site generator. It takes a template
 directory containing raw text files in various formats, runs it through
 [Markdown](http://daringfireball.net/projects/markdown/) (or
 [Textile](http://redcloth.org/textile)) and
-[Liquid](http://wiki.shopify.com/Liquid)
+[Liquid](https://github.com/Shopify/liquid/wiki)
 converters, and spits out a complete, ready-to-publish static website suitable
 for serving with your favorite web server. Jekyll also happens to be the engine
 behind [GitHub Pages](http://pages.github.com), which means you can use Jekyll
