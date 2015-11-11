@@ -4,7 +4,7 @@ title: 変数
 prev_section: pages
 next_section: collections
 permalink: /docs/variables/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
 ---
 
 <!--original
@@ -18,16 +18,16 @@ permalink: /docs/variables/
 -->
 
 Jekyll は処理を行うファイルを探してサイトを横断します。
-[YAML Front Matter](../frontmatter/) を持つ任意のファイルは処理の対象になります。
+[YAML front matter](../frontmatter/) を持つ任意のファイルは処理の対象になります。
 これらのファイルのそれぞれについて、 Jekyll は [Liquid templating
-system](http://wiki.shopify.com/Liquid) を経由して様々なデータを作ります。
+system](https://github.com/Shopify/liquid/wiki) を経由して様々なデータを作ります。
 以下は利用可能なデータのリファレンスです。
 
 <!--original
 Jekyll traverses your site looking for files to process. Any files with [YAML
-Front Matter](../frontmatter/) are subject to processing. For each of these
+front matter](../frontmatter/) are subject to processing. For each of these
 files, Jekyll makes a variety of data available via the [Liquid templating
-system](http://wiki.shopify.com/Liquid). The
+system](https://github.com/Shopify/liquid/wiki). The
 following is a reference of the available data.
 -->
 
@@ -59,8 +59,8 @@ following is a reference of the available data.
       <td><p><code>page</code></p></td>
       <td><p>
 
-        Page 固有の情報と <a href="../frontmatter/">YAML Front Matter</a> を設定します。
-        YAML front matter を経由して設定されたカスタム変数は、ここで利用可能です。
+        Page 固有の情報と <a href="../frontmatter/">YAML front matter</a> を設定します。
+        YAML Front Matter を経由して設定されたカスタム変数は、ここで利用可能です。
         詳細については、下記を参照してください。
 
       </p></td>
@@ -110,8 +110,8 @@ following is a reference of the available data.
       <td><p><code>page</code></p></td>
       <td><p>
 
-        Page specific information + the <a href="../frontmatter/">YAML Front
-        Matter</a>. Custom variables set via the YAML front matter will be
+        Page specific information + the <a href="../frontmatter/">YAML front
+        matter</a>. Custom variables set via the YAML Front Matter will be
         available here. See below for details.
 
       </p></td>
@@ -409,7 +409,8 @@ following is a reference of the available data.
       <td><p><code>page.content</code></p></td>
       <td><p>
 
-        未レンダリングの Page コンテンツです。
+        レンダリング済みまたは未レンダリング（Liquid が処理されているかや、
+        <code>page</code> が何であるかにより変わります）の，Page の内容です。
 
       </p></td>
     </tr>
@@ -530,7 +531,8 @@ following is a reference of the available data.
       <td><p><code>page.content</code></p></td>
       <td><p>
 
-        The un-rendered content of the Page.
+        The content of the Page, rendered or un-rendered depending upon
+        what Liquid is being processed and what <code>page</code> is.
 
       </p></td>
     </tr>
@@ -637,7 +639,7 @@ following is a reference of the available data.
 -->
 
 <div class="note">
-  <h5>ProTip™: カスタム front-matter を使用する</h5>
+  <h5>ProTip™: カスタム Front Matter を使用する</h5>
   <p>
 
     任意のカスタム front-matter は指定した <code>page</code> の下で利用可能となります。
@@ -649,7 +651,7 @@ following is a reference of the available data.
 
 <!--original
 <div class="note">
-  <h5>ProTip™: Use custom front-matter</h5>
+  <h5>ProTip™: Use Custom Front Matter</h5>
   <p>
 
     Any custom front matter that you specify will be available under
