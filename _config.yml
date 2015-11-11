@@ -1,8 +1,7 @@
 markdown: kramdown
 highlighter: pygments
-relative_permalinks: false
 permalink: /news/:year/:month/:day/:title/
-excerpt_separator: noifniof3nioaniof3nioafafinoafnoif
+excerpt_separator: ""
 
 gauges_id: 503c5af6613f5d0f19000027
 google_analytics_id: UA-50755011-1
@@ -14,5 +13,15 @@ collections:
   docs:
     output: true
 
+# name: Jekyll • Simple, blog-aware, static sites
+# description: Transform your plain text into static websites and blogs
+# url: http://jekyllrb.com
+
+gems:
+  - jekyll-feed
+
 # jekyllrb-ja
 exclude: [vendor, diff]
+name: Jekyll • Simple, blog-aware, static sites
+description: Transform your plain text into static websites and blogs
+url: http://jekyllrb-ja.github.io
