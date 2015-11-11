@@ -13,8 +13,8 @@ collections:
   docs:
     output: true
 
-# name: Jekyll • Simple, blog-aware, static sites
-# description: Transform your plain text into static websites and blogs
+name: Jekyll • Simple, blog-aware, static sites
+description: Transform your plain text into static websites and blogs
 # url: http://jekyllrb.com
 
 gems:
@@ -22,6 +22,4 @@ gems:
 
 # jekyllrb-ja
 exclude: [vendor, diff]
-name: Jekyll • Simple, blog-aware, static sites
-description: Transform your plain text into static websites and blogs
 url: http://jekyllrb-ja.github.io
