@@ -4,7 +4,7 @@ title: インストール
 prev_section: quickstart
 next_section: usage
 permalink: /docs/installation/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: 52c76b5d9333a98285db7e04ee7ae8051228ec76[refs/heads/master]
 ---
 
 <!--original
@@ -45,13 +45,14 @@ Installing Jekyll is easy and straight-forward, but there are a few requirements
 you’ll need to make sure your system has before you start.
 -->
 
-- [Ruby](http://www.ruby-lang.org/en/downloads/)
+- [Ruby](http://www.ruby-lang.org/en/downloads/) (開発用ヘッダもこちら)
 - [RubyGems](http://rubygems.org/pages/download)
 - Linux, Unix または Mac OS X
 - [NodeJS](http://nodejs.org)か、あるいは別のJavaScriptランタイム(CoffeeScriptをサポートするため)
 
 <!--original
-- [Ruby](http://www.ruby-lang.org/en/downloads/)
+- [Ruby](http://www.ruby-lang.org/en/downloads/) (including development
+  headers)
 - [RubyGems](http://rubygems.org/pages/download)
 - Linux, Unix, or Mac OS X
 - [NodeJS](http://nodejs.org), or another JavaScript runtime (for
