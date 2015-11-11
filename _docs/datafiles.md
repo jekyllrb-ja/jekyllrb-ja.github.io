@@ -4,7 +4,7 @@ title: データファイル
 prev_section: collections
 next_section: assets
 permalink: /docs/datafiles/
-base_revision:0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
 ---
 
 <!--original
