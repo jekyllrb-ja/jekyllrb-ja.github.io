@@ -3,11 +3,6 @@ require "gh-diff"
 
 Dotenv.load
 
-GITHUB_HOST = "https://github.com"
-GITHUB_USER = 'jekyll'
-GITHUB_REPOSITORY = 'jekyll'
-RAW_URL = 'https://raw.githubusercontent.com'
-
 task :default => :togglate
 
 desc "diff local and original document at BASE_REVISION"
@@ -33,7 +28,7 @@ task :togglate do
     end
     puts "base revision: #{revision}"
 
-    ORIGINAL_DOC_URL = "#{RAW_URL}/#{GITHUB_USER}/#{GITHUB_REPOSITORY}/#{revision}/site"
+    ORIGINAL_DOC_URL = "#{ENV['HOST_RAW']}/#{ENV['PARENT_USER']}/#{ENV['PARENT_REPO']}/#{revision}/site"
     puts "original doc url: #{ORIGINAL_DOC_URL}"
 
     begin
@@ -192,11 +187,11 @@ task :create_issue do |x, args|
   cont =
     case path
     when /diff$/
-      build_issue_content(:update, GITHUB_HOST, myrepo, myrevision, path)
+      build_issue_content(:update, ENV['HOST'], myrepo, myrevision, path)
     when /(md|markdown)$/
-      build_issue_content(:new, GITHUB_HOST, myrepo, myrevision, path)
+      build_issue_content(:new, ENV['HOST'], myrepo, myrevision, path)
     when /delete$/
-      build_issue_content(:delete, GITHUB_HOST, myrepo, myrevision, path)
+      build_issue_content(:delete, ENV['HOST'], myrepo, myrevision, path)
     else
       fail "Only accept 'diff' or 'markdown'"
     end
@@ -272,7 +267,7 @@ def build_issue_content(type, host, repo, revision, path)
   repo_source_link = build_repo_file_link(host, repo, revision, path, '.md')
   org_rev_link =
     if base_rev = read_base_revision(path)
-      File.join(host, GITHUB_USER, GITHUB_REPOSITORY, 'commit', base_rev)
+      File.join(host, ENV['PARENT_USER'], ENV['PARENT_REPO'], 'commit', base_rev)
     else
       ''
     end
