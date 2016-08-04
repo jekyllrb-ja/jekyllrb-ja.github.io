@@ -29,7 +29,7 @@ Sites built using Jekyll can be deployed in a large number of ways due to the st
 ## Web hosting providers (FTP)
 -->
 
-従来のWebホスティングプロバイダについては、あなたは、FTP経由でそれらのサーバーにファイルをアップロードできます。 FTPを使用してWebホストにJekyllで作られたサイトをアップロードするには、単に `jekyll` コマンドを実行し、生成された `_site` フォルダをホスティングアカウントのルートフォルダにコピーします。
+従来のWebホスティングプロバイダについては、あなたは、FTP経由でそれらのサーバーにファイルをアップロードできます。 FTPを使用してWebホストにJekyllで作られたサイトをアップロードするには、単に `jekyll  build` コマンドを実行し、生成された `_site` フォルダをホスティングアカウントのルートフォルダにコピーします。
 これは、多くのホスティングプロバイダーの `httpdocs` や `publich_html` フォルダに相当します。
 
 <!--original
