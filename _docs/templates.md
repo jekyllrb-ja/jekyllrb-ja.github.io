@@ -199,7 +199,7 @@ common tasks easier.
     <tr>
       <td>
         <p class='name'><strong>JSON 用のデータ</strong></p>
-        <p>JSON 用にハッシュか配列に変換します。Convert Hash or Array to JSON.</p>
+        <p>ハッシュや配列を JSON に変換します。</p>
       </td>
       <td class='align-center'>
         <p>
