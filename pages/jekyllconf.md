@@ -4,9 +4,12 @@ title: JekyllConf
 permalink: /jekyllconf/
 ---
 
-[JekyllConf](http://jekyllconf.com) is a free, online conference for all things Jekyll hosted by [CloudCannon](http://cloudcannon.com). Each year members of the Jekyll community speak about interesting use cases, tricks they've learned, or meta Jekyll topics.
+[JekyllConf](http://jekyllconf.com){:target="_blank"}は[CloudCannon](http://cloudcannon.com){:target="_blank"}がホストのJekyllの全てのことの無料のオンラインカンファレンスです。毎年、Jekyllコミュニティのメンバーが興味深い使用例や、彼らが学んだ技術、メタJekyllトピックについて話しています。
 
-## Featured
+<!-- [JekyllConf](http://jekyllconf.com) is a free, online conference for all things Jekyll hosted by [CloudCannon](http://cloudcannon.com). Each year members of the Jekyll community speak about interesting use cases, tricks they've learned, or meta Jekyll topics. -->
+
+## おすすめ
+<!-- ## Featured -->
 
 {% assign random = site.time | date: "%s%N" | modulo: site.data.jekyllconf-talks.size %}
 {% assign featured = site.data.jekyllconf-talks[random] %}
