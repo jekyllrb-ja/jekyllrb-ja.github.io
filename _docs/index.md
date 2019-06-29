@@ -1,136 +1,59 @@
 ---
-layout: docs
-title: ようこそ
-next_section: quickstart
-permalink: /docs/home/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
+title: クイックスタート
+permalink: /docs/
+redirect_from:
+  - /docs/home/
+  - /docs/quickstart/
+  - /docs/extras/
 ---
 
-<!--original
----
-layout: docs
-title: Welcome
-next_section: quickstart
-permalink: /docs/home/
----
--->
+<!-- ---
+title: Quickstart
+permalink: /docs/
+redirect_from:
+  - /docs/home/
+  - /docs/quickstart/
+  - /docs/extras/
+--- -->
 
-このサイトは Jekyll の包括的なガイドを目指しています。
-私たちはあなたのサイトの起動と動作、コンテンツの作成と管理、
-サイトの動作や見た目のカスタマイズ、様々な環境へのデプロイのようなトピックをカバーし、
-Jekyll 自体の将来の開発への参加について、いくつかアドバイスします。
+Jekyllはシンプルで、拡張できる、静的サイトジェネレータです。  
+好きなマークアップ言語で書かれたテキストを用意すれば、Jekyllはレイアウトを合成して静的サイトを作成します。  
+このプロセスを通じ、サイトのURLの見た目をどうするか、レイアウトでどのデータを表示するかなどを調整することができます。
+<!-- Jekyll is a simple, extendable, static site generator. You give it text written
+in your favorite markup language and it churns through layouts to create a
+static website. Throughout that process you can tweak how you want the site URLs
+to look, what data gets displayed in the layout, and more. -->
 
-<!--original
-This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such
-as getting your site up and running, creating and managing your content,
-customizing the way your site works and looks, deploying to various
-environments, and give you some advice on participating in the future
-development of Jekyll itself.
--->
+## 説明
+<!-- ## Instructions -->
 
-## Jekyll とは一体何ですか？
+1. [Ruby開発環境]({{ "/docs/installation/" | relative_url }})をフルでインストールします
+<!-- 1. Install a full [Ruby development environment](/docs/installation/) -->
+2. Jekyllと[bundler]({{ "/docs/ruby-101/#bundler" | relative_url }}) [gems]({{ "/docs/ruby-101/#gems" | relative_url }})をインストールします。
+<!-- 2. Install Jekyll and [bundler](/docs/ruby-101/#bundler) [gems](/docs/ruby-101/#gems) -->
+```
+gem install jekyll bundler
+```
+3. `./myblog`に新しいJkyllサイトを作ります
+<!-- 3. Create a new Jekyll site at `./myblog` -->
+```
+jekyll new myblog
+```
+4. 新しいディレクトリに移動します
+<!-- 4. Change into your new directory -->
+```
+cd myblog
+```
+5. サイトを構築し、ローカルサーバ上に出現させます
+<!-- 5. Build the site and make it available on a local server -->
+```
+bundle exec jekyll serve
+```
+6. さあ[http://localhost:4000](http://localhost:4000){:target="_blank"}をブラウザで見てみましょう
+<!-- 6. Now browse to [http://localhost:4000](http://localhost:4000){:target="_blank"} -->
 
-<!--original
-## So what is Jekyll, exactly?
--->
-
-Jekyll はシンプルな、ブログを意識した静的サイトジェネレータです。
-それは様々なフォーマットの生テキストファイルを含むテンプレートディレクトリをとり、
-[Markdown](http://daringfireball.net/projects/markdown/) (または
-[Textile](http://redcloth.org/textile)) や
-[Liquid](http://wiki.shopify.com/Liquid)
-コンバータを通して実行し、あなたの好みの Web サーバとサービス提供に適した、
-完全かつすぐに公開できる静的 Web サイトを吐き出します。
-Jekyll は GitHub Pages の背後で動いているエンジンでもあります。このことは、
-プロジェクトのページ、ブログまたは Web サイトをGitHub のサーバから**無料で**ホストするために
-Jekyll を使用できることを意味します。
-
-<!--original
-Jekyll is a simple, blog-aware, static site generator. It takes a template
-directory containing raw text files in various formats, runs it through
-[Markdown](http://daringfireball.net/projects/markdown/) (or
-[Textile](http://redcloth.org/textile)) and
-[Liquid](http://wiki.shopify.com/Liquid)
-converters, and spits out a complete, ready-to-publish static website suitable
-for serving with your favorite web server. Jekyll also happens to be the engine
-behind [GitHub Pages](http://pages.github.com), which means you can use Jekyll
-to host your project’s page, blog, or website from GitHub’s servers **for
-free**.
--->
-
-## 役に立つヒント集
-
-<!--original
-## Helpful Hints
--->
-
-このガイドには Jekyll の利用をより簡単に、より楽しく、より危険が少なく
-できる、ささやかだけれども役に立つ多くの情報があります。
-以下に、注意すべき点を示します。
-
-<!--original
-Throughout this guide there are a number of small-but-handy pieces of
-information that can make using Jekyll easier, more interesting, and less
-hazardous. Here’s what to look out for.
--->
-
-<div class="note">
-  <h5>ProTips™ はあなたが Jekyll からより多くのことを得る助けになります</h5>
-  <p>Jekyll の達人になるのを助ける tips や仕掛けがあります！</p>
-</div>
-
-<!--original
-<div class="note">
-  <h5>ProTips™ help you get more from Jekyll</h5>
-  <p>These are tips and tricks that will help you be a Jekyll wizard!</p>
-</div>
--->
-
-<div class="note info">
-  <h5>Notes は役に立つ情報です</h5>
-  <p>Jekyll を理解するために時々必要となる追加情報です。</p>
-</div>
-
-<!--original
-<div class="note info">
-  <h5>Notes are handy pieces of information</h5>
-  <p>These are for the extra tidbits sometimes necessary to understand
-     Jekyll.</p>
-</div>
--->
-
-<div class="note warning">
-  <h5>Warnings は、あなたがものを破壊してしまわないよう手助けします</h5>
-  <p>もし、あなたが絶体絶命の事態を回避したいなら、これらのメッセージに注意してください。</p>
-</div>
-
-<!--original
-<div class="note warning">
-  <h5>Warnings help you not blow things up</h5>
-  <p>Be aware of these messages if you wish to avoid certain death.</p>
-</div>
--->
-
-<div class="note unreleased">
-  <h5>この注釈付きの機能はリリースされていません</h5>
-  <p>このウェブサイトの中には、まだリリースされていない将来のバージョンのJekyllのための情報が含まれています。</p>
-</div>
-
-<!--original
-<div class="note unreleased">
-  <h5>You'll see this by a feature that hasn't been released</h5>
-  <p>Some pieces of this website are for future versions of Jekyll that
-    are not yet released.</p>
-</div>
--->
-
-もし、あなたが私たちがカバーしていない何かに途中で出くわしたり、
-他の人が便利だと思う tips を知っているならば、[issueに報告(英語)]({{ site.repository }}/issues/new) をお願いします。
-そうすれば、私たちはこのガイドに含めることを検討します。
-
-<!--original
-If you come across anything along the way that we haven’t covered, or if you
-know of a tip you think others would find handy, please [file an
-issue]({{ site.repository }}/issues/new) and we’ll see about
-including it in this guide.
--->
+上記の作業中に予期しないエラーが発生した場合は、[トラブルシューティング]({{ "/docs/troubleshooting/#configuration-problems" | relative_url }})ページや既に紹介した[必要条件]({{ "/docs/installation/#requirements" | relative_url }})ページを参照してください。development headersや他の前提条件が整っていない可能性があります。
+<!-- If you encounter any unexpected errors during the above, please refer to the
+[troubleshooting](/docs/troubleshooting/#configuration-problems) page or the
+already-mentioned [requirements](/docs/installation/#requirements) page, as
+you might be missing development headers or other prerequisites. -->

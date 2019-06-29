@@ -1,54 +1,24 @@
 ---
-layout: docs
 title: ディレクトリ構成
-prev_section: usage
-next_section: configuration
-permalink: /docs/structure/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
----
-
-<!--original
----
-layout: docs
-title: Directory structure
-prev_section: usage
-next_section: configuration
 permalink: /docs/structure/
 ---
--->
+<!-- ---
+title: Directory Structure
+permalink: /docs/structure/
+--- -->
 
-Jekyll のコアは、テキスト変換エンジンです。
-システムの背後のコンセプトはこれです: 
-あなたが、 Markdown や Textile や ただのプレーン HTML のような
-自分のお気に入りのマークアップ言語で書かれたテキストを
-与えると、それはレイアウトや一連のレイアウトファイルを大量生産します。
-そのプロセスを通して、あなたはどのようにサイト URL が見られるか、
-取得データがレイアウトの中に表示されるかなどを微調整することができます
-それはすべてのテキストファイル編集を通して行われ、
-静的な Web サイトは最終的な成果物となります。
+基本的なJekyllサイトは、通常この様になっています。
 
-<!--original
-Jekyll is, at its core, a text transformation engine. The concept behind the
-system is this: you give it text written in your favorite markup language, be
-that Markdown, Textile, or just plain HTML, and it churns that through a layout
-or series of layout files. Throughout that process you can tweak how you want
-the site URLs to look, what data gets displayed in the layout, and more. This is
-all done through editing text files, and the static web site is the final
-product.
--->
+<!-- A basic Jekyll site usually looks something like this: -->
 
-基本的な Jekyll サイトは、通常このようになります:
-
-<!--original
-A basic Jekyll site usually looks something like this:
--->
-
-{% highlight bash %}
+```sh
 .
 ├── _config.yml
+├── _data
+|   └── members.yml
 ├── _drafts
-|   ├── begin-with-the-crazy-ideas.textile
-|   └── on-simplicity-in-technology.markdown
+|   ├── begin-with-the-crazy-ideas.md
+|   └── on-simplicity-in-technology.md
 ├── _includes
 |   ├── footer.html
 |   └── header.html
@@ -56,200 +26,46 @@ A basic Jekyll site usually looks something like this:
 |   ├── default.html
 |   └── post.html
 ├── _posts
-|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
-|   └── 2009-04-26-barcamp-boston-4-roundup.textile
-├── _data
-|   └── members.yml
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
+|   └── 2009-04-26-barcamp-boston-4-roundup.md
+├── _sass
+|   ├── _base.scss
+|   └── _layout.scss
 ├── _site
-└── index.html
-{% endhighlight %}
+├── .jekyll-metadata
+└── index.html # can also be an 'index.md' with valid front matter
+```
 
-<!--original
-{% highlight bash %}
-.
-├── _config.yml
-├── _drafts
-|   ├── begin-with-the-crazy-ideas.textile
-|   └── on-simplicity-in-technology.markdown
-├── _includes
-|   ├── footer.html
-|   └── header.html
-├── _layouts
-|   ├── default.html
-|   └── post.html
-├── _posts
-|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
-|   └── 2009-04-26-barcamp-boston-4-roundup.textile
-├── _data
-|   └── members.yml
-├── _site
-└── index.html
-{% endhighlight %}
--->
-
-これらのファイルの概要はこのようになります:
-
-<!--original
-An overview of what each of these does:
--->
-
-<div class="mobile-side-scroller">
-<table>
-  <thead>
-    <tr>
-      <th>ファイル / ディレクトリ</th>
-      <th>説明</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <p><code>_config.yml</code></p>
-      </td>
-      <td>
-        <p>
-
-          <a href="../configuration/">設定項目</a> データを保管します。
-          これらのオプションの多くはコマンドラインの実行から指定することもできます。
-          しかし、オプションはここで指定する方が簡単です。オプションを覚えておく必要がありません。
-
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><code>_drafts</code></p>
-      </td>
-      <td>
-        <p>
-
-          ドラフトは posts に出力しません。
-          これらのファイルのフォーマットは日付がありません: <code>title.MARKUP</code> 。
-          <a href="../drafts/">ドラフトの働き</a> で使い方を学んでください。
-
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><code>_includes</code></p>
-      </td>
-      <td>
-        <p>
-
-          これらは部分的な再利用を容易にするために layouts ファイルと posts ファイルによって
-          ミックス、マッチすることができます。
-          liquid のタグ <code>{% raw %}{% include file.ext %}{% endraw %}</code> は
-          ファイルの <code>_includes/file.ext</code> を含むために使用されます。
-
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><code>_layouts</code></p>
-      </td>
-      <td>
-        <p>
-
-          これらは posts をラップするテンプレートです。
-          layouts は次のセクションに記述されている <a href="../frontmatter/">YAML front matter</a>
-          に基づいて post 毎に選択されます。
-          liquid タグ <code>{% raw %}{{ content }}{% endraw %}</code> は
-          ウェブページにコンテンツを挿入するために使用されます。
-
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><code>_posts</code></p>
-      </td>
-      <td>
-        <p>
-
-          言うならば、あなたの動的コンテンツです。
-          これらのファイルのフォーマットは重要で、フォーマットに従う必要があります:
-          <code>YEAR-MONTH-DAY-title.MARKUP</code> 。
-          <a href="../permalinks/">パーマリンク</a> は、各 post のためにカスタマイズすることができます。
-          しかし、日付とマークアップ言語はファイル名によってのみ決定されます。
-
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><code>_data</code></p>
-      </td>
-      <td>
-        <p>
-
-          よく整備されたサイトデータはここに置かれるべきです。
-          Jekyll エンジンはこのディレクトリの全ての yaml ファイルをオートロードします。
-          (<code>.yml</code> または <code>.yaml</code> で終わるもの)
-          このディレクトリの下に member.yml がある場合、あなたは
-          <code>site.data.members</code> を通してコンテンツにアクセスできます。
-
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><code>_site</code></p>
-      </td>
-      <td>
-        <p>
-
-          Jekyll がそれを変換すると、生成されたサイトは(デフォルトで)ここに置かれます。
-          あなたの <code>.gitignore</code> ファイルにこれを追加するのは良い考えです。
-
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p><code>index.html</code> や、他の HTML, Markdown, Textile ファイル</p>
-      </td>
-      <td>
-        <p>
-
-          <a href="../frontmatter/">YAML Front Matter</a> セクションを持つという条件で、
-          それは Jekyll によって変換されます。
-          同様の事がどんな <code>.html</code> 、 <code>.markdown</code> 、
-          <code>.md</code> 、または <code>.textile</code> ファイルにも
-          サイトのルートディレクトリや、上記以外のディレクトリに起こります。
-
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>他のファイル/フォルダ</p>
-      </td>
-      <td>
-        <p>
-
-          上記のリストで挙げたファイルやディレクトリを除く全てのもの
-          ― <code>css</code> や <code>images</code> フォルダ、
-          <code>favicon.ico</code> ファイルのような―
-          そのまま生成したサイトにコピーされます。
-          もし、あなたが彼らが展開したものに興味があれば、 <a href="../sites/">
-          既に Jekyll を使用しているサイト</a>はたくさんあります。
-
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="note info">
+  <h5>gemベーステーマを使ったJekyllサイトのディレクトリ構成</h5>
+  <!-- <h5>Directory structure of Jekyll sites using gem-based themes</h5> -->
+  <p>
+    <strong>Jekyll 3.2</strong>から、<code>jekyll new</code>の新しいJekyllプロジェクトは、<a href="/docs/themes/">gemベーステーマ</a>を使用してサイトの外観を決定します。その結果、デフォルトのディレクトリ構成は軽くます。<code>_layouts</code>、 <code>_includes</code>、<code>_sass</code>がテーマのgemに入っています。
+  </p>
+  <!-- <p>
+    Starting <strong>Jekyll 3.2</strong>, a new Jekyll project bootstrapped with <code>jekyll new</code> uses <a href="/docs/themes/">gem-based themes</a> to define the look of the site. This results in a lighter default directory structure : <code>_layouts</code>, <code>_includes</code> and <code>_sass</code> are stored in the theme-gem, by default.
+  </p> -->
+  <br />
+  <p>
+     <a href="https://github.com/jekyll/minima" target="_blank">minima</a>は現在のデフォルトテーマで、 <code>bundle show minima</code>でminimaのテーマファイルがコンピュータのどこに保存されているのかを見ることができます。
+  </p>
+  <!-- <p>
+     <a href="https://github.com/jekyll/minima">minima</a> is the current default theme, and <code>bundle show minima</code> will show you where minima theme's files are stored on your computer.
+  </p> -->
 </div>
 
-<!--original
+以下は、それぞれのファイルがなんなのかの概要です。
+
+<!-- An overview of what each of these does: -->
+
 <div class="mobile-side-scroller">
 <table>
   <thead>
     <tr>
-      <th>File / Directory</th>
-      <th>Description</th>
+      <th>ファイル・<br />ディレクトリ</th>
+      <th>説明</th>
+      <!-- <th>File / Directory</th>
+      <th>Description</th> -->
     </tr>
   </thead>
   <tbody>
@@ -259,12 +75,13 @@ An overview of what each of these does:
       </td>
       <td>
         <p>
-
-          Stores <a href="../configuration/">configuration</a> data. Many of
+          <a href="{{ "/docs/configuration/" | relative_url }}">構成</a>データの保管場所です。多くのオプションはコマンドラインから実行するときに指定できますが、ここで設定する方が簡単です。ですので、覚えておく必要がありません。
+        </p>
+        <!-- <p>
+          Stores <a href="/docs/configuration/">configuration</a> data. Many of
           these options can be specified from the command line executable but
           it’s easier to specify them here so you don’t have to remember them.
-
-        </p>
+        </p> -->
       </td>
     </tr>
     <tr>
@@ -273,10 +90,13 @@ An overview of what each of these does:
       </td>
       <td>
         <p>
-
-          Drafts are unpublished posts. The format of these files is without a date: <code>title.MARKUP</code>. Learn how to <a href="../drafts/">work with drafts</a>.
-
+          ドラフトは未公開のポストです。これらのファイルのフォーマットは、日付を含めません： <code>title.MARKUP</code>。 <a href="{{ "/docs/posts/#drafts" | relative_url }}">ドラフトの働き</a>で方法を学んでください。
         </p>
+        <!-- <p>
+          Drafts are unpublished posts. The format of these files is without a
+          date: <code>title.MARKUP</code>. Learn how to <a href="/docs/posts/#drafts">
+          work with drafts</a>.
+        </p> -->
       </td>
     </tr>
     <tr>
@@ -285,14 +105,15 @@ An overview of what each of these does:
       </td>
       <td>
         <p>
-
+          レイアウトやポストに入れ込んで使う部品です。Liquidタグの<code>{% raw %}{% include file.ext %}{% endraw %}</code>で<code>_includes/file.ext</code>のファイルを読み込んで使用できます。
+        </p>
+        <!-- <p>
           These are the partials that can be mixed and matched by your layouts
           and posts to facilitate reuse. The liquid tag
           <code>{% raw %}{% include file.ext %}{% endraw %}</code>
           can be used to include the partial in
           <code>_includes/file.ext</code>.
-
-        </p>
+        </p> -->
       </td>
     </tr>
     <tr>
@@ -301,14 +122,16 @@ An overview of what each of these does:
       </td>
       <td>
         <p>
-
-          These are the templates that wrap posts. Layouts are chosen on a post-
-          by-post basis in the <a href="../frontmatter/">YAML front matter</a>,
+          ポストを包むテンプレートです。レイアウトはポスト毎に<a href="{{ "/docs/front-matter/" | relative_url }}">front matter</a>で設定できます。Liqudタグ<code>{% raw %}{{ content }}{% endraw %}</code>をページにコンテンツを挿入するために使用します。
+        </p>
+        <!-- <p>
+          These are the templates that wrap posts. Layouts are chosen on a
+          post-by-post basis in the
+          <a href="/docs/front-matter/">front matter</a>,
           which is described in the next section. The liquid tag
           <code>{% raw %}{{ content }}{% endraw %}</code>
           is used to inject content into the web page.
-
-        </p>
+        </p> -->
       </td>
     </tr>
     <tr>
@@ -317,15 +140,16 @@ An overview of what each of these does:
       </td>
       <td>
         <p>
-
-          Your dynamic content, so to speak. The naming convention of these files is
-          important, and must follow the format:
-          <code>YEAR-MONTH-DAY-title.MARKUP</code>.
-          The <a href="../permalinks/">permalinks</a> can be customized for each
-          post, but the date and markup language are determined solely by the
-          file name.
-
+          言うなれば、あなたの動的コンテンツです。ファイルの命名規則が重要で、<code>YEAR-MONTH-DAY-title.MARKUP</code>のフォーマットでなければなりません。ポスト毎に<a href="{{ "/docs/permalinks/" | relative_url }}">パーマリンク</a>をカスタマイズできますが、日付とマークアップの言語はファイル名によってのみ決まります。
         </p>
+        <!-- <p>
+          Your dynamic content, so to speak. The naming convention of these
+          files is important, and must follow the format:
+          <code>YEAR-MONTH-DAY-title.MARKUP</code>.
+          The <a href="/docs/permalinks/">permalinks</a> can be customized for
+          each post, but the date and markup language are determined solely by
+          the file name.
+        </p> -->
       </td>
     </tr>
     <tr>
@@ -334,13 +158,32 @@ An overview of what each of these does:
       </td>
       <td>
         <p>
-
-          Well-formatted site data should be placed here. The jekyll engine will
-          autoload all yaml files (ends with <code>.yml</code> or <code>.yaml</code>)
-          in this directory. If there's a file <code>members.yml</code> under the directory,
-          then you can access contents of the file through <code>site.data.members</code>.
-
+          形式に則ったサイトのデータはここに配置します。Jekyllエンジンはこのディレクトリのデータファイル(<code>.yml</code>, <code>.yaml</code>, <code>.json</code>, <code>.csv</code>, <code>.tsv</code>のフォーマット)を自動で読み込み、`site.data`で使用可能にします。このディレクトリの<code>members.yml</code>ファイルの場合、<code>site.data.members</code>でファイルの内容にアクセスできます。
         </p>
+        <!-- <p>
+          Well-formatted site data should be placed here. The Jekyll engine
+          will autoload all data files (using either the <code>.yml</code>,
+          <code>.yaml</code>, <code>.json</code>, <code>.csv</code> or
+          <code>.tsv</code> formats and extensions) in this directory,
+          and they will be accessible via `site.data`. If there's a file
+          <code>members.yml</code> under the directory, then you can access
+          contents of the file through <code>site.data.members</code>.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>_sass</code></p>
+      </td>
+      <td>
+        <p>
+          <code>main.scss</code>にインポートするためのsassの部品ファイルです。変換する家庭で一つのスタイルシート<code>main.css</code>になり、サイトのスタイルとして使用できます。
+        </p>
+        <!-- <p>
+          These are sass partials that can be imported into your <code>main.scss</code>
+          which will then be processed into a single stylesheet
+          <code>main.css</code> that defines the styles to be used by your site.
+        </p> -->
       </td>
     </tr>
     <tr>
@@ -349,48 +192,70 @@ An overview of what each of these does:
       </td>
       <td>
         <p>
-
+          生成されたサイトがJ、ekyllが変換した際に配置される（デフォルトの）場所です。これを<code> .gitignore </code>ファイルに追加することをお勧めします。
+        </p>
+        <!-- <p>
           This is where the generated site will be placed (by default) once
           Jekyll is done transforming it. It’s probably a good idea to add this
           to your <code>.gitignore</code> file.
-
-        </p>
+        </p> -->
       </td>
     </tr>
     <tr>
       <td>
-        <p><code>index.html</code> and other HTML, Markdown, Textile files</p>
+        <p><code>.jekyll-metadata</code></p>
       </td>
       <td>
         <p>
-
-          Provided that the file has a <a href="../frontmatter/">YAML Front
-          Matter</a> section, it will be transformed by Jekyll. The same will
+          これにより、Jekyllは、サイトが最後に構築されてから変更されていないファイル、および次回の構築時にどのファイルを再生成する必要があるかを追跡できます。このファイルは生成されたサイトには含まれません。これをあなたの<code>.gitignore</code>ファイルに追加するのはおそらく良い考えです。
+        </p>
+        <!-- <p>
+          This helps Jekyll keep track of which files have not been modified
+          since the site was last built, and which files will need to be
+          regenerated on the next build. This file will not be included in the
+          generated site. It’s probably a good idea to add this to your
+          <code>.gitignore</code> file.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>index.html</code>か<code>index.md</code>と他のHTML、Markdownファイル</p>
+        <!-- <p><code>index.html</code> or <code>index.md</code> and other HTML,
+        Markdown files</p> -->
+      </td>
+      <td>
+        <p>
+          ファイルに<a href="{{ "/docs/front-matter/" | relative_url }}">front matter</a>がある場合、Jekyllによって変換されます。サイトのルートディレクトリまたは上記以外のディレクトリにある<code>.html</code>、<code>.markdown</code>、<code>.md</code>または<code>.textile</code>ファイルについても同様です。
+        </p>
+        <!-- <p>
+          Provided that the file has a <a href="/docs/front-matter/">front
+          matter</a> section, it will be transformed by Jekyll. The same will
           happen for any <code>.html</code>, <code>.markdown</code>,
           <code>.md</code>, or <code>.textile</code> file in your site’s root
           directory or directories not listed above.
-
-        </p>
+        </p> -->
       </td>
     </tr>
     <tr>
       <td>
-        <p>Other Files/Folders</p>
+        <p>他のファイルやフォルダ</p>
+        <!-- <p>Other Files/Folders</p> -->
       </td>
       <td>
         <p>
-
+          <code>css</code>や<code>images</code>フォルダ、<code>favicon.ico</code>ファイルなど、上記以外のすべてのディレクトリとファイルは、生成されたサイトにそのままコピーされます。レイアウトがどのように行われているかを知りたい場合は、<a href="https://jekyllrb.com/showcase/" target="_blank">既にJekyllを使用しているサイト</a>がたくさんあります。
+        </p>
+        <!-- <p>
           Every other directory and file except for those listed above—such as
           <code>css</code> and <code>images</code> folders,
           <code>favicon.ico</code> files, and so forth—will be copied verbatim
-          to the generated site. There are plenty of <a href="../sites/">sites
+          to the generated site. There are plenty of <a href="/showcase/">sites
           already using Jekyll</a> if you’re curious to see how they’re laid
           out.
-
-        </p>
+        </p> -->
       </td>
     </tr>
   </tbody>
 </table>
 </div>
--->
