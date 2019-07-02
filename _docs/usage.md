@@ -1,170 +1,38 @@
 ---
-layout: docs
-title: 基本的な使い方
-prev_section: installation
-next_section: structure
-permalink: /docs/usage/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
----
-
-<!--original
----
-layout: docs
-title: Basic Usage
-prev_section: installation
-next_section: structure
+title:  コマンドラインの使い方
 permalink: /docs/usage/
 ---
--->
+<!-- ---
+title:  Command Line Usage
+permalink: /docs/usage/
+--- -->
 
-Jekyll gem はターミナルウィンドウに `jekyll` で実行することができます。
-あなたはいくつかの方法でこのコマンドを使用することができます:
+Jekyll gemは、ターミナルで`jekyll`を実行可能にします。
+<!-- The Jekyll gem makes a `jekyll` executable available to you in your terminal. -->
 
-<!--original
-The Jekyll gem makes a `jekyll` executable available to you in your Terminal
-window. You can use this command in a number of ways:
--->
+このコマンドは多くの使い方ができます：
+<!-- You can use this command in a number of ways: -->
 
-{% highlight bash %}
-$ jekyll build
-# => カレントフォルダが ./_site の下に生成されます
+* `jekyll new` - デフォルトのgem-basedテーマで、新しいJekyllサイトを作ります
+* `jekyll new --blank` - 新しい空白のJekyllサイトの骨組みを作ります
+* `jekyll build`や`jekyll b` - （デフォルトでは）`./_site`にサイトを一度だけ構築します。
+* `jekyll serve`や`jekyll s` - ソースファイルが変更される度サイトを構築し、ローカルにサーバを立てます。
+* `jekyll doctor` - 不備や設定の問題をアウトプットします
+* `jekyll new-theme` - 新しいJekyllテーマの骨組みを作ります
+* `jekyll clean` - 作成したサイトやmetaファイルを取り除きます
+* `jekyll help` - ヘルプを表示します。オプションでサブコマンドを使用できます。例：`jekyll help build`
 
-$ jekyll build --destination <destination>
-# => カレントフォルダが <destination> の下に生成されます
+<!-- * `jekyll new` - Creates a new Jekyll site with default gem-based theme
+* `jekyll new --blank` - Creates a new blank Jekyll site scaffold
+* `jekyll build` or `jekyll b` - Performs a one off build your site to `./_site` (by default)
+* `jekyll serve` or `jekyll s` - Builds your site any time a source file changes and serves it locally
+* `jekyll doctor` - Outputs any deprecation or configuration issues
+* `jekyll new-theme` - Creates a new Jekyll theme scaffold
+* `jekyll clean` - Removes the generated site and metadata file
+* `jekyll help` - Shows help, optionally for a given subcommand, e.g. `jekyll help build` -->
 
-$ jekyll build --source <source> --destination <destination>
-# => <source> フォルダが <destination> の下に生成されます
+通常は、`jekyll serve`をローカル開発中に使用し、'jekyll build'は出来上がったサイトを作成する良きに必要となります。
+<!-- Typically you'll use `jekyll serve` while developing locally and `jekyll build` when you need to generate the site for production. -->
 
-$ jekyll build --watch
-# => カレントフォルダが ./_site の下に生成されます
-#    変更を監視し、自動的に再生成を行います
-{% endhighlight %}
-
-<!--original
-{% highlight bash %}
-$ jekyll build
-# => The current folder will be generated into ./_site
-
-$ jekyll build --destination <destination>
-# => The current folder will be generated into <destination>
-
-$ jekyll build --source <source> --destination <destination>
-# => The <source> folder will be generated into <destination>
-
-$ jekyll build --watch
-# => The current folder will be generated into ./_site,
-#    watched for changes, and regenerated automatically.
-{% endhighlight %}
--->
-
-<div class="note warning">
-  <h5>サイトのビルド時に生成先のフォルダの中身は削除されます</h5>
-  <p>
-    <code>&lt;destination&gt;</code> の中身はサイトをビルドした際に自動的に削除されます。
-    あなたのサイトで生成されたものではないファイルやフォルダは削除されます。
-    重要な場所として <code>&lt;destination&gt;</code> を使用しないでください。
-    それよりもステージング領域として使用し、ファイルをそこからWebサーバへコピーしてください。
-  </p>
-</div>
-
-<!--original
-<div class="note warning">
-  <h5>Destination folders are cleaned on site builds</h5>
-  <p>
-    The contents of <code>&lt;destination&gt;</code> are automatically
-    cleaned when the site is built.  Files or folders that are not
-    created by your site will be removed.  Do not use an important
-    location for <code>&lt;destination&gt;</code>; instead, use it as
-    a staging area and copy files from there to your web server.
-  </p>
-</div>
--->
-
-Jekyll もまた組み込み開発サーバがついており、
-ローカルで生成したサイトをブラウザでプレビューすることができます。
-
-<!--original
-Jekyll also comes with a built-in development server that will allow you to
-preview what the generated site will look like in your browser locally.
--->
-
-{% highlight bash %}
-$ jekyll serve
-# => 開発サーバを http://localhost:4000/ で起動します
-
-$ jekyll serve --detach
-# => `jekyll serve` と同様、しかし、現在のターミナルからは切り離されます
-
-#    サーバを停止する場合、 PID が `1234` ならば `kill -9 1234` で停止することができます
-#    PID が見つからない場合、 `ps aux | grep jekyll` を実行し、インスタンスを停止してください [Read more](http://unixhelp.ed.ac.uk/shell/jobz5.html).
-
-$ jekyll serve --watch
-# => `jekyll serve` と同様、しかし、変更を監視し、自動的に再生成を行います
-{% endhighlight %}
-
-<!--original
-{% highlight bash %}
-$ jekyll serve
-# => A development server will run at http://localhost:4000/
-
-$ jekyll serve --detach
-# => Same as `jekyll serve` but will detach from the current terminal.
-#    If you need to kill the server, you can `kill -9 1234` where "1234" is the PID.
-#    If you cannot find the PID, then do, `ps aux | grep jekyll` and kill the instance. [Read more](http://unixhelp.ed.ac.uk/shell/jobz5.html).
-
-$ jekyll serve --watch
-# => Same as `jekyll serve`, but watch for changes and regenerate automatically.
-{% endhighlight %}
--->
-
-これらは [設定項目](../configuration/) の一部です。
-多くのコンフィグオプションはコマンドラインでフラグとして指定するか、
-もしくは(より一般的な)、ソースディレクトリのルートにある `_config.yml` ファイルに指定することができます。
-Jekyll は、起動時にこのファイルのオプションを自動的に使用します。
-例えば、あなたが `_config.yml` ファイルに以下のような行を置いた場合:
-
-<!--original
-These are just a few of the available [configuration options](../configuration/).
-Many configuration options can either be specified as flags on the command line,
-or alternatively (and more commonly) they can be specified in a `_config.yml`
-file at the root of the source directory. Jekyll will automatically use the
-options from this file when run. For example, if you place the following lines
-in your `_config.yml` file:
--->
-
-{% highlight yaml %}
-source:      _source
-destination: _deploy
-{% endhighlight %}
-
-<!--original
-{% highlight yaml %}
-source:      _source
-destination: _deploy
-{% endhighlight %}
--->
-
-この時、以下の二つのコマンドの意味は同じとなります:
-
-<!--original
-Then the following two commands will be equivalent:
--->
-
-{% highlight bash %}
-$ jekyll build
-$ jekyll build --source _source --destination _deploy
-{% endhighlight %}
-
-<!--original
-{% highlight bash %}
-$ jekyll build
-$ jekyll build --source _source --destination _deploy
-{% endhighlight %}
--->
-
-コンフィグオプションの詳細については、 [設定項目](../configuration/) ページを参照してください。
-
-<!--original
-For more about the possible configuration options, see the
-[configuration](../configuration/) page.
--->
+Jekyllのデフォルトのビルドの振る舞いを変更したいときは、[設定オプション]({{ "/docs/configuration/" | relative_url }})を通読してください。
+<!-- To change Jekyll's default build behavior have a look through the [configuration options](/docs/configuration/). -->

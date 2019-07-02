@@ -1,131 +1,122 @@
 ---
-layout: docs
 title: Assets
-prev_section: datafiles
-next_section: migrations
-permalink: /docs/assets/
-base_revision: 0fbdc6944041147c2d21b306751b078860b6603b[refs/heads/master]
----
-
-<!--original
----
-layout: docs
-title: Assets
-prev_section: datafiles
-next_section: migrations
 permalink: /docs/assets/
 ---
--->
 
-Jekyll は Sass と CoffeeScript の組み込みをサポートしています。
-それらを使うためには、適切な拡張子名のファイルを作成( `.sass`, `.scss` や `.coffee` の一つ)
-し、ファイルを2行の3ダッシュで開始します、このように:
+Jekyllは[Sass](https://sass-lang.com/){:target="_blank"}の組み込みをサポートし、Ruby gemで[CoffeeScript](https://coffeescript.org/){:target="_blank"}を使用することができます。これらを使用するには、適切な拡張子（`.sass`か`.scss`か`.coffee`）のファイルを作成し、下記のように***2行の3つのダッシュで始める***必要があります。
 
-<!--original
-Jekyll provides built-in support for Sass and CoffeeScript. In order to use
-them, create a file with the proper extension name (one of `.sass`, `.scss`,
-or `.coffee`) and start the file with two lines of triple dashes, like this:
--->
+<!-- Jekyll provides built-in support for [Sass](https://sass-lang.com/)
+and can work with [CoffeeScript](https://coffeescript.org/) via a Ruby gem.
+In order to use them, you must first create a file with the proper extension
+name (one of `.sass`, `.scss`, or `.coffee`) and
+***start the file with two lines of triple dashes***, like this: -->
 
-{% highlight sass %}
----
----
-
-// コンテンツのはじまり
-.my-definition
-  font-size: 1.2em
-{% endhighlight %}
-
-<!--original
-{% highlight sass %}
+```sass
 ---
 ---
 
 // start content
 .my-definition
   font-size: 1.2em
-{% endhighlight %}
--->
+```
 
-Jekyll はこれらのファイルを通常ページと同一に扱われ、
-その中で出力ファイルはもとファイルと同一ディレクトリに配置されます。
-例えば、あなたが `/css/styles.scss` という名前のファイルを
-サイトのソースフォルダに持っていた場合、
-Jekyll はそれを処理し、そしてサイトの指定フォルダの下に
-`/css/styles.css` を配置します。
+Jekyllはこれらのファイルを他の通常のページと同じように扱い、同じディレクトリ配置になるように出力先に配置します。例えば、サイトのソースフォルダに`css/styles.scss`というファイルがあった場合、Jekyllは処理を行い、出力先のフォルダに`css/styles.css`を作成します。
 
-<!--original
-Jekyll treats these files the same as a regular page, in that the output file
+<!-- Jekyll treats these files the same as a regular page, in that the output file
 will be placed in the same directory that it came from. For instance, if you
-have a file named `/css/styles.scss` in your site's source folder, Jekyll
+have a file named `css/styles.scss` in your site's source folder, Jekyll
 will process it and put it in your site's destination folder under
-`/css/styles.css`.
--->
+`css/styles.css`. -->
+
+<div class="note info">
+  <h5>JekyllはAssetファイルの全てのLiquidタグとフィルタを処理します。</h5>
+  <!-- <h5>Jekyll processes all Liquid filters and tags in asset files</h5> -->
+  <p><a href="{{ "docs/templates/" | relative_url }}">Liquidテンプレート文法</a>と競合する<a href="https://mustache.github.io" target="_blank">Mustache</a>
+     や他のJavaScriptテンプレート言語を使用している場合、コードを<code>{&#37; raw &#37;}</code>と<code>{&#37; endraw &#37;}</code>で囲む必要があります。</p>
+     <!-- <p>If you are using <a href="https://mustache.github.io">Mustache</a>
+        or another JavaScript templating language that conflicts with
+        the <a href="/docs/templates/">Liquid template syntax</a>, you
+        will need to place <code>{&#37; raw &#37;}</code> and
+        <code>{&#37; endraw &#37;}</code> tags around your code.</p> -->
+</div>
 
 ## Sass/SCSS
 
-<!--original
-## Sass/SCSS
--->
+Jekyllは、Sassの変換を特定の方法でカスタマイズできるようにします。
 
-Jekyll は特定の方法で Sass 変換をカスタマイズする事ができます。
+<!-- Jekyll allows you to customize your Sass conversion in certain ways. -->
 
-<!--original
-Jekyll allows you to customize your Sass conversion in certain ways.
--->
+全ての部品を`sass_dir`に配置します。デフォルトは、`<source>/_sass`です。メインのSCSSやSassファイルを、`<source>/css`のような出力後に配置したいフォルダに入れます。例は、[JekyllでSassをサーポーとしている例][example-sass]を見てください。
 
-もし、あなたが Sass の `@import` 文を使用している場合は、 Sass ファイルを含む
-`sass_dir` が ベースディレクトリに設定されていることを保障する必要があります。
-次いで、あなたはこうしてそれを行うことができます:
+<!-- Place all your partials in your `sass_dir`, which defaults to
+`<source>/_sass`. Place your main SCSS or Sass files in the place you want
+them to be in the output file, such as `<source>/css`. For an example, take
+a look at [this example site using Sass support in Jekyll][example-sass]. -->
 
-<!--original
-If you are using Sass `@import` statements, you'll need to ensure that your
-`sass_dir` is set to the base directory that contains your Sass files. You
-can do that thusly:
--->
+Sass `@import`を使用している場合は、`sass_dir`がSassファイルのベースディテクとりに設定されていることを確認してください。
 
-{% highlight yaml %}
+<!-- If you are using Sass `@import` statements, you'll need to ensure that your
+`sass_dir` is set to the base directory that contains your Sass files: -->
+
+```yaml
 sass:
     sass_dir: _sass
-{% endhighlight %}
+```
 
-<!--original
-{% highlight yaml %}
+Sassコンバータは`sass_dir`をデフォルトで`_sass`に設定します。
+
+<!-- The Sass converter will default the `sass_dir` configuration option to
+`_sass`. -->
+
+[example-sass]: https://github.com/jekyll/jekyll-sass-converter/tree/master/docs
+
+<div class="note info">
+  <h5><code>sass_dir</code>はSassにのみ使用できます。</h5>
+  <!-- <h5>The <code>sass_dir</code> is only used by Sass</h5> -->
+  <p>
+
+    <code>sass_dir</code>はSassをインポートするためのロードパスになるだけで、それ以外ではないことに注意してください。Jekyllはこのディレクトリのファイルは知らないということを意味します。ここのファイルには空のfront matterを含めるべきではありません。含んでいたとしても、変換されることはありません。このフォルダは、インポート用のファイルのみです。
+  </p>
+  <!-- <p>
+
+    Note that the <code>sass_dir</code> becomes the load path for Sass imports,
+    nothing more. This means that Jekyll does not know about these files
+    directly. Any files here should not contain the empty front matter as
+    described above. If they do, they'll not be transformed as described above. This
+    folder should only contain imports.
+
+  </p> -->
+</div>
+
+`_config.yml`ファイルの`style`で出力スタイルを指定することもできます。
+
+<!-- You may also specify the output style with the `style` option in your
+`_config.yml` file: -->
+
+```yaml
 sass:
-    sass_dir: _sass
-{% endhighlight %}
--->
+    style: compressed
+```
 
-Sass コンバータはデフォルトで `_sass` を設定します。
+これらはSassに渡されるので、Sassがサポートする出力スタイルオプションはすべて、ここでも有効です。
 
-<!--original
-The Sass converter will default to `_sass`.
--->
+<!-- These are passed to Sass, so any output style options Sass supports are valid
+here, too. -->
 
-また、 `_config.yml` ファイルの `style` オプションで
-出力スタイルを設定することもできます。
 
-<!--original
-You may also specify the output style with the `style` option in your
-`_config.yml` file:
--->
+## Coffeescript
 
-{% highlight yaml %}
-sass:
-    style: :compressed
-{% endhighlight %}
+CoffeeScriptはJekyll 3.0以上で有効です。
 
-<!--original
-{% highlight yaml %}
-sass:
-    style: :compressed
-{% endhighlight %}
--->
+<!-- To enable Coffeescript in Jekyll 3.0 and up you must -->
 
-これは Sass に渡されたため、
-Sass の任意の出力スタイルのオプションサポートはここでも有効になります。
+* `jekyll-coffeescript` gemをインストールします
+* `_config.yml`に下記を確実に書き込んでください。
 
-<!--original
-These are passed to Sass, so any output style options Sass supports are valid
-here, too.
--->
+<!-- * Install the `jekyll-coffeescript` gem
+* Ensure that your `_config.yml` is up-to-date and includes the following: -->
+
+```yaml
+plugins:
+  - jekyll-coffeescript
+```

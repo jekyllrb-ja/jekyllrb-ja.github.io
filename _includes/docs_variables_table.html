@@ -1,0 +1,20 @@
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+      <th>変数</th>
+      <th>説明</th>
+      <!-- <th>Variable</th>
+      <th>Description</th> -->
+    </tr>
+  </thead>
+  <tbody>
+  {% for var in include.scope %}
+    <tr>
+      <td><p><code>{{ var.name }}</code></p></td>
+      <td><p>{{- var.description -}}</p></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
