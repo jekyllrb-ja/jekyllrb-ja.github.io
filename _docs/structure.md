@@ -177,7 +177,7 @@ permalink: /docs/structure/
       </td>
       <td>
         <p>
-          <code>main.scss</code>にインポートするためのsassの部品ファイルです。変換する家庭で一つのスタイルシート<code>main.css</code>になり、サイトのスタイルとして使用できます。
+          <code>main.scss</code>にインポートするためのsassの部品ファイルです。変換する過程で一つのスタイルシート<code>main.css</code>になり、サイトのスタイルとして使用できます。
         </p>
         <!-- <p>
           These are sass partials that can be imported into your <code>main.scss</code>
