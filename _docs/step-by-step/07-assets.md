@@ -4,7 +4,7 @@ title: Assets
 position: 7
 ---
 
-JekyllでCSSやJS、画像その他のファイルを使うのは、簡単です。サイトのフォルダにそれらを入れれば、サイトを構築する家庭でコピーされます。
+JekyllでCSSやJS、画像その他のファイルを使うのは、簡単です。サイトのフォルダにそれらを入れれば、サイトを構築する過程でコピーされます。
 
 <!-- Using CSS, JS, images and other assets is straightforward with Jekyll. Place
 them in your site folder and they’ll copy across to the built site. -->
