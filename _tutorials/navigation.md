@@ -728,9 +728,12 @@ order: 2
 
 <!-- Whether you use properties in your doc's front matter to retrieve your pages or a YAML data file, in both cases you can programmatically build a more robust navigation for your site. -->
 
-## Scenario 9: Nested tree navigation with recursion
+## シナリオ9：再帰による入れ子ツリーナビゲーション
+<!-- ## Scenario 9: Nested tree navigation with recursion -->
 
-Suppose you want a nested tree navigation of any depth. We can achieve this by recursively looping through our tree of navigation links.
+任意の深さの入れ子ツリーナビゲーションを考えます。ナビゲーションリンクのツリーを再帰的にループすることでこれを実現できます。
+
+<!-- Suppose you want a nested tree navigation of any depth. We can achieve this by recursively looping through our tree of navigation links. -->
 
 **YAML**
 
@@ -750,7 +753,9 @@ nav:
 
 **Liquid**
 
-First, we'll create an include that we can use for rendering the navigation tree. This file would be `_includes/nav.html`
+まず、ツリーナビゲーションに使用するインクルードを作成します。このファイルを`_includes/nav.html`とします。
+
+<!-- First, we'll create an include that we can use for rendering the navigation tree. This file would be `_includes/nav.html` -->
 
 {% raw %}
 ```liquid
@@ -766,7 +771,9 @@ First, we'll create an include that we can use for rendering the navigation tree
 ```
 {% endraw %}
 
-To render this in your layout or pages, you would simply include the template and pass in the `nav` parameter. In this case, we'll use the `page.nav` to grab it from the yaml frontmatter.
+レイアウトやページで使用するには、単にテンプレートをincludeし、`nav`パラメータを渡します。以下では、YAML front matterを参照するために`page.nav`を使用しています。
+
+<!-- To render this in your layout or pages, you would simply include the template and pass in the `nav` parameter. In this case, we'll use the `page.nav` to grab it from the yaml frontmatter. -->
 
 {% raw %}
 ```liquid
@@ -774,7 +781,9 @@ To render this in your layout or pages, you would simply include the template an
 ```
 {% endraw %}
 
-Our include will use this first, then look through each item for a `subnav` property to recursively render the nested lists.
+インクルードではこれをまず使用し、入れ子のリストを再帰的にレンダリングするために`subnav`の各項目を確認します。
+
+<!-- Our include will use this first, then look through each item for a `subnav` property to recursively render the nested lists. -->
 
 **Result**
 <div class="highlight result" data-proofer-ignore>
