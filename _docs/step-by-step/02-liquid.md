@@ -87,9 +87,9 @@ and are separated by a `|`. For example: -->
 ```
 {% endraw %}
 
-変更をJekyllが処理するには、ページの先頭に[front matter](03-front-matter/)を追加する必要があります。
+変更をJekyllが処理するには、ページの先頭に[front matter](../03-front-matter/)を追加する必要があります。
 
-<!-- To get our changes processed by Jekyll we need to add [front matter](03-front-matter/) to the top of the page: -->
+<!-- To get our changes processed by Jekyll we need to add [front matter](../03-front-matter/) to the top of the page: -->
 
 ```markdown
 ---
