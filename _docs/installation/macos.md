@@ -17,10 +17,10 @@ xcode-select --install
 ## Rubyのインストール
 ## Install Ruby
 
-JekyllはRuby > {{ site.min_ruby_version }}が必須です。
+Jekyllは**Ruby > {{ site.data.ruby.min_version }}**が必須です。
 macOS Mojave 10.14には、ruby 2.3.xのみ付属していますので、新しいバージョンのRubyをインストールする必要があります。
 
-<!-- Jekyll requires Ruby > {{ site.min_ruby_version }}.
+<!-- Jekyll requires **Ruby > {{ site.data.ruby.min_version }}**.
 As macOS Mojave 10.14 comes only with ruby 2.3.x, you'll have to install a newer version of Ruby. -->
 
 ### With Homebrew {#brew}
@@ -36,9 +36,9 @@ As macOS Mojave 10.14 comes only with ruby 2.3.x, you'll have to install a newer
 brew install ruby
 ```
 
-brew Rubyパスをshell configに追加するのを忘れないでください。
+brew Rubyパスをshell configに追加してください。
 
-<!-- Don't forget to add the brew ruby path to your shell config : -->
+<!-- Add the brew ruby path to your shell config : : -->
 
 ```
 export PATH=/usr/local/opt/ruby/bin:$PATH
@@ -53,7 +53,7 @@ which ruby
 # /usr/local/opt/ruby/bin/ruby
 
 ruby -v
-# ruby 2.6.2p47 (2019-03-13 revision 67232) [x86_64-darwin18]
+{{ site.data.ruby.current_version_output }}
 ```
 
 現在の安定版Rubyを実行できるようになりました。
@@ -87,10 +87,10 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor 
 Now you can install the Ruby version of our choice, let's go with current latest stable Ruby: -->
 
 ```sh
-rbenv install 2.6.2
-rbenv global 2.6.2
+rbenv install {{ site.data.ruby.current_version }}
+rbenv global {{ site.data.ruby.current_version }}
 ruby -v
-# ruby 2.6.2p47 (2019-03-13 revision 67232) [x86_64-darwin18]
+{{ site.data.ruby.current_version_output }}
 ```
 
 以上です。[rbenv command references](https://github.com/rbenv/rbenv#command-reference){:target="_blank"}を読んで、プロジェクトでの異なるRubyバージョンの使い方を学んでください。
@@ -117,7 +117,7 @@ gem install --user-install bundler jekyll
 
 ```sh
 ruby -v
-# ruby 2.6.1p33 (2019-01-30 revision 66950) [x86_64-darwin18]
+{{ site.data.ruby.current_version_output }}
 ```
 
 それから、パスファイルに以下を追加します。`X.X`には、あなたのRubyバージョンの最初の2桁を入れてください。
