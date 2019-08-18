@@ -147,7 +147,7 @@ the permalink style are ignored for the output. -->
     <tr>
       <td>
         <p><code>long_month</code></p>
-        <small>{% include docs_version_badge.html version="4.0.0" %}</small>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
       </td>
       <td>
         <p>月のフルネーム。“January”など。</p>
@@ -194,7 +194,7 @@ the permalink style are ignored for the output. -->
     <tr>
       <td>
         <p><code>w_year</code></p>
-        <small>{% include docs_version_badge.html version="4.0.0" %}</small>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
       </td>
       <td>
         <p>週の所属する年。1月の始めと12月の終わりは月の所属する年と異なる場合があります。</p>
@@ -204,7 +204,7 @@ the permalink style are ignored for the output. -->
     <tr>
       <td>
         <p><code>week</code></p>
-        <small>{% include docs_version_badge.html version="4.0.0" %}</small>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
       </td>
       <td>
         <p>その年の何週目か。ただし、1月の日が大部分を占める週から始まります。 (01..53)</p>
@@ -214,7 +214,7 @@ the permalink style are ignored for the output. -->
     <tr>
       <td>
         <p><code>w_day</code></p>
-        <small>{% include docs_version_badge.html version="4.0.0" %}</small>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
       </td>
       <td>
         <p月曜日を1とする曜日。(1..7)</p>
@@ -224,7 +224,7 @@ the permalink style are ignored for the output. -->
     <tr>
       <td>
         <p><code>short_day</code></p>
-        <small>{% include docs_version_badge.html version="4.0.0" %}</small>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
       </td>
       <td>
         <p>3文字表記の曜日。“Sun”など</p>
@@ -234,7 +234,7 @@ the permalink style are ignored for the output. -->
     <tr>
       <td>
         <p><code>long_day</code></p>
-        <small>{% include docs_version_badge.html version="4.0.0" %}</small>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
       </td>
       <td>
         <p>曜日名。“Sunday”など。</p>
@@ -375,7 +375,7 @@ Jekyllはポストに、以下の便利な組み込みスタイルを提供し�
     <tr>
       <td>
         <p><code>weekdate</code></p>
-        <small>{% include docs_version_badge.html version="4.0.0" %}</small>
+        <small>{% include docs_version_badge.html version="4.0" %}</small>
       </td>
       <td>
         <p><code>/:categories/:year/W:week/:short_day/:title:output_ext</code></p>
