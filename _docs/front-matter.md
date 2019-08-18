@@ -41,8 +41,8 @@ relies on. -->
 </div>
 
 <div class="note">
-  <h5>ProTip™: Front Matter変数はオプションです</h5>
-  <!-- <h5>ProTip™: Front Matter Variables Are Optional</h5> -->
+  <h5>Front Matter変数はオプションです</h5>
+  <!-- <h5>Front Matter Variables Are Optional</h5> -->
   <p>
     <a href="{{ "/docs/variables/" | relative_url }}">Liquidタグや変数</a>は使いたいけれどfront matterでは何も必要ない場合、取り除いて空にしましょう。3つのダッシュの行が2行続いていれば、Jekyllはそのファイルで作業をします。（これは、CSSやRSSフィードのファイルで便利です！）
   </p>
@@ -150,8 +150,8 @@ front matter of a page or post. -->
 </div>
 
 <div class="note">
-  <h5>ProTip™: 非公開としてマークされたポストをレンダリングする</h5>
-  <!-- <h5>ProTip™: Render Posts Marked As Unpublished</h5> -->
+  <h5>非公開としてマークされたポストをレンダリングする</h5>
+  <!-- <h5>Render Posts Marked As Unpublished</h5> -->
   <p>
     非公開のページをプレビューするには、<code>jekyll serve</code>や<code>jekyll build</code>を実行するときに<code>--unpublished</code>スイッチを使います。 Jekyllには、ブログポスト専用の便利な<a href="{{ "/docs/posts/#drafts" | relative_url }}">ドラフト</a>機能もあります。
   </p>
@@ -264,8 +264,8 @@ food: Pizza
 </div>
 
 <div class="note">
-  <h5>ProTip™: 繰り返さないで</h5>
-  <!-- <h5>ProTip™: Don't repeat yourself</h5> -->
+  <h5>繰り返さないで</h5>
+  <!-- <h5>Don't repeat yourself</h5> -->
   <p>
     よく使用するfront matter変数を、何度も何度も繰り返し記述したくない場合は、<a href="{{ "/docs/configuration/front-matter-defaults/" | relative_url }}" title="Front Matter defaults">デフォルト</a>を変更し必要に応じて上書きしてください。これは定義済み変数でもカスタム変数でも行えます。
   </p>
