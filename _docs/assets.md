@@ -46,7 +46,7 @@ Jekyllは、Sassの変換を特定の方法でカスタマイズできるよう�
 
 <!-- Jekyll allows you to customize your Sass conversion in certain ways. -->
 
-全ての部品を`sass_dir`に配置します。デフォルトは、`<source>/_sass`です。メインのSCSSやSassファイルを、`<source>/css`のような出力後に配置したいフォルダに入れます。例は、[JekyllでSassをサーポーとしている例][example-sass]を見てください。
+全ての部品を`sass_dir`に配置します。デフォルトは、`<source>/_sass`です。メインのSCSSやSassファイルを、`<source>/css`のような出力後に配置したいフォルダに入れます。例は、[JekyllでSassをサポートしている例][example-sass]を見てください。
 
 <!-- Place all your partials in your `sass_dir`, which defaults to
 `<source>/_sass`. Place your main SCSS or Sass files in the place you want
