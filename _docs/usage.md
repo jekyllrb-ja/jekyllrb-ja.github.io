@@ -18,18 +18,18 @@ Jekyll gemは、ターミナルで`jekyll`を実行可能にします。
 * `jekyll build`や`jekyll b` - （デフォルトでは）`./_site`にサイトを一度だけ構築します。
 * `jekyll serve`や`jekyll s` - ソースファイルが変更される度サイトを構築し、ローカルにサーバを立てます。
 * `jekyll doctor` - 不備や設定の問題をアウトプットします
-* `jekyll new-theme` - 新しいJekyllテーマの骨組みを作ります
-* `jekyll clean` - 作成したサイトやmetaファイルを取り除きます
+* `jekyll clean` - 作成した全てのファイルを取り除きます：出力フォルダ、メタデータファイル、SassおよびJekyllキャッシュ
 * `jekyll help` - ヘルプを表示します。オプションでサブコマンドを使用できます。例：`jekyll help build`
+* `jekyll new-theme` - 新しいJekyllテーマの骨組みを作ります
 
 <!-- * `jekyll new` - Creates a new Jekyll site with default gem-based theme
 * `jekyll new --blank` - Creates a new blank Jekyll site scaffold
 * `jekyll build` or `jekyll b` - Performs a one off build your site to `./_site` (by default)
 * `jekyll serve` or `jekyll s` - Builds your site any time a source file changes and serves it locally
 * `jekyll doctor` - Outputs any deprecation or configuration issues
-* `jekyll new-theme` - Creates a new Jekyll theme scaffold
-* `jekyll clean` - Removes the generated site and metadata file
-* `jekyll help` - Shows help, optionally for a given subcommand, e.g. `jekyll help build` -->
+* `jekyll clean` - Removes all generated files: destination folder, metadata file, Sass and Jekyll caches.
+* `jekyll help` - Shows help, optionally for a given subcommand, e.g. `jekyll help build`
+* `jekyll new-theme` - Creates a new Jekyll theme scaffold -->
 
 通常は、`jekyll serve`をローカル開発中に使用し、'jekyll build'は出来上がったサイトを作成する良きに必要となります。
 <!-- Typically you'll use `jekyll serve` while developing locally and `jekyll build` when you need to generate the site for production. -->

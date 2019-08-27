@@ -15,11 +15,11 @@ Jekyllは多くのシステムにインストールできる[Ruby Gem]({{ "/docs
 ## 必要条件
 <!-- ## Requirements -->
 
-* [Ruby](https://www.ruby-lang.org/en/downloads/){:target="_blank"}バージョン{{ site.min_ruby_version }}以上、全てのdevelopment headersを含む。（Rubyのバージョンは、`ruby -v`の実行で確認できます）
+* [Ruby](https://www.ruby-lang.org/en/downloads/){:target="_blank"}バージョン**{{ site.data.ruby.min_version }}**以上、全てのdevelopment headersを含む。（Rubyのバージョンは、`ruby -v`の実行で確認できます）
 * [RubyGems](https://rubygems.org/pages/download){:target="_blank"}（`gem -v`の実行で確認できます）
 * [GCC](https://gcc.gnu.org/install/){:target="_blank"}と[Make](https://www.gnu.org/software/make/){:target="_blank"}（あなたのシステムにこれらがインストールされていない場合は、システムのコマンドラインから`gcc -v`、`g++ -v`や`make -v`を実行することで確認できます）
 
-<!-- * [Ruby](https://www.ruby-lang.org/en/downloads/) version {{ site.min_ruby_version }} or above, including all development headers (ruby version can be checked by running `ruby -v`)
+<!-- * [Ruby](https://www.ruby-lang.org/en/downloads/) version **{{ site.data.ruby.min_version }}** or above, including all development headers (ruby version can be checked by running `ruby -v`)
 * [RubyGems](https://rubygems.org/pages/download) (which you can check by running `gem -v`)
 * [GCC](https://gcc.gnu.org/install/) and [Make](https://www.gnu.org/software/make/) (in case your system doesn't have them installed, which you can check by running `gcc -v`,`g++ -v`  and `make -v` in your system's command line interface) -->
 
