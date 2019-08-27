@@ -71,12 +71,12 @@ Jekyllのテーマはデフォルトのレイアウトやインクルド、ス�
 
 <!-- To locate a theme's files on your computer: -->
 
-1. `bundle show`にテーマgemの名前をつけて実行します。Jekyllのデフォルトテーマなら、`bundle show minima`です。  
-   これは、gemベーステーマのファイルの場所を返します。例えばmacOSなら、Minimaテーマのファイルは、`/usr/local/lib/ruby/gems/2.3.0/gems/minima-2.1.0`にあるはずです。
+1. `bundle show`にテーマgemの名前をつけて実行します。Jekyllのデフォルトテーマなら、`bundle show minima`です。
+   これは、gemベーステーマのファイルの場所を返します。例えばmacOSなら、Minimaテーマのファイルは、`/usr/local/lib/ruby/gems/2.6.0/gems/minima-2.5.1`にあるはずです。
 
    <!-- 1. Run `bundle show` followed by the name of the theme's gem, e.g., `bundle show minima` for Jekyll's default theme. -->
 
-   <!-- This returns the location of the gem-based theme files. For example, the Minima theme's files might be located in `/usr/local/lib/ruby/gems/2.3.0/gems/minima-2.1.0` on macOS. -->
+   <!-- This returns the location of the gem-based theme files. For example, the Minima theme's files might be located in `/usr/local/lib/ruby/gems/2.6.0/gems/minima-2.5.1` on macOS. -->
 
 2. FinderやExplorerでテーマのディレクトリを開きます。
 
@@ -90,10 +90,10 @@ Jekyllのテーマはデフォルトのレイアウトやインクルド、ス�
    # First get the gem's installation path:
    #
    #   bundle show minima
-   #   => C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/minima-2.1.0
+   #   => C:/Ruby26-x64/lib/ruby/gems/{{ site.data.ruby.current_version }}/gems/minima-2.5.1
    #
    # then invoke explorer with above path, substituting `/` with `\`
-   explorer C:\Ruby24-x64\lib\ruby\gems\2.4.0\gems\minima-2.1.0
+   explorer C:\Ruby26-x64\lib\ruby\gems\{{ site.data.ruby.current_version}}\gems\minima-2.5.1
 
    # On Linux
    xdg-open $(bundle show minima)
@@ -178,8 +178,8 @@ gemベーステーマを取り除き、全てのファイルがテーマgemで�
 <!-- Then you must tell Jekyll about the plugins that were referenced by the theme. You can find these plugins in the theme's gemspec file as runtime dependencies. If you were converting the Minima theme, for example, you might see: -->
 
 ```
-spec.add_runtime_dependency "jekyll-feed", "~> 0.9"
-spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.1"
+spec.add_runtime_dependency "jekyll-feed", "~> 0.12"
+spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.6"
 ```
 
 これらのリファレンスを2つの方法のどちらかで、`Gemfile`に含めなければなりません。
@@ -193,8 +193,8 @@ spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.1"
 ```ruby
 # ./Gemfile
 
-gem "jekyll-feed", "~> 0.9"
-gem "jekyll-seo-tag", "~> 2.1"
+gem "jekyll-feed", "~> 0.12"
+gem "jekyll-seo-tag", "~> 2.6"
 ```
 
 ```yaml
@@ -213,8 +213,8 @@ plugins:
 # ./Gemfile
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.9"
-  gem "jekyll-seo-tag", "~> 2.1"
+  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-seo-tag", "~> 2.6"
 end
 ```
 
@@ -230,10 +230,10 @@ GitHub Pagesで公開している場合は、GitHub PagesはBundler経由でプ�
 
 <!-- Finally, remove references to the theme gem in `Gemfile` and configuration. For example, to remove `minima`: -->
 
-- `Gemfile`を開き、`gem "minima", "~> 2.0"`を削除します。
+- `Gemfile`を開き、`gem "minima", "~> 2.5"`を削除します。
 - `_config.yml`を開き、`theme: minima`を削除します。
 
-<!-- - Open `Gemfile` and remove `gem "minima", "~> 2.0"`.
+<!-- - Open `Gemfile` and remove `gem "minima", "~> 2.5"`.
 - Open `_config.yml` and remove `theme: minima`. -->
 
 これで、`bundle update`をしてもテーマgemの更新は取得されません。
@@ -266,14 +266,14 @@ gemベーステーマをインストールするには：
    gem "jekyll-theme-minimal"
    ```
 
-   もしくは、`jekyll new`コマンドで開始するときなら、`gem "minima", "~> 2.0"`を好きなように書き換えてください。
+   もしくは、`jekyll new`コマンドで開始するときなら、`gem "minima", "~> 2.5"`を好きなように書き換えてください。
 
-   <!-- Or if you've started with the `jekyll new` command, replace `gem "minima", "~> 2.0"` with the gem you want, e.g: -->
+   <!-- Or if you've started with the `jekyll new` command, replace `gem "minima", "~> 2.5"` with the gem you want, e.g: -->
 
    ```diff
    # ./Gemfile
 
-   - gem "minima", "~> 2.0"
+   - gem "minima", "~> 2.5"
    + gem "jekyll-theme-minimal"
    ```
 
@@ -409,11 +409,8 @@ _sass
 
 <!-- With this, the end-user need not keep track of the plugins required to be included in their config file for their theme-gem to work as intended. -->
 
-{% if site.version == '4.0.0' %}
-{% comment %} Remove this encapsulation when `v4.0` ships {% endcomment %}
-
-### テーマgemの事前設定 {%- include docs_version_badge.html version="4.0.0" -%}
-<!-- ### Pre-configuring Theme-gems {%- include docs_version_badge.html version="4.0.0" -%} -->
+### テーマgemの事前設定 {%- include docs_version_badge.html version="4.0" -%}
+<!-- ### Pre-configuring Theme-gems {%- include docs_version_badge.html version="4.0" -%} -->
 
 Jekyllはテーマgemのrootで `_config.yml`を読み込み、そのデータをサイトの既存の設定データにマージします。
 
@@ -440,7 +437,6 @@ Jekyllはテーマgemのrootで `_config.yml`を読み込み、そのデータ�
 この機能により、テーマgemは*テーマ固有の設定変数*をそのまま使用できるようになります。
 
 <!-- This feature will let the theme-gem to work with *theme-specific config variables* out-of-the-box. -->
-{% endif %}
 
 ### テーマのドキュメンテーション
 <!-- ### Documenting your theme -->
