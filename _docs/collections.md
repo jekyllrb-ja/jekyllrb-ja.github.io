@@ -356,7 +356,7 @@ you specified in your `_config.yml` (if present) and the following information: 
 </div>
 
 
-### <span id=documents></span>ドキュメント
+### ドキュメント<span id="documents"></span>
 <!-- ### Documents -->
 
 各ドキュメントのfront matterで記載されたものに加えて、次の属性を持っています。
