@@ -94,6 +94,7 @@ SaaSサービスをJekyllサイトでの機能的なバックエンドとして�
   - [Formspree (open source)](https://formspree.io/){:target="_blank"}
   - [formX](https://formx.stream){:target="_blank"}
   - [Simple Form](https://getsimpleform.com/){:target="_blank"}
+  - [SmartForms](https://smartforms.dev/){:target="_blank"}
 
 ### 検索
 <!-- ### Search -->
