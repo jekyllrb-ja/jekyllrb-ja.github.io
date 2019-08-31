@@ -160,6 +160,7 @@ collections:
 ```html
 ---
 layout: default
+title: Staff
 ---
 <h1>Staff</h1>
 
