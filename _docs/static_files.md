@@ -85,7 +85,7 @@ following metadata: -->
 ## 静的ファイルへのfront matterの追加
 <!-- ## Add front matter to static files -->
 
-静的ファイルに直接front matterを追加することはできませんが、設定ファイルの[デフォルトプロパティ]({{ "docs/configuration/front-matter-defaults/" | relative_url }})を通じてfront matterニア隊をセットできます。Jekyllが構築するときにセットしたfront matterを使用できます。
+静的ファイルに直接front matterを追加することはできませんが、設定ファイルの[デフォルトプロパティ]({{ "docs/configuration/front-matter-defaults/" | relative_url }})を通じてfront matterに値をセットできます。Jekyllが構築するときにセットしたfront matterを使用できます。
 
 <!-- Although you can't directly add front matter values to static files, you can set front matter values through the [defaults property](/docs/configuration/front-matter-defaults/) in your configuration file. When Jekyll builds the site, it will use the front matter values you set. -->
 
