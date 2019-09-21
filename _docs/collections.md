@@ -58,15 +58,20 @@ collections:
 ## コンテンツの追加
 <!-- ## Add content -->
 
-対応するフォルダ（`<source>/_staff_members`など）を作成して、ドキュメントを追加します。front matterがある場合はfront matterが処理され、front matterより後の全部がドキュメントの`content`とされます。front matterが無い場合は、Jekyllは[静的ファイル]({{ "docs/static-files/" | relative_url }})として（`_site`など）変換先に、そのままコピーを行います。front matterがある場合は、Jekyllはコレクション内のファイルの処理を行いますが、コレクションのメタデータに`output: true`が設定されていなければディスクに書き込みません。
+対応するフォルダ（`<source>/_staff_members`など）を作成して、ドキュメントを追加します。front matterがある場合はfront matterが処理され、front matterより後の全部がドキュメントの`content`とされます。front matterが無い場合は、Jekyllは[静的ファイル]({{ "docs/static-files/" | relative_url }})としてそれ以上コンテンツを処理しません。front matterがある場合は、Jekyllはファイルの内容を処理して期待される出力にします。
 
 <!-- Create a corresponding folder (e.g. `<source>/_staff_members`) and add
 documents. Front matter is processed if the front matter exists, and everything
 after the front matter is pushed into the document's `content` attribute. If no front
 matter is provided, Jekyll will consider it to be a [static file](/docs/static-files/)
-and copy it to the destination (e.g. `_site`) without processing. If front matter
-is provided, Jekyll will process the file in your collection but will not write to disk
-unless `output: true` is set in the collection's metadata. -->
+and the contents will not undergo further processing. If front matter is provided,
+Jekyll will process the file contents into the expected output.-->
+
+front matterが存在するかどうかに関係なく、Jekyllは、コレクションのメタデータに`output: true`が設定されている場合にのみ、宛先ディレクトリ（例えば、`_site`）に書き込みます。
+
+<!-- Regardless of whether front matter exists or not, Jekyll will write to the destination
+directory (e.g. `_site`) only if `output: true` has been set in the collection's
+metadata. -->
 
 上記で設定したコレクションにstaff memberを追加する方法の例です。ファイル名は`./_staff_members/jane.md`で、内容は以下の通りです。
 
@@ -80,6 +85,16 @@ position: Developer
 ---
 Jane has worked on Jekyll for the past *five years*.
 ```
+
+<em>
+内部的にコレクションと見なされていますが、上記は[posts]({{ "/docs/posts/" | relative_url }})には適用されないことに注意してください。有効なファイル名形式の投稿は、front matterが含まれていない場合でも処理対象としてマークされます。
+</ em>
+
+<!-- <em>
+  Do note that in spite of being considered as a collection internally, the above
+  doesn't apply to [posts](/docs/posts/). Posts with a valid filename format will be
+  marked for processing even if they do not contain front matter.
+</em>  -->
 
 <div class="note info">
   <h5>ディレクトリは正しい名前にしてください</h5>
