@@ -82,6 +82,8 @@ test:
 ## circle.ymlファイルの例
 <!-- ## Complete Example circle.yml File -->
 
+### CircleCI v1
+
 まとめると、こちらは`circle.yml`ファイルがv1でどのように見えるかの例です。
 
 <!-- When you put it all together, here's an example of what that `circle.yml` file could look like in v1: -->
@@ -106,9 +108,13 @@ deployment:
       - rsync -va --delete ./_site username@my-website:/var/html
 ```
 
-新しいプロジェクトが従うDockerベースのシステムであるCircleCI v2の場合は、`S3_BUCKET_NAME`環境変数を設定します（必要な設定ファイルの例を以下に示します）。
+### CircleCI v2
 
-<!-- for CircleCI v2, a Docker-based system which new projects will follow, set the `S3_BUCKET_NAME` environment variable (an example of the required config file is shown below). -->
+CircleCI v2はDockerベースのシステムです。以下の`circle.yml`の例は、JekyllプロジェクトのAWSへのデプロイ方法のデモです。これを機能させるには、まず`S3_BUCKET_NAME` [環境変数](https://circleci.com/docs/2.0/env-vars/){: target="_blank"}を設定する必要があります。
+
+<!-- CircleCI v2 is a Docker-based system. The example `circle.yml` below demonstrates how to
+deploy your Jekyll project to AWS. In order for this to work you would first have to set the
+`S3_BUCKET_NAME` [environment variable](https://circleci.com/docs/2.0/env-vars/). -->
 
 ```yaml
 defaults: &defaults
