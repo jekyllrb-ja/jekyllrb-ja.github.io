@@ -31,7 +31,7 @@ Jekyll gemは、ターミナルで`jekyll`を実行可能にします。
 * `jekyll help` - Shows help, optionally for a given subcommand, e.g. `jekyll help build`
 * `jekyll new-theme` - Creates a new Jekyll theme scaffold -->
 
-通常は、`jekyll serve`をローカル開発中に使用し、'jekyll build'は出来上がったサイトを作成する良きに必要となります。
+通常は、`jekyll serve`をローカル開発中に使用し、'jekyll build'は出来上がったサイトを作成するときに必要となります。
 <!-- Typically you'll use `jekyll serve` while developing locally and `jekyll build` when you need to generate the site for production. -->
 
 Jekyllのデフォルトのビルドの振る舞いを変更したいときは、[設定オプション]({{ "/docs/configuration/" | relative_url }})を通読してください。
