@@ -11,6 +11,16 @@ Jekyllには幅広いテーマシステムがあり、サイトの表現をカ�
 
 <!-- Jekyll has an extensive theme system that allows you to leverage community-maintained templates and styles to customize your site's presentation. Jekyll themes specify plugins and package up assets, layouts, includes, and stylesheets in a way that can be overridden by your site's content. -->
 
+## テーマをピックアップ
+<!-- ## Pick up a theme -->
+
+さまざまなギャラリーでテーマをプレビューし、見つけることができます。
+<!-- You can find and preview themes on different galleries: -->
+
+- [jamstackthemes.dev](https://jamstackthemes.dev/ssg/jekyll/){:target="_blank"}
+- [jekyllthemes.org](http://jekyllthemes.org/){:target="_blank"}
+- [jekyllthemes.io](https://jekyllthemes.io/){:target="_blank"}
+
 ## gemベーステーマを理解する
 <!-- ## Understanding gem-based themes -->
 
