@@ -13,6 +13,7 @@ some of the most popular Jekyll resources. -->
 
 ## テーマ
 <!-- ## Themes -->
+- [jamstackthemes.dev](https://jamstackthemes.dev/ssg/jekyll/){:target="_blank"}
 - [jekyllthemes.org](http://jekyllthemes.org/){:target="_blank"}
 - [jekyllthemes.io](https://jekyllthemes.io/){:target="_blank"}
 
