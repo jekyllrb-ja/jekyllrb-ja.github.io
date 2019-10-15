@@ -82,8 +82,10 @@ SaaSサービスをJekyllサイトでの機能的なバックエンドとして�
 
 ### Webショップ
 <!-- ### E-commerce -->
+ - [MemberSpace](https://www.memberspace.com/integrations/jekyll-membership/){:target="_blank"}: Jekyllサイトに会員と有料記事機能を追加する
   - [Snipcart](https://snipcart.com/blog/static-site-e-commerce-part-2-integrating-snipcart-with-jekyll){:target="_blank"}: Jekyllサイトにショッピングカートを追加
-  <!-- - [Snipcart](https://snipcart.com/blog/static-site-e-commerce-part-2-integrating-snipcart-with-jekyll): Add a shopping cart to a Jekyll site -->
+  <!-- - [MemberSpace](https://www.memberspace.com/integrations/jekyll-membership/): Add memberships and paywall functionality to a Jekyll site
+- [Snipcart](https://snipcart.com/blog/static-site-e-commerce-part-2-integrating-snipcart-with-jekyll): Add a shopping cart to a Jekyll site -->
 
 ### フォーラム
 <!-- ### Forms -->
