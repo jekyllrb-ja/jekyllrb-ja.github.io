@@ -20,6 +20,7 @@ Jekyllには幅広いテーマシステムがあり、サイトの表現をカ�
 - [jamstackthemes.dev](https://jamstackthemes.dev/ssg/jekyll/){:target="_blank"}
 - [jekyllthemes.org](http://jekyllthemes.org/){:target="_blank"}
 - [jekyllthemes.io](https://jekyllthemes.io/){:target="_blank"}
+- [jekyll-themes.com](https://jekyll-themes.com/){:target="_blank"}
 
 ## gemベーステーマを理解する
 <!-- ## Understanding gem-based themes -->
