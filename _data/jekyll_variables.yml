@@ -211,10 +211,10 @@ site:
       <code>name</code>, <code>basename</code> and <code>extname</code>。
   - name: site.html_pages
     description: >-
-      `site.pages`のサブセットで`.html`で終わるファイルのリスト。
+      <code>site.pages</code>のサブセットで<code>.html</code>で終わるファイルのリスト。
   - name: site.html_files
     description: >-
-      `site.static_files`のサブセットで`.html`で終わるファイルのリスト。
+      <code>site.static_files</code>のサブセットで<code>.html</code>で終わるファイルのリスト。
   - name: site.collections
     description: >-
       （ポストを含む）コレクションのリスト。
