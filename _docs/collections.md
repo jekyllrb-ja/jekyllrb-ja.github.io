@@ -26,9 +26,11 @@ collections:
   - staff_members
 ```
 
-必要に応じて、設定でコレクションのメタデータを指定できます。
+この場合、`collections`は、各コレクションに追加のメタデータが定義されていないシーケンス（配列）として定義されます。  
+オプションでコレクションのメタデータを指定するには、`collections`をシーケンスではなくマッピング（ハッシュマップ）として定義し、その中に追加のフィールドを定義します。
 
-<!-- You can optionally specify metadata for your collection in the configuration: -->
+<!-- In this case `collections` is defined as a sequence (i.e array) with no additional metadata defined for each collection.  
+You can optionally specify metadata for your collection by defining `collections` as a mapping (i.e hashmap) instead of sequence, and then defining additional fields in it: -->
 
 ```yaml
 collections:
