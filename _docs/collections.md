@@ -37,6 +37,11 @@ collections:
 ```
 
 <div class="note">
+  <p>コレクションをシーケンスとして定義する場合、そのページはデフォルトではレンダリングされません。有効にするには、コレクションのマッピング定義で<code>output：true</code>を指定する必要があります。詳細については、<a href="#output">出力</a>セクションを参照してください</p>
+  <!-- <p>When defining a collection as a sequence, its pages will not be rendered by default. To enable this, <code>output: true</code> must be specified on the collection, which requires defining the collection as a mapping. For more information, see the section <a href="#output">Output</a></p> -->
+</div>
+
+<div class="note">
   <h5>コレクションをまとめる {%- include docs_version_badge.html version="3.7.0" -%}</h5>
   <!-- <h5>Gather your collections {%- include docs_version_badge.html version="3.7.0" -%}</h5> -->
 
@@ -108,6 +113,7 @@ your <code>_config.yml</code> file, with the addition of the preceding <code>_</
   </p> -->
 </div>
 
+{:#output}
 ## 出力
 <!-- ## Output -->
 
