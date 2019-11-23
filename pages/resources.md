@@ -70,7 +70,7 @@ SaaSサービスをJekyllサイトでの機能的なバックエンドとして�
   - [CloudCannon](https://cloudcannon.com/){:target="_blank"}: JekyllのCloud CMS
   <!-- - [CloudCannon](https://cloudcannon.com/): The Cloud CMS for Jekyll -->
   - [Contentful](https://github.com/contentful/jekyll-contentful-data-import){:target="_blank"}: デジタルチームのためのコンテンツ基盤
-  <!-- - [Contentful](https://github.com/contentful/jekyll-contentful-data-import) Content infrastructure for digital teams -->
+  <!-- - [Contentful](https://github.com/contentful/jekyll-contentful-data-import): Content infrastructure for digital teams -->
   - [Forestry.io](https://forestry.io/){:target="_blank"}: コミットする静的CMS
   <!-- - [Forestry.io](https://forestry.io/): A static CMS that commits -->
   - [Netlify CMS](https://www.netlifycms.org/){:target="_blank"}: Git workflowのためのOpen sourceコンテンツ管理
