@@ -8,11 +8,11 @@ permalink: /docs/datafiles/
 --- -->
 
 Jekyllの[組み込み変数](../variables/)に加えて、[Liquid
-templating system](https://wiki.github.com/shopify/liquid/liquid-for-designers){:target="_blank"}からアクセスできるカスタムデータを設定できます。
+templating system](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers){:target="_blank"}からアクセスできるカスタムデータを設定できます。
 
 <!-- In addition to the [built-in variables](../variables/) available from Jekyll,
 you can specify your own custom data that can be accessed via the [Liquid
-templating system](https://wiki.github.com/shopify/liquid/liquid-for-designers). -->
+templating system](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers). -->
 
 Jekyllは`_data`ディレクトリの[YAML](http://yaml.org/){:target="_blank"}・[JSON](http://www.json.org/){:target="_blank"}・[CSV](https://en.wikipedia.org/wiki/Comma-separated_values){:target="_blank"}・[TSV](https://en.wikipedia.org/wiki/Tab-separated_values){:target="_blank"}ファイルのデータ読み込みをサポートしています。  
 注：CSVとTSVはヘッダ行が*必要*です。
