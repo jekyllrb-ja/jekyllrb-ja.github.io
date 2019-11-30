@@ -49,16 +49,16 @@ You can use placeholders to your desired output. For example: -->
 permalink: /:categories/:year/:month/:day/:title:output_ext
 ```
 
-ページやコレクションには時刻やカテゴリが無いことに注意してください。これらのパーマリンクスタイルは出力時には無視されます。
+ページや(`posts`と`drafts`を除く)コレクションには時刻やカテゴリが無いことに注意してください（ページの場合、上記の`:title`は`:basename`と同等です）。これらのパーマリンクスタイルは出力時には無視されます。
 
-<!-- Note that pages and collections don't have time or categories, these aspects of
-the permalink style are ignored for the output. -->
+<!-- Note that pages and collections (excluding `posts` and `drafts`) don't have time
+and categories (for pages, the above `:title` is equivalent to `:basename`), these
+aspects of the permalink style are ignored for the output. -->
 
-パーマリンクスタイルの例は、ポストなら`/:categories/:year/:month/:day/:title:output_ext`、ページやコレクションなら`/:title.html`です。
+パーマリンクスタイルの例は、`posts`コレクションなら`/:categories/:year/:month/:day/:title:output_ext`、ページや(`posts`と`drafts`を除く)コレクションなら`/:title.html`です。
 
-<!-- For example, a permalink style of
-`/:categories/:year/:month/:day/:title:output_ext` for posts becomes
-`/:title.html` for pages and collections. -->
+<!-- `/:categories/:year/:month/:day/:title:output_ext` for the `posts` collection becomes
+`/:title.html` for pages and collections (excluding `posts` and `drafts`). -->
 
 ### 置換用変数（Placeholders）
 <!-- ### Placeholders -->
@@ -407,10 +407,10 @@ Jekyllはポストに、以下の便利な組み込みスタイルを提供し�
 ### コレクション
 <!-- ### Collections -->
 
-コレクションは、`_config.yml`のコレクションの設定でグローバルパーマリンクを上書きできるオプションがあります。
+コレクション（`posts`と`draft`を含む）は、`_config.yml`のコレクションの設定でグローバルパーマリンクを上書きできるオプションがあります。
 
-<!-- For collections, you have the option to override the global permalink in the
-collection configuration in `_config.yml`: -->
+<!-- For collections (including `posts` and `drafts`), you have the option to override
+the global permalink in the collection configuration in `_config.yml`: -->
 
 ```yaml
 collections:
@@ -448,8 +448,10 @@ collections:
         <p><code>:path</code></p>
       </td>
       <td>
-        <p>コレクションのディレクトリからの相対パス。</p>
-        <!-- <p>Path to the document relative to the collection's directory.</p> -->
+        <p>コレクションのディレクトリからの相対パス。ドキュメントのベースファイル名を含みます。</p>
+        <!-- <p>Path to the document relative to the collection's directory,
+          including base filename of the document.
+</p> -->
       </td>
     </tr>
     <tr>
@@ -486,6 +488,69 @@ collections:
       <td>
         <p>出力ファイルの拡張子。（デフォルトで含まれており、通常は不要です。）</p>
         <!-- <p>Extension of the output file. (Included by default and usually unnecessary.)</p> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+### ページ
+<!-- ### Pages -->
+
+ぺーじでは、front matterを用いてグローバルパーマリンクを上書きでき、`_config.yml`のfront matterデフォルトを介してパーマリンクを設定していた場合、無視されます
+
+<!-- For pages, you have to use front matter to override the global permalink,
+and if you set a permalink via front matter defaults in `_config.yml`,
+it will be ignored. -->
+
+ページは以下の置換用変数を使用できます。
+
+<!-- Pages have the following placeholders available: -->
+
+<div class="mobile-side-scroller">
+<table>
+  <thead>
+    <tr>
+    <th>変数</th>
+    <th>説明</th>
+    <!-- <th>Variable</th>
+    <th>Description</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <p><code>:path</code></p>
+      </td>
+      <td>
+        <p>
+          ページのベースファイル名を除いた、サイトのソースディレクトリへのページの相対パス。
+        </p>
+        <!-- <p>
+          Path to the page relative to the site's source directory, excluding
+          base filename of the page.
+        </p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>:basename</code></p>
+      </td>
+      <td>
+        <p>ページのベースファイル名</p>
+        <!-- <p>The page's base filename</p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>:output_ext</code></p>
+      </td>
+      <td>
+        <p>出力ファイルの拡張子。（デフォルトで含まれており、通常は不要です。）</p>
+        <!-- <p>
+          Extension of the output file. (Included by default and usually
+          unnecessary.)
+        </p> -->
       </td>
     </tr>
   </tbody>
