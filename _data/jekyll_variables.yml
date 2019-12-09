@@ -235,7 +235,7 @@ site:
       <code>_config.yml</code>で設定されているサイトのURLです。例えば、設定ファイルで<code>url: http://mysite.com</code>とすると、<code>site.url</code>としてLiquidからアクセスできます。開発環境で<code>jekyll serve</code>を実行した場合は異なり、<code>site.url</code>は<code>host</code>と<code>port</code>とSSL関連オプションで設定されます。デフォルトでは、<code>url: http://localhost:4000</code>です。
   - name: "site.[CONFIGURATION_DATA]"
     description: >-
-      コマンドやインや<code>_config.yml</code>で<code>site</code>変数として登録した値です。例えば、設定ファイルに<code>foo: bar</code>とあれば、Liquidから<code>site.foo</code>でアクセスできます。Jekyllは<code>watch</code>では<code>_config.yml</code>の変更を反映できません。変数を変更した場合はJekyllをリスタートしてください。
+      コマンドラインや<code>_config.yml</code>で<code>site</code>変数として登録した値です。例えば、設定ファイルに<code>foo: bar</code>とあれば、Liquidから<code>site.foo</code>でアクセスできます。Jekyllは<code>watch</code>では<code>_config.yml</code>の変更を反映できません。変数を変更した場合はJekyllをリスタートしてください。
 
 page:
   - name: page.content
