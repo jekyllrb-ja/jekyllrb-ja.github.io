@@ -1,15 +1,20 @@
 - title: Home
   link: /
   show_on_mobile: true
+  target: _self
 - title: Docs
   link: /docs/
   show_on_mobile: true
+  target: _self
 - title: Resources
   link: /resources/
   show_on_mobile: true
+  target: _self
 - title: Showcase
-  link: /showcase/
+  link: https://jekyllrb.com/showcase/
   show_on_mobile: false
+  target: _blank
 - title: News
-  link: /news/
+  link: https://jekyllrb.com/news/
   show_on_mobile: true
+  target: _blank
