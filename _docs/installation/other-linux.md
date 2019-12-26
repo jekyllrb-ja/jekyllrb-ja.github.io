@@ -14,13 +14,30 @@ Fedoraでは、dependenciesを以下でインストールできます。
 sudo dnf install ruby ruby-devel @development-tools
 ```
 
-Debianの場合。
+Debianの場合：
 
 <!-- On Debian: -->
 
 ```sh
 sudo apt-get install ruby-full build-essential
 ```
+
+ArchLinuxの場合：
+
+<!-- On ArchLinux: -->
+
+```sh
+sudo pacman -S ruby base-devel
+```
+
+openSUSEの場合：
+
+<!-- On openSUSE: -->
+
+```sh
+sudo zypper install -t pattern devel_ruby devel_C_C++
+```
+
 
 後は[Ubuntu](../ubuntu/)と同じです。
 
