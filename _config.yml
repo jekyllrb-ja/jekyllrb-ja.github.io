@@ -1,5 +1,5 @@
 ---
-version: 4.0.0
+version: 4.1.0
 name: Jekyll • シンプルで、ブログのような、静的サイト
 # name: Jekyll • Simple, blog-aware, static sites
 description: プレーンテキストを静的サイトやブログに変えましょう
@@ -21,6 +21,7 @@ collections:
     permalink: "/news/:year/:month/:day/:title/"
     output: true
   tutorials:
+    permalink: "/:collection/:path/"
     output: true
 defaults:
 - scope:
@@ -33,6 +34,11 @@ defaults:
     type: posts
   values:
     layout: news_item
+- scope:
+    path: _tutorials
+    type: tutorials
+  values:
+    layout: tutorials
 - scope:
     path: ''
   values:
@@ -49,6 +55,9 @@ plugins:
 feed:
   categories:
   - release
+kramdown:
+  syntax_highlighter_opts:
+    default_lang: plaintext
 sass:
   style: compressed
 strict_front_matter: true

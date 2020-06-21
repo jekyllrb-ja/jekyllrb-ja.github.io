@@ -9,12 +9,12 @@
     </tr>
   </thead>
   <tbody>
-  {% for var in include.scope %}
-    <tr>
-      <td><p><code>{{ var.name }}</code></p></td>
-      <td><p>{{- var.description -}}</p></td>
-    </tr>
-  {% endfor %}
+    {% for var in include.scope -%}
+      <tr>
+        <td><p><code>{{ var.name }}</code></p></td>
+        <td><p>{{- var.description -}}</p></td>
+      </tr>
+    {% endfor -%}
   </tbody>
 </table>
 </div>
