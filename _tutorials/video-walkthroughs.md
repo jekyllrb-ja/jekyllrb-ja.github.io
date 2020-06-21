@@ -1,12 +1,12 @@
 ---
-layout: tutorials
-permalink: /tutorials/video-walkthroughs/
 title: 動画での解説
+author: giraffeacademy
+date: 2017-10-02 15:20:08 -0400
 ---
 <!-- ---
-layout: tutorials
-permalink: /tutorials/video-walkthroughs/
 title: Video Walkthroughs
+author: giraffeacademy
+date: 2017-10-02 15:20:08 -0400
 --- -->
 
 [Giraffe Academy](https://www.youtube.com/c/GiraffeAcademy){:target="_blank"}は、Jekyllの基本的な使用方法の動画での解説シリーズを用意しています。このシリーズでは、Jekyllのインストールから最初のサイトの設定、変数やレイアウト・条件といった複雑な機能の使い方までを学ぶことができます。

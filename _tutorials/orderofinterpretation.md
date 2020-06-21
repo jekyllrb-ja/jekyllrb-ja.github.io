@@ -1,12 +1,12 @@
 ---
-layout: tutorials
-permalink: /tutorials/orderofinterpretation/
 title: 解釈の順番
+author: tomjoht
+date: 2017-01-29 21:45:03 -0800
 ---
 <!-- ---
-layout: tutorials
-permalink: /tutorials/orderofinterpretation/
 title: Order of interpretation
+author: tomjoht
+date: 2017-01-29 21:45:03 -0800
 --- -->
 
 Jekyllの主な仕事は、あなたのテキストファイルを静的Webサイトに変換することです。LiquidやMarkdown、その他の変換を行い、静的HTMLを作成し出力します。

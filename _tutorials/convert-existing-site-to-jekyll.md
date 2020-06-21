@@ -1,12 +1,12 @@
 ---
-layout: tutorials
-permalink: /tutorials/convert-site-to-jekyll/
 title: HTMLサイトをJekyllに変換
+author: tomjoht
+date: 2017-02-10 21:58:56 -0800
 ---
 <!-- ---
-layout: tutorials
-permalink: /tutorials/convert-site-to-jekyll/
 title: Convert an HTML site to Jekyll
+author: tomjoht
+date: 2017-02-10 21:58:56 -0800
 --- -->
 
 Jekyllサイトのテーマをお探しでしたら、既存のJekyllテーマにこだわる必要はありません。様々な静的HTMLファイルをJekyll Webサイトに変換するのは簡単です。
@@ -611,6 +611,7 @@ layout: null
     <channel>
         <title>{{ site.title }}</title>
         <link>{{ site.url }}</link>
+        <atom:link href="{{ page.url | prepend: site.url }}" rel="self" type="application/rss+xml" />
         <description>{{ site.description }}</description>
         <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
         {% for post in site.posts %}
@@ -743,9 +744,9 @@ Webサイトはさらに見た目をよくしたり機能を実装すること�
 
 <!-- Although websites can implement more sophisticated features and functionality, we've covered the basics in this tutorial. You now have a fully functional Jekyll site. -->
 
-[GitHub Pages](https://pages.github.com/){:target="_blank"}、[Netlify](https://www.netlify.com/){:target="_blank"}を使って、[s3_website plugin](https://github.com/laurilehmijoki/s3_website){:target="_blank"}を使用して[Amazon AWS S3](https://aws.amazon.com/s3/){:target="_blank"}、もしくはFTPでWebサーバーにファイルを転送して、あなたのサイトを公開しましょう。
+[GitHub Pages](https://pages.github.com/){:target="_blank"}、[Netlify](https://www.netlify.com/){:target="_blank"}、[Vercel](https://vercel.com){:target="_blank"}、[Render](https://render.com){:target="_blank"}や、[s3_website plugin](https://github.com/laurilehmijoki/s3_website){:target="_blank"}を使用して[Amazon AWS S3](https://aws.amazon.com/s3/){:target="_blank"}、もしくはFTPでWebサーバーにファイルを転送して、あなたのサイトを公開しましょう。
 
-<!-- To deploy your site, consider using [GitHub Pages](https://pages.github.com/), [Netlify](https://www.netlify.com/), [Amazon AWS S3](https://aws.amazon.com/s3/) using the [s3_website plugin](https://github.com/laurilehmijoki/s3_website), or just FTP your files to your web server. -->
+<!-- To deploy your site, consider using [GitHub Pages](https://pages.github.com/), [Netlify](https://www.netlify.com/), [Vercel](https://vercel.com), [Render](https://render.com), [Amazon AWS S3](https://aws.amazon.com/s3/) using the [s3_website plugin](https://github.com/laurilehmijoki/s3_website), or just FTP your files to your web server. -->
 
 アセットを含めたレイアウトをRuby `gem`にパッケージして、[Jekyllのテーマを作る]({{ "/docs/themes/" | relative_url }})こともできます。
 
