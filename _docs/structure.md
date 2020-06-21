@@ -11,46 +11,46 @@ permalink: /docs/structure/
 
 <!-- A basic Jekyll site usually looks something like this: -->
 
-```sh
+```
 .
 ├── _config.yml
 ├── _data
-|   └── members.yml
+│   └── members.yml
 ├── _drafts
-|   ├── begin-with-the-crazy-ideas.md
-|   └── on-simplicity-in-technology.md
+│   ├── begin-with-the-crazy-ideas.md
+│   └── on-simplicity-in-technology.md
 ├── _includes
-|   ├── footer.html
-|   └── header.html
+│   ├── footer.html
+│   └── header.html
 ├── _layouts
-|   ├── default.html
-|   └── post.html
+│   ├── default.html
+│   └── post.html
 ├── _posts
-|   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
-|   └── 2009-04-26-barcamp-boston-4-roundup.md
+│   ├── 2007-10-29-why-every-programmer-should-play-nethack.md
+│   └── 2009-04-26-barcamp-boston-4-roundup.md
 ├── _sass
-|   ├── _base.scss
-|   └── _layout.scss
+│   ├── _base.scss
+│   └── _layout.scss
 ├── _site
 ├── .jekyll-metadata
 └── index.html # can also be an 'index.md' with valid front matter
 ```
 
-<div class="note info">
+<div class="note">
   <h5>gemベーステーマを使ったJekyllサイトのディレクトリ構成</h5>
   <!-- <h5>Directory structure of Jekyll sites using gem-based themes</h5> -->
   <p>
-    <strong>Jekyll 3.2</strong>から、<code>jekyll new</code>の新しいJekyllプロジェクトは、<a href="/docs/themes/">gemベーステーマ</a>を使用してサイトの外観を決定します。その結果、デフォルトのディレクトリ構成は軽くます。<code>_layouts</code>、 <code>_includes</code>、<code>_sass</code>がテーマのgemに入っています。
+    バージョン{% include docs_version_badge.html version="3.2"%}から、<code>jekyll new</code>の新しいJekyllプロジェクトは、<a href="/docs/themes/">gemベーステーマ</a>を使用してサイトの外観を決定します。その結果、デフォルトのディレクトリ構成は軽くます。<code>_layouts</code>、 <code>_includes</code>、<code>_sass</code>がテーマのgemに入っています。
   </p>
   <!-- <p>
-    Starting <strong>Jekyll 3.2</strong>, a new Jekyll project bootstrapped with <code>jekyll new</code> uses <a href="/docs/themes/">gem-based themes</a> to define the look of the site. This results in a lighter default directory structure : <code>_layouts</code>, <code>_includes</code> and <code>_sass</code> are stored in the theme-gem, by default.
+    Since version {% include docs_version_badge.html version="3.2"%}, a new Jekyll project bootstrapped with <code>jekyll new</code> uses <a href="/docs/themes/">gem-based themes</a> to define the look of the site. This results in a lighter default directory structure : <code>_layouts</code>, <code>_includes</code> and <code>_sass</code> are stored in the theme-gem, by default.
   </p> -->
   <br />
   <p>
-     <a href="https://github.com/jekyll/minima" target="_blank">minima</a>は現在のデフォルトテーマで、 <code>bundle show minima</code>でminimaのテーマファイルがコンピュータのどこに保存されているのかを見ることができます。
+     <a href="https://github.com/jekyll/minima" target="_blank">minima</a>は現在のデフォルトテーマで、 <code>bundle info minima</code>でminimaのテーマファイルがコンピュータのどこに保存されているのかを見ることができます。
   </p>
   <!-- <p>
-     <a href="https://github.com/jekyll/minima">minima</a> is the current default theme, and <code>bundle show minima</code> will show you where minima theme's files are stored on your computer.
+     <a href="https://github.com/jekyll/minima">minima</a> is the current default theme, and <code>bundle info minima</code> will show you where minima theme's files are stored on your computer.
   </p> -->
 </div>
 
@@ -259,3 +259,13 @@ permalink: /docs/structure/
   </tbody>
 </table>
 </div>
+
+`.`, `_ `, `#` もしくは `~`から始まる`source`ディレクトリの全てのファイルやディレクトリは、`destination`フォルダには含まれません。これらのパスを特別にコピーしたい場合には、設定ファイルの`include`に書き込まなければなりません。
+
+<!-- Every file or directory beginning with the following characters: `.`, `_ `, `#` or `~` in the `source` directory will not be included in the `destination` folder. Such paths will have to be explicitly specified via the config file in the `include` directive to make sure they're copied over: -->
+
+```yaml
+include:
+ - _pages
+ - .htaccess
+ ```

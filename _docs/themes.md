@@ -38,6 +38,7 @@ Minimaの場合、Jekyllのサイトディレクトリでは以下のファイ�
 <!-- In the case of Minima, you see only the following files in your Jekyll site directory: -->
 
 ```
+.
 ├── Gemfile
 ├── Gemfile.lock
 ├── _config.yml
@@ -82,10 +83,10 @@ Jekyllのテーマはデフォルトのレイアウトやインクルド、ス�
 
 <!-- To locate a theme's files on your computer: -->
 
-1. `bundle show`にテーマgemの名前をつけて実行します。Jekyllのデフォルトテーマなら、`bundle show minima`です。
+1. `bundle info --path`にテーマgemの名前をつけて実行します。Jekyllのデフォルトテーマなら、`bundle info --path minima`です。
    これは、gemベーステーマのファイルの場所を返します。例えばmacOSなら、Minimaテーマのファイルは、`/usr/local/lib/ruby/gems/2.6.0/gems/minima-2.5.1`にあるはずです。
 
-   <!-- 1. Run `bundle show` followed by the name of the theme's gem, e.g., `bundle show minima` for Jekyll's default theme. -->
+   <!-- 1. Run `bundle info --path` followed by the name of the theme's gem, e.g., `bundle info --path minima` for Jekyll's default theme. -->
 
    <!-- This returns the location of the gem-based theme files. For example, the Minima theme's files might be located in `/usr/local/lib/ruby/gems/2.6.0/gems/minima-2.5.1` on macOS. -->
 
@@ -95,52 +96,53 @@ Jekyllのテーマはデフォルトのレイアウトやインクルド、ス�
 
    ```sh
    # On MacOS
-   open $(bundle show minima)
+   open $(bundle info --path minima)
 
    # On Windows
    # First get the gem's installation path:
    #
-   #   bundle show minima
+   #   bundle info --path minima
    #   => C:/Ruby26-x64/lib/ruby/gems/{{ site.data.ruby.current_version }}/gems/minima-2.5.1
    #
    # then invoke explorer with above path, substituting `/` with `\`
    explorer C:\Ruby26-x64\lib\ruby\gems\{{ site.data.ruby.current_version}}\gems\minima-2.5.1
 
    # On Linux
-   xdg-open $(bundle show minima)
+   xdg-open $(bundle info --path minima)
    ```
 
    FinderやExplorerが開き、テーマのファイルやディレクトリが表示されます。Minimaテーマgemはこれらのファイルを含んでいます。
 
    <!-- A Finder or Explorer window opens showing the theme's files and directories. The Minima theme gem contains these files: -->
 
-    ```
-    ├── LICENSE.txt
-    ├── README.md
-    ├── _includes
-    │   ├── disqus_comments.html
-    │   ├── footer.html
-    │   ├── google-analytics.html
-    │   ├── head.html
-    │   ├── header.html
-    │   ├── icon-github.html
-    │   ├── icon-github.svg
-    │   ├── icon-twitter.html
-    │   └── icon-twitter.svg
-    ├── _layouts
-    │   ├── default.html
-    │   ├── home.html
-    │   ├── page.html
-    │   └── post.html
-    ├── _sass
-    │   ├── minima
-    │   │   ├── _base.scss
-    │   │   ├── _layout.scss
-    │   │   └── _syntax-highlighting.scss
-    │   └── minima.scss
-    └── assets
-        └── main.scss
-     ```
+   ```
+   .
+   ├── LICENSE.txt
+   ├── README.md
+   ├── _includes
+   │   ├── disqus_comments.html
+   │   ├── footer.html
+   │   ├── google-analytics.html
+   │   ├── head.html
+   │   ├── header.html
+   │   ├── icon-github.html
+   │   ├── icon-github.svg
+   │   ├── icon-twitter.html
+   │   └── icon-twitter.svg
+   ├── _layouts
+   │   ├── default.html
+   │   ├── home.html
+   │   ├── page.html
+   │   └── post.html
+   ├── _sass
+   │   ├── minima
+   │   │   ├── _base.scss
+   │   │   ├── _layout.scss
+   │   │   └── _syntax-highlighting.scss
+   │   └── minima.scss
+   └── assets
+       └── main.scss
+   ```
 
 テーマファイルをはっきり理解するには、あなたのJekyllサイトのディレクトリに同じ名前のファイルを作成します。
 
@@ -188,7 +190,7 @@ gemベーステーマを取り除き、全てのファイルがテーマgemで�
 
 <!-- Then you must tell Jekyll about the plugins that were referenced by the theme. You can find these plugins in the theme's gemspec file as runtime dependencies. If you were converting the Minima theme, for example, you might see: -->
 
-```
+```ruby
 spec.add_runtime_dependency "jekyll-feed", "~> 0.12"
 spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.6"
 ```
@@ -396,7 +398,7 @@ For help getting started, read /path/to/jekyll-theme-awesome/README.md.
 
 ```
 _sass
-├── jekyll-theme-awesome.scss
+└── jekyll-theme-awesome.scss
 ```
 
 テーマのスタイルシートは`@import`を使用することでダイレクトにユーザーのスタイルシートを取り込めます。
