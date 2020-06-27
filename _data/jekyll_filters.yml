@@ -119,6 +119,38 @@
 #         [{"name"=>"2013", "items"=>[...]},
 #         {"name"=>"2014", "items"=>[...]}]
 #
+# - name: Find
+#   description: >-
+#     Return <strong>the first object</strong> in an array for which the queried
+#     attribute has the given value or return <code>nil</code> if no item in
+#     the array satisfies the given criteria.
+#   version_badge: 4.1.0
+#   examples:
+#     - input: '{{ site.members | find: "graduation_year", "2014" }}'
+#       output:
+# 
+# #
+# 
+# - name: Find Expression
+#   description: >-
+#     Return <strong>the first object</strong> in an array for which the given
+#     expression evaluates to true or return <code>nil</code> if no item in
+#     the array satisfies the evaluated expression.
+#   version_badge: 4.1.0
+#   examples:
+#     - input: |-
+#         {{ site.members | find_exp:"item",
+#         "item.graduation_year == 2014" }}
+#       output:
+#     - input: |-
+#         {{ site.members | find_exp:"item",
+#         "item.graduation_year < 2014" }}
+#       output:
+#     - input: |-
+#         {{ site.members | find_exp:"item",
+#         "item.projects contains 'foo'" }}
+#       output:
+#
 # #
 #
 # - name: Group By Expression
@@ -166,10 +198,25 @@
 # #
 #
 # - name: Number of Words
-#   description: Count the number of words in some text.
+#   description: >-
+#     Count the number of words in some text.<br/>
+#     From <span class="version-badge">v4.1.0</span>, this filter takes an optional
+#     argument to control the handling of Chinese-Japanese-Korean (CJK) characters
+#     in the <code>input</code> string.<br/>
+#     Passing <code>'cjk'</code> as the argument will count every CJK character
+#     detected as one word irrespective of being separated by whitespace.<br/>
+#     Passing <code>'auto'</code> (auto-detect) works similar to <code>'cjk'</code>
+#     but is more performant if the filter is used on a variable string that may
+#     or may not contain CJK chars.
 #   examples:
-#     - input: '{{ page.content | number_of_words }}'
-#       output: 1337
+#     - input: '{{ "Hello world!" | number_of_words }}'
+#       output: 2
+#     - input: '{{ "你好hello世界world" | number_of_words }}'
+#       output: 1
+#     - input: '{{ "你好hello世界world" | number_of_words: "cjk" }}'
+#       output: 6
+#     - input: '{{ "你好hello世界world" | number_of_words: "auto" }}'
+#       output: 6
 #
 # #
 #
@@ -390,6 +437,34 @@
       output:
 
 #
+- name: Find
+  description: >-
+    指定された属性を持つ配列内の<strong>最初のオブジェクト</strong>を返します。配列内のアイテムが指定された基準を満たさない場合は<code>nil</code>を返します。
+  version_badge: 4.1.0
+  examples:
+    - input: '{{ site.members | find: "graduation_year", "2014" }}'
+      output:
+
+#
+
+- name: Find Expression
+  description: >-
+    指定された条件を満たすを持つ配列内の<strong>最初のオブジェクト</strong>を返します。配列内のアイテムが指定された条件を満たさない場合は<code>nil</code>を返します。
+  version_badge: 4.1.0
+  examples:
+    - input: |-
+        {{ site.members | find_exp:"item",
+        "item.graduation_year == 2014" }}
+      output:
+    - input: |-
+        {{ site.members | find_exp:"item",
+        "item.graduation_year < 2014" }}
+      output:
+    - input: |-
+        {{ site.members | find_exp:"item",
+        "item.projects contains 'foo'" }}
+      output:
+#
 
 - name: Group By
   description: 指定したプロパティで配列内のアイテムをグループ化する。
@@ -441,11 +516,20 @@
 #
 
 - name: Number of Words
-  description: テキストのワード数を数える。
+  description: >-
+    テキストの単語数を数えます。<br/>
+    <span class="version-badge">v4.1.0</span>以降、このフィルターはオプションの引数を取り、<code>input</code>文字列内のChinese-Japanese-Korean (CJK)文字の処理を制御します。<br/>
+引数として<code>'cjk'</code>を渡すと、空白で区切られているかどうかに関係なく、検出されたすべてのCJK文字が1つの単語としてカウントされます。<br/>
+<code>'auto'</code>（自動検出）を渡す場合、 <code>'cjk'</code>と同様に機能しますが、フィルターがCJK文字を含む場合と含まない場合がある変数文字列で使用される場合は、よりパフォーマンスが高くなります。
   examples:
-    - input: '{{ page.content | number_of_words }}'
-      output: 1337
-
+    - input: '{{ "Hello world!" | number_of_words }}'
+      output: 2
+    - input: '{{ "你好hello世界world" | number_of_words }}'
+      output: 1
+    - input: '{{ "你好hello世界world" | number_of_words: "cjk" }}'
+      output: 6
+    - input: '{{ "你好hello世界world" | number_of_words: "auto" }}'
+      output: 6
 #
 
 - name: Array to Sentence
