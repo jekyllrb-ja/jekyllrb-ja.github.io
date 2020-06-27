@@ -1,12 +1,12 @@
 ---
-layout: tutorials
-permalink: /tutorials/using-jekyll-with-bundler/
 title: BundlerでJekyllを使う
+author: mkasberg
+date: 2018-03-06 21:33:25 -0700
 ---
 <!-- ---
-layout: tutorials
-permalink: /tutorials/using-jekyll-with-bundler/
 title: Using Jekyll with Bundler
+author: mkasberg
+date: 2018-03-06 21:33:25 -0700
 --- -->
 
 >Bundlerは、必要なgemとバージョンを追跡しインストールすることで、Rubyプロジェクトに一貫した環境を提供します。
@@ -14,14 +14,33 @@ title: Using Jekyll with Bundler
 <!-- > Bundler provides a consistent environment for Ruby projects by tracking and
 > installing the exact gems and versions that are needed. -->
 
-[Bundler](https://bundler.io){:target="_blank"}はJekyllで使用できる素晴らしいツールです。プロジェクト毎に依存関係を追跡するため、異なるプロジェクトで異なるバージョンのJekyllを使用する場合や、システムやユーザーレベルでJekyllをインストールしたくない場合に、特に便利です。このチュートリアルでは、Baundlerを使用して、Jekyllをプロジェクト外にインストールせずに、新しいJekyllプロジェクトを作る方法を示します。
+[Bundler](https://bundler.io){:target="_blank"}はJekyllで使用できる素晴らしいツールです。プロジェクト毎に依存関係を追跡するため、異なるプロジェクトで異なるバージョンのJekyllを使用する場合に便利です。
 
 <!-- [Bundler](https://bundler.io) can be a great tool to use with Jekyll. Because it
 tracks dependencies on a per-project basis, it is particularly useful if you
-need to run different versions of Jekyll in different projects, or if you don't
-want to install Jekyll at the system or user level. This tutorial will show you
-how to create a new Jekyll project using Bundler and without installing Jekyll
-outside the project. -->
+need to run different versions of Jekyll in different projects.-->
+
+加えて、(オプションで)プロジェクトフォルダにインストールでき、実行時のパーミッションの問題を回避できます。  
+通常Jekyllを使用する場合、システムのデフォルトgemインストールディレクトリにJekyllをインストールし、`jekyll new`を実行します。このチュートリアルでは、プロジェクトディレクトリの外にgemをインストールせずにBundlerで新しいJekyllプロジェクトを作成する方法を示します。
+
+<!-- In addition, because it can (optionally) install dependencies in the project
+folder, it can help you avoid permissions issues you might otherwise run into.
+The usual way to use Jekyll is to install Jekyll to the system's default gem
+installation directory and then run `jekyll new`. In this tutorial, we'll show
+you how to create a new Jekyll project using Bundler and without installing gems
+outside the project directory. -->
+
+<div class="note info">
+  <h5>Jekyllを使い始める最もシンプルな方法ではありません</h5>
+  <!-- <h5>This is not the simplest way to start using Jekyll</h5> -->
+  <p>このチュートリアルはシステムワイドのgemインストールをせずに、Bundlerを使用してJekyllをセットアップすることを助けます。デフォルトのgemインストールディレクトリにjekyllをインストールしたい場合は、<a href="{% link _docs/index.md %}">クイックスタート</a>がよいかもしれません。</p>
+  <!-- <p>
+    This tutorial helps you get Jekyll set up using Bundler, and optionally
+    without any system-wide gem installations. If prefer installing the jekyll
+    command to your default gem installation directory, you might want the
+    <a href="{% link _docs/index.md %}">Quickstart</a>.
+  </p> -->
+</div>
 
 ## 始める前に
 <!-- ## Before You Begin -->
@@ -47,19 +66,23 @@ cd my-jekyll-website
 bundle init
 ```
 
-## Bundlerの設定
-<!-- ## Configure Bundler -->
+## Bundlerインストールパスの設定
+<!-- ## Configure Bundler Install Path -->
 
-このステップはオプションですが、行った方がよいでしょう。プロジェクトのサブディレクトリ`./vendor/bundle/`にgemをインストールするため、Bundlerの設定を行います。これにより、依存関係を独立した環境にインストールして、システム上の他のgemと競合しないようにすることができます。このステップを飛ばすと、Bundlerは依存関係をシステムにグローバルにインストールします。
+このステップはオプションです。プロジェクトのサブディレクトリ`./vendor/bundle/`にgemをインストールするため、Bundlerの設定を行います。  
+これを行う利点は、`gem install`で使用される場所ではなく、依存関係をプロジェクトフォルダにgemをインストールすることです。これにより、Rubyのインストール方法に応じて、gemのインストール中に発生する可能性がある権限エラーを回避できます。  
+このステップを飛ばすと、Bundlerは依存関係を`gem install`で使用される場所にインストールします。
 
-<!-- This step is optional, but encouraged. We're going to configure Bundler to install
-gems in the `./vendor/bundle/` project subdirectory. This allows us to install
-our dependencies in an isolated environment, ensuring they don't conflict with
-other gems on your system. If you skip this step, Bundler will install your
-dependencies globally on your system. -->
+<!-- This step is optional. In this step, we're going to configure Bundler to install
+gems in the `./vendor/bundle/` project subdirectory. The advantage of doing this
+is that bundler will install gems within your project folder instead of the
+location used by `gem install`. This can help you avoid permissions errors you
+might otherwise get during gem installation, depending how you installed Ruby.
+If you skip this step, Bundler will install your dependencies to the location
+used by `gem install`. -->
 
 ```sh
-bundle install --path vendor/bundle
+bundle install --local path vendor/bundle
 ```
 
 <div class="note info">
@@ -78,11 +101,12 @@ bundle install --path vendor/bundle
 ## Jekyllを追加する
 <!-- ## Add Jekyll -->
 
-次は、新しいプロジェクトが依存するJekyllを追加するためにBundlerを使用します。このコマンドはJekyll gemをGemfileに追加し、`./vendor/bundle/`フォルダにインストールします。
+次は、新しいプロジェクトが依存するJekyllを追加するためにBundlerを使用します。このコマンドはJekyll gemをGemfileに追加し、`./vendor/bundle/`フォルダ(カスタムパスを設定していない場合はデフォルトのgemインストールディレクトリ)にインストールします。
 
 <!-- Now, we're going to use Bundler to add Jekyll as a dependency of our new
 project. This command will add the Jekyll gem to our Gemfile and install it to
-the `./vendor/bundle/` folder. -->
+the `./vendor/bundle/` folder (or your default gem installation directory if you
+didn't set a custom path). -->
 
 ```sh
 bundle add jekyll

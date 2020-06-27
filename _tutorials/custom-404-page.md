@@ -1,12 +1,12 @@
 ---
-layout: tutorials
-permalink: /tutorials/custom-404-page/
 title: カスタム404ページ
+author: ashmaroli
+date: 2017-03-11 17:23:24 +0530
 ---
 <!-- ---
-layout: tutorials
-permalink: /tutorials/custom-404-page/
 title: Custom 404 Page
+author: ashmaroli
+date: 2017-03-11 17:23:24 +0530
 --- -->
 
 壊れたリンクへアクセスしたときに表示されるデフォルトの**Error 404 -- File Not Found**ページを、Jekyllで簡単にカスタム404エラーページに置き換えることができます。

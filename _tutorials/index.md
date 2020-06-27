@@ -1,11 +1,9 @@
 ---
-layout: tutorials
 title: チュートリアル
 permalink: /tutorials/home/
 redirect_from: /tutorials/index.html
 ---
 <!-- ---
-layout: tutorials
 title: Tutorials
 permalink: /tutorials/home/
 redirect_from: /tutorials/index.html

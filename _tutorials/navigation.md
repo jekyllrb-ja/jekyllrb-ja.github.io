@@ -1,12 +1,12 @@
 ---
-layout: tutorials
-permalink: /tutorials/navigation/
 title: ナビゲーション
+author: tomjoht
+date: 2017-01-24 15:38:17 -0800
 ---
 <!-- ---
-layout: tutorials
-permalink: /tutorials/navigation/
 title: Navigation
+author: tomjoht
+date: 2017-01-24 15:38:17 -0800
 --- -->
 
 Jekyllサイトに多くのページがあるなら、ページのナビゲーションを作りたくなるでしょう。ナビゲーションリンクをハードコーディングする代わりに、ページのリストをプログラムで取得してサイトのナビゲーションを構築することができます。
