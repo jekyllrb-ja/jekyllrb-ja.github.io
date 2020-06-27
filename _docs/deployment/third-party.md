@@ -25,7 +25,7 @@ JekyllサイトをAWS Amplifyでデプロイとホストするために[step-by-
 
 ## CloudCannon
 
-[CloudCannon](https://cloudcannon.com){:target="_blank"}にはJekyllサイトをビルド、ホスト、更新するのに必要な物が全てあります。グローバルCDN、自動SSL、継続的導入[など](https://cloudcannon.com/features/)を{:target="_blank"}活用してください。
+[CloudCannon](https://cloudcannon.com){: target="_blank"}にはJekyllサイトをビルド、ホスト、更新するのに必要な物が全てあります。グローバルCDN、自動SSL、継続的導入[など](https://cloudcannon.com/features/){: target="_blank"}を活用してください。
 
 <!-- [CloudCannon](https://cloudcannon.com) has everything you need to build, host
 and update Jekyll websites. Take advantage of our global CDN, automated SSL,
