@@ -92,7 +92,7 @@ SaaSサービスをJekyllサイトでの機能的なバックエンドとして�
   - [Bonsai Search](https://docs.bonsai.io/article/217-jekyll){:target="_blank"}: JekyllサイトでElasticsearchを使用する最も簡単な方法
   - [CloudSh](https://cloudsh.com/generators/How-to-setup-search-on-Jekyll/){:target="_blank"}: 数行のJavaScriptのWebサイト検索
 
-  <!-- [Algolia](https://blog.algolia.com/instant-search-blog-documentation-jekyll-plugin/): Add a powerful instant search to your Jekyll site
+<!-- [Algolia](https://blog.algolia.com/instant-search-blog-documentation-jekyll-plugin/): Add a powerful instant search to your Jekyll site
   - [Bonsai Search](https://docs.bonsai.io/article/217-jekyll): The easiest way to use Elasticsearch for your Jekyll site
   - [CloudSh](https://cloudsh.com/generators/How-to-setup-search-on-Jekyll/): Website search with a few lines of JavaScript -->
 
