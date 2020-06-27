@@ -518,9 +518,7 @@
 - name: Number of Words
   description: >-
     テキストの単語数を数えます。<br/>
-    <span class="version-badge">v4.1.0</span>以降、このフィルターはオプションの引数を取り、<code>input</code>文字列内のChinese-Japanese-Korean (CJK)文字の処理を制御します。<br/>
-引数として<code>'cjk'</code>を渡すと、空白で区切られているかどうかに関係なく、検出されたすべてのCJK文字が1つの単語としてカウントされます。<br/>
-<code>'auto'</code>（自動検出）を渡す場合、 <code>'cjk'</code>と同様に機能しますが、フィルターがCJK文字を含む場合と含まない場合がある変数文字列で使用される場合は、よりパフォーマンスが高くなります。
+    <span class="version-badge">v4.1.0</span>以降、このフィルターはオプションの引数を取り、<code>input</code>文字列内のChinese-Japanese-Korean (CJK)文字の処理を制御します。<br/>引数として<code>'cjk'</code>を渡すと、空白で区切られているかどうかに関係なく、検出されたすべてのCJK文字が1つの単語としてカウントされます。<br/><code>'auto'</code>（自動検出）を渡す場合、 <code>'cjk'</code>と同様に機能しますが、フィルターがCJK文字を含む場合と含まない場合がある変数文字列で使用される場合は、よりパフォーマンスが高くなります。
   examples:
     - input: '{{ "Hello world!" | number_of_words }}'
       output: 2
