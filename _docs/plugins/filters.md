@@ -29,12 +29,12 @@ Liquid::Template.register_filter(Jekyll::AssetFilter)
   <h5>ProTip™: Liquidを使用してサイトオブジェクトにアクセスする</h5>
   <!-- <h5>ProTip™: Access the site object using Liquid</h5> -->
   <p>
-    Jekyllでは、<code>context.registers[:site]</code>のLiquidの<code>context.registers</code>機能を通じて、<code>site</code>オブジェクトにアクセスすることができます。例えば、 <code>context.registers[:site].config</code>を使用してグローバル設定ファイルの<code>_config.yml</code>にアクセスできます。
+    Jekyllでは、<code>@context.registers[:site]</code>のLiquidの<code>@context.registers</code>機能を通じて、<code>site</code>オブジェクトにアクセスすることができます。例えば、 <code>@context.registers[:site].config</code>を使用してグローバル設定ファイルの<code>_config.yml</code>にアクセスできます。
   </p>
   <!-- <p>
     Jekyll lets you access the <code>site</code> object through the
-    <code>context.registers</code> feature of Liquid at <code>context.registers[:site]</code>. For example, you can
+    <code>@context.registers</code> feature of Liquid at <code>@context.registers[:site]</code>. For example, you can
     access the global configuration file <code>_config.yml</code> using
-    <code>context.registers[:site].config</code>.
+    <code>@context.registers[:site].config</code>.
   </p> -->
 </div>

@@ -57,7 +57,7 @@ have been named something like `creator`. -->
 `_layouts/post.html` with the following content: -->
 
 {% raw %}
-```html
+```liquid
 ---
 layout: default
 ---
@@ -94,7 +94,7 @@ Jekyllはポストを`site.posts`で使用可能にします。
 <!-- Create `blog.html` in your root (`/blog.html`) with the following content: -->
 
 {% raw %}
-```html
+```liquid
 ---
 layout: default
 title: Blog
@@ -105,7 +105,7 @@ title: Blog
   {% for post in site.posts %}
     <li>
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p>{{ post.excerpt }}</p>
+      {{ post.excerpt }}
     </li>
   {% endfor %}
 </ul>

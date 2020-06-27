@@ -10,7 +10,6 @@ LiquidでJekyllはもっと面白くなります。Liquidは3つの主なパー�
 language which has three main parts: [objects](#objects), [tags](#tags) and
 [filters](#filters). -->
 
-
 ## オブジェクト {#objects}
 <!-- ## Objects -->
 
@@ -91,7 +90,7 @@ and are separated by a `|`. For example: -->
 
 <!-- To get our changes processed by Jekyll we need to add [front matter](../03-front-matter/) to the top of the page: -->
 
-```markdown
+```yaml
 ---
 # front matter tells Jekyll to process Liquid
 ---

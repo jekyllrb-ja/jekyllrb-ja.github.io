@@ -30,13 +30,13 @@ and are available via `site.pages`. Static files become instances of
 and are available via `site.static_files`. See
 [the Variables documentation page](/docs/variables/) and
 [`Jekyll::Site`]({{ site.repository }}/blob/master/lib/jekyll/site.rb)
-for more details. -->
+for details. -->
 
 例えば、ジェネレータはテンプレート変数に構築時に計算された値を代入することができます。以下の例では、`reading.html`テンプレートに`ongoing`と`done`の2つの変数をジェネレータから書き込んでいます。
 
 <!-- For instance, a generator can inject values computed at build time for template
-variables. In the following example the template `reading.html` has two
-variables `ongoing` and `done` that we fill in the generator: -->
+variables. In the following example, the template `reading.html` has two
+variables `ongoing` and `done` that are filled in the generator: -->
 
 ```ruby
 module Reading
@@ -52,9 +52,9 @@ module Reading
 end
 ```
 
-こちらは新しいページを生成するより複雑なジェネレータです。
+以下の例は新しいページを生成するより複雑なジェネレータです。この例は、`categories`ディレクトリにそのカテゴリのポスト一覧のカテゴリページを`category_index.html`レイアウトを使用して作成します。
 
-<!-- This is a more complex generator that generates new pages: -->
+<!-- The following example is a more complex generator that generates new pages. In this example, the generator will create a series of files under the `categories` directory for each category, listing the posts in each category using the `category_index.html` layout. -->
 
 ```ruby
 module Jekyll
@@ -90,15 +90,9 @@ module Jekyll
 end
 ```
 
-この例では、ジェネレータは一連のファイルを`categories`ディレクトリに各カテゴリの作成します。`category_index.html`レイアウトを使用し、各カテゴリのポストの一覧を作成します。
+ジェネレータには一つだけのメソッドの実装が必要です。
 
-<!-- In this example, our generator will create a series of files under the
-`categories` directory for each category, listing the posts in each category
-using the `category_index.html` layout. -->
-
-ジェネレータには一つのメソッドの実装が必要です。
-
-<!-- Generators are only required to implement one method: -->
+<!-- Generators need to implement only one method: -->
 
 <div class="mobile-side-scroller">
 <table>
@@ -125,3 +119,11 @@ using the `category_index.html` layout. -->
   </tbody>
 </table>
 </div>
+
+ジェネレータが単一のファイル内に収まっている場合、任意の名前を付けることができますが、拡張子は `.rb`にする必要があります。ジェネレータが複数のファイルに分割されている場合は、https：//rubygems.org/で公開するRubygemとしてパッケージ化する必要があります。この場合、2つのgemが同じ名前を持つことはできないため、gemの名前はそのサイトに基づく名前を設定する必要があります。
+
+<!-- If your generator is contained within a single file, it can be named whatever you want but it should have an `.rb` extension. If your generator is split across multiple files, it should be packaged as a Rubygem to be published at https://rubygems.org/. In this case, the name of the gem depends on the availability of the name at that site because no two gems can have the same name. -->
+
+デフォルトでは、Jekyllは`_plugins`ディレクトリでジェネレータを探します。しかし、設定ファイルで`plugins_dir`キーでプラグインのディレクトリを指定できます。
+
+<!-- By default, Jekyll looks for generators in the `_plugins` directory. However, you can change the default directory by assigning the desired name to the key `plugins_dir` in the config file. -->

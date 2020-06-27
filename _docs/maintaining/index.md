@@ -8,10 +8,10 @@ permalink: /docs/maintaining/
 --- -->
 
 **このガイドはJekyllの貢献者と維持管理者向けです。**これらの特別な人々は、1つ以上のジキルのリポジトリに貢献したり、他の人々の貢献を統合するのを助けています。こちらに書かれていることに興味を持つかもしれませんが、万人向けのガイドではありません。
-{: .note .info }
+{: .note .info}
 
 <!-- **This guide is for Jekyll contributors and maintainers.** These special people contribute to one or more of Jekyll's repositories or help merge the contributions of others. You may find what is written here interesting, but it’s definitely not for everyone. -->
-<!-- {: .note .info } -->
+<!-- {: .note .info} -->
 
 <div class="note info">
   <h5>日本語訳注：公式へのリンクです</h5>

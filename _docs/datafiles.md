@@ -7,10 +7,10 @@ title: Data Files
 permalink: /docs/datafiles/
 --- -->
 
-Jekyllの[組み込み変数](../variables/)に加えて、[Liquid
+Jekyllの[組み込み変数]({{'/docs/variables/' | relative_url }})に加えて、[Liquid
 templating system](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers){:target="_blank"}からアクセスできるカスタムデータを設定できます。
 
-<!-- In addition to the [built-in variables](../variables/) available from Jekyll,
+<!-- In addition to the [built-in variables]({{'/docs/variables/' | relative_url }}) available from Jekyll,
 you can specify your own custom data that can be accessed via the [Liquid
 templating system](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers). -->
 
@@ -62,7 +62,7 @@ In `_data/members.yml`:
 
 Or `_data/members.csv`:
 
-```text
+```
 name,github
 Eric Mill,konklone
 Parker Moore,parkr
@@ -181,6 +181,6 @@ author: dave
 ```
 {% endraw %}
 
-（特にドキュメンテーションサイトや多くのページが存在するJekyllサイトを持っているなら）しっかりしたナビゲーションの構築のための情報は、[ナビゲーション]({{ "tutorials/navigation" | relative_url }})を見てください。
+（特にドキュメンテーションサイトや多くのページが存在するJekyllサイトを持っているなら）しっかりしたナビゲーションの構築のための情報は、[ナビゲーション]({{ '/tutorials/navigation/' | relative_url }})を見てください。
 
-<!-- For information on how to build robust navigation for your site (especially if you have a documentation website or another type of Jekyll site with a lot of pages to organize), see [Navigation](/tutorials/navigation). -->
+<!-- For information on how to build robust navigation for your site (especially if you have a documentation website or another type of Jekyll site with a lot of pages to organize), see [Navigation]({{ '/tutorials/navigation/' | relative_url }}). -->

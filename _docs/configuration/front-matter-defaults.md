@@ -48,10 +48,10 @@ defaults:
     during automatic regeneration are not loaded until the next execution.
   </p> -->
   <p>
-    <a href="/docs/datafiles">Dataファイル</a>は自動再生成時も再読込されます。
+    <a href="{{ '/docs/datafiles' | relative_url }}">Dataファイル</a>は自動再生成時も再読込されます。
   </p>
   <!-- <p>
-    Note <a href="/docs/datafiles">Data Files</a> are included and reloaded during automatic regeneration.
+    Note <a href="{{ '/docs/datafiles' | relative_url }}">Data Files</a> are included and reloaded during automatic regeneration.
   </p> -->
 </div>
 
@@ -97,7 +97,9 @@ defaults:
 
 このdefaultsで、全てのページは`my-site`レイアウトを使用します。`projects/`フォルダのhtmlファイルは`project`レイアウトを使用し、`page.author` [liquid変数]({{ "/docs/variables/" | relative_url }})に`Mr. Hyde`を指定します。
 
-<!-- With these defaults, all pages would use the `my-site` layout. Any html files that exist in the `projects/` folder will use the `project` layout, if it exists. Those files will also have the `page.author` [liquid variable](/docs/variables/) set to `Mr. Hyde`. -->
+<!-- With these defaults, all pages would use the `my-site` layout. Any html files that exist in the `projects/`
+folder will use the `project` layout, if it exists. Those files will also have the `page.author`
+[liquid variable]({{ '/docs/variables/' | relative_url }}) set to `Mr. Hyde`. -->
 
 ```yaml
 collections:
@@ -113,10 +115,10 @@ defaults:
       layout: "default"
 ```
 
-この例では、`my_collection`という[コレクション]({{ "/docs/collections/" | relative_url }})に`layout`は`default`だと設定します。
+この例では、`my_collection`という[コレクション]({{ '/docs/collections/' | relative_url }})に`layout`は`default`だと設定します。
 
 <!-- In this example, the `layout` is set to `default` inside the
-[collection](/docs/collections/) with the name `my_collection`. -->
+[collection]({{ '/docs/collections/' | relative_url }}) with the name `my_collection`. -->
 
 ### Front MatterデフォルトでのGlobパターン
 <!-- ### Glob patterns in Front Matter defaults -->

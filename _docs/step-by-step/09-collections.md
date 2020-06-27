@@ -87,7 +87,7 @@ collection available at `site.authors`. -->
 <!-- Create `staff.html` and iterate over `site.authors` to output all the staff: -->
 
 {% raw %}
-```html
+```liquid
 ---
 layout: default
 title: Staff
@@ -148,6 +148,10 @@ collections:
     output: true
 ```
 
+設定の変更を反映するために、Jekyllをリスタートします。
+
+<!-- Restart the jekyll server once more for the configuration changes to take effect.  -->
+
 出力したページへのリンクは、`author.url`を使用して行えます。
 
 <!-- You can link to the output page using `author.url`. -->
@@ -157,7 +161,7 @@ collections:
 <!-- Add the link to the `staff.html` page: -->
 
 {% raw %}
-```html
+```liquid
 ---
 layout: default
 title: Staff
@@ -185,7 +189,7 @@ title: Staff
 <!-- Create `_layouts/author.html` with the following content: -->
 
 {% raw %}
-```html
+```liquid
 ---
 layout: default
 ---
@@ -246,7 +250,7 @@ defaults:
 
 <!-- Now you can remove layout from the front matter of all pages and posts. Note
 that any time you update `_config.yml` you'll need to restart Jekyll for the
-changes to take affect. -->
+changes to take effect. -->
 
 ## 著者の投稿のリスト
 <!-- ## List author's posts -->
@@ -263,7 +267,7 @@ use this to filter the posts by author. -->
 author's posts: -->
 
 {% raw %}
-```html
+```liquid
 ---
 layout: default
 ---
@@ -291,7 +295,7 @@ layout: default
 You can do this using a similar filtering technique in `_layouts/post.html`: -->
 
 {% raw %}
-```html
+```liquid
 ---
 layout: default
 ---

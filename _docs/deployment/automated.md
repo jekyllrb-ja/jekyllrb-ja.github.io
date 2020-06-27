@@ -28,17 +28,19 @@ service of your choice.  -->
 
 <!-- We have guides for the following providers: -->
 
+* [GitHub Actions]({{ '/docs/continuous-integration/github-actions/' | relative_url }})
 * [Travis CI]({{ "/docs/continuous-integration/travis-ci/" | relative_url }})
 * [CircleCI]({{ "/docs/continuous-integration/circleci/" | relative_url }})
 * [Buddy]({{ "/docs/continuous-integration/buddyworks/" | relative_url }})
 
-<!-- * [Travis CI](/docs/continuous-integration/travis-ci/)
+<!-- * [GitHub Actions]({{ '/docs/continuous-integration/github-actions/' | relative_url }})
+* [Travis CI](/docs/continuous-integration/travis-ci/)
 * [CircleCI](/docs/continuous-integration/circleci/)
 * [Buddy](/docs/continuous-integration/buddyworks/) -->
 
 ## Git post-receive hook
 
-Gitを使用して変更をプッシュするたびにリモートサーバーが展開を処理するようにするには、その`authorized_keys`ファイルに展開が許可されている全ての公開鍵を持つユーザーアカウントを作成します。これを設定したら、受信後フックの設定は次のようセットアップします。
+Gitを使用して変更をプッシュするたびにリモートサーバーが展開を処理するようにするには、その`authorized_keys`ファイルに展開が許可されている全ての公開鍵を持つユーザーアカウントを作成します。これを設定したら、post-receiveフックを次のようセットアップします。
 
 <!-- To have a remote server handle the deploy for you every time you push changes using Git, you can create a user account which has all the public keys that are authorized to deploy in its `authorized_keys` file. With that in place, setting up the post-receive hook is done as follows: -->
 

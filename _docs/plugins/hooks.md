@@ -27,7 +27,7 @@ Jekyll::Hooks.register :posts, :post_render do |post|
 end
 ```
 
-Jekyllは`:site`、`:pages`、`:posts`そして`:documents`にHookを提供します。すべての場合において、Jekyllは最初のコールバックパラメータとしてのコンテナオブジェクトを使用してHookを呼び出します。 全ての`:pre_render` Hookと`:site, :post_render` Hookもペイロードハッシュを2番目のパラメータとして提供します。`:pre_render`の場合、ペイロードはレンダリング中に利用可能な変数を完全に制御します。`:site, :post_render`の場合、ペイロードにはすべてのサイトをレンダリングした後の最終値が含まれます（サイトマップ、フィードなどに役立ちます）。
+Jekyllは`:site`、`:pages`、`:posts`、`:documents`にHookを提供します。すべての場合において、Jekyllは最初のコールバックパラメータとしてのコンテナオブジェクトを使用してHookを呼び出します。 全ての`:pre_render` Hookと`:site, :post_render` Hookもペイロードハッシュを2番目のパラメータとして提供します。`:pre_render`の場合、ペイロードはレンダリング中に利用可能な変数を完全に制御します。`:site, :post_render`の場合、ペイロードにはすべてのサイトをレンダリングした後の最終値が含まれます（サイトマップ、フィードなどに役立ちます）。
 
 <!-- Jekyll provides hooks for <code>:site</code>, <code>:pages</code>,
 <code>:posts</code>, and <code>:documents</code>. In all cases, Jekyll calls
@@ -272,6 +272,17 @@ rendering all the site (useful for sitemaps, feeds, etc). -->
       <td>
         <p>ドキュメントをディスクに書き込んだ後</p>
         <!-- <p>After writing a document to disk</p> -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><code>:clean</code></p>
+      </td>
+      <td>
+        <p><code>:on_obsolete</code></p>
+      </td>
+      <td>
+        <p>構築前のサイトの出力先のクリーンアップ中</p>
       </td>
     </tr>
   </tbody>

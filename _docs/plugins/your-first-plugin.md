@@ -107,10 +107,19 @@ Obfuscates emails to protect them from spam bots. -->
 ## Hooks（ホック）
 <!-- ## Hooks -->
 
-[Hooks（ホック）]({{ "/docs/plugins/hooks/" | relative_url }})はビルドプロセスを拡張するためのきめ細かい制御を与えます。
+[Hooks（ホック）]({{ "/docs/plugins/hooks/" | relative_url }})はビルドプロセスを拡張するためのきめ細かい制御を与えます。例えば：
 
 <!-- [Hooks](/docs/plugins/hooks/) give fine-grained control to extend the build
-process. -->
+process. For example: -->
+
+* [jemoji](https://github.com/jekyll/jemoji){: target="_balnk"} 絵文字を表示 :+1: 
+* [jekyll-mentions](https://github.com/jekyll/jekyll-mentions){: target="_balnk"} メンション @jekyll をリンクに変換する
+* [jekyll-spaceship](https://github.com/jeffreytse/jekyll-spaceship){: target="_balnk"} - 高度な例。テーブル、mathjax、plantuml、ビデオなどの強力なサポートを提供します。
+
+<!-- * [jemoji](https://github.com/jekyll/jemoji) Display emojis :+1: 
+* [jekyll-mentions](https://github.com/jekyll/jekyll-mentions) turns mentions @jekyll into links
+* [jekyll-spaceship](https://github.com/jeffreytse/jekyll-spaceship) - advanced example. Provides
+powerful supports for table, mathjax, plantuml, video, etc. -->
 
 ## Flags
 

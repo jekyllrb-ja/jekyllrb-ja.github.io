@@ -65,12 +65,12 @@ collections:
 ## コンテンツの追加
 <!-- ## Add content -->
 
-対応するフォルダ（`<source>/_staff_members`など）を作成して、ドキュメントを追加します。front matterがある場合はfront matterが処理され、front matterより後の全部がドキュメントの`content`とされます。front matterが無い場合は、Jekyllは[静的ファイル]({{ "docs/static-files/" | relative_url }})としてそれ以上コンテンツを処理しません。front matterがある場合は、Jekyllはファイルの内容を処理して期待される出力にします。
+対応するフォルダ（`<source>/_staff_members`など）を作成して、ドキュメントを追加します。front matterがある場合はfront matterが処理され、front matterより後の全部がドキュメントの`content`とされます。front matterが無い場合は、Jekyllは[静的ファイル]({{{{ '/docs/static-files/' | relative_url }})としてそれ以上コンテンツを処理しません。front matterがある場合は、Jekyllはファイルの内容を処理して期待される出力にします。
 
 <!-- Create a corresponding folder (e.g. `<source>/_staff_members`) and add
 documents. Front matter is processed if the front matter exists, and everything
 after the front matter is pushed into the document's `content` attribute. If no front
-matter is provided, Jekyll will consider it to be a [static file](/docs/static-files/)
+matter is provided, Jekyll will consider it to be a [static file]({{ '/docs/static-files/' | relative_url }})
 and the contents will not undergo further processing. If front matter is provided,
 Jekyll will process the file contents into the expected output.-->
 
@@ -166,17 +166,23 @@ collections:
 ## パーマリンク
 <!-- ## Permalinks -->
 
-コレクション全体のURLの出力をコントロールするのに役立つ、特別な[コレクションのパーマリンク変数]({{ "docs/permalinks/" | relative_url }})があります。
+コレクション全体のURLの出力をコントロールするのに役立つ、特別な[コレクションのパーマリンク変数]({{ '/docs/permalinks/' | relative_url }})があります。
 
-<!-- There are special [permalink variables for collections](/docs/permalinks/) to
+<!-- There are special [permalink variables for collections]({{ '/docs/permalinks/' | relative_url }}) to
 help you control the output url for the entire collection. -->
 
-## ドキュメントのカスタムソート
-<!-- ## Custom Sorting of Documents -->
+## ドキュメントのカスタムソート{%- include docs_version_badge.html version="4.0" -%}
+{: #custom-sorting-of-documents}
+<!-- ## Custom Sorting of Documents {%- include docs_version_badge.html version="4.0" -%}
+{: #custom-sorting-of-documents}-->
 
-デフォルトでは、コレクション内のドキュメントはパスでソートされます。ですが、コレクションのメタデータでソート順を制御することができます。
+デフォルトでは、fromt matterに`date`キーがある場合はコレクション内のドキュメントは`date`でソートされます。ですが、`date`キーがない場合はそれぞれのパスでソートされます。
 
-<!-- By default, documents in a collection are sorted by their paths. But you can control this sorting via the collection's metadata. -->
+<!-- By default, two documents in a collection are sorted by their `date` attribute when both of them have the `date` key in their front matter. However, if either or both documents do not have the `date` key in their front matter, they are sorted by their respective paths. -->
+
+コレクションのメタデータでソート順を制御することができます。
+
+<!-- You can control this sorting via the collection's metadata. -->
 
 ### Front Matterキーでソート
 <!-- ### Sort By Front Matter Key -->

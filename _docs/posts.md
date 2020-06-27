@@ -176,21 +176,28 @@ Jekyllはブログポストの*タグ*と*カテゴリ*をサポートしてい�
 ### タグ
 <!-- ### Tags -->
 
-Tags for a post are defined in the post's front matter using either the key
+ポストのタグは一つだけなら`tag`、複数なら`tags`キーを利用してfront matterで指定します。  
+Jekyllは`tags`に複数指定されていれば、自動で空白で*区切り*ます。例えば、`tag: classic hollywood`という指定であればタグは単一の`"classic hollywood"`として処理され、`tags: classic hollywood`の場合は`["classic", "hollywood"]`という配列として処理されます。
+
+<!-- Tags for a post are defined in the post's front matter using either the key
 `tag` for a single entry or `tags` for multiple entries. <br/> Since Jekyll
 expects multiple items mapped to the key `tags`, it will automatically *split*
 a string entry if it contains whitespace. For example, while front matter
 `tag: classic hollywood` will be processed into a singular entity
 `"classic hollywood"`, front matter `tags: classic hollywood` will be processed
-into an array of entries `["classic", "hollywood"]`.
+into an array of entries `["classic", "hollywood"]`. -->
 
-Irrespective of the front matter key chosen, Jekyll stores the metadata mapped
-to the plural key which is exposed to Liquid templates.
+front matterで選択したキーにかかわらず、JekyllはLiquidテンプレートで参照できる複数形のキーとしてマップしメタデータに保存します。
 
-All tags registered in the current site are exposed to Liquid templates via
+<!-- Irrespective of the front matter key chosen, Jekyll stores the metadata mapped
+to the plural key which is exposed to Liquid templates. -->
+
+全てのタグはLiquidテンプレートでは`site.tags`で参照できます。ページ上で、`site.tags`からは異なる二つのアイテムが得られます。一つ目のアイテムはタグの名前で、二つ目はそのタグを持つ*ホストの配列*です。
+
+<!-- All tags registered in the current site are exposed to Liquid templates via
 `site.tags`. Iterating over `site.tags` on a page will yield another array with
 two items, where the first item is the name of the tag and the second item being
-*an array of posts* with that tag.
+*an array of posts* with that tag. -->
 
 {% raw %}
 ```liquid
@@ -205,36 +212,51 @@ two items, where the first item is the name of the tag and the second item being
 ```
 {% endraw %}
 
+### カテゴリ
+<!-- ### Categories -->
 
-### Categories
+ポストのカテゴリは上述のタグと同様の働きをします:
+  * front matterの`category`や`categories`キーで指定します。（タグと同じロジックに従います）
+  * サイトに登録された全てのカテゴリは（上述のタグのforループと同様に）繰り返し処理可能な`site.categories`変数としてLiquidテンプレートに提供されます。
 
-Categories of a post work similar to the tags above:
+<!-- Categories of a post work similar to the tags above:
   * They can be defined via the front matter using keys `category` or
     `categories` (that follow the same logic as for tags)
   * All categories registered in the site are exposed to Liquid templates via
     `site.categories` which can be iterated over (similar to the loop for tags
-    above.)
+    above.) -->
 
-*The similarity between categories and tags however, ends there.*
+*ただし、カテゴリとタグの類似性はこれで終わりです。*
 
-Unlike tags, categories for posts can also be defined by a post's file path.
+<!-- *The similarity between categories and tags however, ends there.* -->
+
+タグとは異なり、カテゴリはポストのファイルパスで指定することも可能です。  
+`_post`内のディレクトリはカテゴリとして扱われます。例えば、ポストのパスが`movies/horror/_posts/2019-05-21-bride-of-chucky.markdown`なら、自動で`movies`と`horror`がそのポストのカテゴリとなります。
+
+<!-- Unlike tags, categories for posts can also be defined by a post's file path.
 Any directory above `_post` will be read-in as a category. For example,
 if a post is at path `movies/horror/_posts/2019-05-21-bride-of-chucky.markdown`,
 then `movies` and `horror` are automatically registered as categories for that
-post.
+post. -->
 
-When the post also has front matter defining categories, they just get added to
-the existing list if not present already.
+投稿にもカテゴリを定義するfront matterがある場合、パスで指定されたものでなければ、既存のリストに追加されます。
 
-The hallmark difference between categories and tags is that categories of a post
+<!-- When the post also has front matter defining categories, they just get added to
+the existing list if not present already. -->
+
+カテゴリとタグの特徴的な違いは、投稿のカテゴリが投稿の[生成されたURL]('/docs/permalinks/#global')に組み込むことが可能ですが、タグはできません。
+
+<!-- The hallmark difference between categories and tags is that categories of a post
 may be incorporated into [the generated URL]('/docs/permalinks/#global') for the
-post, while tags cannot be.
+post, while tags cannot be. -->
 
-Therefore, depending on whether front matter has `category: classic hollywood`,
+front matterで`category: classic hollywood`と`categories: classic hollywood`と指定する場合は挙動が異なります。この例では前者は`movies/horror/classic%20hollywood/2019/05/21/bride-of-chucky.html`に、後者は`movies/horror/classic/hollywood/2019/05/21/bride-of-chucky.html`となります。
+
+<!-- Therefore, depending on whether front matter has `category: classic hollywood`,
 or `categories: classic hollywood`, the example post above would have the URL as
 either
 `movies/horror/classic%20hollywood/2019/05/21/bride-of-chucky.html` or
-`movies/horror/classic/hollywood/2019/05/21/bride-of-chucky.html` respectively.
+`movies/horror/classic/hollywood/2019/05/21/bride-of-chucky.html` respectively. -->
 
 ## ポストの抜粋
 <!-- ## Post excerpts -->

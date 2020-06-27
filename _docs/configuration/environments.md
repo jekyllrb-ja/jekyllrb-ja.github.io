@@ -61,11 +61,11 @@ environment but not include it in production environments. -->
 <!-- By specifying the option in the build command, you avoid having to change
 values in your configuration files when moving from one environment to another. -->
 
-<div class="note info">
-  <p>
-    環境に応じて設定の一部を切り替えるには、<a href="{{ "/docs/configuration/options/#build-command-options" | relative_url }}">ビルドコマンドオプション</a>を使用します。例えば<code>--config _config.yml、_config_development.yml</code>です。 後のファイルの設定は、前のファイルの設定を上書きします。
-  </p>
-  <!-- <p>
-    To switch part of your config settings depending on the environment, use the <a href="/docs/configuration/options/#build-command-options">build command option</a>, for example <code>--config _config.yml,_config_development.yml</code>. Settings in later files override settings in earlier files.
-  </p> -->
-</div>
+{: .note}
+環境に応じて設定の一部を切り替えるには、<a href="{{ "/docs/configuration/options/#build-command-options" | relative_url }}">ビルドコマンドオプション</a>を使用します。例えば<code>--config _config.yml、_config_development.yml</code>です。 後のファイルの設定は、前のファイルの設定を上書きします。
+
+  <!-- {: .note}
+To switch part of your config settings depending on the environment, use the
+<a href="{{ '/docs/configuration/options/#build-command-options' | relative_url }}">build command option</a>,
+for example <code>--config _config.yml,_config_development.yml</code>. Settings
+in later files override settings in earlier files. -->

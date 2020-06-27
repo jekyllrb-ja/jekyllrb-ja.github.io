@@ -40,10 +40,10 @@ brew install ruby
 
 brew Rubyパスをshell configに追加してください。
 
-<!-- Add the brew ruby path to your shell config : : -->
+<!-- Add the brew ruby path to your shell config: -->
 
-```
-export PATH=/usr/local/opt/ruby/bin:$PATH
+```bash
+echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.bash_profile
 ```
 
 ターミナルを再起動し、Rubyのセットアップの更新を確認します。
@@ -76,10 +76,10 @@ Ruby versions. This is very useful when you need to be able to run a given Ruby 
 # Install rbenv and ruby-build
 brew install rbenv
 
-# Setup rbenv integration to your shell
+# Set up rbenv integration with your shell
 rbenv init
 
-# Check your install
+# Check your installation
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 ```
 
@@ -102,9 +102,9 @@ ruby -v
 ## Jekyllのインストール
 <!-- ## Install Jekyll -->
 
-後は、[Bundler]({{ "/docs/ruby-101/#bundler" | relative_url }})とJekyllをインストールするだけです。
+後は、[Bundler]({{ '/docs/ruby-101/#bundler' | relative_url }}))とJekyllをインストールするだけです。
 
-<!-- Now all that is left is installing [Bundler](/docs/ruby-101/#bundler) and Jekyll. -->
+<!-- Now all that is left is installing [Bundler]({{ '/docs/ruby-101/#bundler' | relative_url }})) and Jekyll. -->
 
 ### ローカルインストール
 <!-- ### Local Install -->
@@ -126,13 +126,13 @@ ruby -v
 
 <!-- Then append your path file with the following, replacing the `X.X` with the first two digits of your Ruby version. -->
 
-```
-export PATH=$HOME/.gem/ruby/X.X.0/bin:$PATH
+```bash
+echo 'export PATH="$HOME/.gem/ruby/X.X.0/bin:$PATH"' >> ~/.bash_profile
 ```
 
 gemパスがホームディレクトリを指していることを確認するには、次のコマンドを実行します。
 
-<!-- To check your that you gem paths point to your home directory run: -->
+<!-- To check that your gem paths point to your home directory run: -->
 
 ```sh
 gem env
@@ -142,10 +142,10 @@ gem env
 
 <!-- And check that `GEM PATHS:` points to a path in your home directory -->
 
-{: .note }
+{: .note .info}
 最初の2桁が異なるRubyバージョンに更新する度に、パスもあわせて更新する必要があります。
 
-<!-- {: .note }
+<!-- {: .note .info}
 Every time you update Ruby to a version with a different first two digits, you will need to update your path to match. -->
 
 ### グローバルインストール
@@ -183,6 +183,6 @@ sudo gem install bundler jekyll
 ## 問題が発生しましたか？
 <!-- ## Problems? -->
 
-[トラブルシューティング]({{ "/docs/troubleshooting/" | relative_url }})ページを確認したり、[フォーラムで助けを求めて](https://talk.jekyllrb.com){:target="_blank"}ください。
+[トラブルシューティング]({{ '/docs/troubleshooting/' | relative_url }})ページを確認したり、[フォーラムで助けを求めて](https://talk.jekyllrb.com){:target="_blank"}ください。
 
-<!-- Check out the [troubleshooting](/docs/troubleshooting/) page or [ask for help on our forum](https://talk.jekyllrb.com). -->
+<!-- Check out the [troubleshooting]({{ '/docs/troubleshooting/' | relative_url }}) page or [ask for help on our forum](https://talk.jekyllrb.com). -->

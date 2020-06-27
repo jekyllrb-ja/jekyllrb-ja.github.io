@@ -33,7 +33,7 @@ Rubyをセットアップしたら、ターミナルで以下を実行し、Jeky
 <!-- With Ruby setup you can install Jekyll by running the following in your
 terminal: -->
 
-```
+```sh
 gem install jekyll bundler
 ```
 
@@ -41,7 +41,7 @@ gem install jekyll bundler
 
 <!-- To create a new `Gemfile` to list your project's dependencies run: -->
 
-```
+```sh
 bundle init
 ```
 
@@ -49,7 +49,7 @@ bundle init
 
 <!-- Now edit the `Gemfile`and add jekyll as a dependency: -->
 
-```
+```ruby
 gem "jekyll"
 ```
 

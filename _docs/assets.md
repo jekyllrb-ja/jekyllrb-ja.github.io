@@ -31,11 +31,11 @@ will process it and put it in your site's destination folder under
 <div class="note info">
   <h5>JekyllはAssetファイルの全てのLiquidタグとフィルタを処理します。</h5>
   <!-- <h5>Jekyll processes all Liquid filters and tags in asset files</h5> -->
-  <p><a href="{{ "docs/templates/" | relative_url }}">Liquidテンプレート文法</a>と競合する<a href="https://mustache.github.io" target="_blank">Mustache</a>
+  <p><a href="{{ '/docs/templates/' | relative_url }}">Liquidテンプレート文法</a>と競合する<a href="https://mustache.github.io" target="_blank">Mustache</a>
      や他のJavaScriptテンプレート言語を使用している場合、コードを<code>{&#37; raw &#37;}</code>と<code>{&#37; endraw &#37;}</code>で囲む必要があります。</p>
      <!-- <p>If you are using <a href="https://mustache.github.io">Mustache</a>
         or another JavaScript templating language that conflicts with
-        the <a href="/docs/templates/">Liquid template syntax</a>, you
+        the <a href="{{ '/docs/templates/' | relative_url }}">Liquid template syntax</a>, you
         will need to place <code>{&#37; raw &#37;}</code> and
         <code>{&#37; endraw &#37;}</code> tags around your code.</p> -->
 </div>
@@ -102,7 +102,6 @@ sass:
 
 <!-- These are passed to Sass, so any output style options Sass supports are valid
 here, too. -->
-
 
 ## Coffeescript
 
