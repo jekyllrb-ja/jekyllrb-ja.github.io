@@ -27,7 +27,7 @@ Examples:
 <!-- For a full list of options and their argument, see [Build Command Options](/docs/configuration/options/#build-command-options). -->
 
 以下は、最も一般的なコマンドの一部です：
-<!-- Here is some of the most common commands: -->
+<!-- Here are some of the most common commands: -->
 
 * `jekyll new PATH` - デフォルトのgem-basedテーマで、指定したpathに新しいJekyllサイトを作ります。必要であればディレクトリを作成します。
 * `jekyll new PATH --blank` - 指定したpathに新しい空白のJekyllサイトの骨組みを作ります
