@@ -84,7 +84,7 @@ site builds properly, use the handy [URL filters](/docs/liquid/filters/): -->
 {% raw %}
 ```liquid
 <!-- For styles with static names... -->
-<link href="{{ "/assets/css/style.css" | relative_url }}" rel="stylesheet">
+<link href="{{ '/assets/css/style.css' | relative_url }}" rel="stylesheet">
 <!-- For documents/pages whose URLs can change... -->
 [{{ page.title }}]("{{ page.url | relative_url }}")
 ```
@@ -163,7 +163,7 @@ to see more detailed examples. -->
   <h5>ソースファイルはrootディレクトリに必要です</h5>
   <!-- <h5>Source files must be in the root directory</h5> -->
   <p>
-GitHub Pagesは<a href="{{ "/docs/configuration/" | relative_url }}">“Site Source”</a>の設定値を<a href="https://help.github.com/articles/troubleshooting-github-pages-build-failures#source-setting" target="_blank">上書き</a>するため、ファイルをルートディレクトリ以外の場所に配置すると、サイトが正しく構築されない可能性があります。  </p>
+GitHub Pagesは<a href="{{ "/docs/configuration/options/" | relative_url }}">“Site Source”</a>の設定値を<a href="https://help.github.com/en/github/working-with-github-pages/troubleshooting-jekyll-build-errors-for-github-pages-sites" target="_blank">上書き</a>するため、ファイルをルートディレクトリ以外の場所に配置すると、サイトが正しく構築されない可能性があります。  </p>
   <!-- <p>
     GitHub Pages <a href="https://help.github.com/articles/troubleshooting-github-pages-build-failures#source-setting">overrides</a>
     the <a href="/docs/configuration/options/>“Site Source”</a>

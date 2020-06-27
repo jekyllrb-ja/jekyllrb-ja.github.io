@@ -142,7 +142,7 @@ and path are configured, but here are some simple examples in Markdown: -->
 simple example of how to create a list of links to your blog posts: -->
 
 {% raw %}
-```html
+```liquid
 <ul>
   {% for post in site.posts %}
     <li>
@@ -166,41 +166,45 @@ you wish to access the currently-rendering page/posts's variables (the
 variables of the post/page that has the `for` loop in it), use the `page`
 variable instead. -->
 
-## カテゴリとタグ
-<!-- ## Categories and Tags -->
+## タグとカテゴリ
+<!-- ## Tags and Categories -->
 
-Jekyllはブログポストのカテゴリとタグをサポートしています。カテゴリとタグの違いは、カテゴリはポストのURLに含めることができますが、タグはできません。
+Jekyllはブログポストの*タグ*と*カテゴリ*をサポートしています。
 
-<!-- Jekyll has first class support for categories and tags in blog posts. The difference
-between categories and tags is a category can be part of the URL for a post
-whereas a tag cannot. -->
+<!-- Jekyll has first class support for *tags* and *categories* in blog posts. -->
 
-使用するにはまず、カテゴリとタグをfront matterにセットします：
+### タグ
+<!-- ### Tags -->
 
-<!-- To use these, first set your categories and tags in front matter: -->
+ポストのタグは一つだけなら`tag`、複数なら`tags`キーを利用してfront matterで指定します。  
+Jekyllは`tags`に複数指定されていれば、自動で空白で*区切り*ます。例えば、`tag: classic hollywood`という指定であればタグは単一の`"classic hollywood"`として処理され、`tags: classic hollywood`の場合は`["classic", "hollywood"]`という配列として処理されます。
 
-```yaml
----
-layout: post
-title: A Trip
-categories: [blog, travel]
-tags: [hot, summer]
----
-```
+<!-- Tags for a post are defined in the post's front matter using either the key
+`tag` for a single entry or `tags` for multiple entries. <br/> Since Jekyll
+expects multiple items mapped to the key `tags`, it will automatically *split*
+a string entry if it contains whitespace. For example, while front matter
+`tag: classic hollywood` will be processed into a singular entity
+`"classic hollywood"`, front matter `tags: classic hollywood` will be processed
+into an array of entries `["classic", "hollywood"]`. -->
 
-Jekyllは`site.categories`でカテゴリを使用可能にします。`site.categories`には2つの異なる配列が格納されています。一つ目はカテゴリの名前、二つ目はそのカテゴリのポストの配列です。
+front matterで選択したキーにかかわらず、JekyllはLiquidテンプレートで参照できる複数形のキーとしてマップしメタデータに保存します。
 
-<!-- Jekyll makes the categories available to us at `site.categories`. Iterating over
-`site.categories` on a page gives us another array with two items, the first
-item is the name of the category and the second item is an array of posts in that
-category. -->
+<!-- Irrespective of the front matter key chosen, Jekyll stores the metadata mapped
+to the plural key which is exposed to Liquid templates. -->
+
+全てのタグはLiquidテンプレートでは`site.tags`で参照できます。ページ上で、`site.tags`からは異なる二つのアイテムが得られます。一つ目のアイテムはタグの名前で、二つ目はそのタグを持つ*ホストの配列*です。
+
+<!-- All tags registered in the current site are exposed to Liquid templates via
+`site.tags`. Iterating over `site.tags` on a page will yield another array with
+two items, where the first item is the name of the tag and the second item being
+*an array of posts* with that tag. -->
 
 {% raw %}
 ```liquid
-{% for category in site.categories %}
-  <h3>{{ category[0] }}</h3>
+{% for tag in site.tags %}
+  <h3>{{ tag[0] }}</h3>
   <ul>
-    {% for post in category[1] %}
+    {% for post in tag[1] %}
       <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
@@ -208,9 +212,51 @@ category. -->
 ```
 {% endraw %}
 
-タグも同様に`site.tags`で使用できます。
+### カテゴリ
+<!-- ### Categories -->
 
-<!-- For tags it's exactly the same except the variable is `site.tags`. -->
+ポストのカテゴリは上述のタグと同様の働きをします:
+  * front matterの`category`や`categories`キーで指定します。（タグと同じロジックに従います）
+  * サイトに登録された全てのカテゴリは（上述のタグのforループと同様に）繰り返し処理可能な`site.categories`変数としてLiquidテンプレートに提供されます。
+
+<!-- Categories of a post work similar to the tags above:
+  * They can be defined via the front matter using keys `category` or
+    `categories` (that follow the same logic as for tags)
+  * All categories registered in the site are exposed to Liquid templates via
+    `site.categories` which can be iterated over (similar to the loop for tags
+    above.) -->
+
+*ただし、カテゴリとタグの類似性はこれで終わりです。*
+
+<!-- *The similarity between categories and tags however, ends there.* -->
+
+タグとは異なり、カテゴリはポストのファイルパスで指定することも可能です。  
+`_post`内のディレクトリはカテゴリとして扱われます。例えば、ポストのパスが`movies/horror/_posts/2019-05-21-bride-of-chucky.markdown`なら、自動で`movies`と`horror`がそのポストのカテゴリとなります。
+
+<!-- Unlike tags, categories for posts can also be defined by a post's file path.
+Any directory above `_post` will be read-in as a category. For example,
+if a post is at path `movies/horror/_posts/2019-05-21-bride-of-chucky.markdown`,
+then `movies` and `horror` are automatically registered as categories for that
+post. -->
+
+投稿にもカテゴリを定義するfront matterがある場合、パスで指定されたものでなければ、既存のリストに追加されます。
+
+<!-- When the post also has front matter defining categories, they just get added to
+the existing list if not present already. -->
+
+カテゴリとタグの特徴的な違いは、投稿のカテゴリが投稿の[生成されたURL]('/docs/permalinks/#global')に組み込むことが可能ですが、タグはできません。
+
+<!-- The hallmark difference between categories and tags is that categories of a post
+may be incorporated into [the generated URL]('/docs/permalinks/#global') for the
+post, while tags cannot be. -->
+
+front matterで`category: classic hollywood`と`categories: classic hollywood`と指定する場合は挙動が異なります。この例では前者は`movies/horror/classic%20hollywood/2019/05/21/bride-of-chucky.html`に、後者は`movies/horror/classic/hollywood/2019/05/21/bride-of-chucky.html`となります。
+
+<!-- Therefore, depending on whether front matter has `category: classic hollywood`,
+or `categories: classic hollywood`, the example post above would have the URL as
+either
+`movies/horror/classic%20hollywood/2019/05/21/bride-of-chucky.html` or
+`movies/horror/classic/hollywood/2019/05/21/bride-of-chucky.html` respectively. -->
 
 ## ポストの抜粋
 <!-- ## Post excerpts -->
@@ -222,7 +268,7 @@ post. By default this is the first paragraph of content in the post, however it
 can be customized by setting a `excerpt_separator` variable in front matter or
 `_config.yml`. -->
 
-```yaml
+```markdown
 ---
 excerpt_separator: <!--more-->
 ---
@@ -261,8 +307,10 @@ working on and don't want to publish yet. To get up and running with drafts,
 create a `_drafts` folder in your site's root and create your first draft: -->
 
 ```text
-|-- _drafts/
-|   |-- a-draft-post.md
+.
+├── _drafts
+│   └── a-draft-post.md
+...
 ```
 
 ドラフトを含むプレビューは、`jekyll serve`や`jekyll build`の実行時に`--drafts`スイッチをつけてください。ドラフトファイルの日付が割り当てられるため、現在編集中のドラフトは最新のポストとして表示されます。

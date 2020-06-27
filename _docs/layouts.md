@@ -54,7 +54,7 @@ being wrapped. -->
 
 
 {% raw %}
-```
+```liquid
 <!doctype html>
 <html lang="en">
   <head>
@@ -91,7 +91,7 @@ You can also use
 [front matter defaults](/docs/configuration/front-matter-defaults/) to save you
 from having to set this on every page. -->
 
-```
+```markdown
 ---
 title: My First Page
 layout: default
@@ -104,7 +104,7 @@ This is the content of my page
 
 <!-- The rendered output of this page is: -->
 
-```
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -146,7 +146,7 @@ layout in front matter. For example this layout will live at
 `_layouts/post.html`: -->
 
 {% raw %}
-```
+```liquid
 ---
 layout: default
 ---
@@ -170,7 +170,7 @@ using in Liquid, you need to use the `layout` variable instead of `page`. For
 example: -->
 
 {% raw %}
-```
+```liquid
 ---
 city: San Francisco
 ---

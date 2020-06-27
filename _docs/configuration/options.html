@@ -56,8 +56,11 @@ class="flag">flags</code> (specified on the command-line) that control them. -->
     <tr class="setting">
       <td>
         <p class="name"><strong>Safe</strong></p>
-        <p class="description"><a href="{{ "/docs/plugins/" | relative_url }}">カスタムプラグイン</a>を無効にし、シンボリックリンクを無視する。</p>
-        <!-- <p class="description">Disable <a href="/docs/plugins/">custom plugins, and ignore symbolic links</a>.</p> -->
+        <p class="description"><a href="{{ "/docs/plugins/" | relative_url }}">カスタムプラグイン</a>を無効にし、ディスクにキャッシュしシンボリックリンクを無視する。</p>
+        <!-- <p class="description">
+          Disable <a href="/docs/plugins/">custom plugins</a>, caching to disk
+          and ignore symbolic links.
+        </p> -->
       </td>
       <td class="align-center">
         <p><code class="option">safe: BOOL</code></p>
@@ -65,6 +68,49 @@ class="flag">flags</code> (specified on the command-line) that control them. -->
       </td>
     </tr>
     <tr class="setting">
+          <td>
+            <p class="name">
+              <strong>Disable Disk Cache</strong>
+              <span class="version-badge" title="Introduced in v4.1.0">4.1.0</span>
+            </p>
+            <p class="description">
+              仮想環境やサードパーティのディレクトリウォッチャーとの干渉を回避するために、<code>.jekyll-cache</code>やソースで指定された同様のディレクトリの作成をスキップし、コンテンツのディスクへのキャッシュを無効にします。
+              <code>safe</code>モードでは常に無効です。
+            </p>
+            <!-- <p class="description">
+              Disable caching of content to disk in order to skip creating a
+              <code>.jekyll-cache</code> or similar directory at the source
+              to avoid interference with virtual environments and third-party
+              directory watchers.
+              Caching to disk is always disabled in <code>safe</code> mode.
+            </p> -->
+          </td>
+          <td class="align-center">
+            <p><code class="option">disable_disk_cache: BOOL</code></p>
+            <p><code class="flag">--disable-disk-cache</code></p>
+          </td>
+        </tr>
+        <tr class="setting">
+          <td>
+            <p class="name">
+              <strong>Ignore theme configuration</strong>
+              <span class="version-badge" title="Introduced in v4.1.0">4.1.0</span>
+            </p>
+            <p class="description">
+              Jekyll 4.0では、テーマを<code>_config.yml</code>にバンドルして、新しいユーザーのテーマオンボーディングを簡素化できるようになりました。バンドルされたテーマ構成をインポートすると、マージされたサイト構成が台無しになるという不幸な状況では、ユーザーは、テーマ構成を完全にインポートしないようにJekyllを構成できます。</p>
+            <!-- <p class="description">
+              Jekyll 4.0 started allowing themes to bundle a <code>_config.yml</code>
+              to simplify theme-onboarding for new users.
+              In the unfortunate situation that importing a bundled theme configuration
+              messes up the merged site-configuration, the user can configure Jekyll
+              to not import the theme-config entirely.
+            </p> -->
+          </td>
+          <td class="align-center">
+            <p><code class="option">ignore_theme_config: BOOL</code></p>
+          </td>
+        </tr>
+      <tr class="setting">
       <td>
         <p class="name"><strong>Exclude</strong></p>
         <p class="description">
@@ -219,7 +265,6 @@ class="flag">flags</code> (specified on the command-line) that control them. -->
         <!-- <p class="description">Enable auto-regeneration of the site when files are modified.</p> -->
       </td>
       <td class="align-center">
-        <p><code class="option">watch: BOOL</code></p>
         <p><code class="flag">-w, --[no-]watch</code></p>
       </td>
     </tr>
@@ -279,7 +324,7 @@ class="flag">flags</code> (specified on the command-line) that control them. -->
     <tr class="setting">
       <td>
         <p class="name"><strong>LSI</strong></p>
-        <p class="description">関連記事のインデックスを作成する。<a href="http://www.classifier-reborn.com/">classifier-reborn</a>プラグインが必要。</p>
+        <p class="description">関連記事のインデックスを作成する。<a href="https://jekyll.github.io/classifier-reborn/">classifier-reborn</a>プラグインが必要。</p>
         <!-- <p class="description">Produce an index for related posts. Requires the <a href="http://www.classifier-reborn.com/">classifier-reborn</a> plugin.</p> -->
       </td>
       <td class="align-center">
@@ -378,6 +423,17 @@ class="flag">flags</code> (specified on the command-line) that control them. -->
         <p><code class="flag">--strict_front_matter</code></p>
       </td>
     </tr>
+    <tr class="setting">
+      <td>
+        <p class="name"><strong>Base URL</strong></p>
+        <p class="description">与えられたベースURLでWebサイトを提供する</p>
+        <!-- <p class="description">Serve the website from the given base URL</p> -->
+      </td>
+      <td class="align-center">
+        <p><code class="option">baseurl: URL</code></p>
+        <p><code class="flag">--baseurl URL</code></p>
+      </td>
+    </tr>
   </tbody>
 </table>
 </div>
@@ -424,17 +480,6 @@ before your site is served. -->
       <td class="align-center">
         <p><code class="option">host: HOSTNAME</code></p>
         <p><code class="flag">--host HOSTNAME</code></p>
-      </td>
-    </tr>
-    <tr class="setting">
-      <td>
-        <p class="name"><strong>Base URL</strong></p>
-        <p class="description">与えられたベースURLでWebサイトを提供する</p>
-        <!-- <p class="description">Serve the website from the given base URL</p> -->
-      </td>
-      <td class="align-center">
-        <p><code class="option">baseurl: URL</code></p>
-        <p><code class="flag">--baseurl URL</code></p>
       </td>
     </tr>
     <tr class="setting">

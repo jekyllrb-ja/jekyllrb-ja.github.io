@@ -7,9 +7,9 @@ title: Commands
 permalink: /docs/plugins/commands/
 --- -->
 
-バージョン2.5.0以降、Jekyllはプラグインで`jekyll`で実行可能なサブコマンドを提供することができます。`:jekyll_plugins`という`Gemfile`グループに関連するプラグインを含めることで可能になります。
+バージョン{% include docs_version_badge.html version="2.5.0"%}以降、Jekyllはプラグインで`jekyll`で実行可能なサブコマンドを提供することができます。`:jekyll_plugins`という`Gemfile`グループに関連するプラグインを含めることで可能になります。
 
-<!-- As of version 2.5.0, Jekyll can be extended with plugins which provide
+<!-- As of version {% include docs_version_badge.html version="2.5.0"%}, Jekyll can be extended with plugins which provide
 subcommands for the `jekyll` executable. This is possible by including the
 relevant plugins in a `Gemfile` group called `:jekyll_plugins`: -->
 

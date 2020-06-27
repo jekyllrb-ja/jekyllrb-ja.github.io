@@ -51,7 +51,7 @@ or write a Ruby script which utilizes the gem. -->
 
 ### The HTML Proofer Executable
 
-```sh
+```bash
 #!/usr/bin/env bash
 set -e # halt script on error
 
@@ -145,8 +145,6 @@ addons:
   apt:
     packages:
     - libcurl4-openssl-dev
-
-sudo: false # route your build to the container-based infrastructure for a faster build
 
 cache: bundler # caching bundler gem packages will speed up build
 
@@ -262,18 +260,6 @@ environment variable `NOKOGIRI_USE_SYSTEM_LIBRARIES` to `true`. -->
 
 ```yaml
 exclude: [vendor]
-```
-
-デフォルトではTravisに`sudo: false`コマンドを与えるべきです。このコマンドは、Travisの[コンテナベースのインフラストラクチャ](https://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure)でビルドを実行するようにTravisに明示的に指示します。コンテナーベースのインフラストラクチャーで実行すると、ビルドの速度が上がることがよくあります。ビルドに問題がある場合、またはビルドに`sudo`アクセスが必要な場合は、その行を`sudo: required`に変更します。
-
-<!-- By default you should supply the `sudo: false` command to Travis. This command
-explicitly tells Travis to run your build on Travis's [container-based
- infrastructure](https://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure). Running on the container-based infrastructure can often times
-speed up your build. If you have any trouble with your build, or if your build
-does need `sudo` access, modify the line to `sudo: required`. -->
-
-```yaml
-sudo: false
 ```
 
 ビルドをスピードアップするために、`bundler`によって作成されたgemパッケージをキャッシュするべきです。Travisは事前定義された[ツールのキャッシュストラテジー][6]を持っています。正確にするためにすべてのデフォルト設定が必要です。

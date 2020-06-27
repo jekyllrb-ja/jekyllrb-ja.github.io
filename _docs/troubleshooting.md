@@ -156,7 +156,7 @@ possible to run Jekyll as a non-superuser and without having to install
 gems to system-wide locations by adding the following lines to the end
 of your `.bashrc` file: -->
 
-```
+```bash
 # Ruby exports
 
 export GEM_HOME=$HOME/gems
@@ -343,9 +343,9 @@ specified elsewhere. -->
 
 **注：v3.3.0以降、Jekyllはデフォルトで`node_modules`と`vendor`内の特定のサブディレクトリを処理しません。ただし、設定ファイルで明示的に`exclude:`arrayを定義すると、このデフォルト設定が上書きされるため、一部のユーザーはサイトの構築時にエラーが発生し、次のエラーメッセージが表示されます。**
 
-**Note: From v3.3.0 onward, Jekyll does not process `node_modules` and certain subdirectories within `vendor`, by default. But, by having an `exclude:` array defined explicitly in the config file overrides this default setting, which results in some users to encounter an error in building the site, with the following error message:**
+<!-- **Note: From v3.3.0 onward, Jekyll does not process `node_modules` and certain subdirectories within `vendor`, by default. But, by having an `exclude:` array defined explicitly in the config file overrides this default setting, which results in some users to encounter an error in building the site, with the following error message:** -->
 
-```sh
+```
     ERROR: YOUR SITE COULD NOT BE BUILT:
     ------------------------------------
     Invalid date '<%= Time.now.strftime('%Y-%m-%d %H:%M:%S %z') %>':
@@ -397,7 +397,7 @@ Liquidバージョン2.0はテンプレートでの`{{ "{{" }}`の使用が壊�
 <!-- Liquid version 2.0 seems to break the use of `{{ "{{" }}` in templates.
 Unlike previous versions, using `{{ "{{" }}` in 2.0 triggers the following error: -->
 
-```sh
+```
 '{{ "{{" }}' was not properly terminated with regexp: /\}\}/  (Liquid::SyntaxError)
 ```
 

@@ -14,19 +14,19 @@ permalink: /docs/plugins/installation/
 1. サイトのソースrootに`_plugins`ディレクトリを作ります。プラグインをここに入れます。このディレクトリにある`*.rb`で終わる全てのファイルはJekyllがサイトを生成する前に読み込まれます。
 2. `_config.yml`ファイルに`plugins`キー（もしくはJekyll < `3.5.0`は`gems`）と使用したいgem名の値の配列を追加します。例えば、
 
-   ```yaml
-   # This will require each of these plugins automatically.
-   plugins:
-     - jekyll-gist
-     - jekyll-coffeescript
-     - jekyll-assets
-     - another-jekyll-plugin
-   ```
+  ```yaml
+  # This will require each of these plugins automatically.
+  plugins:
+    - jekyll-gist
+    - jekyll-coffeescript
+    - jekyll-assets
+    - another-jekyll-plugin
+  ```
 
    次に`gem install jekyll-gist jekyll-coffeescript jekyll-assets another-jekyll-plugin`でプラグインをインストールします。
 3.  `Gemfile`のBundlerグループに関連するプラグインを追加します。例えば、
 
-   ```ruby
+  ```ruby
     group :jekyll_plugins do
       gem "jekyll-gist"
       gem "jekyll-coffeescript"
@@ -89,7 +89,7 @@ permalink: /docs/plugins/installation/
   </p> -->
 </div>
 
-<div class="note info">
+<div class="note">
   <h5>
     <code>_plugins</code>と<code>_config.yml</code>、<code>Gemfile</code>は同時に使用できます。
   </h5>
@@ -121,13 +121,10 @@ processing the rest of your source directory. -->
 <!-- A gem included here will be activated even if its not explicitly listed under
 the `plugins:` key in your site's config file. -->
 
-<div class="note warning">
-  <p>
-    <code>:jekyll-plugins</code>グループに含まれるGemは、<code>--safe</code>モード設定に関係なく有効になります。このグループにどのようなGemが含まれているかに、注意してください！
-  </p>
-  <!-- <p>
-    Gems included in the <code>:jekyll-plugins</code> group are activated
-    regardless of the <code>--safe</code> mode setting. Be aware of what
-    gems are included under this group!
-  </p> -->
-</div>
+{: .note .warning}
+<code>:jekyll-plugins</code>グループに含まれるGemは、<code>--safe</code>モード設定に関係なく有効になります。このグループにどのようなGemが含まれているかに、注意してください！
+
+<!-- {: .note .warning}
+Gems included in the <code>:jekyll-plugins</code> group are activated
+regardless of the <code>--safe</code> mode setting. Be aware of which
+gems are included under this group! -->

@@ -22,7 +22,7 @@ webrick:
 ### デフォルト
 <!-- ### Defaults -->
 
-Jekyllはデフォルトで`Content-Type`と`Cache-Control`レスポンスヘッダを提供します。提供されるデータの所為室を指定するための動的な一つと、開発モードでChromeの積極的なキャッシングを無効にするため静的なものです。
+Jekyllはデフォルトで`Content-Type`と`Cache-Control`レスポンスヘッダを提供します。提供されるデータの性質を指定するための動的な一つと、開発モードでChromeの積極的なキャッシングを無効にするため静的なものです。
 
 <!-- Jekyll provides by default `Content-Type` and `Cache-Control` response
 headers: one dynamic in order to specify the nature of the data being served,

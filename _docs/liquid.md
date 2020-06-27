@@ -22,5 +22,5 @@ Jekyllではサイトの構築を助けるため、多くの便利なLiquidの�
 * [フィルタ]({{ "/docs/liquid/filters/" | relative_url }})
 * [タグ]({{ "/docs/liquid/tags/" | relative_url }})
 
-<!-- * [Filters](/docs/liquid/filters/)
-* [Tags](/docs/liquid/tags/) -->
+<!-- * [Filters]({{ '/docs/liquid/filters/' | relative_url }})
+* [Tags]({{ '/docs/liquid/tags/' | relative_url }}) -->

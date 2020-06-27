@@ -51,19 +51,30 @@ Kickster gemをインストールしてください。より多くのドキュ�
 
 <!-- Install the Kickster gem and you are good to go. More documentation can here found [here](https://github.com/nielsenramon/kickster#kickster). If you do not want to use the gem or start a new project you can just copy paste the deployment scripts for [Travis CI](https://github.com/nielsenramon/kickster/tree/master/snippets/travis) or [Circle CI](https://github.com/nielsenramon/kickster#automated-deployment-with-circle-ci). -->
 
-
 ## Netlify
 
-Netlifyは、グローバルCDN、継続的導入、ワンクリックHTTPS[など](https://www.netlify.com/features/){:target="_blank"}を提供し、複雑さを増すことなく、最新のWebプロジェクトで利用可能な最も堅牢なツールセットを開発者に提供します。NetlifyはJekyll用のカスタムプラグインをサポートし、オープンソースプロジェクトのための無料プランを持っています。
+Netlifyは、グローバルCDN、継続的導入、ワンクリックHTTPS[など](https://www.netlify.com/features/){:target="_blank"}を提供し、複雑さを増すことなく、最新のWebプロジェクトで利用可能な堅牢なツールセットを開発者に提供します。NetlifyはJekyll用のカスタムプラグインをサポートし、オープンソースプロジェクトのための無料プランを持っています。
 
-<!-- Netlify provides Global CDN, Continuous Deployment, one click HTTPS and [much more](https://www.netlify.com/features/), providing developers the most robust toolset available for modern web projects, without added complexity. Netlify supports custom plugins for Jekyll and has a free plan for open source projects. -->
+<!-- Netlify provides Global CDN, Continuous Deployment, one click HTTPS and [much more](https://www.netlify.com/features/), providing developers a robust toolset for modern web projects, without added complexity. Netlify supports custom plugins for Jekyll and has a free plan for open source projects. -->
 
 JekyllサイトをNetlifyでセットアップするには、[Jekyll step-by-step guide](https://www.netlify.com/blog/2015/10/28/a-step-by-step-guide-jekyll-3.0-on-netlify/){:target="_blank"}をご覧ください。
 
 <!-- Read this [Jekyll step-by-step guide](https://www.netlify.com/blog/2015/10/28/a-step-by-step-guide-jekyll-3.0-on-netlify/) to setup your Jekyll site on Netlify. -->
+
+## Render
+
+[Render](https://render.com){:target="_blank"}は、静的サイトに構成なしの継続的な展開を提供します。このサービスは毎月100GBの帯域幅で無料です。
+
+<!-- [Render](https://render.com) provides zero config continuous deployment for static sites. The service is free under 100GB monthly bandwith. -->
 
 ## Static Publisher
 
 [Static Publisher](https://github.com/static-publisher/static-publisher){:target="_blank"}は、ウェブフックの投稿を待機しているサーバーを使用したもう1つの自動導入オプションです。ただし、GitHubとは特に関係ありません。Herokuにワンクリックでデプロイでき、1つのサーバーから複数のプロジェクトを見ることができ、ユーザー管理が簡単なインターフェースを備え、S3またはgitリポジトリ（gh-pagesなど）にパブリッシュできます。
 
 <!-- [Static Publisher](https://github.com/static-publisher/static-publisher) is another automated deployment option with a server listening for webhook posts, though it's not tied to GitHub specifically. It has a one-click deploy to Heroku, it can watch multiple projects from one server, it has an easy to user admin interface and can publish to either S3 or to a git repository (e.g. gh-pages). -->
+
+## ZEIT
+
+[ZEIT](https://zeit.co/){:target="_blank"}は、ゼロ構成の継続的デプロイメント、HTTPSカスタムドメイン、高性能スマートCDNを提供し、無料のインスタント静的デプロイメントを取得します。
+
+<!-- [ZEIT](https://zeit.co/) provides zero config continuous deployment, HTTPS Custom domains, high performance smart CDN, you get instant static deploy for free. -->

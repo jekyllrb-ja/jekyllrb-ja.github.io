@@ -30,7 +30,6 @@ gemは次のような機能を実行できます。
 [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) and
 [jekyll-archives](https://github.com/jekyll/jekyll-archives). -->
 
-
 ## Gemfile
 
 `Gemfile`はあなたのサイトに必要なgemのリストです。シンプルなJekyllサイトの場合、この様になります。

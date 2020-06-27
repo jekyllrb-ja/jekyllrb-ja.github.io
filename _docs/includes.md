@@ -96,7 +96,7 @@ my_variable: footer_company_a.html
 ```
 {% endraw %}
 
-`{% raw %}{{ include.content }}{% endraw %}`はincludeでそのパラメータの値を指定した時に入力される変数です。指定は次のように行います。
+{% raw %}`{{ include.content }}`{% endraw %}はincludeでそのパラメータの値を指定した時に入力される変数です。指定は次のように行います。
 
 <!-- The `{% raw %}{{ include.content }}{% endraw %}` is a parameter that gets populated when you call the include and specify a value for that parameter, like this: -->
 

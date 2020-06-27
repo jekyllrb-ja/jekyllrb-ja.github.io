@@ -83,6 +83,12 @@ currently supported options: -->
 * **transliterated_header_ids** - Transliterate the header text before generating the ID
 * **typographic_symbols** - Defines a mapping from typographical symbol to output characters -->
 
+### 使用例
+<!-- ### Example Usage -->
+```yaml
+kramdown:
+  html_to_native: true
+```
 
 <div class="note warning">
   <h5>サポートされていないkramdownオプションが2つあります</h5>
@@ -138,9 +144,9 @@ extension for disabling fenced code. -->
 <!-- Note that you can also specify a language for highlighting after the first
 delimiter: -->
 
-        ```ruby
-        # ...ruby code
-        ```
+    ```ruby
+    # ...ruby code
+    ```
 
 コードブロックとハイライトは共に有効にできます。これはコードを静的にハイライトします。シンタックスハイライトがない場合は、`<code>`要素に `class =" LANGUAGE "`属性を追加します。これは様々なJavaScriptコードハイライトライブラリでヒントとして使用できます。
 

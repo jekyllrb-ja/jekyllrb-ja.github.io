@@ -26,7 +26,7 @@ directories in your output. -->
 `/my_pages/about-me.html` and you want the output url to be `/about/`. In
 front matter of the page you would set: -->
 
-```
+```yaml
 ---
 permalink: /about/
 ---
@@ -66,7 +66,6 @@ aspects of the permalink style are ignored for the output. -->
 使用できる全置換用変数（Placeholders）のリストです。
 
 <!-- Here's the full list of placeholders available: -->
-
 
 <div class="mobile-side-scroller">
 <table>
@@ -326,7 +325,29 @@ aspects of the permalink style are ignored for the output. -->
         </p> -->
       </td>
     </tr>
-  </tbody>
+    <tr>
+      <td>
+        <p><code>slugified_categories</code></p>
+        <small>{% include docs_version_badge.html version="4.1" %}</small>
+      </td>
+      <td>
+        <p>このポストの<em>slugified</em>カテゴリ。カテゴリが複数の単語で構成されている場合、Jekyllは全てのアルファベットを小文字にし、アルファベットでない文字をハイフンに置き換えます。(例 <code>"Work 2 Progress"</code>
+        は <code>"work-2-progress"</code>となります)</p>
+        <p>ポストに複数のカテゴリがある場合、Jekyllは階層化します(例 <code>/work-2-progress/category2</code>)。また、JekyllはURL内の二重スラッシュを自動的に解析するため、カテゴリが存在しない場合は無視されます。</p>
+        <!-- <p>
+          The specified categories for this post but <em>slugified</em>. If a category is a
+          composite of multiple words, Jekyll will downcase all alphabets and replace any
+          non-alphanumeric character with a hyphen. (e.g. <code>"Work 2 Progress"</code>
+          will be converted into <code>"work-2-progress"</code>)
+        </p>
+        <p>
+          If a post has multiple categories, Jekyll will create a hierarchy
+          (e.g. <code>/work-2-progress/category2</code>).
+          Also Jekyll automatically parses out double slashes in the URLs,
+          so if no categories are present, it will ignore this.
+        </p> -->
+      </td>
+    </tr>  </tbody>
 </table>
 </div>
 

@@ -54,9 +54,11 @@ Windows10の1607以降を使用している場合、Linux用のWindowsサブシ�
 <!-- If you are using Windows 10 version 1607 or later, another option to run Jekyll is by
 [installing](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide) the Windows Subsystem for Linux. -->
 
-*注：*[Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/about){:target="_blank"}を有効にする必要があります。
+{: .note .info}
+[Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/about){:target="_blank"}を有効にする必要があります。
 
-<!-- *Note:* You must have [Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/about) enabled. -->
+<!-- {: .note .info}
+You must have [Windows Subsystem for Linux](https://msdn.microsoft.com/en-us/commandline/wsl/about) enabled. -->
 
 まず、全てのパッケージとリポジトリを最新にします。新しいコマンドプロンプトを開き、以下の入力します。
 
@@ -125,14 +127,16 @@ with the current date in the filename. -->
 <div class="note info">
   <h5>superuserでないアカウントの問題</h5>
   <!-- <h5>Non-superuser account issues</h5> -->
-  <p>`jekyll new`コマンドで"Your user account isn't allowed to install to the system RubyGems"のエラーが表示されたら、 <a href="{{ "/docs/troubleshooting/#no-sudo" | relative_url }}">トラブルシューティング</a>の"SuperuserでなくJekyllを実行する"の項を見てください。</p>
+  <p>`jekyll new`コマンドで"Your user account isn't allowed to install to the system RubyGems"のエラーが表示されたら、 <a href="{{ '/docs/troubleshooting/#no-sudo' | relative_url }}">トラブルシューティング</a>の"SuperuserでなくJekyllを実行する"の項を見てください。</p>
   <!-- <p>If the `jekyll new` command prints the error "Your user account isn't allowed to install to the system RubyGems", see
-  the "Running Jekyll as Non-Superuser" instructions in <a href="/docs/troubleshooting/#no-sudo">Troubleshooting</a>.</p> -->
+  the "Running Jekyll as Non-Superuser" instructions in <a href="{{ '/docs/troubleshooting/#no-sudo' | relative_url }}">Troubleshooting</a>.</p> -->
 </div>
 
+{: .note .info}
 **注：** Bash on Ubuntu on Windowsは、まだ開発中です。実行で問題が発生するかもしれません。
 
-<!-- **Note:** Bash on Ubuntu on Windows is still under development, so you may run into issues. -->
+<!-- {: .note .info}
+Bash on Ubuntu on Windows is still under development, so you may run into issues. -->
 
 
 ## エンコード
@@ -182,17 +186,17 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
   <h5>TZInfo 2.0 不適合</h5>
   <!-- <h5>TZInfo 2.0 incompatibility</h5> -->
   <p>
-    TZ情報ライブラリ<code>v2.0</code>はタイムゾーンオフセットの計算方法に変更を加えました。サイトがWindows上でJekyll 3.xでビルドされている場合、このことは投稿の日時を不正確にするでしょう。
+    TZ情報ライブラリVersion 2.0はタイムゾーンオフセットの計算方法に変更を加えました。サイトがWindows上でJekyll 3.xでビルドされている場合、このことは投稿の日時を不正確にするでしょう。
   </p>
   <!-- <p>
-    <code>v2.0</code> of the TZInfo library has introduced a change in how timezone offsets are calculated.
+    Version 2.0 of the TZInfo library has introduced a change in how timezone offsets are calculated.
     This will result in incorrect date and time for your posts when the site is built with Jekyll 3.x on Windows.
   </p> -->
   <p>
-    ですので、<code>Gemfile</code>に<code>gem 'tzinfo', '~> 1.2'</code>をリストして、タイムゾーンライブラリを<code>v1.2</code>以上にロックすることをお勧めします。
+    ですので、<code>Gemfile</code>に<code>gem 'tzinfo', '~> 1.2'</code>をリストして、タイムゾーンライブラリをVersion 1.2以上にロックすることをお勧めします。
   </p>
   <!-- <p>
-    We therefore recommend that you lock the Timezone library to <code>v1.2</code> and above by listing
+    We therefore recommend that you lock the Timezone library to version 1.2 and above by listing
     <code>gem 'tzinfo', '~> 1.2'</code> in your <code>Gemfile</code>.
   </p> -->
 </div>

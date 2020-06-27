@@ -7,19 +7,19 @@ title: Tags Filters
 permalink: "/docs/liquid/tags/"
 --- -->
 
-標準のLiquid[タグ](https://shopify.github.io/liquid/tags/control-flow/){:target="_blank"}は全てサポートされています。Jekyllはサイト構築のためにいくつかの組み込みタグを用意しています。また、あなた自身のタグを[プラグイン]({{ "/docs/plugins/" | relative_url }})を使用して作成することもできます。
+標準のLiquid[タグ](https://shopify.github.io/liquid/tags/control-flow/){:target="_blank"}は全てサポートされています。Jekyllはサイト構築のためにいくつかの組み込みタグを用意しています。また、あなた自身のタグを[プラグイン]({{ '/docs/plugins/' | relative_url }})を使用して作成することもできます。
 
 <!-- All of the standard Liquid
 [tags](https://shopify.github.io/liquid/tags/control-flow/) are supported.
 Jekyll has a few built in tags to help you build your site. You can also create
-your own tags using [plugins](/docs/plugins/). -->
+your own tags using [plugins]({{ '/docs/plugins/' | relative_url }}). -->
 
 ## Includes
 
-サイトに渡り、繰り返すページ構文がある場合は、[include]({{ "/docs/includes/" | relative_url }})は管理面からもよい方法です。
+サイトに渡り、繰り返すページ構文がある場合は、[include]({{ '/docs/includes/' | relative_url }})は管理面からもよい方法です。
 
 <!-- If you have page snippets that you use repeatedly across your site, an
-[include](/docs/includes/) is the perfect way to make this more maintainable. -->
+[include]({{ '/docs/includes/' | relative_url }}) is the perfect way to make this more maintainable. -->
 
 ## コードの構文ハイライト
 <!-- ## Code snippet highlighting -->
@@ -30,15 +30,16 @@ Jekyllは[Rouge](http://rouge.jneen.net){:target="_blank"}のおかげで100言�
 thanks to [Rouge](http://rouge.jneen.net). Rouge is the default highlighter
 in Jekyll 3 and above.  -->
 
-<div class="note warning">
-  <p>Pygmentsの使用は推奨されず、Jekyll 4ではサポートされていません。<code>highlighter: pygments</code>の設定は、Pygmentsのスタイルシートと100%互換のRubyで書かれた<em>Rouge</em>の使用に、自動的に変更されます。
-  </p>
-  <!-- <p>Using Pygments has been deprecated and is not supported in
-  Jekyll 4, the configuration setting <code>highlighter: pygments</code>
-  now automatically falls back to using <em>Rouge</em> which is written in Ruby
-  and 100% compatible with stylesheets for Pygments.</p> -->
-</div>
+{: .note .warning}
+Pygmentsの使用は推奨されず、Jekyll 4ではサポートされていません。<code>highlighter: pygments</code>の設定は、Pygmentsのスタイルシートと100%互換のRubyで書かれた<em>Rouge</em>の使用に、自動的に変更されます。
 
+  
+  <!-- {: .note .warning}
+  Using Pygments has been deprecated and is not supported in
+  Jekyll 4; the configuration setting <code>highlighter: pygments</code>
+  now automatically falls back to using <em>Rouge</em> which is written in Ruby
+  and 100% compatible with stylesheets for Pygments. -->
+  
 コードブロックのシンタックスハイライトのレンダリングは、以下のようにコードを囲みます。
 
 <!-- To render a code block with syntax highlighting, surround your code as follows: -->
@@ -64,11 +65,11 @@ wiki](https://github.com/jayferd/rouge/wiki/List-of-supported-languages-and-lexe
 <div class="note">
   <h5>Jekyllはコードブロックに全てのLiquidフィルタを適用します</h5>
   <!-- <h5>Jekyll processes all Liquid filters in code blocks</h5> -->
-  <p>使用する言語に中括弧がある場合、<code>{&#37; raw &#37;}</code>と<code>{&#37; endraw &#37;}</code>でコードを囲む必要があります。{% include docs_version_badge.html version="4.0" %}以降、front matterに<code>render_with_liquid: false</code>を追加することで、特定のドキュメントに対してLiquidを完全に無効にできます。</p>
+  <p>使用する言語に中括弧がある場合、<code>{&#37; raw &#37;}</code>と<code>{&#37; endraw &#37;}</code>でコードを囲む必要があります。Jekyll{% include docs_version_badge.html version="4.0" %}以降、front matterに<code>render_with_liquid: false</code>を追加することで、特定のドキュメントに対してLiquidを完全に無効にできます。</p>
     <!-- <p>If you are using a language that contains curly braces, you
       will likely need to place <code>{&#37; raw &#37;}</code> and
       <code>{&#37; endraw &#37;}</code> tags around your code.
-      Since {% include docs_version_badge.html version="4.0" %} you can add <code>render_with_liquid: false</code> in your front matter to disable Liquid entirely for a particular document.</p> -->
+      Since Jekyll{% include docs_version_badge.html version="4.0" %} you can add <code>render_with_liquid: false</code> in your front matter to disable Liquid entirely for a particular document.</p> -->
 </div>
 
 ### 行番号
@@ -114,10 +115,10 @@ the syntax highlighter styles into your `main.css`:-->
 ## リンク
 <!-- ## Links -->
 
-{: .note }
+{: .note}
 Jekyll {% include docs_version_badge.html version="v4.0"%}以降、`link`や`post_url`タグの前に`site.baseurl`を使用する必要がなくなりました。
 
-<!-- {: .note }
+<!-- {: .note}
 Since Jekyll {% include docs_version_badge.html version="v4.0"%} you don't need to prepend `link` and `post_url` tags with `site.baseurl` -->
 
 ### ページのリンク {#link}
@@ -161,17 +162,17 @@ Since Jekyll {% include docs_version_badge.html version="v4.0"%} you don't need 
 
 <!-- For example, suppose you're creating a link in `page_a.md` (stored in `pages/folder1/folder2`) to `page_b.md` (stored in  `pages/folder1`). Your path in the link would not be `../page_b.html`. Instead, it would be `/pages/folder1/page_b.md`. -->
 
-パスが分からない場合、ページに`{% raw %}{{ page.path }}{% endraw %}`を追加し、パスを表示します。
+パスが分からない場合、ページに{% raw %}`{{ page.path }}`{% endraw %}を追加し、パスを表示します。
 
-<!-- If you're unsure of the path, add `{% raw %}{{ page.path }}{% endraw %}` to the page and it will display the path. -->
+<!-- If you're unsure of the path, add {% raw %}`{{ page.path }}`{% endraw %} to the page and it will display the path. -->
 
 `link`または` post_url`タグを使用することの一つの大きな利点はリンク検証です。リンクが存在しない場合、Jekyllはあなたのサイトを構築しません。リンクが壊れていることを警告するので、（リンクが壊れたサイトを構築し公開するのではなく）修正することができます。
 
 <!-- One major benefit of using the `link` or `post_url` tag is link validation. If the link doesn't exist, Jekyll won't build your site. This is a good thing, as it will alert you to a broken link so you can fix it (rather than allowing you to build and deploy a site with broken links). -->
 
-`link`タグにフィルタは追加できませんので注意してください。例えば、`{% raw %}{% link mypage.html | append: "#section1" %} {% endraw %}`のようにLiquidフィルタで文字列を追加することはできません。ページのセクションへのリンクは、通常のHTMlやMarkdownのリンク方法を使用する必要があります。
+`link`タグにフィルタは追加できませんので注意してください。例えば、{% raw %}`{% link mypage.html | append: "#section1" %}`{% endraw %}のようにLiquidフィルタで文字列を追加することはできません。ページのセクションへのリンクは、通常のHTMlやMarkdownのリンク方法を使用する必要があります。
 
-<!-- Note you cannot add filters to `link` tags. For example, you cannot append a string using Liquid filters, such as `{% raw %}{% link mypage.html | append: "#section1" %} {% endraw %}`. To link to sections on a page, you will need to use regular HTML or Markdown linking techniques. -->
+<!-- Note you cannot add filters to `link` tags. For example, you cannot append a string using Liquid filters, such as {% raw %}`{% link mypage.html | append: "#section1" %}`{% endraw %}. To link to sections on a page, you will need to use regular HTML or Markdown linking techniques. -->
 
 ### ポストへのリンク
 <!-- ### Linking to posts -->
