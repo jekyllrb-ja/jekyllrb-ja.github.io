@@ -161,15 +161,14 @@ jobs:
 - **checkout** actionは、リポジトリのクローンを作成します。
 - `helaili/jekyll-action@2.0.0`を使用して、選択した**action**と**version number**を指定します。これはビルドとデプロイを処理します。
 - 使用するアクションの秘密の**environment variable**への参照を設定します。`JEKYLL_PAT`は*個人アクセストークン*であり、次のセクションで詳しく説明します。
-
- <!-- We trigger the build using **on.push** condition for `master` branch only --- this prevents
+{% comment %} We trigger the build using **on.push** condition for `master` branch only --- this prevents
   the Action from overwriting the `gh-pages` branch on any feature branch pushes.
 - The **name** of the job matches our YAML filename: `github-pages`.
 - The **checkout** action takes care of cloning your repository.
 - We specify our selected **action** and **version number** using `helaili/jekyll-action@2.0.0`.
   This handles the build and deploy.
 - We set a reference to a secret **environment variable** for the action to use. The `JEKYLL_PAT`
-    is a *Personal Access Token* and is detailed in the next section. -->
+    is a *Personal Access Token* and is detailed in the next section. {% endcomment %}
 
 **on.push**条件を使用する代わりに、[on.schedule]パラメーターを使用して**schedule**でビルドをトリガーできます。たとえば、ここでは[crontab guru]サイトでテストできる**cron**構文を指定して、毎日午前0時にビルドします。
 
@@ -232,13 +231,12 @@ following approaches: -->
     - GitHubのリポジトリレベルビューに移動します。最新のコミット（上部近く）の下で、コミットメッセージの横にチェックまたは_X_として**ステータスシンボル**が表示されます。カーソルを合わせて、**details**リンクをクリックします。
 - **Actionsタブ**
     - リポジトリのActions他部へ移動します。`jekyll`ワークフロータブをクリックします。
-
- <!-- **View by commit**
+{% comment %}- **View by commit**
     - Go to the repository level view in GitHub. Under the most recent commit (near the top) you’ll
       see a **status symbol** next to the commit message as a tick or _X_. Hover over it and click
       the **details** link.
 - **Actions tab**
-    - Go to the repository's Actions tab. Click on the `jekyll` workflow tab. -->
+    - Go to the repository's Actions tab. Click on the `jekyll` workflow tab. {% endcomment %}
 
 すべてがうまくいけば、全ステップが緑色になり、ビルドされたアセットが`gh-pages`ブランチに存在するようになります。
 
