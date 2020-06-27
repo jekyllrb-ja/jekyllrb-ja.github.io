@@ -70,8 +70,8 @@ SaaSサービスをJekyllサイトでの機能的なバックエンドとして�
 <!-- ### E-commerce -->
  - [MemberSpace](https://www.memberspace.com/integrations/jekyll-membership/){:target="_blank"}: Jekyllサイトに会員と有料記事機能を追加する
   - [Snipcart](https://snipcart.com/blog/static-site-e-commerce-part-2-integrating-snipcart-with-jekyll){:target="_blank"}: Jekyllサイトにショッピングカートを追加
-  <!-- - [MemberSpace](https://www.memberspace.com/integrations/jekyll-membership/): Add memberships and paywall functionality to a Jekyll site
-- [Snipcart](https://snipcart.com/blog/static-site-e-commerce-part-2-integrating-snipcart-with-jekyll): Add a shopping cart to a Jekyll site -->
+{% comment %} - [MemberSpace](https://www.memberspace.com/integrations/jekyll-membership/): Add memberships and paywall functionality to a Jekyll site
+- [Snipcart](https://snipcart.com/blog/static-site-e-commerce-part-2-integrating-snipcart-with-jekyll): Add a shopping cart to a Jekyll site {% endcomment %}
 
 ### フォーラム
 <!-- ### Forms -->
@@ -91,10 +91,9 @@ SaaSサービスをJekyllサイトでの機能的なバックエンドとして�
   - [Algolia](https://blog.algolia.com/instant-search-blog-documentation-jekyll-plugin/){:target="_blank"}: Jekyllサイトに強力なインスタント検索を追加
   - [Bonsai Search](https://docs.bonsai.io/article/217-jekyll){:target="_blank"}: JekyllサイトでElasticsearchを使用する最も簡単な方法
   - [CloudSh](https://cloudsh.com/generators/How-to-setup-search-on-Jekyll/){:target="_blank"}: 数行のJavaScriptのWebサイト検索
-
-<!-- [Algolia](https://blog.algolia.com/instant-search-blog-documentation-jekyll-plugin/): Add a powerful instant search to your Jekyll site
+{% comment %}- [Algolia](https://blog.algolia.com/instant-search-blog-documentation-jekyll-plugin/): Add a powerful instant search to your Jekyll site
   - [Bonsai Search](https://docs.bonsai.io/article/217-jekyll): The easiest way to use Elasticsearch for your Jekyll site
-  - [CloudSh](https://cloudsh.com/generators/How-to-setup-search-on-Jekyll/): Website search with a few lines of JavaScript -->
+  - [CloudSh](https://cloudsh.com/generators/How-to-setup-search-on-Jekyll/): Website search with a few lines of JavaScript {% endcomment %}
 
 ## エディタ用プラグイン
 <!-- ## Editors plugins -->
