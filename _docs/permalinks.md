@@ -518,7 +518,7 @@ collections:
 ### ページ
 <!-- ### Pages -->
 
-ぺーじでは、front matterを用いてグローバルパーマリンクを上書きでき、`_config.yml`のfront matterデフォルトを介してパーマリンクを設定していた場合、無視されます
+ページでは、front matterを用いてグローバルパーマリンクを上書きでき、`_config.yml`のfront matterデフォルトを介してパーマリンクを設定していた場合、無視されます
 
 <!-- For pages, you have to use front matter to override the global permalink,
 and if you set a permalink via front matter defaults in `_config.yml`,
