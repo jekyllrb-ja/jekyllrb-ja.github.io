@@ -190,7 +190,7 @@ or [3rd party](/docs/deployment/third-party/). -->
 ## 最後に
 <!-- ## Wrap up -->
 
-これで、このstep-by-stepちょーとリアルはお終いです。ですが、あなたのJekyllの旅は始まったばかりです！
+これで、このstep-by-stepチュートリアルはお終いです。ですが、あなたのJekyllの旅は始まったばかりです！
 
 <!-- That brings us to the end of this step-by-step tutorial and the beginning of
 your Jekyll journey! -->
