@@ -95,7 +95,7 @@ Jane has worked on Jekyll for the past *five years*.
 
 <em>
 内部的にコレクションと見なされていますが、上記は[posts]({{ "/docs/posts/" | relative_url }})には適用されないことに注意してください。有効なファイル名形式の投稿は、front matterが含まれていない場合でも処理対象としてマークされます。
-</ em>
+</em>
 
 <!-- <em>
   Do note that in spite of being considered as a collection internally, the above
