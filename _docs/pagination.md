@@ -37,7 +37,7 @@ your `_config.yml` under `plugins`. For Jekyll 2, this is standard. -->
 ## ページ分けの有効化
 <!-- ## Enable pagination -->
 
-ブログでポストのページ分けを有効にするには、`_config.yml`ふぁいるに1ページに何個のアイテムを表示するかの設定を追加します。
+ブログでポストのページ分けを有効にするには、`_config.yml`ファイルに1ページに何個のアイテムを表示するかの設定を追加します。
 
 <!-- To enable pagination for posts on your blog, add a line to the `_config.yml` file that
 specifies how many items should be displayed per page: -->
