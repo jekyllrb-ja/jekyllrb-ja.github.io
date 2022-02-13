@@ -152,7 +152,7 @@ Every time you update Ruby to a version with a different first two digits, you w
 <!-- ### Global Install -->
 
 {: .note .warning}
-ファイルのパーミッションの問題を解決し、`sudo`を使用するためにRuby Gemsをグローバル環境にインストールすることを、強く推奨します。
+ファイルのパーミッションの問題を解決し、`sudo`を使用してRuby Gemsをグローバル環境にインストールしないことを、強く推奨します。
 
 <!-- {: .note .warning}
 We strongly recommend against installing Ruby gems globally to avoid file permissions problems and using `sudo`. -->
