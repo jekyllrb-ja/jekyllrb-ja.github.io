@@ -192,7 +192,7 @@ permalink: /docs/structure/
       </td>
       <td>
         <p>
-          生成されたサイトがJ、ekyllが変換した際に配置される（デフォルトの）場所です。これを<code> .gitignore </code>ファイルに追加することをお勧めします。
+          生成されたサイトがJekyllが変換した際に配置される（デフォルトの）場所です。これを<code> .gitignore </code>ファイルに追加することをお勧めします。
         </p>
         <!-- <p>
           This is where the generated site will be placed (by default) once
